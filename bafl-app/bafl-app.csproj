@@ -50,4 +50,7 @@
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\bafl-library\bafl-library.csproj" />
+	</ItemGroup>
 </Project>

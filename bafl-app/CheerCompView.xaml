@@ -4,11 +4,6 @@
              x:Class="bafl_app.CheerCompView">
 
     <VerticalStackLayout>
-        <HorizontalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
-            <Label Text="Cheer" VerticalTextAlignment="Center" />
-            <Switch />
-            <Label Text="Mascots" VerticalTextAlignment="Center" />
-        </HorizontalStackLayout>
         <ScrollView>
             <VerticalStackLayout
                 Spacing="25"

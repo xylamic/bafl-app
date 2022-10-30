@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bafl_app.MainPage"
+             Title="Bay Area Football League">
+    <VerticalStackLayout>
+        <Image
+            Source="bafl.png"
+            SemanticProperties.Description="Bay Area Football League"
+            HeightRequest="200"
+            HorizontalOptions="Center"
+            />
+        <Label 
+            Text="Use the menu to navigate."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Margin="10,10,10,30"/>
+        <Label
+            Text="{Binding Path=Description}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Margin="10,10,10,10"/>
+    </VerticalStackLayout>
+</ContentPage>
