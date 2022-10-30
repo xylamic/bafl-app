@@ -4,12 +4,23 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:bafl_app"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        Title="Home"
+        Title="Bay Area Football League"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <FlyoutItem Title="Cheer Competition: Cheer">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
+       </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Cheer Competition: Mascots">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
+       </Tab>
+    </FlyoutItem>
 
 </Shell>
 

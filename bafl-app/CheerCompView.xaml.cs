@@ -1,12 +1,13 @@
 ﻿namespace bafl_app;
 
-public partial class MainPage : ContentPage
+public partial class CheerCompView : ContentPage
 {
 	int count = 0;
 
-	public MainPage()
+	public CheerCompView(CheerCompViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
 
 	private void OnCounterClicked(object sender, EventArgs e)
