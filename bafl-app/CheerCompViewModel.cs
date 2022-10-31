@@ -1,4 +1,6 @@
 ﻿using System;
+using bafl.library;
+
 namespace bafl_app
 {
     public class CheerCompViewModel

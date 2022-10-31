@@ -1,5 +1,7 @@
 ﻿namespace bafl_app;
 
+using bafl.library;
+
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()

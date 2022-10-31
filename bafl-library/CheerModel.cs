@@ -1,5 +1,5 @@
 ﻿using System;
-namespace bafl_app
+namespace bafl.library
 {
     public class CheerModel
     {

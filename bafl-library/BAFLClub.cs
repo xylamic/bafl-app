@@ -1,5 +1,5 @@
 ﻿using System;
-namespace bafl_app
+namespace bafl.library
 {
     public class BAFLClub
     {
@@ -7,6 +7,8 @@ namespace bafl_app
         private string _football;
         private string _cheer;
         private string _mascot;
+
+        public BAFLClub() { }
 
         public BAFLClub(string region, string football, string cheer,
             string mascot)
@@ -20,26 +22,30 @@ namespace bafl_app
         public string Region
         {
             get => _region;
+            set => _region = value;
         }
 
-        public string Footbal
+        public string Football
         {
             get => _football;
+            set => _football = value;
         }
 
         public string Cheer
         {
             get => _cheer;
+            set => _cheer = value;
         }
 
         public string Mascot
         {
             get => _mascot;
+            set => _mascot = value;
         }
 
         public override string ToString()
         {
-            return String.Format("{} {}", Region, Footbal);
+            return String.Format("{} {}", Region, Football);
         }
 
         public string FootballName()
