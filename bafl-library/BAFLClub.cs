@@ -7,16 +7,18 @@ namespace bafl.library
         private string _football;
         private string _cheer;
         private string _mascot;
+        private string _website;
 
         public BAFLClub() { }
 
         public BAFLClub(string region, string football, string cheer,
-            string mascot)
+            string mascot, string website)
         {
             _region = region;
             _football = football;
             _cheer = cheer;
             _mascot = mascot;
+            _website = website;
         }
 
         public string Region
@@ -41,6 +43,12 @@ namespace bafl.library
         {
             get => _mascot;
             set => _mascot = value;
+        }
+
+        public string Website
+        {
+            get => _website;
+            set => _website = value;
         }
 
         public override string ToString()

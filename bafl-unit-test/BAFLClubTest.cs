@@ -23,19 +23,22 @@ public class BAFLClubTest
             "Bay Area",
             "Buccaneers",
             "Legacy",
-            "Mermaids");
+            "Mermaids",
+            "https://www.bayareabucs.org");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "La Porte",
             "Texans",
             "Darlings",
-            "Stars");
+            "Stars",
+            "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Southbelt",
             "Dolphins",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -44,12 +47,14 @@ public class BAFLClubTest
             "Brazosport",
             "Longhorns",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Alvin",
             "Raiders",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -58,12 +63,14 @@ public class BAFLClubTest
             "Angleton",
             "Wildcats",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Barbers Hill",
             "Eagles",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -72,12 +79,14 @@ public class BAFLClubTest
             "East End",
             "Eagles",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Hitchcock",
             "Red Raiders",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -86,12 +95,14 @@ public class BAFLClubTest
             "League City",
             "49ers",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Magnolia Park",
             "Sharks",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -100,6 +111,7 @@ public class BAFLClubTest
             "Manvel",
             "Texans",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
@@ -107,12 +119,14 @@ public class BAFLClubTest
             "North Shore",
             "Mustangs",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Pasadena",
             "Panthers",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -122,12 +136,14 @@ public class BAFLClubTest
             "Pearland",
             "Patriots",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Pearland",
             "Texans",
+            "",
             "",
             "");
         clubList.Add(id++, club);
@@ -136,6 +152,7 @@ public class BAFLClubTest
             "Sagemont",
             "Cowboys",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
@@ -143,12 +160,14 @@ public class BAFLClubTest
             "Southeast Houston",
             "Wildcats",
             "",
+            "",
             "");
         clubList.Add(id++, club);
 
         club = new BAFLClub(
             "Santa Fe",
             "Braves",
+            "",
             "",
             "");
         clubList.Add(id++, club);

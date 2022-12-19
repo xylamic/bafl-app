@@ -3,24 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bafl_app.MainPage"
              Title="Bay Area Football League">
-    <VerticalStackLayout>
-        <Image
-            Source="bafl.png"
-            SemanticProperties.Description="Bay Area Football League"
-            HeightRequest="200"
-            HorizontalOptions="Center"
-            />
-        <Label 
-            Text="Use the menu to navigate."
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+            Text="{Binding Path=NavigateText}"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Margin="10,10,10,30"/>
-        <Label
-            Text="{Binding Path=Description}"
-            VerticalOptions="Center"
+
+        <Image Grid.Row="1" Grid.Column="0"
+            Source="bafl.png"
+            SemanticProperties.Description="Bay Area Football League"
+            HeightRequest="125"
             HorizontalOptions="Center"
-            HorizontalTextAlignment="Center"
-            Margin="10,10,10,10"/>
-    </VerticalStackLayout>
+            />
+
+        <Label Grid.Row="1" Grid.Column="1" Padding="10"
+            Text="{Binding Path=DescriptionText}"
+            HorizontalTextAlignment="Center"/>
+
+        <ListView Grid.Row="2" Grid.ColumnSpan="2"
+                  x:Name="ClubList" ItemsSource="{Binding Path=BaflClubs}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Region}" />
+                            <Label Text="{Binding Football}" />
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 </ContentPage>

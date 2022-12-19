@@ -3,114 +3,133 @@
     "Region": "Bay Area",
     "Footbal": "Buccaneers",
     "Cheer": "Legacy",
-    "Mascot": "Mermaids"
+    "Mascot": "Mermaids",
+    "Website": "https://www.bayareabucs.org"
   },
   "2": {
     "Region": "La Porte",
     "Footbal": "Texans",
     "Cheer": "Darlings",
-    "Mascot": "Stars"
+    "Mascot": "Stars",
+    "Website": ""
   },
   "3": {
     "Region": "Southbelt",
     "Footbal": "Dolphins",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "4": {
     "Region": "Brazosport",
     "Footbal": "Longhorns",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "5": {
     "Region": "Alvin",
     "Footbal": "Raiders",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "6": {
     "Region": "Angleton",
     "Footbal": "Wildcats",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "7": {
     "Region": "Barbers Hill",
     "Footbal": "Eagles",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "8": {
     "Region": "East End",
     "Footbal": "Eagles",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "9": {
     "Region": "Hitchcock",
     "Footbal": "Red Raiders",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "10": {
     "Region": "League City",
     "Footbal": "49ers",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "11": {
     "Region": "Magnolia Park",
     "Footbal": "Sharks",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "12": {
     "Region": "Manvel",
     "Footbal": "Texans",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "13": {
     "Region": "North Shore",
     "Footbal": "Mustangs",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "14": {
     "Region": "Pasadena",
     "Footbal": "Panthers",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "15": {
     "Region": "Pearland",
     "Footbal": "Patriots",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "16": {
     "Region": "Pearland",
     "Footbal": "Texans",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "17": {
     "Region": "Sagemont",
     "Footbal": "Cowboys",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "18": {
     "Region": "Southeast Houston",
     "Footbal": "Wildcats",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   },
   "19": {
     "Region": "Santa Fe",
     "Footbal": "Braves",
     "Cheer": "",
-    "Mascot": ""
+    "Mascot": "",
+    "Website": ""
   }
 }

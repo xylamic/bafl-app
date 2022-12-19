@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pXGIxcGnVxfoUJ+wjaUY4CPh+0VGyvpcpBPlRdF1ugKN8Xq0q2ZWKoWnImqNUfUIYeFfkF/lW1lKU4X87Js+KA==",
+  "dgSpecHash": "trC4ZW9CaOE1cyad+xHsCbtDbr9BfRuBiXNPiaPAftTiInvRdGfB5coeTuwMKzcIxr3sGFIhx0HBSUzl5NSE0Q==",
   "success": true,
   "projectFilePath": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,8 @@
     "/Users/xylamic/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.1/microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "/Users/xylamic/.nuget/packages/microsoft.maui.dependencies/6.0.541/microsoft.maui.dependencies.6.0.541.nupkg.sha512",
-    "/Users/xylamic/.nuget/packages/microsoft.maui.extensions/6.0.541/microsoft.maui.extensions.6.0.541.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.dependencies/6.0.548/microsoft.maui.dependencies.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.extensions/6.0.548/microsoft.maui.extensions.6.0.548.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/microsoft.maui.graphics/6.0.501/microsoft.maui.graphics.6.0.501.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
@@ -100,7 +100,24 @@
     "/Users/xylamic/.nuget/packages/xamarin.kotlin.stdlib.jdk7/1.6.20.1/xamarin.kotlin.stdlib.jdk7.1.6.20.1.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/xamarin.kotlin.stdlib.jdk8/1.6.20.1/xamarin.kotlin.stdlib.jdk8.1.6.20.1.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/xamarin.kotlinx.coroutines.android/1.6.0.1/xamarin.kotlinx.coroutines.android.1.6.0.1.nupkg.sha512",
-    "/Users/xylamic/.nuget/packages/xamarin.kotlinx.coroutines.core.jvm/1.6.0.1/xamarin.kotlinx.coroutines.core.jvm.1.6.0.1.nupkg.sha512"
+    "/Users/xylamic/.nuget/packages/xamarin.kotlinx.coroutines.core.jvm/1.6.0.1/xamarin.kotlinx.coroutines.core.jvm.1.6.0.1.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.controls.ref.any/6.0.548/microsoft.maui.controls.ref.any.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.controls.runtime.any/6.0.548/microsoft.maui.controls.runtime.any.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.core.ref.any/6.0.548/microsoft.maui.core.ref.any.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.core.runtime.any/6.0.548/microsoft.maui.core.runtime.any.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.essentials.ref.any/6.0.548/microsoft.maui.essentials.ref.any.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.essentials.runtime.any/6.0.548/microsoft.maui.essentials.runtime.any.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.controls.ref.android/6.0.548/microsoft.maui.controls.ref.android.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.core.ref.android/6.0.548/microsoft.maui.core.ref.android.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.essentials.ref.android/6.0.548/microsoft.maui.essentials.ref.android.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.ios.ref/16.1.229/microsoft.ios.ref.16.1.229.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.controls.ref.ios/6.0.548/microsoft.maui.controls.ref.ios.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.core.ref.ios/6.0.548/microsoft.maui.core.ref.ios.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.essentials.ref.ios/6.0.548/microsoft.maui.essentials.ref.ios.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maccatalyst.ref/16.1.229/microsoft.maccatalyst.ref.16.1.229.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.controls.ref.maccatalyst/6.0.548/microsoft.maui.controls.ref.maccatalyst.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.core.ref.maccatalyst/6.0.548/microsoft.maui.core.ref.maccatalyst.6.0.548.nupkg.sha512",
+    "/Users/xylamic/.nuget/packages/microsoft.maui.essentials.ref.maccatalyst/6.0.548/microsoft.maui.essentials.ref.maccatalyst.6.0.548.nupkg.sha512"
   ],
   "logs": []
 }
