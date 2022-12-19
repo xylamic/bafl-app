@@ -1,6 +1,117 @@
 {
-  "this": "is",
-  "a": {
-    "test": 2
+  "1": {
+    "Region": "Bay Area",
+    "Footbal": "Buccaneers",
+    "Cheer": "Legacy",
+    "Mascot": "Mermaids",
+    "Website": "https://www.bayareabucs.org"
+  },
+  "2": {
+    "Region": "La Porte",
+    "Footbal": "Texans",
+    "Cheer": "Darlings",
+    "Mascot": "Stars"
+  },
+  "3": {
+    "Region": "Southbelt",
+    "Footbal": "Dolphins",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "4": {
+    "Region": "Brazosport",
+    "Footbal": "Longhorns",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "5": {
+    "Region": "Alvin",
+    "Footbal": "Raiders",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "6": {
+    "Region": "Angleton",
+    "Footbal": "Wildcats",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "7": {
+    "Region": "Barbers Hill",
+    "Footbal": "Eagles",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "8": {
+    "Region": "East End",
+    "Footbal": "Eagles",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "9": {
+    "Region": "Hitchcock",
+    "Footbal": "Red Raiders",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "10": {
+    "Region": "League City",
+    "Footbal": "49ers",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "11": {
+    "Region": "Magnolia Park",
+    "Footbal": "Sharks",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "12": {
+    "Region": "Manvel",
+    "Footbal": "Texans",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "13": {
+    "Region": "North Shore",
+    "Footbal": "Mustangs",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "14": {
+    "Region": "Pasadena",
+    "Footbal": "Panthers",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "15": {
+    "Region": "Pearland",
+    "Footbal": "Patriots",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "16": {
+    "Region": "Pearland",
+    "Footbal": "Texans",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "17": {
+    "Region": "Sagemont",
+    "Footbal": "Cowboys",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "18": {
+    "Region": "Southeast Houston",
+    "Footbal": "Wildcats",
+    "Cheer": "",
+    "Mascot": ""
+  },
+  "19": {
+    "Region": "Santa Fe",
+    "Footbal": "Braves",
+    "Cheer": "",
+    "Mascot": ""
   }
 }
