@@ -8,7 +8,8 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		BindingContext = this;
+
+        BindingContext = this;
 
 		_ = InitPage();
 	}
@@ -16,6 +17,9 @@ public partial class MainPage : ContentPage
 	public async Task InitPage()
 	{
 		await App.UpdateConfiguration();
+
+		ClickTeamsButton();
+
 		OnPropertyChanged(null);
 	}
 
@@ -47,6 +51,47 @@ public partial class MainPage : ContentPage
             return "Teaching and support youth through football, " +
 				"drill, & cheer since 1977. 19 teams across the greater " +
 				"Houston area";
+        }
+    }
+
+    void Button_Pressed(System.Object sender, System.EventArgs e)
+    {
+		ClickTeamsButton();
+    }
+
+	void ClickTeamsButton()
+	{
+        if (ClubListView.IsVisible)
+        {
+            ClubListView.IsVisible = false;
+            VisualStateManager.GoToState(ClubListButton, "Off");
+            /*Color bgColor = ClubListButton.BackgroundColor;
+			ClubListButton.BackgroundColor = ClubListButton.TextColor;
+			ClubListButton.TextColor = bgColor;*/
+        }
+        else
+        {
+            ClubListView.IsVisible = true;
+            VisualStateManager.GoToState(ClubListButton, "On");
+            /*Color bgColor = ClubListButton.BackgroundColor;
+			ClubListButton.BackgroundColor = ClubListButton.TextColor;
+			ClubListButton.TextColor = bgColor;*/
+        }
+    }
+
+    async void TapGestureHyperlink_Tapped(System.Object sender, System.EventArgs e)
+    {
+		try
+		{
+			Label label = (Label)sender;
+			string url = label.Text;
+
+            Uri uri = new Uri(url);
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
+		catch (Exception)
+		{
+            await DisplayAlert("Error", "Could not open the browser.", "OK");
         }
     }
 }

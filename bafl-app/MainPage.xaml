@@ -7,6 +7,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -32,18 +33,26 @@
             Text="{Binding Path=DescriptionText}"
             HorizontalTextAlignment="Center"/>
 
-        <ListView Grid.Row="2" Grid.ColumnSpan="2"
-                  x:Name="ClubList" ItemsSource="{Binding Path=BaflClubs}">
+        <Button Text="Teams" Pressed="Button_Pressed" Grid.Row="2"
+                Grid.ColumnSpan="2" Margin="10,30,10,10"
+                x:Name="ClubListButton"/>
+        <ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,10"
+                x:Name="ClubListView" ItemsSource="{Binding Path=BaflClubs}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <VerticalStackLayout>
-                            <Label Text="{Binding Region}" />
-                            <Label Text="{Binding Football}" />
+                            <Label Text="{Binding RegionFootball}" />
+                            <Label Text="{Binding Website}" IsEnabled="{Binding WebsitePresent}" Style="{StaticResource Hyperlink}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureHyperlink_Tapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
                         </VerticalStackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
     </Grid>
 </ContentPage>

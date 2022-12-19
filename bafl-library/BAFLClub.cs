@@ -33,6 +33,11 @@ namespace bafl.library
             set => _football = value;
         }
 
+        public string RegionFootball
+        {
+            get => String.Format("{0} {1}", _region, _football);
+        }
+
         public string Cheer
         {
             get => _cheer;
@@ -49,6 +54,11 @@ namespace bafl.library
         {
             get => _website;
             set => _website = value;
+        }
+
+        public bool WebsitePresent
+        {
+            get => !String.IsNullOrEmpty(Website);
         }
 
         public override string ToString()

@@ -13,7 +13,6 @@ public partial class App : Application
 		InitializeComponent();
 
         ClubList = new Dictionary<int, BAFLClub>();
-        ClubList.Add(1, new BAFLClub("SE", "foosball", "", "", ""));
 		MainPage = new AppShell();
     }
 
