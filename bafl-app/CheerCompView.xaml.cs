@@ -2,8 +2,6 @@
 
 public partial class CheerCompView : ContentPage
 {
-	int count = 0;
-
 	public CheerCompView(CheerCompViewModel vm)
 	{
 		InitializeComponent();

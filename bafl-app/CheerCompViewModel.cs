@@ -9,6 +9,7 @@ namespace bafl_app
 
         public CheerCompViewModel(CheerModel cheerModel)
         {
+            _model = cheerModel;
         }
     }
 }
