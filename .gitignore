@@ -403,3 +403,11 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+bafl-app/bin
+bafl-app/obj
+bafl-library/bin
+bafl-library/obj
+bafl-unit-test/bin
+bafl-unit-test/obj
+*.cache
