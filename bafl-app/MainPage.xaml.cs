@@ -49,12 +49,12 @@ public partial class MainPage : ContentPage
 			"learn, and thrive within their community.";*/
 
             return "Teaching and support youth through football, " +
-				"drill, & cheer since 1977. 19 teams across the greater " +
-				"Houston area";
+				"drill, & cheer since 1977. BAFL consists of 19 teams " +
+				"across the greater Houston area.";
         }
     }
 
-    void Button_Pressed(System.Object sender, System.EventArgs e)
+    void TeamsButton_Pressed(System.Object sender, System.EventArgs e)
     {
 		ClickTeamsButton();
     }
@@ -79,18 +79,31 @@ public partial class MainPage : ContentPage
         }
     }
 
+    void BoardButton_Pressed(System.Object sender, System.EventArgs e)
+    {
+    }
+
+    void ContactButton_Pressed(System.Object sender, System.EventArgs e)
+    {
+    }
+
     async void TapGestureHyperlink_Tapped(System.Object sender, System.EventArgs e)
     {
-		try
-		{
-			Label label = (Label)sender;
-			string url = label.Text;
+		Label label = (Label)sender;
+		string url = label.Text;
 
+		await OpenUrl(url);
+    }
+
+    private async Task OpenUrl(string url)
+    {
+        try
+        {
             Uri uri = new Uri(url);
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
-		catch (Exception)
-		{
+        catch (Exception)
+        {
             await DisplayAlert("Error", "Could not open the browser.", "OK");
         }
     }

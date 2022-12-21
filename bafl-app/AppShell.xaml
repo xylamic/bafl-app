@@ -10,7 +10,12 @@
         Title="Bay Area Football League"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    <MenuItem
+        Text="Football Scoreboard"
+        Clicked="FootballScoreboard_Clicked"/>
+    <MenuItem
+        Text="Football Standings"
+        Clicked="FootballStandings_Clicked"/>
     <FlyoutItem Title="Cheer Competition: Cheer">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
