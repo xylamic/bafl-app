@@ -1,0 +1,38 @@
+[
+  {
+    "Role": "President",
+    "Name": "Gloria Sanchez",
+    "Email": "eeeagles@yahoo.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "1st Vice President",
+    "Name": "Chris Sweat",
+    "Email": "chris_sweat@ymail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Secretary",
+    "Name": "Jennifer Sorsby",
+    "Email": "baflsecretary@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Treasurer",
+    "Name": "Kari",
+    "Email": "bafltreasurer21@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Drill Director",
+    "Name": "Bel Wranich",
+    "Email": "bafldrilldirector@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Athletic Director",
+    "Name": "Denny Wranich",
+    "Email": "dwranich82@gmail.com",
+    "EmailPresent": true
+  }
+]
