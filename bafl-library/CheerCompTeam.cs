@@ -3,7 +3,7 @@ namespace bafl.library
 {
     public class CheerCompTeam
     {
-        public CheerCompTeam(BAFLClub club, DateTime startTime,
+        public CheerCompTeam(BaflClub club, DateTime startTime,
             DateTime actStartTime)
         {
         }

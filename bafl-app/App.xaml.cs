@@ -15,13 +15,13 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        ClubList = new Dictionary<int, BAFLClub>();
+        ClubList = new Dictionary<int, BaflClub>();
 		MainPage = new AppShell();
     }
 
     public static bool IsInitiatied = false;
 
-    public static Dictionary<int, BAFLClub> ClubList { get; private set; }
+    public static Dictionary<int, BaflClub> ClubList { get; private set; }
 
     public static List<BaflBoardMember> BoardMemberList { get; private set; }
 
@@ -65,7 +65,7 @@ public partial class App : Application
 
         // deserialize the teams
         ClubList =
-            JsonSerializer.Deserialize<Dictionary<int, BAFLClub>>(content);
+            JsonSerializer.Deserialize<Dictionary<int, BaflClub>>(content);
         Console.WriteLine("Loaded team data.");
         #endregion
 

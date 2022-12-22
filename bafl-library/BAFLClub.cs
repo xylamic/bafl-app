@@ -1,7 +1,7 @@
 ﻿using System;
 namespace bafl.library
 {
-    public class BAFLClub
+    public class BaflClub
     {
         private string _region;
         private string _football;
@@ -9,9 +9,9 @@ namespace bafl.library
         private string _mascot;
         private string _website;
 
-        public BAFLClub() { }
+        public BaflClub() { }
 
-        public BAFLClub(string region, string football, string cheer,
+        public BaflClub(string region, string football, string cheer,
             string mascot, string website)
         {
             _region = region;
