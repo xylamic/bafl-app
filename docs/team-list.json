@@ -1,32 +1,4 @@
 {
-  "1": {
-    "Region": "Bay Area",
-    "Football": "Buccaneers",
-    "Cheer": "Legacy",
-    "Mascot": "Mermaids",
-    "Website": "https://www.bayareabucs.org"
-  },
-  "2": {
-    "Region": "La Porte",
-    "Football": "Texans",
-    "Cheer": "Darlings",
-    "Mascot": "Stars",
-    "Website": "https://www.lptexansdarlings.com/"
-  },
-  "3": {
-    "Region": "Southbelt",
-    "Football": "Dolphins",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": "https://www.facebook.com/people/Southbelt-Dolphins-Youth-Football-Drill-Cheer/100057183051387/"
-  },
-  "4": {
-    "Region": "Brazosport",
-    "Football": "Longhorns",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": "https://www.facebook.com/BEYFALonghorns/"
-  },
   "5": {
     "Region": "Alvin",
     "Football": "Raiders",
@@ -48,6 +20,20 @@
     "Mascot": "",
     "Website": "https://m.facebook.com/barbershillyouthfootball/"
   },
+  "1": {
+    "Region": "Bay Area",
+    "Football": "Buccaneers",
+    "Cheer": "Legacy",
+    "Mascot": "Mermaids",
+    "Website": "https://www.bayareabucs.org"
+  },
+  "4": {
+    "Region": "Brazosport",
+    "Football": "Longhorns",
+    "Cheer": "",
+    "Mascot": "",
+    "Website": "https://www.facebook.com/BEYFALonghorns/"
+  },
   "8": {
     "Region": "East End",
     "Football": "Eagles",
@@ -61,6 +47,13 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.hometeamsonline.com/teams/?u=HITCHCOCKREDRAIDERS&s=football"
+  },
+  "2": {
+    "Region": "La Porte",
+    "Football": "Texans",
+    "Cheer": "Darlings",
+    "Mascot": "Stars",
+    "Website": "https://www.lptexansdarlings.com/"
   },
   "10": {
     "Region": "League City",
@@ -110,6 +103,13 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/sagemont.cowboys/"
+  },
+  "3": {
+    "Region": "Southbelt",
+    "Football": "Dolphins",
+    "Cheer": "",
+    "Mascot": "",
+    "Website": "https://www.facebook.com/people/Southbelt-Dolphins-Youth-Football-Drill-Cheer/100057183051387/"
   },
   "18": {
     "Region": "Southeast Houston",
