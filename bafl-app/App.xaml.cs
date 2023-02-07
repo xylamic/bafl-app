@@ -5,10 +5,8 @@ namespace bafl_app;
 
 public partial class App : Application
 {
-	private static string TEAM_URL = "https://xylamic.github.io/bafl-app/team-list.json";
+	
 	private static string TEAM_FILE_NAME = "team-list.json";
-
-    private static string BOARD_URL = "https://xylamic.github.io/bafl-app/board-list.json";
     private static string BOARD_FILE_NAME = "board-list.json";
 
     public App()
@@ -53,7 +51,7 @@ public partial class App : Application
         {
             using (HttpClient client = new HttpClient())
             {
-                content = await client.GetStringAsync(TEAM_URL);
+                content = await client.GetStringAsync(BaflUtilities.TEAM_URL);
                 await File.WriteAllTextAsync(cacheDir + "/" + TEAM_FILE_NAME, content);
                 Console.WriteLine("Successfully read latest team data.");
             }
@@ -90,7 +88,7 @@ public partial class App : Application
         {
             using (HttpClient client = new HttpClient())
             {
-                content = await client.GetStringAsync(BOARD_URL);
+                content = await client.GetStringAsync(BaflUtilities.BOARD_URL);
                 await File.WriteAllTextAsync(cacheDir + "/" + BOARD_FILE_NAME, content);
                 Console.WriteLine("Successfully read latest board data.");
             }
