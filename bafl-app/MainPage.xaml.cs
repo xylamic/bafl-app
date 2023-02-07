@@ -23,7 +23,7 @@ public partial class MainPage : ContentPage
 		OnPropertyChanged(null);
 	}
 
-	public List<BAFLClub> BaflClubs
+	public List<BaflClub> BaflClubs
 	{
 		get { return App.ClubList.Values.ToList(); }
 	}

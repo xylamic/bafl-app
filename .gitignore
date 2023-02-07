@@ -411,3 +411,4 @@ bafl-library/obj
 bafl-unit-test/bin
 bafl-unit-test/obj
 *.cache
+bafl-app/private
