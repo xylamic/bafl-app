@@ -35,6 +35,7 @@
 	  <CodesignKey>iPhone Developer</CodesignKey>
 	  <CodesignProvision>Automatic</CodesignProvision>
 	  <CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
+	  <MtouchLink>None</MtouchLink>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
