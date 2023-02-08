@@ -44,30 +44,44 @@
             <Button Text="Teams" Pressed="TeamsButton_Pressed" Margin="10,10,10,10"
                 x:Name="ClubListButton" Grid.Column="0" HorizontalOptions="FillAndExpand" />
             <Button Text="Board" Pressed="BoardButton_Pressed" Margin="10,10,10,10"
-                x:Name="BoardButton" IsEnabled="False" Grid.Column="1" HorizontalOptions="FillAndExpand" />
+                x:Name="BoardButton" IsEnabled="True" Grid.Column="1" HorizontalOptions="FillAndExpand" />
             <Button Text="Contact Us" Pressed="ContactButton_Pressed" Margin="10,10,10,10"
-                x:Name="ContactButton" IsEnabled="False" Grid.Column="2" HorizontalOptions="FillAndExpand" />
+                x:Name="ContactButton" IsEnabled="True" Grid.Column="2" HorizontalOptions="FillAndExpand" />
 
         </Grid>
         
         <ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand"
-                x:Name="ClubListView" ItemsSource="{Binding Path=BaflClubs}">
+                x:Name="ClubListView" ItemsSource="{Binding Path=BaflClubs}" IsVisible="{Binding Path=ClubsShown}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <VerticalStackLayout>
-                            <Label Text="{Binding RegionFootball}" />
-                            <Label Text="{Binding Website}" IsEnabled="{Binding WebsitePresent}" Style="{StaticResource Hyperlink}" MaxLines="1">
+                        <HorizontalStackLayout HorizontalOptions="Center">
+                            <Label Text="{Binding RegionFootball}" Margin="0,0,10,0" VerticalTextAlignment="Center" FontSize="Large" />
+                            <Label Text="Website" IsEnabled="{Binding WebsitePresent}" Style="{StaticResource Hyperlink}"
+                                   MaxLines="1" VerticalTextAlignment="Center" FontSize="Small">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureHyperlink_Tapped" />
                                 </Label.GestureRecognizers>
                             </Label>
-                        </VerticalStackLayout>
+                        </HorizontalStackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
+        <ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand"
+                x:Name="BoardListView" ItemsSource="{Binding Path=BaflBoard}" IsVisible="{Binding Path=BoardShown}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout HorizontalOptions="Center">
+                            <Label Text="{Binding Role}" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,10,0" />
+                            <Label Text="{Binding Name}" FontSize="Small" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         
         
     </Grid>

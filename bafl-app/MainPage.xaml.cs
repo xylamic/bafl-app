@@ -4,29 +4,72 @@ namespace bafl_app;
 
 public partial class MainPage : ContentPage
 {
+    private bool _boardShown = true;
+    private bool _clubsShown = true;
 
-	public MainPage()
-	{
-		InitializeComponent();
+    public MainPage()
+    {
+        InitializeComponent();
+
+        VisualStateManager.GoToState(BoardButton, "Off");
+        VisualStateManager.GoToState(ContactButton, "Off");
+        VisualStateManager.GoToState(ClubListButton, "Off");
 
         BindingContext = this;
 
-		_ = InitPage();
-	}
+        _ = InitPage();
+
+        Task.Run(() =>
+        {
+            BoardShown = false;
+            ClubsShown = false;
+        });
+    }
 
 	public async Task InitPage()
 	{
 		await App.UpdateConfiguration();
 
-		ClickTeamsButton();
-
 		OnPropertyChanged(null);
+
+        ClickTeamsButton();
 	}
 
 	public List<BaflClub> BaflClubs
 	{
 		get { return App.ClubList.Values.ToList(); }
 	}
+
+    public List<BaflBoardMember> BaflBoard
+    {
+        get { return App.BoardMemberList; }
+    }
+
+    public bool BoardShown
+    {
+        get { return _boardShown; }
+        private set
+        {
+            if (_boardShown != value)
+            {
+                _boardShown = value;
+                OnPropertyChanged(nameof(BoardShown));
+            }
+        }
+    }
+
+    public bool ClubsShown
+    {
+        get { return _clubsShown; }
+        private set
+        {
+            if (_clubsShown != value)
+            {
+                _clubsShown = value;
+                OnPropertyChanged(nameof(ClubsShown));
+            }
+        }
+    }
 
 	public string NavigateText
 	{
@@ -61,9 +104,12 @@ public partial class MainPage : ContentPage
 
 	void ClickTeamsButton()
 	{
-        if (ClubListView.IsVisible)
+        BoardShown = false;
+        VisualStateManager.GoToState(BoardButton, "Off");
+
+        if (ClubsShown)
         {
-            ClubListView.IsVisible = false;
+            ClubsShown = false;
             VisualStateManager.GoToState(ClubListButton, "Off");
             /*Color bgColor = ClubListButton.BackgroundColor;
 			ClubListButton.BackgroundColor = ClubListButton.TextColor;
@@ -71,7 +117,7 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            ClubListView.IsVisible = true;
+            ClubsShown = true;
             VisualStateManager.GoToState(ClubListButton, "On");
             /*Color bgColor = ClubListButton.BackgroundColor;
 			ClubListButton.BackgroundColor = ClubListButton.TextColor;
@@ -81,16 +127,37 @@ public partial class MainPage : ContentPage
 
     void BoardButton_Pressed(System.Object sender, System.EventArgs e)
     {
+        ClubsShown = false;
+        VisualStateManager.GoToState(ClubListButton, "Off");
+
+        if (BoardShown)
+        {
+            BoardShown = false;
+            VisualStateManager.GoToState(BoardButton, "Off");
+            /*Color bgColor = ClubListButton.BackgroundColor;
+			ClubListButton.BackgroundColor = ClubListButton.TextColor;
+			ClubListButton.TextColor = bgColor;*/
+        }
+        else
+        {
+            BoardShown = true;
+            VisualStateManager.GoToState(BoardButton, "On");
+            /*Color bgColor = ClubListButton.BackgroundColor;
+			ClubListButton.BackgroundColor = ClubListButton.TextColor;
+			ClubListButton.TextColor = bgColor;*/
+        }
     }
 
-    void ContactButton_Pressed(System.Object sender, System.EventArgs e)
+    async void ContactButton_Pressed(System.Object sender, System.EventArgs e)
     {
+        await OpenUrl("https://www.bayareafootballleague.org/contact");
     }
 
     async void TapGestureHyperlink_Tapped(System.Object sender, System.EventArgs e)
     {
 		Label label = (Label)sender;
-		string url = label.Text;
+        BaflClub club = (BaflClub) label.BindingContext;
+		string url = club.Website;
 
 		await OpenUrl(url);
     }
