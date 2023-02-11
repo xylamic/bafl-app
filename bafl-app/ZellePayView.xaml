@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bafl_app.CashAppPayView"
+             Title="CashApp">
+
+    <VerticalStackLayout>
+
+        <Image Source="cashapp_code.png" WidthRequest="300" />
+        <Label FontSize="Small" Text="Scan to pay or click to go directly."
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Start" />
+    </VerticalStackLayout>
+
+</ContentPage>
+
