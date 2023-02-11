@@ -1,37 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-unit-test\\bafl-unit-test.csproj": {}
+    "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-library\\bafl-library.csproj": {
+    "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-library\\bafl-library.csproj",
+        "projectUniqueName": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj",
         "projectName": "bafl-library",
-        "projectPath": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-library\\bafl-library.csproj",
-        "packagesPath": "C:\\Users\\xylam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-library\\obj\\",
+        "projectPath": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj",
+        "packagesPath": "/Users/xylamic/.nuget/packages/",
+        "outputPath": "/Users/xylamic/Development/bafl-app/bafl-library/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xylam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/xylamic/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0",
           "net6.0-android",
           "net6.0-ios",
-          "net6.0-maccatalyst",
-          "net6.0-windows10.0.19041.0"
+          "net6.0-maccatalyst"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,10 +43,6 @@
           "net6.0-maccatalyst16.1": {
             "targetAlias": "net6.0-maccatalyst",
             "projectReferences": {}
-          },
-          "net6.0-windows10.0.19041": {
-            "targetAlias": "net6.0-windows10.0.19041.0",
-            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -69,13 +58,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             }
           },
@@ -93,27 +82,27 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Maui.Controls.Ref.any",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Controls.Runtime.any",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Core.Ref.any",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Core.Runtime.any",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Essentials.Ref.any",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Essentials.Runtime.any",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             }
           ],
           "frameworkReferences": {
@@ -130,7 +119,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         },
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
@@ -138,13 +127,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             }
           },
@@ -162,19 +151,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Android.Ref.31",
-              "version": "[32.0.476, 32.0.476]"
+              "version": "[32.0.485, 32.0.485]"
             },
             {
               "name": "Microsoft.Maui.Controls.Ref.android",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Core.Ref.android",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Essentials.Ref.android",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             }
           ],
           "frameworkReferences": {
@@ -194,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         },
         "net6.0-ios16.1": {
           "targetAlias": "net6.0-ios",
@@ -202,13 +191,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
@@ -231,19 +220,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.iOS.Ref",
-              "version": "[16.1.228, 16.1.228]"
+              "version": "[16.2.3, 16.2.3]"
             },
             {
               "name": "Microsoft.Maui.Controls.Ref.ios",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Core.Ref.ios",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Essentials.Ref.ios",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             }
           ],
           "frameworkReferences": {
@@ -263,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         },
         "net6.0-maccatalyst16.1": {
           "targetAlias": "net6.0-maccatalyst",
@@ -271,13 +260,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.548, )",
+              "version": "[6.0.552, )",
               "autoReferenced": true
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
@@ -301,19 +290,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.MacCatalyst.Ref",
-              "version": "[16.1.228, 16.1.228]"
+              "version": "[16.2.3, 16.2.3]"
             },
             {
               "name": "Microsoft.Maui.Controls.Ref.maccatalyst",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Core.Ref.maccatalyst",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             },
             {
               "name": "Microsoft.Maui.Essentials.Ref.maccatalyst",
-              "version": "[6.0.548, 6.0.548]"
+              "version": "[6.0.552, 6.0.552]"
             }
           ],
           "frameworkReferences": {
@@ -333,111 +322,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
-        },
-        "net6.0-windows10.0.19041": {
-          "targetAlias": "net6.0-windows10.0.19041.0",
-          "dependencies": {
-            "Microsoft.Maui.Dependencies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.548, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Maui.Extensions": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.548, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Windows.SDK.BuildTools": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[10.0.22000.194, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.Maui.Controls.Ref.win",
-              "version": "[6.0.548, 6.0.548]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Ref.win",
-              "version": "[6.0.548, 6.0.548]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Ref.win",
-              "version": "[6.0.548, 6.0.548]"
-            },
-            {
-              "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.28, 10.0.19041.28]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.Maui.Controls": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Core": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Essentials": {
-              "privateAssets": "all"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Windows.SDK.NET.Ref": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-unit-test\\bafl-unit-test.csproj": {
+    "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-unit-test\\bafl-unit-test.csproj",
+        "projectUniqueName": "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj",
         "projectName": "bafl-unit-test",
-        "projectPath": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-unit-test\\bafl-unit-test.csproj",
-        "packagesPath": "C:\\Users\\xylam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-unit-test\\obj\\",
+        "projectPath": "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj",
+        "packagesPath": "/Users/xylamic/.nuget/packages/",
+        "outputPath": "/Users/xylamic/Development/bafl-app/bafl-unit-test/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xylam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/xylamic/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-library\\bafl-library.csproj": {
-                "projectPath": "C:\\Users\\xylam\\Development\\xylamic\\bafl-app\\bafl-library\\bafl-library.csproj"
+              "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj": {
+                "projectPath": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj"
               }
             }
           }
@@ -489,7 +402,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
