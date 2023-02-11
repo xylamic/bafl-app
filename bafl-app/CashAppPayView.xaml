@@ -1,158 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="bafl_app.CheerCompView">
+             x:Class="bafl_app.CashAppPayView"
+             Title="CashApp">
 
-    <ScrollView>
-        <Grid Margin="10,10,10,10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
+    <VerticalStackLayout>
 
-            </Grid.RowDefinitions>
-            <Label Text="Cheer Comp 2022 Schedule" FontAttributes="Bold"
-                   FontSize="Header"
-                   HorizontalTextAlignment="Center"
-                   TextColor="Blue"
-                   Grid.Row="0"/>
-            <Label Text="Last updated: October 16, 11:34A" FontSize="Caption" HorizontalTextAlignment="Center" Margin="0,0,0,10"
-                   Grid.Row="1"/>
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-
-                </Grid.ColumnDefinitions>
-
-                <Label Grid.Row="0" Grid.Column="0" Text="Team" Margin="10,0,0,0" FontAttributes="Bold" FontSize="Large"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="Scheduled" Margin="10,0,0,0" FontAttributes="Bold" FontSize="Large" />
-                <Label Grid.Row="0" Grid.Column="2" Text="Start" Padding="10,0,10,0" FontAttributes="Bold" FontSize="Large" />
-
-                <Label Grid.Row="1" Grid.Column="0" Text="Brazosport Longhorns" Margin="10,0,0,0" />
-                <Label Grid.Row="1" Grid.Column="1" Text="10:50A" Margin="10,0,0,0" />
-                <Label Grid.Row="1" Grid.Column="2" Text="10:55A" Margin="10,0,10,0" />
-
-                <Label Grid.Row="2" Grid.Column="0" Text="League City 49ers" Margin="10,0,0,0" />
-                <Label Grid.Row="2" Grid.Column="1" Text="11:00A" Margin="10,0,0,0" />
-                <Label Grid.Row="2" Grid.Column="2" Text="11:10A" Margin="10,0,10,0" />
-
-                <Label Grid.Row="3" Grid.Column="0" Text="Angleton Wildcats" Margin="10,0,0,0" />
-                <Label Grid.Row="3" Grid.Column="1" Text="11:10A" Margin="10,0,0,0" />
-                <Label Grid.Row="3" Grid.Column="2" Text="11:25A" Margin="10,0,10,0" />
-
-                <Label Grid.Row="4" Grid.Column="0" Text="Santa Fe Braves" Margin="10,0,0,0" TextColor="Green" FontAttributes="Italic" />
-                <Label Grid.Row="4" Grid.Column="1" Text="11:20A" Margin="10,0,0,0" TextColor="Green" FontAttributes="Italic" />
-                <Label Grid.Row="4" Grid.Column="2" Text="Performing" Margin="10,0,10,0" FontAttributes="Italic" TextColor="Green" />
-
-                <Label Grid.Row="5" Grid.Column="0" Text="Pearland Texans" Margin="10,0,0,0" />
-                <Label Grid.Row="5" Grid.Column="1" Text="11:30A" Margin="10,0,0,0" />
-                <Label Grid.Row="5" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="6" Grid.Column="0" Text="Alvin Raiders" Margin="10,0,0,0" />
-                <Label Grid.Row="6" Grid.Column="1" Text="11:40A" Margin="10,0,0,0" />
-                <Label Grid.Row="6" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="7" Grid.Column="0" Text="15m BREAK" Margin="10,0,0,0" TextColor="Blue" />
-                <Label Grid.Row="7" Grid.Column="1" Text="11:50A" Margin="10,0,0,0" TextColor="Blue" />
-                <Label Grid.Row="7" Grid.Column="2" Text="" Margin="10,0,10,0" />
-
-                <Label Grid.Row="8" Grid.Column="0" Text="Sagemont Cowboys" Margin="10,0,0,0" />
-                <Label Grid.Row="8" Grid.Column="1" Text="11:55A" Margin="10,0,0,0" />
-                <Label Grid.Row="8" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="9" Grid.Column="0" Text="Hitchcock Red Raiders" Margin="10,0,0,0" />
-                <Label Grid.Row="9" Grid.Column="1" Text="12:05P" Margin="10,0,0,0" />
-                <Label Grid.Row="9" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="10" Grid.Column="0" Text="Bay Area Buccaneers" Margin="10,0,0,0" />
-                <Label Grid.Row="10" Grid.Column="1" Text="12:15P" Margin="10,0,0,0" />
-                <Label Grid.Row="10" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="11" Grid.Column="0" Text="La Porte Texans" Margin="10,0,0,0" />
-                <Label Grid.Row="11" Grid.Column="1" Text="12:25P" Margin="10,0,0,0" />
-                <Label Grid.Row="11" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="12" Grid.Column="0" Text="Pearland Patriots" Margin="10,0,0,0" />
-                <Label Grid.Row="12" Grid.Column="1" Text="12:35P" Margin="10,0,0,0" />
-                <Label Grid.Row="12" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="13" Grid.Column="0" Text="Manvel Texans" Margin="10,0,0,0" />
-                <Label Grid.Row="13" Grid.Column="1" Text="12:45P" Margin="10,0,0,0" />
-                <Label Grid.Row="13" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="14" Grid.Column="0" Text="15m BREAK" Margin="10,0,0,0" TextColor="Blue" />
-                <Label Grid.Row="14" Grid.Column="1" Text="11:50A" Margin="10,0,0,0" TextColor="Blue" />
-                <Label Grid.Row="14" Grid.Column="2" Text="" Margin="10,0,10,0" />
-
-                <Label Grid.Row="15" Grid.Column="0" Text="Magnolia Park Sharks" Margin="10,0,0,0" />
-                <Label Grid.Row="15" Grid.Column="1" Text="1:05P" Margin="10,0,0,0" />
-                <Label Grid.Row="15" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="16" Grid.Column="0" Text="Barber Hill Eagles" Margin="10,0,0,0" />
-                <Label Grid.Row="16" Grid.Column="1" Text="1:15P" Margin="10,0,0,0" />
-                <Label Grid.Row="16" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-
-                <Label Grid.Row="17" Grid.Column="0" Text="Southeast Houston Wildcats" Margin="10,0,0,0" />
-                <Label Grid.Row="17" Grid.Column="1" Text="1:25P" Margin="10,0,0,0" />
-                <Label Grid.Row="17" Grid.Column="2" Text="Not performed" Margin="10,0,10,0" TextColor="DarkOrange" />
-            </Grid>
-        </Grid>
-        <!--<VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>-->
-    </ScrollView>
+        <Image Source="cashapp_code.png" WidthRequest="300" />
+        <Label FontSize="Small" Text="Scan to pay or click to go directly."
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Start" />
+    </VerticalStackLayout>
 
 </ContentPage>
 

@@ -1,8 +1,8 @@
 ﻿namespace bafl_app;
 
-public partial class CashAppPayView : ContentPage
+public partial class ZellePayView : ContentPage
 {
-	public CashAppPayView()
+	public ZellePayView()
 	{
         InitializeComponent();
     }

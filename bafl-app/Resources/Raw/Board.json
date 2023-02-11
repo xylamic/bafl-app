@@ -36,7 +36,7 @@
     "EmailPresent": true
   },
   {
-    "Role": "Rest",
+    "Role": "Other",
     "Name": "TBA",
     "Email": "",
     "EmailPresent": false
