@@ -5,8 +5,13 @@
              Title="CashApp">
 
     <VerticalStackLayout>
-
-        <Image Source="cashapp_code.png" WidthRequest="300" />
+        <Label Text="CashApp" TextColor="Green" HorizontalTextAlignment="Center" FontSize="Large" />
+        <Label Text="$payBAFL" FontSize="Large" HorizontalTextAlignment="Center" />
+        <Image Source="cashapp_code.png" WidthRequest="300" Margin="10,20,10,20">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+        </Image>
         <Label FontSize="Small" Text="Scan to pay or click to go directly."
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start" />
