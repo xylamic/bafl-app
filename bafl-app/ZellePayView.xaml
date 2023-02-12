@@ -4,18 +4,19 @@
              x:Class="bafl_app.ZellePayView"
              Title="Zelle">
 
-    <VerticalStackLayout>
+    <VerticalStackLayout Margin="10,20,10,10">
 
-        <Label Text="Zelle" TextColor="Purple" HorizontalTextAlignment="Center" FontSize="Large" />
-        <Label Text="BAFL: 281-731-1904" FontSize="Large" HorizontalTextAlignment="Center" />
-        <Image Source="zelle_code.png" WidthRequest="300" Margin="10,20,10,20">
+        <Label Text="bafltreasurer21@gmail.com" FontSize="Large" TextColor="Purple" HorizontalTextAlignment="Center" Grid.Row="0" />
+        <Image Source="zelle_code.png" WidthRequest="300" Grid.Row="1" Margin="0,20,0,20">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
         <Label FontSize="Small" Text="Scan to pay or click to go directly."
                HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Start" />
+               VerticalTextAlignment="Start"
+               Grid.Row="2"/>
+        <Label Grid.Row="3" />
     </VerticalStackLayout>
 
 </ContentPage>

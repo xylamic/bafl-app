@@ -29,7 +29,7 @@
             <ShellContent ContentTemplate="{DataTemplate local:CashAppPayView}" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Pay BAFL: Zelle" Icon="zelle.png" IsVisible="False" >
+    <FlyoutItem Title="Pay BAFL: Zelle" Icon="zelle.png" >
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:ZellePayView}" />
         </Tab>
