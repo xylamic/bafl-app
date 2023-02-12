@@ -412,3 +412,5 @@ bafl-unit-test/bin
 bafl-unit-test/obj
 *.cache
 bafl-app/private
+bafl-unit-test/bin*
+bafl-unit-test/obj
