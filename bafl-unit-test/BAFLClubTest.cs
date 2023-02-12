@@ -179,6 +179,7 @@ public class BaflClubTest
         var clubList2 =
             JsonSerializer.Deserialize<Dictionary<int, BaflClub>>(jsonString);
 
+        Assert.NotNull(clubList2);
         Assert.Equal(19, clubList2.Count);
     }
 }
