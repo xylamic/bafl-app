@@ -56,7 +56,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <VerticalStackLayout>
-                            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10,0,0">
+                            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,5,0,0">
                                 <Label Text="{Binding Path=RegionFootball}" Margin="0,0,10,0" VerticalTextAlignment="Center" FontSize="Large" />
                                 <Label Text="Website" IsEnabled="{Binding Path=WebsitePresent}" Style="{StaticResource Hyperlink}"
                                        MaxLines="1" VerticalTextAlignment="Center" FontSize="Small">
@@ -65,7 +65,7 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                             </HorizontalStackLayout>
-                            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,0,0,10">
+                            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,0,0,5">
                                 <Label Text="President:" Margin="0,0,5,0" />
                                 <Label Text="{Binding Path=President}" />
                             </HorizontalStackLayout>
