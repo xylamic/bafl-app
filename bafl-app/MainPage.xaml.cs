@@ -92,7 +92,7 @@ public partial class MainPage : ContentPage
 			"learn, and thrive within their community.";*/
 
             return "Teaching and support youth through football, " +
-				"drill, & cheer since 1977. BAFL consists of 19 teams " +
+				"drill, & cheer since 1977. BAFL consists of 17 teams " +
 				"across the greater Houston area.";
         }
     }

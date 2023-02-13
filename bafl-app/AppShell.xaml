@@ -6,26 +6,44 @@
     xmlns:local="clr-namespace:bafl_app"
     Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Bay Area Football League"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <MenuItem
-        Text="Football Scoreboard"
-        Clicked="FootballScoreboard_Clicked"/>
-    <MenuItem
-        Text="Football Standings"
-        Clicked="FootballStandings_Clicked"/>
-    <FlyoutItem Title="Cheer Competition: Cheer">
+    <FlyoutItem Title="Bay Area Football League" Icon="bafl.png">
        <Tab>
-           <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
+           <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
        </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Cheer Competition: Mascots">
+
+    <MenuItem Text="" />
+
+    <FlyoutItem Title="Season Schedule" Icon="{AppThemeBinding Light=schedule_light.png, Dark=schedule_dark.png}">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:ScheduleView}" />
+       </Tab>
+    </FlyoutItem>
+    <MenuItem
+        Text="Football Scoreboard"
+        Clicked="FootballScoreboard_Clicked"
+        IconImageSource="{AppThemeBinding Light=scoreboard_light.png, Dark=scoreboard_dark.png}"/>
+    <MenuItem
+        Text="Football Standings"
+        Clicked="FootballStandings_Clicked"
+        IconImageSource="{AppThemeBinding Light=standings_light.png, Dark=standings_dark.png}"/>
+    <FlyoutItem Title="Cheer Competition" Icon="{AppThemeBinding Light=cheer_light.png, Dark=cheer_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
        </Tab>
     </FlyoutItem>
 
+    <MenuItem Text="" />
+
+    <FlyoutItem Title="Pay BAFL: CashApp" Icon="cashapp.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:CashAppPayView}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Pay BAFL: Zelle" Icon="zelle.png" >
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:ZellePayView}" />
+        </Tab>
+    </FlyoutItem>
 </Shell>
 

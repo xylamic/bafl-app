@@ -61,6 +61,7 @@ public class BaflBoardMemberTest
         var memberList2 =
             JsonSerializer.Deserialize<List<BaflBoardMember>>(jsonString);
 
+        Assert.NotNull(memberList2);
         Assert.Equal(6, memberList2.Count);
     }
 }

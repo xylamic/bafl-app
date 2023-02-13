@@ -8,6 +8,7 @@ public partial class App : Application
 	
 	private static string TEAM_FILE_NAME = "team-list.json";
     private static string BOARD_FILE_NAME = "board-list.json";
+    private static string SCHEDULE_FILE_NAME = "schedule.json";
 
     public App()
 	{
@@ -23,88 +24,115 @@ public partial class App : Application
 
     public static List<BaflBoardMember> BoardMemberList { get; private set; }
 
+    public static List<BaflScheduleItem> ScheduleList { get; private set; }
+
     public static async Task UpdateConfiguration()
     {
         if (IsInitiatied)
             return;
 
+        // verify cache files are ready
+        await PreloadCacheCheck();
+
+        // get the cache file locations
+        string cacheDir = FileSystem.Current.CacheDirectory;
+        string team_cache_filename = cacheDir + "/" + TEAM_FILE_NAME;
+        string board_cache_filename = cacheDir + "/" + BOARD_FILE_NAME;
+        string schedule_cache_filename = cacheDir + "/" + SCHEDULE_FILE_NAME;
+
+        try
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string teamContent = await client.GetStringAsync(BaflUtilities.TEAM_URL);
+                string boardContent = await client.GetStringAsync(BaflUtilities.BOARD_URL);
+                string scheduleContent = await client.GetStringAsync(BaflUtilities.SCHEDULE_URL);
+
+                await File.WriteAllTextAsync(team_cache_filename, teamContent);
+                await File.WriteAllTextAsync(board_cache_filename, boardContent);
+                await File.WriteAllTextAsync(schedule_cache_filename, scheduleContent);
+
+                Console.WriteLine("Successfully read latest data from the APIs.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(String.Format("Error reading API data: {0}", ex.ToString()));
+        }
+
+        try
+        {
+            // load team data
+            string content = await File.ReadAllTextAsync(team_cache_filename);
+            ClubList =
+                JsonSerializer.Deserialize<Dictionary<int, BaflClub>>(content);
+            Console.WriteLine("Loaded team data.");
+
+            // load board data
+            content = await File.ReadAllTextAsync(board_cache_filename);
+            BoardMemberList =
+                JsonSerializer.Deserialize<List<BaflBoardMember>>(content);
+            Console.WriteLine("Loaded board data.");
+
+            // load schedule data
+            content = await File.ReadAllTextAsync(schedule_cache_filename);
+            ScheduleList =
+                JsonSerializer.Deserialize<List<BaflScheduleItem>>(content);
+            Console.WriteLine("Loaded schedule data.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(String.Format("Failed to load data: {0}", ex.ToString()));
+        }
+
+        IsInitiatied = true;
+    }
+
+    /// <summary>
+    /// This preloads any cache in the case that this is the first time the app
+    /// has been run.
+    /// </summary>
+    /// <returns>Async task.</returns>
+    private static async Task PreloadCacheCheck()
+    {
         string cacheDir = FileSystem.Current.CacheDirectory;
 
-        #region Team List
-        // if the team data does not already exist, then load from assets
-        if (!File.Exists(cacheDir + "/" + TEAM_FILE_NAME))
+        string team_cache_filename = cacheDir + "/" + TEAM_FILE_NAME;
+        string board_cache_filename = cacheDir + "/" + BOARD_FILE_NAME;
+        string schedule_cache_filename = cacheDir + "/" + SCHEDULE_FILE_NAME;
+
+        if (!File.Exists(team_cache_filename))
         {
             using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("Teams.json");
             using StreamReader reader = new StreamReader(fileStream);
             string rawContent = await reader.ReadToEndAsync();
 
-            await File.WriteAllTextAsync(cacheDir + "/" + TEAM_FILE_NAME, rawContent);
+            await File.WriteAllTextAsync(team_cache_filename, rawContent);
 
             Console.WriteLine("Loaded raw asset team data.");
         }
 
-        // read the most recent content, in case of web error
-        string content = await File.ReadAllTextAsync(cacheDir + "/" + TEAM_FILE_NAME);
-
-        // try to read the latest from the website
-        try
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                content = await client.GetStringAsync(BaflUtilities.TEAM_URL);
-                await File.WriteAllTextAsync(cacheDir + "/" + TEAM_FILE_NAME, content);
-                Console.WriteLine("Successfully read latest team data.");
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(String.Format("Error reading team data: {0}", ex.ToString()));
-        }
-
-        // deserialize the teams
-        ClubList =
-            JsonSerializer.Deserialize<Dictionary<int, BaflClub>>(content);
-        Console.WriteLine("Loaded team data.");
-        #endregion
-
-        #region Board List
-        // if the board data does not already exist, then load from assets
-        if (!File.Exists(cacheDir + "/" + BOARD_FILE_NAME))
+        if (!File.Exists(board_cache_filename))
         {
             using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("Board.json");
             using StreamReader reader = new StreamReader(fileStream);
             string rawContent = await reader.ReadToEndAsync();
 
-            await File.WriteAllTextAsync(cacheDir + "/" + BOARD_FILE_NAME, rawContent);
+            await File.WriteAllTextAsync(board_cache_filename, rawContent);
 
             Console.WriteLine("Loaded raw asset board data.");
         }
 
-        // read the most recent content, in case of web error
-        content = await File.ReadAllTextAsync(cacheDir + "/" + BOARD_FILE_NAME);
-
-        // try to read the latest from the website
-        try
+        if (!File.Exists(schedule_cache_filename))
         {
-            using (HttpClient client = new HttpClient())
-            {
-                content = await client.GetStringAsync(BaflUtilities.BOARD_URL);
-                await File.WriteAllTextAsync(cacheDir + "/" + BOARD_FILE_NAME, content);
-                Console.WriteLine("Successfully read latest board data.");
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(String.Format("Error reading board data: {0}", ex.ToString()));
-        }
+            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("Schedule.json");
+            using StreamReader reader = new StreamReader(fileStream);
+            string rawContent = await reader.ReadToEndAsync();
 
-        // deserialize the teams
-        BoardMemberList =
-            JsonSerializer.Deserialize<List<BaflBoardMember>>(content);
-        Console.WriteLine("Loaded board data.");
-        #endregion
+            await File.WriteAllTextAsync(schedule_cache_filename, rawContent);
 
-        IsInitiatied = true;
+            Console.WriteLine("Loaded raw asset schedule data.");
+        }
     }
 }
 

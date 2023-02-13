@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bafl_app.ScheduleView"
+             Title="Season Schedule">
+
+    <ListView ItemsSource="{Binding ScheduleList}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout Margin="0,10,0,10">
+                        <Grid HorizontalOptions="Center">
+                            <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
+                            <Label Text="{Binding Path=Name}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Secondary}}"
+                                   FontSize="Large"
+                                   HorizontalTextAlignment="Center" />
+                        </Grid>
+                        <Label Text="{Binding Path=DateString}" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding Path=LocationString}" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </ViewCell>
+
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+
+    </ListView>
+
+</ContentPage>
+

@@ -1,0 +1,88 @@
+[
+  {
+    "Date": "2023-08-12",
+    "Name": "Football - Week 1",
+    "Location": "Team Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2023-08-19",
+    "Name": "Football - Week 2",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-08-26",
+    "Name": "Football - Week 3",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-09-02",
+    "Name": "Football - Week 4",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-09-09",
+    "Name": "Football - Week 5",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-09-16",
+    "Name": "Football - Week 6",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-09-23",
+    "Name": "Football - Week 7",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-09-30",
+    "Name": "Football - Week 8",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-10-07",
+    "Name": "Football - Week 9",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-10-14",
+    "Name": "Football - Week 10",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-10-15",
+    "Name": "Cheer Competition",
+    "Location": "Moody Gardens",
+    "Notable": true
+  },
+  {
+    "Date": "2023-10-21",
+    "Name": "Football - Week 11",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2023-10-28",
+    "Name": "Football Quarterfinals",
+    "Location": "TBA",
+    "Notable": true
+  },
+  {
+    "Date": "2023-11-04",
+    "Name": "Football Semifinals",
+    "Location": "TBA",
+    "Notable": true
+  },
+  {
+    "Date": "2023-11-11",
+    "Name": "Drill Competition",
+    "Location": "TBA",
+    "Notable": true
+  },
+  {
+    "Date": "2023-11-18",
+    "Name": "Super Bowl",
+    "Location": "Rice Stadium",
+    "Notable": true
+  }
+]
