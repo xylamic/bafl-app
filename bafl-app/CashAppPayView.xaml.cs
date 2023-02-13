@@ -1,5 +1,7 @@
 ﻿namespace bafl_app;
 
+using bafl.library;
+
 public partial class CashAppPayView : ContentPage
 {
 	public CashAppPayView()
@@ -9,7 +11,7 @@ public partial class CashAppPayView : ContentPage
 
     private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     {
-        await Browser.Default.OpenAsync("https://cash.app/$payBAFL?qr=1");
+        await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.External);
     }
 }
 

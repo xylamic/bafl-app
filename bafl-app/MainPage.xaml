@@ -45,7 +45,7 @@
                 x:Name="ClubListButton" Grid.Column="0" HorizontalOptions="FillAndExpand" />
             <Button Text="Board" Pressed="BoardButton_Pressed" Margin="10,10,10,10"
                 x:Name="BoardButton" IsEnabled="True" Grid.Column="1" HorizontalOptions="FillAndExpand" />
-            <Button Text="Contact Us" Pressed="ContactButton_Pressed" Margin="10,10,10,10"
+            <Button Text="Contact" Pressed="ContactButton_Pressed" Margin="10,10,10,10"
                 x:Name="ContactButton" IsEnabled="True" Grid.Column="2" HorizontalOptions="FillAndExpand" />
 
         </Grid>

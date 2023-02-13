@@ -11,19 +11,21 @@
            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
        </Tab>
     </FlyoutItem>
+    <MenuItem Text="" />
     <MenuItem
         Text="Football Scoreboard"
         Clicked="FootballScoreboard_Clicked"
-        IconImageSource="scoreboard.png"/>
+        IconImageSource="{AppThemeBinding Light=scoreboard_light.png, Dark=scoreboard_dark.png}"/>
     <MenuItem
         Text="Football Standings"
         Clicked="FootballStandings_Clicked"
-        IconImageSource="standings.png"/>
-    <FlyoutItem Title="Cheer Competition" Icon="cheer.png">
+        IconImageSource="{AppThemeBinding Light=standings_light.png, Dark=standings_dark.png}"/>
+    <FlyoutItem Title="Cheer Competition" Icon="{AppThemeBinding Light=cheer_light.png, Dark=cheer_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
        </Tab>
     </FlyoutItem>
+    <MenuItem Text="" />
     <FlyoutItem Title="Pay BAFL: CashApp" Icon="cashapp.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:CashAppPayView}" />
