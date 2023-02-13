@@ -15,6 +15,8 @@ public partial class App : Application
 		InitializeComponent();
 
         ClubList = new Dictionary<int, BaflClub>();
+        BoardMemberList = new List<BaflBoardMember>();
+        ScheduleList = new List<BaflScheduleItem>();
 		MainPage = new AppShell();
     }
 

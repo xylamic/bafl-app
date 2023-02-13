@@ -4,8 +4,9 @@ namespace bafl_app;
 
 public partial class MainPage : ContentPage
 {
-    private bool _boardShown = true;
-    private bool _clubsShown = true;
+    private bool _boardShown = false;
+    private bool _clubsShown = false;
+    private bool _scheduleShown = true;
 
     public MainPage()
     {
@@ -14,6 +15,7 @@ public partial class MainPage : ContentPage
         VisualStateManager.GoToState(BoardButton, "Off");
         VisualStateManager.GoToState(ContactButton, "Off");
         VisualStateManager.GoToState(ClubListButton, "Off");
+        VisualStateManager.GoToState(ScheduleButton, "On");
 
         BindingContext = this;
 
@@ -23,6 +25,7 @@ public partial class MainPage : ContentPage
         {
             BoardShown = false;
             ClubsShown = false;
+            ScheduleShown = true;
         });
     }
 
@@ -44,6 +47,10 @@ public partial class MainPage : ContentPage
     {
         get { return App.BoardMemberList; }
     }
+    public List<BaflScheduleItem> ScheduleList
+    {
+        get { return App.ScheduleList; }
+    }
 
     public bool BoardShown
     {
@@ -53,7 +60,19 @@ public partial class MainPage : ContentPage
             if (_boardShown != value)
             {
                 _boardShown = value;
-                OnPropertyChanged(nameof(BoardShown));
+                OnPropertyChanged();
+            }
+        }
+    }
+    public bool ScheduleShown
+    {
+        get { return _scheduleShown; }
+        private set
+        {
+            if (_scheduleShown != value)
+            {
+                _scheduleShown = value;
+                OnPropertyChanged();
             }
         }
     }
@@ -66,7 +85,7 @@ public partial class MainPage : ContentPage
             if (_clubsShown != value)
             {
                 _clubsShown = value;
-                OnPropertyChanged(nameof(ClubsShown));
+                OnPropertyChanged();
             }
         }
     }
@@ -102,50 +121,50 @@ public partial class MainPage : ContentPage
 		ClickTeamsButton();
     }
 
-	void ClickTeamsButton()
-	{
-        BoardShown = false;
-        VisualStateManager.GoToState(BoardButton, "Off");
+    private void ClickButton(int action = 0)
+    {
+        switch (action)
+        {
+            case 0:
+                BoardShown = false;
+                ClubsShown = false;
+                ScheduleShown = true;
+                VisualStateManager.GoToState(BoardButton, "Off");
+                VisualStateManager.GoToState(ClubListButton, "Off");
+                VisualStateManager.GoToState(ScheduleButton, "On");
+                break;
+            case 1:
+                BoardShown = false;
+                ClubsShown = true;
+                ScheduleShown = false;
+                VisualStateManager.GoToState(BoardButton, "Off");
+                VisualStateManager.GoToState(ClubListButton, "On");
+                VisualStateManager.GoToState(ScheduleButton, "Off");
+                break;
+            case 2:
+                BoardShown = true;
+                ClubsShown = false;
+                ScheduleShown = false;
+                VisualStateManager.GoToState(BoardButton, "On");
+                VisualStateManager.GoToState(ClubListButton, "Off");
+                VisualStateManager.GoToState(ScheduleButton, "Off");
+                break;
+        }
+    }
 
-        if (ClubsShown)
-        {
-            ClubsShown = false;
-            VisualStateManager.GoToState(ClubListButton, "Off");
-            /*Color bgColor = ClubListButton.BackgroundColor;
-			ClubListButton.BackgroundColor = ClubListButton.TextColor;
-			ClubListButton.TextColor = bgColor;*/
-        }
-        else
-        {
-            ClubsShown = true;
-            VisualStateManager.GoToState(ClubListButton, "On");
-            /*Color bgColor = ClubListButton.BackgroundColor;
-			ClubListButton.BackgroundColor = ClubListButton.TextColor;
-			ClubListButton.TextColor = bgColor;*/
-        }
+    void ScheduleButton_Pressed(System.Object sender, System.EventArgs e)
+    {
+        ClickButton(0);
+    }
+
+    void ClickTeamsButton()
+	{
+        ClickButton(1);
     }
 
     void BoardButton_Pressed(System.Object sender, System.EventArgs e)
     {
-        ClubsShown = false;
-        VisualStateManager.GoToState(ClubListButton, "Off");
-
-        if (BoardShown)
-        {
-            BoardShown = false;
-            VisualStateManager.GoToState(BoardButton, "Off");
-            /*Color bgColor = ClubListButton.BackgroundColor;
-			ClubListButton.BackgroundColor = ClubListButton.TextColor;
-			ClubListButton.TextColor = bgColor;*/
-        }
-        else
-        {
-            BoardShown = true;
-            VisualStateManager.GoToState(BoardButton, "On");
-            /*Color bgColor = ClubListButton.BackgroundColor;
-			ClubListButton.BackgroundColor = ClubListButton.TextColor;
-			ClubListButton.TextColor = bgColor;*/
-        }
+        ClickButton(2);
     }
 
     async void ContactButton_Pressed(System.Object sender, System.EventArgs e)
