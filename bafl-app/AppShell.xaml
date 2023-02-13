@@ -14,7 +14,7 @@
 
     <MenuItem Text="" />
 
-    <FlyoutItem Title="Season Schedule" Icon="{AppThemeBinding Light=cheer_light.png, Dark=cheer_dark.png}">
+    <FlyoutItem Title="Season Schedule" Icon="{AppThemeBinding Light=schedule_light.png, Dark=schedule_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:ScheduleView}" />
        </Tab>

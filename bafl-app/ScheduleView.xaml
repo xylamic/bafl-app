@@ -11,7 +11,10 @@
                     <VerticalStackLayout Margin="0,10,0,10">
                         <Grid HorizontalOptions="Center">
                             <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
-                            <Label Text="{Binding Path=Name}" TextColor="{StaticResource Primary}" FontSize="Large" HorizontalTextAlignment="Center" />
+                            <Label Text="{Binding Path=Name}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Secondary}}"
+                                   FontSize="Large"
+                                   HorizontalTextAlignment="Center" />
                         </Grid>
                         <Label Text="{Binding Path=DateString}" HorizontalTextAlignment="Center" />
                         <Label Text="{Binding Path=LocationString}" HorizontalTextAlignment="Center"/>
