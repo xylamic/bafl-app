@@ -1,29 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="bafl_app.ZellePayView"
-             Title="Zelle">
+             x:Class="bafl_app.ScheduleView"
+             Title="Season Schedule">
 
-    <Grid Margin="10,20,10,10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <ListView ItemsSource="{Binding ScheduleList}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout Margin="0,10,0,10">
+                        <Grid HorizontalOptions="Center">
+                            <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
+                            <Label Text="{Binding Path=Name}" TextColor="{StaticResource Primary}" FontSize="Large" HorizontalTextAlignment="Center" />
+                        </Grid>
+                        <Label Text="{Binding Path=DateString}" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding Path=LocationString}" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </ViewCell>
 
-        <Label Text="bafltreasurer21@gmail.com" FontSize="Large" TextColor="Purple" HorizontalTextAlignment="Center" Grid.Row="0" />
-        <Image Source="zelle_code.png" WidthRequest="250" HeightRequest="250" Grid.Row="1" Margin="0,20,0,20" >
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
-            </Image.GestureRecognizers>
-        </Image>
-        <Label FontSize="Small" Text="Scan to pay or tap to go directly."
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Start"
-               Grid.Row="2"/>
-        <Label Grid.Row="3" />
-    </Grid>
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+
+    </ListView>
 
 </ContentPage>
 

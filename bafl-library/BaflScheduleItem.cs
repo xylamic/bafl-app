@@ -1,84 +1,62 @@
 ﻿using System;
 namespace bafl.library
 {
-    public class BaflClub
+    public class BaflScheduleItem
     {
-        private string _region;
-        private string _football;
-        private string _cheer;
-        private string _mascot;
-        private string _website;
+        private DateTime _date;
+        private string _name;
+        private string _location;
+        private bool _notable;
 
-        public BaflClub() { }
-
-        public BaflClub(string region, string football, string cheer,
-            string mascot, string website)
+        public BaflScheduleItem()
         {
-            _region = region;
-            _football = football;
-            _cheer = cheer;
-            _mascot = mascot;
-            _website = website;
+            _notable = false;
         }
 
-        public string Region
+        public BaflScheduleItem(
+            DateTime date,
+            string name,
+            string location,
+            bool notable)
         {
-            get => _region;
-            set => _region = value;
+            _date = date;
+            _name = name;
+            _location = location;
+            _notable = notable;
         }
 
-        public string Football
+        public DateTime Date
         {
-            get => _football;
-            set => _football = value;
+            get => _date;
+            set => _date = value;
         }
 
-        public string RegionFootball
+        public string DateString
         {
-            get => String.Format("{0} {1}", _region, _football);
+            get { return Date.ToLongDateString(); }
         }
 
-        public string Cheer
+        public string Name
         {
-            get => _cheer;
-            set => _cheer = value;
+            get => _name;
+            set => _name = value;
         }
 
-        public string Mascot
+        public string Location
         {
-            get => _mascot;
-            set => _mascot = value;
+            get => _location;
+            set => _location = value;
         }
 
-        public string Website
+        public string LocationString
         {
-            get => _website;
-            set => _website = value;
+            get { return String.Format("Location: {0}", Location); }
         }
 
-        public bool WebsitePresent
+        public bool Notable
         {
-            get => !String.IsNullOrEmpty(Website);
-        }
-
-        public override string ToString()
-        {
-            return String.Format("{} {}", Region, Football);
-        }
-
-        public string FootballName()
-        {
-            return this.ToString();
-        }
-
-        public string CheerName()
-        {
-            return String.Format("{} {}", Region, Cheer);
-        }
-
-        public string MascotName()
-        {
-            return String.Format("{} {}", Region, Mascot);
+            get => _notable;
+            set => _notable = value;
         }
     }
 }

@@ -2,11 +2,19 @@
 
 using bafl.library;
 
-public partial class ZellePayView : ContentPage
+public partial class ScheduleView : ContentPage
 {
-	public ZellePayView()
-	{
+
+    public ScheduleView()
+    {
         InitializeComponent();
+
+        BindingContext = this;
+    }
+
+    public List<BaflScheduleItem> ScheduleList
+    {
+        get { return App.ScheduleList; }
     }
 
     private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
