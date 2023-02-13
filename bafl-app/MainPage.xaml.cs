@@ -4,8 +4,8 @@ namespace bafl_app;
 
 public partial class MainPage : ContentPage
 {
-    private bool _boardShown = false;
-    private bool _clubsShown = false;
+    private bool _boardShown = true;
+    private bool _clubsShown = true;
     private bool _scheduleShown = true;
 
     public MainPage()

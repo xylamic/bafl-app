@@ -8,17 +8,19 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
 
             </Grid.RowDefinitions>
+            <Label Text="UNDER DEVELOPMENT" TextColor="{StaticResource Secondary}" FontSize="Medium" HorizontalTextAlignment="Center" />
             <Label Text="Cheer Comp 2022 Schedule" FontAttributes="Bold"
                    FontSize="Header"
                    HorizontalTextAlignment="Center"
                    TextColor="Blue"
-                   Grid.Row="0"/>
-            <Label Text="Last updated: October 16, 11:34A" FontSize="Caption" HorizontalTextAlignment="Center" Margin="0,0,0,10"
                    Grid.Row="1"/>
-            <Grid Grid.Row="2">
+            <Label Text="Last updated: October 16, 11:34A" FontSize="Caption" HorizontalTextAlignment="Center" Margin="0,0,0,10"
+                   Grid.Row="2"/>
+            <Grid Grid.Row="3">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
