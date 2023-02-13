@@ -8,6 +8,7 @@ namespace bafl.library
         private string _cheer;
         private string _mascot;
         private string _website;
+        private string _president;
 
         public BaflClub() { }
 
@@ -54,6 +55,12 @@ namespace bafl.library
         {
             get => _website;
             set => _website = value;
+        }
+
+        public string President
+        {
+            get => _president;
+            set => _president = value;
         }
 
         public bool WebsitePresent

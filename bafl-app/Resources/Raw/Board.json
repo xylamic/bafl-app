@@ -12,6 +12,12 @@
     "EmailPresent": true
   },
   {
+    "Role": "2nd Vice President",
+    "Name": "Angelica Flores",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
     "Role": "Secretary",
     "Name": "Jennifer Sorsby",
     "Email": "baflsecretary@gmail.com",
@@ -24,20 +30,80 @@
     "EmailPresent": true
   },
   {
-    "Role": "Drill Director",
-    "Name": "Bel Wranich",
-    "Email": "bafldrilldirector@gmail.com",
-    "EmailPresent": true
-  },
-  {
     "Role": "Athletic Director",
     "Name": "Denny Wranich",
     "Email": "dwranich82@gmail.com",
     "EmailPresent": true
   },
   {
-    "Role": "Other",
-    "Name": "TBA",
+    "Role": "Drill Director",
+    "Name": "Bel Wranich",
+    "Email": "bafldrilldirector@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "1st Asst Athletic Director",
+    "Name": "AJ Rodrigue",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "2nd Asst Athletic Director",
+    "Name": "Joseph Gonzales",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "1st Asst Drill Director",
+    "Name": "Ann Marie Segundo",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "2nd Asst Drill Director",
+    "Name": "Brandi Mathews",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "1st Asst Athletic Director",
+    "Name": "AJ Rodrigue",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Parliamentarian",
+    "Name": "Greg Larry",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Safety Director",
+    "Name": "Kirby Hall",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Chair",
+    "Name": "Barry Horton",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Ken Brown",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Lance Gardner",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Rudy Reyes",
     "Email": "",
     "EmailPresent": false
   }
