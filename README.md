@@ -17,4 +17,14 @@ The architecture of the application combines the mobile frontend with Azure host
 
 The Azure hosting is fully implemented as Azure Functions directly in the Azure portal (no outside code required).
 
+# Building the code
+
+This was built on Windows & MacOS with Visual Studio 2022. It is currently dependent on .Net 6. This code can be pulled down and built with no prior steps required. Running it in debug mode will leverage the Azure hosting for data.
+
+Building and deploying to the App Stores (Apple & Google) is done locally by @xylamic.
+
 # Contributions and Moderation
+
+Contributions are welcome, but preferably tracked by a GitHub issue in this repo (so we know what changes you are proposing). Contributions are preferred through creating a Fork, and then creating a Pull Request to merge it back to this repo.
+
+Pull Requests will be vetted and tested by @xylamic. Not all contributions will be accepted.
