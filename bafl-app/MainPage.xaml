@@ -53,7 +53,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <VerticalStackLayout Margin="0,10,0,10">
+                        <VerticalStackLayout Margin="0,10,0,10" Opacity="{Binding Path=OpacityValue}">
                             <Grid HorizontalOptions="Center">
                                 <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
                                 <Label Text="{Binding Path=Name}"
