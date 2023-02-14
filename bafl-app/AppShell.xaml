@@ -45,5 +45,16 @@
             <ShellContent ContentTemplate="{DataTemplate local:ZellePayView}" />
         </Tab>
     </FlyoutItem>
+
+    <MenuItem Text="" />
+
+    <MenuItem
+        Text="BAFL Website"
+        Clicked="Website_Clicked"
+        IconImageSource="{AppThemeBinding Light=website_light.png, Dark=website_dark.png}"/>
+    <MenuItem
+        Text="BAFL Facebook"
+        Clicked="Facebook_Clicked"
+        IconImageSource="facebook.png"/>
 </Shell>
 
