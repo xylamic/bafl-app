@@ -57,27 +57,7 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="MainPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="ZellePayView %28copy%29.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	  <MauiXaml Condition=" '$(EnableDefaultXamlItems)' == 'true' " Update="ScheduleView.xaml">
-	    <SubType>Designer</SubType>
-	  </MauiXaml>
-	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\bafl-library\bafl-library.csproj" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="Resources\Raw\Board %28copy%29.json" />
-	</ItemGroup>
-	<ItemGroup>
-	  <BundleResource Include="Resources\Raw\Schedule.json">
-	    <LogicalName>Board.json</LogicalName>
-	  </BundleResource>
 	</ItemGroup>
 </Project>
