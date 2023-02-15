@@ -19,7 +19,7 @@ The Azure hosting is fully implemented as Azure Functions directly in the Azure 
 
 # Building the code
 
-This was built on Windows & MacOS with Visual Studio 2022. It is currently dependent on .Net 6. This code can be pulled down and built with no prior steps required. Running it in debug mode will leverage the Azure hosting for data.
+This was built on Windows & MacOS with Visual Studio 2022. It is currently dependent on .Net 7. This code can be pulled down and built with no prior steps required. Running the application will require the creation of an ApiKeys.json file which provides access keys to the API calls (check code for details).
 
 Building and deploying to the App Stores (Apple & Google) is done locally by @xylamic.
 
