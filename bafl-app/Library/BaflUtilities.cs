@@ -1,5 +1,5 @@
 ﻿using System;
-namespace bafl.library
+namespace bafl_app.library
 {
 	public static class BaflUtilities
 	{

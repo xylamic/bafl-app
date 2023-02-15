@@ -1,6 +1,6 @@
 ﻿namespace bafl_unit_test;
 
-using bafl.library;
+using bafl_app.library;
 using System.Text.Json;
 using Xunit.Abstractions;
 
@@ -61,7 +61,6 @@ public class BaflBoardMemberTest
         var memberList2 =
             JsonSerializer.Deserialize<List<BaflBoardMember>>(jsonString);
 
-        Assert.NotNull(memberList2);
-        Assert.Equal(6, memberList2.Count);
+        Assert.Equal(6, memberList2?.Count);
     }
 }
