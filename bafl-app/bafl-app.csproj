@@ -63,10 +63,4 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="Library\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Library\" />
-	</ItemGroup>
 </Project>
