@@ -1,6 +1,9 @@
 ﻿using System;
 namespace bafl.library
 {
+    /// <summary>
+    /// An event in the BAFL schedule.
+    /// </summary>
     public class BaflScheduleItem
     {
         private DateTime _date;
@@ -8,11 +11,21 @@ namespace bafl.library
         private string _location;
         private bool _notable;
 
+        /// <summary>
+        /// Construct the item.
+        /// </summary>
         public BaflScheduleItem()
         {
             _notable = false;
         }
 
+        /// <summary>
+        /// Construct the item.
+        /// </summary>
+        /// <param name="date">The date of the event.</param>
+        /// <param name="name">The name of the event.</param>
+        /// <param name="location">The location.</param>
+        /// <param name="notable">Whether this is a notable event.</param>
         public BaflScheduleItem(
             DateTime date,
             string name,
@@ -72,28 +85,43 @@ namespace bafl.library
             }
         }
 
+        /// <summary>
+        /// Get the presentable string for the date.
+        /// </summary>
         public string DateString
         {
             get { return Date.ToLongDateString(); }
         }
 
+        /// <summary>
+        /// The name of the event.
+        /// </summary>
         public string Name
         {
             get => _name;
             set => _name = value;
         }
 
+        /// <summary>
+        /// The location of the event.
+        /// </summary>
         public string Location
         {
             get => _location;
             set => _location = value;
         }
 
+        /// <summary>
+        /// The presentation string for the location.
+        /// </summary>
         public string LocationString
         {
             get { return String.Format("Location: {0}", Location); }
         }
 
+        /// <summary>
+        /// Whether this event is notable, or important.
+        /// </summary>
         public bool Notable
         {
             get => _notable;

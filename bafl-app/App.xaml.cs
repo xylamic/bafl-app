@@ -18,6 +18,8 @@ public partial class App : Application
     private static string _board_cache_filename;
     private static string _schedule_cache_filename;
 
+    private static Dictionary<string, string> _apiKeys = new Dictionary<string, string>();
+
     /// <summary>
     /// Has the App been initiated.
     /// </summary>
@@ -68,6 +70,13 @@ public partial class App : Application
         if (_isInitiatied)
             return;
 
+        // load keys
+        using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("ApiKeys.json");
+        using StreamReader reader = new StreamReader(fileStream);
+        string rawContent = await reader.ReadToEndAsync();
+        _apiKeys = JsonSerializer.Deserialize<Dictionary<string, string>>(rawContent);
+        Console.WriteLine("Loaded API keys.");
+
         // verify cache files are ready
         await PreloadCacheCheck();
 
@@ -81,6 +90,24 @@ public partial class App : Application
     }
 
     /// <summary>
+    /// Get the API key.
+    /// </summary>
+    /// <param name="name">The name for the key.</param>
+    /// <returns>The key or NULL if not found.</returns>
+    public static string GetApiKey(string name)
+    {
+        string val;
+        if (_apiKeys.TryGetValue(name, out val))
+        {
+            return val;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
     /// Update the configuration from the remote URLs.
     /// </summary>
     /// <returns>The async task.</returns>
@@ -91,9 +118,17 @@ public partial class App : Application
             // try to read the latest configuration information.
             using (HttpClient client = new HttpClient())
             {
-                string teamContent = await client.GetStringAsync(BaflUtilities.TEAM_URL);
-                string boardContent = await client.GetStringAsync(BaflUtilities.BOARD_URL);
-                string scheduleContent = await client.GetStringAsync(BaflUtilities.SCHEDULE_URL);
+                string code = String.Format("?code={0}", App.GetApiKey("cheercomp"));
+
+                string teamContent = await client.GetStringAsync(String.Format("{0}?code={1}",
+                    BaflUtilities.TEAM_URL,
+                    App.GetApiKey("team")));
+                string boardContent = await client.GetStringAsync(String.Format("{0}?code={1}",
+                    BaflUtilities.BOARD_URL,
+                    App.GetApiKey("board")));
+                string scheduleContent = await client.GetStringAsync(String.Format("{0}?code={1}",
+                    BaflUtilities.SCHEDULE_URL,
+                    App.GetApiKey("schedule")));
 
                 await File.WriteAllTextAsync(_team_cache_filename, teamContent);
                 await File.WriteAllTextAsync(_board_cache_filename, boardContent);

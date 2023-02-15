@@ -414,3 +414,5 @@ bafl-unit-test/obj
 bafl-app/private
 bafl-unit-test/bin*
 bafl-unit-test/obj
+
+bafl-app/Resources/Raw/ApiKeys.json
