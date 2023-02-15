@@ -4,44 +4,39 @@
     "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj": {}
   },
   "projects": {
-    "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj": {
+    "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj",
-        "projectName": "bafl-library",
-        "projectPath": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj",
+        "projectUniqueName": "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj",
+        "projectName": "bafl-app",
+        "projectPath": "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj",
         "packagesPath": "/Users/xylamic/.nuget/packages/",
-        "outputPath": "/Users/xylamic/Development/bafl-app/bafl-library/obj/",
+        "outputPath": "/Users/xylamic/Development/bafl-app/bafl-app/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
           "/Users/xylamic/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0",
-          "net6.0-android",
-          "net6.0-ios",
-          "net6.0-maccatalyst"
+          "net7.0-android33.0",
+          "net7.0-ios16.1",
+          "net7.0-maccatalyst16.1"
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0-android33.0": {
+            "targetAlias": "net7.0-android33.0",
             "projectReferences": {}
           },
-          "net6.0-android31.0": {
-            "targetAlias": "net6.0-android",
+          "net7.0-ios16.1": {
+            "targetAlias": "net7.0-ios16.1",
             "projectReferences": {}
           },
-          "net6.0-ios16.1": {
-            "targetAlias": "net6.0-ios",
-            "projectReferences": {}
-          },
-          "net6.0-maccatalyst16.1": {
-            "targetAlias": "net6.0-maccatalyst",
+          "net7.0-maccatalyst16.1": {
+            "targetAlias": "net7.0-maccatalyst16.1",
             "projectReferences": {}
           }
         },
@@ -52,19 +47,87 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0-android33.0": {
+          "targetAlias": "net7.0-android33.0",
           "dependencies": {
-            "Microsoft.Maui.Dependencies": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.552, )",
+              "version": "[7.0.0, )",
               "autoReferenced": true
             },
-            "Microsoft.Maui.Extensions": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.552, )",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Maui.Graphics": {
+              "target": "Package",
+              "version": "[7.0.59, )",
+              "autoReferenced": true
+            },
+            "Xamarin.Android.Glide": {
+              "target": "Package",
+              "version": "[4.13.2.2, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Browser": {
+              "target": "Package",
+              "version": "[1.4.0.3, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Legacy.Support.V4": {
+              "target": "Package",
+              "version": "[1.0.0.15, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Lifecycle.LiveData": {
+              "target": "Package",
+              "version": "[2.5.1.1, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Navigation.Common": {
+              "target": "Package",
+              "version": "[2.5.2.1, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Navigation.Fragment": {
+              "target": "Package",
+              "version": "[2.5.2.1, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Navigation.Runtime": {
+              "target": "Package",
+              "version": "[2.5.2.1, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Navigation.UI": {
+              "target": "Package",
+              "version": "[2.5.2.1, )",
+              "autoReferenced": true
+            },
+            "Xamarin.AndroidX.Security.SecurityCrypto": {
+              "target": "Package",
+              "version": "[1.1.0-alpha03, )",
+              "autoReferenced": true
+            },
+            "Xamarin.Google.Android.Material": {
+              "target": "Package",
+              "version": "[1.7.0, )",
+              "autoReferenced": true
+            },
+            "Xamarin.Google.Crypto.Tink.Android": {
+              "target": "Package",
+              "version": "[1.7.0.1, )",
               "autoReferenced": true
             }
           },
@@ -79,93 +142,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.Maui.Controls.Ref.any",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Controls.Runtime.any",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Ref.any",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Runtime.any",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Ref.any",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Runtime.any",
-              "version": "[6.0.552, 6.0.552]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.Maui.Controls": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Core": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Essentials": {
-              "privateAssets": "all"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
-        },
-        "net6.0-android31.0": {
-          "targetAlias": "net6.0-android",
-          "dependencies": {
-            "Microsoft.Maui.Dependencies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.552, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Maui.Extensions": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.552, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.Android.Ref.31",
-              "version": "[32.0.485, 32.0.485]"
-            },
-            {
-              "name": "Microsoft.Maui.Controls.Ref.android",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Ref.android",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Ref.android",
-              "version": "[6.0.552, 6.0.552]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.Android": {
               "privateAssets": "all"
@@ -185,24 +161,32 @@
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
         },
-        "net6.0-ios16.1": {
-          "targetAlias": "net6.0-ios",
+        "net7.0-ios16.1": {
+          "targetAlias": "net7.0-ios16.1",
           "dependencies": {
-            "Microsoft.Maui.Dependencies": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.552, )",
+              "version": "[7.0.0, )",
               "autoReferenced": true
             },
-            "Microsoft.Maui.Extensions": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.552, )",
+              "version": "[7.0.0, )",
               "autoReferenced": true
             },
-            "System.Runtime.InteropServices.NFloat.Internal": {
+            "Microsoft.Extensions.Logging": {
               "target": "Package",
-              "version": "[6.0.1, )",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Maui.Graphics": {
+              "target": "Package",
+              "version": "[7.0.59, )",
               "autoReferenced": true
             }
           },
@@ -217,24 +201,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.iOS.Ref",
-              "version": "[16.2.19, 16.2.19]"
-            },
-            {
-              "name": "Microsoft.Maui.Controls.Ref.ios",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Ref.ios",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Ref.ios",
-              "version": "[6.0.552, 6.0.552]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.iOS": {
               "privateAssets": "all"
@@ -254,24 +220,32 @@
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
         },
-        "net6.0-maccatalyst16.1": {
-          "targetAlias": "net6.0-maccatalyst",
+        "net7.0-maccatalyst16.1": {
+          "targetAlias": "net7.0-maccatalyst16.1",
           "dependencies": {
-            "Microsoft.Maui.Dependencies": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.552, )",
+              "version": "[7.0.0, )",
               "autoReferenced": true
             },
-            "Microsoft.Maui.Extensions": {
-              "suppressParent": "All",
+            "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[6.0.552, )",
+              "version": "[7.0.0, )",
               "autoReferenced": true
             },
-            "System.Runtime.InteropServices.NFloat.Internal": {
+            "Microsoft.Extensions.Logging": {
               "target": "Package",
-              "version": "[6.0.1, )",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Maui.Graphics": {
+              "target": "Package",
+              "version": "[7.0.59, )",
               "autoReferenced": true
             }
           },
@@ -287,24 +261,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.MacCatalyst.Ref",
-              "version": "[16.2.19, 16.2.19]"
-            },
-            {
-              "name": "Microsoft.Maui.Controls.Ref.maccatalyst",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Ref.maccatalyst",
-              "version": "[6.0.552, 6.0.552]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Ref.maccatalyst",
-              "version": "[6.0.552, 6.0.552]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.MacCatalyst": {
               "privateAssets": "all"
@@ -324,6 +280,29 @@
           },
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "android-arm": {
+          "#import": []
+        },
+        "android-arm64": {
+          "#import": []
+        },
+        "android-x64": {
+          "#import": []
+        },
+        "android-x86": {
+          "#import": []
+        },
+        "iossimulator-x64": {
+          "#import": []
+        },
+        "maccatalyst-arm64": {
+          "#import": []
+        },
+        "maccatalyst-x64": {
+          "#import": []
+        }
       }
     },
     "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj": {
@@ -339,18 +318,18 @@
           "/Users/xylamic/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj": {
-                "projectPath": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj"
+              "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj": {
+                "projectPath": "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj"
               }
             }
           }
@@ -362,8 +341,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

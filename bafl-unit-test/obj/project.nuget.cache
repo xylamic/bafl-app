@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "6uxvXkZfGgqPdB1BEBU9pbbqEloeSTY4qU4hZPguDQuf7Wo+oh3468JqfSpLyKylyL7BDy2a41Dvwu877bujlg==",
-  "success": true,
+  "dgSpecHash": "StZG9ylsRzzqgpTB6SE3p4TIBlTNnZHTLin25WJqNdzuzjX0zIqKCRWOCw0jFJck5V4f+XUYYJdunYtvr/Y6EA==",
+  "success": false,
   "projectFilePath": "/Users/xylamic/Development/bafl-app/bafl-unit-test/bafl-unit-test.csproj",
   "expectedPackageFiles": [
     "/Users/xylamic/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
@@ -97,5 +97,15 @@
     "/Users/xylamic/.nuget/packages/xunit.extensibility.execution/2.4.1/xunit.extensibility.execution.2.4.1.nupkg.sha512",
     "/Users/xylamic/.nuget/packages/xunit.runner.visualstudio/2.4.3/xunit.runner.visualstudio.2.4.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project bafl-app is not compatible with net7.0 (.NETCoreApp,Version=v7.0). Project bafl-app supports:\n  - net7.0-android33.0 (.NETCoreApp,Version=v7.0)\n  - net7.0-ios16.1 (.NETCoreApp,Version=v7.0)\n  - net7.0-maccatalyst16.1 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "bafl-app",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

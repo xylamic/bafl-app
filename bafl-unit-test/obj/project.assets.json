@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "coverlet.collector/3.1.2": {
         "type": "package",
         "build": {
@@ -1803,14 +1803,14 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "bafl-library/1.0.0": {
+      "bafl-app/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
-          "bin/placeholder/bafl-library.dll": {}
+          "bin/placeholder/bafl-app.dll": {}
         },
         "runtime": {
-          "bin/placeholder/bafl-library.dll": {}
+          "bin/placeholder/bafl-app.dll": {}
         }
       }
     }
@@ -6109,16 +6109,16 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "bafl-library/1.0.0": {
+    "bafl-app/1.0.0": {
       "type": "project",
-      "path": "../bafl-library/bafl-library.csproj",
-      "msbuildProject": "../bafl-library/bafl-library.csproj"
+      "path": "../bafl-app/bafl-app.csproj",
+      "msbuildProject": "../bafl-app/bafl-app.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.1.0",
-      "bafl-library >= 1.0.0",
+      "bafl-app >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -6140,18 +6140,18 @@
         "/Users/xylamic/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj": {
-              "projectPath": "/Users/xylamic/Development/bafl-app/bafl-library/bafl-library.csproj"
+            "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj": {
+              "projectPath": "/Users/xylamic/Development/bafl-app/bafl-app/bafl-app.csproj"
             }
           }
         }
@@ -6163,8 +6163,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -6206,5 +6206,16 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project bafl-app is not compatible with net7.0 (.NETCoreApp,Version=v7.0). Project bafl-app supports:\n  - net7.0-android33.0 (.NETCoreApp,Version=v7.0)\n  - net7.0-ios16.1 (.NETCoreApp,Version=v7.0)\n  - net7.0-maccatalyst16.1 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "bafl-app",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
