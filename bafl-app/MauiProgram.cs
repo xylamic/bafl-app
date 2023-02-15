@@ -1,6 +1,6 @@
 ﻿namespace bafl_app;
 
-using bafl.library;
+using bafl_app.library;
 
 /// <summary>
 /// Core program.

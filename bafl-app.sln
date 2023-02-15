@@ -5,10 +5,6 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bafl-app", "bafl-app\bafl-app.csproj", "{56AEC78B-4B2C-473F-BEC0-74733591F81E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bafl-library", "bafl-library\bafl-library.csproj", "{B64F421D-A80D-4B17-B806-74F3B6D9351B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bafl-unit-test", "bafl-unit-test\bafl-unit-test.csproj", "{47E97BC2-971A-4E3E-A5A2-ED71F30E9CB3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,14 +17,6 @@ Global
 		{56AEC78B-4B2C-473F-BEC0-74733591F81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56AEC78B-4B2C-473F-BEC0-74733591F81E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56AEC78B-4B2C-473F-BEC0-74733591F81E}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{B64F421D-A80D-4B17-B806-74F3B6D9351B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B64F421D-A80D-4B17-B806-74F3B6D9351B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B64F421D-A80D-4B17-B806-74F3B6D9351B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B64F421D-A80D-4B17-B806-74F3B6D9351B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47E97BC2-971A-4E3E-A5A2-ED71F30E9CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47E97BC2-971A-4E3E-A5A2-ED71F30E9CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47E97BC2-971A-4E3E-A5A2-ED71F30E9CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47E97BC2-971A-4E3E-A5A2-ED71F30E9CB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

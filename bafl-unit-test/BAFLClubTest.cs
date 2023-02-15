@@ -1,6 +1,6 @@
 ﻿namespace bafl_unit_test;
 
-using bafl.library;
+using bafl_app.library;
 using System.Text.Json;
 using Xunit.Abstractions;
 
@@ -179,7 +179,6 @@ public class BaflClubTest
         var clubList2 =
             JsonSerializer.Deserialize<Dictionary<int, BaflClub>>(jsonString);
 
-        Assert.NotNull(clubList2);
-        Assert.Equal(19, clubList2.Count);
+        Assert.Equal(19, clubList2?.Count);
     }
 }
