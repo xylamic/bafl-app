@@ -25,10 +25,51 @@ namespace bafl.library
             _notable = notable;
         }
 
+        /// <summary>
+        /// The date of the event.
+        /// </summary>
         public DateTime Date
         {
             get => _date;
             set => _date = value;
+        }
+
+        /// <summary>
+        /// Is the data for this item in the past?
+        /// </summary>
+        public bool IsDateInPast
+        {
+            get
+            {
+                DateTime dt = DateTime.Now.AddDays(-1);
+                if (_date < dt)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The opacity value for this item based on whether
+        /// it occurred in the past.
+        /// </summary>
+        public double OpacityValue
+        {
+            get
+            {
+                if (IsDateInPast)
+                {
+                    return 0.5;
+                }
+                else
+                {
+                    return 1.0;
+                }
+            }
         }
 
         public string DateString

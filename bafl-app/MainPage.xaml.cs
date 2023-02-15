@@ -45,7 +45,7 @@ public partial class MainPage : ContentPage
 	public async Task InitPage()
 	{
         // Update the configuration for the app.
-		await App.UpdateConfiguration();
+		await App.LoadConfiguration();
 
         // trigger the bindings to update
 		OnPropertyChanged(null);

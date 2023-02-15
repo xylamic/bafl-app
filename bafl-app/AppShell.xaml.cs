@@ -38,17 +38,45 @@ public partial class AppShell : Shell
     /// </summary>
     /// <param name="url">The URL to open.</param>
     /// <returns>The async task.</returns>
-    protected async Task OpenUrl(string url)
+    protected async Task OpenUrl(string url, bool external = false)
     {
         try
         {
             Uri uri = new Uri(url);
-            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+
+            if (external)
+            {
+                await Browser.Default.OpenAsync(uri, BrowserLaunchMode.External);
+            }
+            else
+            {
+                await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+            }
         }
         catch (Exception)
         {
             await DisplayAlert("Error", "Could not open the browser.", "OK");
         }
+    }
+
+    /// <summary>
+    /// Facebook link clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The args.</param>
+    protected async void Facebook_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await OpenUrl("https://www.facebook.com/bafl.youthsports", true);
+    }
+
+    /// <summary>
+    /// Website link clicked.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The args.</param>
+    protected async void Website_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await OpenUrl("https://www.bayareafootballleague.org", true);
     }
 }
 
