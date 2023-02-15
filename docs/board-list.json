@@ -19,8 +19,8 @@
   },
   {
     "Role": "Treasurer",
-    "Name": "Kari",
-    "Email": "bafltreasurer21@gmail.com",
+    "Name": "Gino Barbagelata",
+    "Email": "Gino77de@yahoo.com",
     "EmailPresent": true
   },
   {
@@ -34,5 +34,11 @@
     "Name": "Denny Wranich",
     "Email": "dwranich82@gmail.com",
     "EmailPresent": true
+  },
+  {
+    "Role": "Rest",
+    "Name": "TBA",
+    "Email": "",
+    "EmailPresent": false
   }
 ]

@@ -1,135 +1,121 @@
 {
   "1": {
-    "Region": "Bay Area",
-    "Football": "Buccaneers",
-    "Cheer": "Legacy",
-    "Mascot": "Mermaids",
-    "Website": "https://www.bayareabucs.org"
-  },
-  "2": {
-    "Region": "La Porte",
-    "Football": "Texans",
-    "Cheer": "Darlings",
-    "Mascot": "Stars",
-    "Website": "https://www.lptexansdarlings.com/"
-  },
-  "3": {
-    "Region": "Southbelt",
-    "Football": "Dolphins",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": "https://www.facebook.com/people/Southbelt-Dolphins-Youth-Football-Drill-Cheer/100057183051387/"
-  },
-  "4": {
-    "Region": "Brazosport",
-    "Football": "Longhorns",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": "https://www.facebook.com/BEYFALonghorns/"
-  },
-  "5": {
     "Region": "Alvin",
     "Football": "Raiders",
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/alvin.raiders.9/"
   },
-  "6": {
+  "2": {
     "Region": "Angleton",
     "Football": "Wildcats",
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/CAYFA/"
   },
-  "7": {
+  "3": {
     "Region": "Barbers Hill",
     "Football": "Eagles",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://m.facebook.com/barbershillyouthfootball/"
   },
-  "8": {
+  "4": {
+    "Region": "Bay Area",
+    "Football": "Buccaneers",
+    "Cheer": "Legacy",
+    "Mascot": "Mermaids",
+    "Website": "https://www.bayareabucs.org"
+  },
+  "5": {
+    "Region": "Brazosport",
+    "Football": "Longhorns",
+    "Cheer": "",
+    "Mascot": "",
+    "Website": "https://www.facebook.com/BEYFALonghorns/"
+  },
+  "6": {
     "Region": "East End",
     "Football": "Eagles",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "http://www.eastendeagles.com"
   },
-  "9": {
+  "7": {
     "Region": "Hitchcock",
     "Football": "Red Raiders",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.hometeamsonline.com/teams/?u=HITCHCOCKREDRAIDERS&s=football"
   },
-  "10": {
+  "8": {
+    "Region": "La Porte",
+    "Football": "Texans",
+    "Cheer": "Darlings",
+    "Mascot": "Stars",
+    "Website": "https://www.lptexansdarlings.com/"
+  },
+  "9": {
     "Region": "League City",
     "Football": "49ers",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": ""
+    "Cheer": "Goldrush",
+    "Mascot": "Nuggets",
+    "Website": "https://www.facebook.com/leaguecity49ersgoldrush/"
   },
-  "11": {
+  "10": {
     "Region": "Magnolia Park",
     "Football": "Sharks",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.facebook.com/sharks.mps/"
   },
-  "12": {
+  "11": {
     "Region": "Manvel",
     "Football": "Texans",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.themanveltexans.org"
   },
-  "13": {
-    "Region": "North Shore",
-    "Football": "Mustangs",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": ""
-  },
-  "14": {
+  "12": {
     "Region": "Pasadena",
     "Football": "Panthers",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.facebook.com/pasadenapantherstx/"
   },
-  "15": {
+  "13": {
     "Region": "Pearland",
     "Football": "Patriots",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.facebook.com/PearlandPatriots/"
   },
-  "16": {
+  "14": {
     "Region": "Pearland",
     "Football": "Texans",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.facebook.com/PearlandTexans/"
   },
-  "17": {
+  "15": {
     "Region": "Sagemont",
     "Football": "Cowboys",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
+    "Website": "https://www.facebook.com/sagemont.cowboys/"
   },
-  "18": {
+  "16": {
+    "Region": "Southbelt",
+    "Football": "Dolphins",
+    "Cheer": "",
+    "Mascot": "",
+    "Website": "https://www.facebook.com/people/Southbelt-Dolphins-Youth-Football-Drill-Cheer/100057183051387/"
+  },
+  "17": {
     "Region": "Southeast Houston",
     "Football": "Wildcats",
     "Cheer": "",
     "Mascot": "",
-    "Website": ""
-  },
-  "19": {
-    "Region": "Santa Fe",
-    "Football": "Braves",
-    "Cheer": "",
-    "Mascot": "",
-    "Website": ""
+    "Website": "https://www.facebook.com/Sehwildcats/"
   }
 }
