@@ -25,8 +25,6 @@ public static class MauiProgram
 
 		// instantiate the views
         builder.Services.AddSingleton<CheerCompView>();
-		builder.Services.AddSingleton<CheerCompViewModel>();
-		builder.Services.AddSingleton<CheerModel>();
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<CashAppPayView>();
         builder.Services.AddSingleton<ZellePayView>();
