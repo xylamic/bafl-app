@@ -6,6 +6,18 @@ This is a mobile application targeted at iOS and Android, built on .Net MAUI for
 
 This was initially developed and currently moderated by Adam Jordan (@xylamic).
 
+# Functionality
+
+This allows users to:
+- View the season schedule
+- View the BAFL teams and their contacts
+- View the BAFL board
+- Link to the website for contacts, scores, and standings
+- Real-time updates for cheer competition (drill competition and others to come later)
+- Direct access to payment facilities (e.g. Zelle, CashApp)
+
+The schedule, teams, and board members are locally cached, so they can be accessed offline. They will attempt to update on each launch to assure they have the latest data though. The real-time events must have an Internet connection to refresh those pages.
+
 # Architecture
 
 The architecture of the application combines the mobile frontend with Azure hosting on the backend. These Azure hosting serves two types of content:
