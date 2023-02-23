@@ -3,6 +3,8 @@ namespace bafl_app.library
 {
 	public static class BaflUtilities
 	{
+        public static readonly string COREINFO_URL = "https://baflapp.azurewebsites.net/api/coreinfo";
+
         public static readonly string TEAM_URL = "https://baflapp.azurewebsites.net/api/teams";
 
         public static readonly string BOARD_URL = "https://baflapp.azurewebsites.net/api/board";

@@ -118,21 +118,15 @@ public partial class App : Application
             // try to read the latest configuration information.
             using (HttpClient client = new HttpClient())
             {
-                string code = String.Format("?code={0}", App.GetApiKey("cheercomp"));
+                string content = await client.GetStringAsync(String.Format("{0}?code={1}",
+                    BaflUtilities.COREINFO_URL,
+                    App.GetApiKey("coreinfo")));
 
-                string teamContent = await client.GetStringAsync(String.Format("{0}?code={1}",
-                    BaflUtilities.TEAM_URL,
-                    App.GetApiKey("team")));
-                string boardContent = await client.GetStringAsync(String.Format("{0}?code={1}",
-                    BaflUtilities.BOARD_URL,
-                    App.GetApiKey("board")));
-                string scheduleContent = await client.GetStringAsync(String.Format("{0}?code={1}",
-                    BaflUtilities.SCHEDULE_URL,
-                    App.GetApiKey("schedule")));
+                Dictionary<string, string> contentDict = JsonSerializer.Deserialize<Dictionary<string, string>>(content);
 
-                await File.WriteAllTextAsync(_team_cache_filename, teamContent);
-                await File.WriteAllTextAsync(_board_cache_filename, boardContent);
-                await File.WriteAllTextAsync(_schedule_cache_filename, scheduleContent);
+                await File.WriteAllTextAsync(_team_cache_filename, contentDict["teams"]);
+                await File.WriteAllTextAsync(_board_cache_filename, contentDict["board"]);
+                await File.WriteAllTextAsync(_schedule_cache_filename, contentDict["schedule"]);
 
                 Console.WriteLine("Successfully read latest data from the APIs.");
             }

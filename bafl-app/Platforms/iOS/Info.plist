@@ -28,7 +28,9 @@
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>MinimumOSVersion</key>
 	<string>14.2</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>13</string>
 </dict>
 </plist>

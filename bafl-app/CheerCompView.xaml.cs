@@ -45,10 +45,9 @@ public partial class CheerCompView : ContentPage
             // set the text for the page header
             LastUpdated = String.Format("V  Updated {0}, pull to refresh  V", DateTime.Now.ToShortTimeString());
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             LastUpdated = String.Format("V  Failed load {0}, try again  V", DateTime.Now.ToShortTimeString());
-            Console.WriteLine("Error retrieving cheer comp: " + ex.Message);
         }
 
         _isLoading = false;
