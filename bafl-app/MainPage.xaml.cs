@@ -149,9 +149,11 @@ public partial class MainPage : ContentPage
 			"We offer the support they need in order to ensure they grow, " +
 			"learn, and thrive within their community.";*/
 
-            return "Teaching and support youth through football, " +
-				"drill, & cheer since 1977. BAFL consists of 17 teams " +
-				"across the greater Houston area.";
+            int numTeams = BaflClubs.Count;
+
+            return String.Format("Teaching and support youth through football, " +
+				"drill, & cheer since 1977. BAFL consists of {0} teams " +
+				"across the greater Houston area.", numTeams);
         }
     }
 
