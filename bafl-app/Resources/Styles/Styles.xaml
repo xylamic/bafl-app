@@ -42,12 +42,17 @@
                     </VisualState>
                 </VisualStateGroup>
                 <VisualStateGroup x:Name="ToggleStates">
-                    <VisualState x:Name="On" />
+                    <VisualState x:Name="On">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Primary}}" />
+                            <Setter Property="BorderWidth" Value="2" />
+                        </VisualState.Setters>
+                    </VisualState>
                     <VisualState x:Name="Off">
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Primary}}" />
                             <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-                            <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
                             <Setter Property="BorderWidth" Value="2" />
                         </VisualState.Setters>
                     </VisualState>
