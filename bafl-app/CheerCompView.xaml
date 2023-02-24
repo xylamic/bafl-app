@@ -24,6 +24,30 @@
                 <Label Text="Real-time schedule below. Doors only open for entry &amp; exit during breaks." FontSize="Small"
                        HorizontalTextAlignment="Center" Margin="10,0,10,5" />
 
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="Cheer" HorizontalOptions="Fill" 
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,3,0,3"
+                            Clicked="CheerSection_Clicked" x:Name="CheerButtonOn"
+                            IsVisible="{Binding Path=CheerShown}"/>
+                    <Button Text="Cheer" HorizontalOptions="Fill" 
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,3,0,3"
+                            Clicked="CheerSection_Clicked" x:Name="CheerButtonOff"
+                            IsVisible="{Binding Path=MascotShown}"/>
+                    <Button Text="Mascot" HorizontalOptions="Fill" 
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,3,0,3"
+                            Clicked="MascotSection_Clicked" x:Name="MascotButtonOn"
+                            IsVisible="{Binding Path=MascotShown}"/>
+                    <Button Text="Mascot" HorizontalOptions="Fill" 
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,3,0,3"
+                            Clicked="MascotSection_Clicked" x:Name="MascotButtonOff"
+                            IsVisible="{Binding Path=CheerShown}"/>
+                </Grid>
+
                 <!-- header -->
                 <Grid HorizontalOptions="Fill" >
                     <Grid.ColumnDefinitions>
