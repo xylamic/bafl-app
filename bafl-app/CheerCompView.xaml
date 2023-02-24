@@ -31,10 +31,10 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Text="Cheer"  HorizontalOptions="Fill" CornerRadius="0"
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0"
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,3,0,3"
                             Clicked="CheerSection_Clicked" x:Name="CheerButton"/>
                     <Button Text="Mascot" HorizontalOptions="Fill" CornerRadius="0"
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0"
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,3,0,3"
                             Clicked="MascotSection_Clicked" x:Name="MascotButton" />
                 </Grid>
 
