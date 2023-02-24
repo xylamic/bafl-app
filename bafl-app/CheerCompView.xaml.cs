@@ -19,8 +19,12 @@ public partial class CheerCompView : ContentPage
 	{
 		InitializeComponent();
 
+        VisualStateManager.GoToState(CheerButton, "On");
+        VisualStateManager.GoToState(MascotButton, "Off");
+        CheerShown = true;
+
         // set binding to itself
-		BindingContext = this;
+        BindingContext = this;
 
         // begin the data load
         Task.Run(async () => { await LoadView(); });
@@ -115,9 +119,53 @@ public partial class CheerCompView : ContentPage
     /// <summary>
     /// The set of items to be visible on the screen.
     /// </summary>
-    public List<BaflEventLineItem> Items
+    public IEnumerable<BaflEventLineItem> Items
     {
-        get { return _event.Schedule; }
+        get
+        {
+            if (CheerShown)
+                return CheerItems;
+            else
+                return MascotItems;
+        }
+    }
+
+    /// <summary>
+    /// Get the set of items grouped by Cheer.
+    /// </summary>
+    public IEnumerable<BaflEventLineItem> CheerItems
+    {
+        get
+        {
+            return from item in _event.Schedule where item.Group == "Cheer" select item;
+        }
+    }
+
+    /// <summary>
+    /// Get the set of items grouped by Mascot.
+    /// </summary>
+    public IEnumerable<BaflEventLineItem> MascotItems
+    {
+        get
+        {
+            return from item in _event.Schedule where item.Group == "Mascot" select item;
+        }
+    }
+
+    /// <summary>
+    /// Get whether cheer is shown.
+    /// </summary>
+    public bool CheerShown
+    {
+        get; protected set;
+    }
+
+    /// <summary>
+    /// Get whether mascot is shown.
+    /// </summary>
+    public bool MascotShown
+    {
+        get { return !CheerShown; }
     }
 
     /// <summary>
@@ -134,6 +182,26 @@ public partial class CheerCompView : ContentPage
 
             await LoadView();
         });
+    }
+
+    protected void CheerSection_Clicked(System.Object sender, System.EventArgs e)
+    {
+        VisualStateManager.GoToState(CheerButton, "On");
+        VisualStateManager.GoToState(MascotButton, "Off");
+
+        CheerShown = true;
+
+        OnPropertyChanged(nameof(Items));
+    }
+
+    protected void MascotSection_Clicked(System.Object sender, System.EventArgs e)
+    {
+        VisualStateManager.GoToState(CheerButton, "Off");
+        VisualStateManager.GoToState(MascotButton, "On");
+
+        CheerShown = false;
+
+        OnPropertyChanged(nameof(Items));
     }
 }
 
