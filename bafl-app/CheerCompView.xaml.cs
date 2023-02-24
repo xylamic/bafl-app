@@ -19,8 +19,10 @@ public partial class CheerCompView : ContentPage
 	{
 		InitializeComponent();
 
-        VisualStateManager.GoToState(CheerButton, "On");
-        VisualStateManager.GoToState(MascotButton, "Off");
+        VisualStateManager.GoToState(CheerButtonOn, "On");
+        VisualStateManager.GoToState(CheerButtonOff, "Off");
+        VisualStateManager.GoToState(MascotButtonOn, "On");
+        VisualStateManager.GoToState(MascotButtonOff, "Off");
         CheerShown = true;
 
         // set binding to itself
@@ -186,22 +188,20 @@ public partial class CheerCompView : ContentPage
 
     protected void CheerSection_Clicked(System.Object sender, System.EventArgs e)
     {
-        VisualStateManager.GoToState(CheerButton, "On");
-        VisualStateManager.GoToState(MascotButton, "Off");
-
         CheerShown = true;
 
         OnPropertyChanged(nameof(Items));
+        OnPropertyChanged(nameof(CheerShown));
+        OnPropertyChanged(nameof(MascotShown));
     }
 
     protected void MascotSection_Clicked(System.Object sender, System.EventArgs e)
     {
-        VisualStateManager.GoToState(CheerButton, "Off");
-        VisualStateManager.GoToState(MascotButton, "On");
-
         CheerShown = false;
 
         OnPropertyChanged(nameof(Items));
+        OnPropertyChanged(nameof(CheerShown));
+        OnPropertyChanged(nameof(MascotShown));
     }
 }
 
