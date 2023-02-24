@@ -48,68 +48,59 @@
 
         </Grid>
 
-        <ListView ItemsSource="{Binding ScheduleList}" HasUnevenRows="True" Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand"
-                  IsVisible="{Binding Path=ScheduleShown}" x:Name="ScheduleView">
-            <ListView.ItemTemplate>
+        <CollectionView ItemsSource="{Binding ScheduleList}" Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand"
+                  IsVisible="{Binding Path=ScheduleShown}" x:Name="ScheduleView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <VerticalStackLayout Margin="0,10,0,10" Opacity="{Binding Path=OpacityValue}">
-                            <Grid HorizontalOptions="Center">
-                                <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
-                                <Label Text="{Binding Path=Name}"
-                                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Secondary}}"
-                                   FontSize="Medium"
-                                   HorizontalTextAlignment="Center" />
-                            </Grid>
-                            <Label Text="{Binding Path=DateString}" HorizontalTextAlignment="Center" />
-                            <Label Text="{Binding Path=LocationString}" HorizontalTextAlignment="Center"/>
-                        </VerticalStackLayout>
-                    </ViewCell>
-
+                    <VerticalStackLayout Margin="0,10,0,10" Opacity="{Binding Path=OpacityValue}">
+                        <Grid HorizontalOptions="Center">
+                            <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
+                            <Label Text="{Binding Path=Name}"
+                                TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Secondary}}"
+                                FontSize="Medium"
+                                HorizontalTextAlignment="Center" />
+                        </Grid>
+                        <Label Text="{Binding Path=DateString}" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding Path=LocationString}" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
                 </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-            </ListView.ItemTemplate>
-
-        </ListView>
-
-        <ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand" HasUnevenRows="True" 
-                x:Name="ClubListView" ItemsSource="{Binding Path=BaflClubs}" IsVisible="{Binding Path=ClubsShown}">
-            <ListView.ItemTemplate>
+        <CollectionView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand" SelectionMode="None"
+                        x:Name="ClubListView" ItemsSource="{Binding Path=BaflClubs}" IsVisible="{Binding Path=ClubsShown}">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <VerticalStackLayout>
-                            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,5,0,0">
-                                <Label Text="{Binding Path=RegionFootball}" Margin="0,0,10,0" VerticalTextAlignment="Center" FontSize="Medium" />
-                                <Label Text="Website" IsEnabled="{Binding Path=WebsitePresent}" Style="{StaticResource Hyperlink}"
-                                       MaxLines="1" VerticalTextAlignment="Center" FontSize="Small">
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureHyperlink_Tapped" />
-                                    </Label.GestureRecognizers>
-                                </Label>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,0,0,5">
-                                <Label Text="President:" Margin="0,0,5,0" FontSize="Small" />
-                                <Label Text="{Binding Path=President}" FontSize="Small" />
-                            </HorizontalStackLayout>
-                        </VerticalStackLayout>
-                    </ViewCell>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,5,0,0">
+                            <Label Text="{Binding Path=RegionFootball}" Margin="0,0,10,0" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="Website" IsEnabled="{Binding Path=WebsitePresent}" Style="{StaticResource Hyperlink}"
+                                    MaxLines="1" VerticalTextAlignment="Center" FontSize="Small">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureHyperlink_Tapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,0,0,5">
+                            <Label Text="President:" Margin="0,0,5,0" FontSize="Small" TextColor="{StaticResource Gray500}" />
+                            <Label Text="{Binding Path=President}" FontSize="Small" TextColor="{StaticResource Gray500}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand" HasUnevenRows="True"
+        <CollectionView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand" SelectionMode="None"
                 x:Name="BoardListView" ItemsSource="{Binding Path=BaflBoard}" IsVisible="{Binding Path=BoardShown}">
-            <ListView.ItemTemplate>
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <VerticalStackLayout HorizontalOptions="Center" Margin="0,5,0,5">
-                            <Label Text="{Binding Role}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,10,0" />
-                            <Label Text="{Binding Name}" FontSize="Small" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                        </VerticalStackLayout>
-                    </ViewCell>
+                    <VerticalStackLayout HorizontalOptions="Center" Margin="0,5,0,5">
+                        <Label Text="{Binding Role}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,10,0" />
+                        <Label Text="{Binding Name}" FontSize="Small" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         
         
     </Grid>
