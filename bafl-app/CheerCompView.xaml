@@ -24,6 +24,11 @@
                 <Label Text="Real-time schedule below. Doors only open for entry &amp; exit during breaks." FontSize="Small"
                        HorizontalTextAlignment="Center" Margin="10,0,10,5" />
 
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <RadioButton Content=" Cheer"  />
+                    <RadioButton Content=" Mascot" />
+                </HorizontalStackLayout>
+
                 <!-- header -->
                 <Grid HorizontalOptions="Fill" >
                     <Grid.ColumnDefinitions>
