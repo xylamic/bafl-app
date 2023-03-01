@@ -24,6 +24,9 @@
                 <Label Text="Real-time schedule below. Doors only open for entry &amp; exit during breaks." FontSize="Small"
                        HorizontalTextAlignment="Center" Margin="10,0,10,5" />
 
+                <!-- This was designed as a group of multiple buttons rather than
+                typical state switches to avoid a bug on Android that causes the
+                buttons to disappear when changing visual state -->
                 <Grid HorizontalOptions="FillAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
