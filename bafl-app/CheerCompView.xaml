@@ -5,7 +5,7 @@
              Title="{Binding Path=Name}">
 
     <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsLoading}">
-        <ScrollView>
+        <ScrollView x:Name="scrollViewMain">
             <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5">
                 <!-- refresh label and bar -->
                 <Label Text="{Binding Path=LastUpdated}" FontSize="Micro" HorizontalOptions="Center" TextColor="{StaticResource Gray500}" />
@@ -24,6 +24,24 @@
                 <Label Text="Real-time schedule below. Doors only open for entry &amp; exit during breaks." FontSize="Small"
                        HorizontalTextAlignment="Center" Margin="10,0,10,5" />
 
+                <!-- doors open time -->
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="Doors open @ " />
+                    <Label Text="{Binding Path=DoorsOpen}" />
+                    <Label Margin="20, 0, 0, 0" Text="Event Info" Style="{StaticResource Key=Hyperlink}"
+                           IsVisible="{Binding Path=HasMoreInfo}">
+                        <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureMoreInfo_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Margin="20, 0, 0, 0" Text="Buy Tickets" Style="{StaticResource Key=Hyperlink}"
+                           IsVisible="{Binding Path=HasBuyTickets}">
+                        <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureBuyTickets_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+
                 <!-- This was designed as a group of multiple buttons rather than
                 typical state switches to avoid a bug on Android that causes the
                 buttons to disappear when changing visual state -->
@@ -31,24 +49,30 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Text="Cheer" HorizontalOptions="Fill" 
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0,3,0,3"
+                    <Button Text="{Binding Path=MainText}" HorizontalOptions="Fill" 
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,5,0,5"
                             Clicked="CheerSection_Clicked" x:Name="CheerButtonOn"
                             IsVisible="{Binding Path=CheerShown}"/>
-                    <Button Text="Cheer" HorizontalOptions="Fill" 
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0,3,0,3"
+                    <Button Text="{Binding Path=MainText}" HorizontalOptions="Fill" 
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,5,0,5"
                             Clicked="CheerSection_Clicked" x:Name="CheerButtonOff"
                             IsVisible="{Binding Path=MascotShown}"/>
                     <Button Text="Mascot" HorizontalOptions="Fill" 
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0,3,0,3"
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,5,0,5"
                             Clicked="MascotSection_Clicked" x:Name="MascotButtonOn"
                             IsVisible="{Binding Path=MascotShown}"/>
                     <Button Text="Mascot" HorizontalOptions="Fill" 
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0,3,0,3"
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,5,0,5"
                             Clicked="MascotSection_Clicked" x:Name="MascotButtonOff"
                             IsVisible="{Binding Path=CheerShown}"/>
+                    <Image Source="{AppThemeBinding Light=goto_light.png, Dark=goto_dark.png}" Grid.Column="2" MaximumHeightRequest="30" MaximumWidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Goto_Clicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Grid>
 
                 <!-- header -->
@@ -60,13 +84,13 @@
                     </Grid.ColumnDefinitions>
                     <Label Text="Team" FontSize="Large" Grid.Column="0" HorizontalTextAlignment="Center" />
                     <Label Text="Scheduled" FontSize="Large" Grid.Column="1" HorizontalTextAlignment="Center" />
-                    <Label Text="Start" FontSize="Large" Grid.Column="2" HorizontalTextAlignment="Center" />
+                    <Label Text="Actual" FontSize="Large" Grid.Column="2" HorizontalTextAlignment="Center" />
                 </Grid>
 
                 <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
 
                 <!-- list of schedule items -->
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Items}">
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Items}" x:Name="layoutList">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid HorizontalOptions="Fill" Margin="5">
@@ -84,7 +108,7 @@
 
                                 <!-- add a shape to the row if 'Notable' is on -->
                                 <Border StrokeThickness="2" Stroke="{StaticResource Gray500}" StrokeShape="RoundRectangle 30,0,0,30"
-                                        IsVisible="{Binding Path=Notable}" Grid.ColumnSpan="3" Margin="-5" />
+                                        IsVisible="{Binding Path=Notable}" Grid.ColumnSpan="3" Margin="-5" BackgroundColor="Transparent" />
 
                                 <!-- the data columns-->
                                 <Label Text="{Binding Path=Name}" Grid.Column="0" HorizontalTextAlignment="Center"

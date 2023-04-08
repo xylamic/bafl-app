@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Text.Json;
 using bafl_app.library;
 
@@ -11,6 +12,18 @@ public partial class CheerCompView : ContentPage
 {
     private bool _isLoading = true;
     private BaflEvent _event = new BaflEvent();
+    private bool _firstLoad = true;
+
+    protected ViewType _viewType = ViewType.Cheer;
+    protected string _accessUrl = BaflUtilities.CHEERCOMP_URL;
+    protected string _accessCode = App.GetApiKey("cheercomp");
+    protected string _mainFilter = "Cheer";
+
+    public enum ViewType
+    {
+        Cheer,
+        Drill
+    }
 
     /// <summary>
     /// Construct the view.
@@ -41,17 +54,26 @@ public partial class CheerCompView : ContentPage
         try
         {
             // construct the API key
-            string code = String.Format("?code={0}", App.GetApiKey("cheercomp"));
+            string code = String.Format("?code={0}", _accessCode);
 
             // try to read the latest configuration information.
             HttpClient client = new HttpClient();
-            string cheerContent = await client.GetStringAsync(BaflUtilities.CHEERCOMP_URL + code);
+            string cheerContent = await client.GetStringAsync(_accessUrl + code);
             _event = JsonSerializer.Deserialize<BaflEvent>(cheerContent);
 
             // set the text for the page header
             LastUpdated = String.Format("V  Updated {0}, pull to refresh  V", DateTime.Now.ToShortTimeString());
+
+            if (_firstLoad)
+            {
+                if ((from i in MascotItems where i.Highlight select i).FirstOrDefault() != null)
+                {
+                    MascotSection_Clicked(null, null);
+                }
+                _firstLoad = false;
+            }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             LastUpdated = String.Format("V  Failed load {0}, try again  V", DateTime.Now.ToShortTimeString());
         }
@@ -68,6 +90,14 @@ public partial class CheerCompView : ContentPage
     public string Name
     {
         get => _event.Name;
+    }
+
+    /// <summary>
+    /// Get the main text for the form (e.g. Cheer or Drill)
+    /// </summary>
+    public string MainText
+    {
+        get => _viewType.ToString();
     }
 
     /// <summary>
@@ -92,6 +122,30 @@ public partial class CheerCompView : ContentPage
     public string Message
     {
         get => _event.Message;
+    }
+
+    /// <summary>
+    /// The doors open time.
+    /// </summary>
+    public string DoorsOpen
+    {
+        get => _event.DoorsOpen;
+    }
+
+    /// <summary>
+    /// Get whether there is more info.
+    /// </summary>
+    public bool HasMoreInfo
+    {
+        get => !String.IsNullOrWhiteSpace(_event.MoreInfo);
+    }
+
+    /// <summary>
+    /// Get whether there is a tickets link.
+    /// </summary>
+    public bool HasBuyTickets
+    {
+        get => !String.IsNullOrWhiteSpace(_event.Tickets);
     }
 
     /// <summary>
@@ -139,7 +193,7 @@ public partial class CheerCompView : ContentPage
     {
         get
         {
-            return from item in _event.Schedule where item.Group == "Cheer" select item;
+            return from item in _event.Schedule where item.Group == _mainFilter select item;
         }
     }
 
@@ -177,6 +231,9 @@ public partial class CheerCompView : ContentPage
     /// <param name="e">The args.</param>
     protected void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
     {
+        if (_isLoading)
+            return;
+
         Task.Run(async () =>
         {
             _isLoading = true;
@@ -202,6 +259,39 @@ public partial class CheerCompView : ContentPage
         OnPropertyChanged(nameof(Items));
         OnPropertyChanged(nameof(CheerShown));
         OnPropertyChanged(nameof(MascotShown));
+    }
+
+    protected async void TapGestureMoreInfo_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        try { await Browser.Default.OpenAsync(_event.MoreInfo, BrowserLaunchMode.SystemPreferred); }
+        catch (Exception) { }
+    }
+
+    protected async void TapGestureBuyTickets_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        try { await Browser.Default.OpenAsync(_event.Tickets, BrowserLaunchMode.SystemPreferred); }
+        catch (Exception) { }
+    }
+
+    protected async void Goto_Clicked(System.Object sender, System.EventArgs e)
+    {
+        BaflEventLineItem highlightItem = GetHighlightedItem();
+        if (highlightItem == null)
+            return;
+
+        int index = (from i in Enumerable.Range(0, Items.Count()) where Items.ElementAt(i) == highlightItem select i).FirstOrDefault();
+
+        Element v = layoutList.ElementAt(index) as Element;
+        await scrollViewMain.ScrollToAsync(v, ScrollToPosition.MakeVisible, true);
+    }
+
+    /// <summary>
+    /// Get the first highlighted item in the list.
+    /// </summary>
+    /// <returns>The item or NULL.</returns>
+    protected BaflEventLineItem GetHighlightedItem()
+    {
+        return (from item in Items where item.Highlight select item).FirstOrDefault();
     }
 }
 

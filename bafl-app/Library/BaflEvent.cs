@@ -10,6 +10,8 @@ namespace bafl_app.library
         private DateTime _date;
         private string _message;
         private string _doorsOpen;
+        private string _moreinfo;
+        private string _tickets;
         private List<BaflEventLineItem> _schedule;
 
         /// <summary>
@@ -21,6 +23,8 @@ namespace bafl_app.library
             _date = DateTime.MinValue;
             _message = "";
             _doorsOpen = "";
+            _moreinfo = "";
+            _tickets = "";
             _schedule = new List<BaflEventLineItem>();
         }
 
@@ -31,18 +35,23 @@ namespace bafl_app.library
         /// <param name="date">The date of the event.</param>
         /// <param name="message">Any unique message, if needed.</param>
         /// <param name="doorsOpen">The time the doors open.</param>
+        /// <param name="moreInfo">The more info URL link.</param>
+        /// <param name="tickets">The tickets URL.</param>
         /// <param name="items">The event schedule.</param>
         public BaflEvent(
             string name,
             DateTime date,
             string message,
             string doorsOpen,
+            string moreInfo,
+            string tickets,
             BaflEventLineItem[] items)
         {
             _name = name;
             _date = date;
             _message = message;
             _doorsOpen = doorsOpen;
+            _moreinfo = moreInfo;
             _schedule = new List<BaflEventLineItem>(items);
         }
 
@@ -92,7 +101,7 @@ namespace bafl_app.library
         }
 
         /// <summary>
-        /// Whether to highlight this item.
+        /// When the doors open.
         /// </summary>
         public string DoorsOpen
         {
@@ -101,7 +110,25 @@ namespace bafl_app.library
         }
 
         /// <summary>
-        /// Whether this item is notable.
+        /// More-info navigation URL.
+        /// </summary>
+        public string MoreInfo
+        {
+            get => _moreinfo;
+            set => _moreinfo = value;
+        }
+
+        /// <summary>
+        /// Buy-tickets navigation URL.
+        /// </summary>
+        public string Tickets
+        {
+            get => _tickets;
+            set => _tickets = value;
+        }
+
+        /// <summary>
+        /// The list of schedule items.
         /// </summary>
         public List<BaflEventLineItem> Schedule
         {

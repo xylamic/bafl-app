@@ -32,6 +32,11 @@
            <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />
        </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Drill Competition" Icon="{AppThemeBinding Light=drill_light.png, Dark=drill_dark.png}">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:DrillCompView}" />
+       </Tab>
+    </FlyoutItem>
 
     <MenuItem Text="" />
 

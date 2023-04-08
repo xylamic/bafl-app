@@ -31,6 +31,8 @@
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>CFBundleVersion</key>
-	<string>16</string>
+	<string>17</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
 </dict>
 </plist>
