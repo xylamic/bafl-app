@@ -53,19 +53,19 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Text="{Binding Path=MainText}" HorizontalOptions="Fill" 
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0,5,0,5"
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,8,0,8"
                             Clicked="CheerSection_Clicked" x:Name="CheerButtonOn"
                             IsVisible="{Binding Path=CheerShown}"/>
                     <Button Text="{Binding Path=MainText}" HorizontalOptions="Fill" 
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0,5,0,5"
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,8,0,8"
                             Clicked="CheerSection_Clicked" x:Name="CheerButtonOff"
                             IsVisible="{Binding Path=MascotShown}"/>
                     <Button Text="Mascot" HorizontalOptions="Fill" 
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0,5,0,5"
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,8,0,8"
                             Clicked="MascotSection_Clicked" x:Name="MascotButtonOn"
                             IsVisible="{Binding Path=MascotShown}"/>
                     <Button Text="Mascot" HorizontalOptions="Fill" 
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0,5,0,5"
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,8,0,8"
                             Clicked="MascotSection_Clicked" x:Name="MascotButtonOff"
                             IsVisible="{Binding Path=CheerShown}"/>
                     <Image Source="{AppThemeBinding Light=goto_light.png, Dark=goto_dark.png}" Grid.Column="2" MaximumHeightRequest="30" MaximumWidthRequest="30">
