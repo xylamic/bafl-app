@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bafl_app.StandingsView"
+             Title="{Binding Path=TitleText}">
+
+    <ScrollView x:Name="scrollViewMain">
+        <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5">
+
+            <!-- optional message, displayed only if present -->
+            <Label Text="{Binding Path=Message}" TextColor="{StaticResource Primary}"
+                    FontSize="Medium" HorizontalTextAlignment="Center" IsVisible="{Binding Path=HasMessage}"
+                    BackgroundColor="{StaticResource Gray300}" Margin="0,0,0,5"/>
+
+            <Picker ItemsSource="{Binding Path=Standings}" SelectedIndex="{Binding Path=LevelsIndex}"
+                    ItemDisplayBinding="{Binding Path=Level}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
+
+            <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
+
+            <!-- list of schedule items -->
+            <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Teams}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalOptions="CenterAndExpand" Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <HorizontalStackLayout Grid.ColumnSpan="4">
+                                <Label Text="{Binding Rank}" Margin="0,0,5,0" FontSize="Medium" />
+                                <Label Text="{Binding Team}" TextColor="{StaticResource Secondary}" FontSize="Medium" />
+                                <Label Text="🏁" IsVisible="{Binding Path=Playoff}" VerticalTextAlignment="Center" Margin="10,0,0,0" />
+                            </HorizontalStackLayout>
+                                
+
+                            <Label Text="{Binding WinsText}" Grid.Row="1" Grid.Column="0" />
+                            <Label Text="{Binding LossesText}" Grid.Row="1" Grid.Column="1" />
+                            <Label Text="{Binding TiesText}" Grid.Row="1" Grid.Column="2" />
+                            <Label Text="{Binding PointsText}" Grid.Row="1" Grid.Column="3" />
+
+                            <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1"
+                                    Grid.Row="2" Grid.ColumnSpan="4" Margin="5"/>
+                                
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+

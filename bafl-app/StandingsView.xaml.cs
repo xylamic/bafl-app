@@ -4,19 +4,18 @@ using System.Text.Json;
 using bafl_app.library;
 using Microsoft.Maui.Controls;
 
-public partial class ScheduleView : ContentPage
+public partial class StandingsView : ContentPage
 {
     private bool _isLoading = true;
-    private BaflGameCalendar _calendar = new BaflGameCalendar();
+    private BaflStandings _standings = new BaflStandings();
     private bool _firstLoad = true;
     private bool _isError = false;
-    private int _weekIndex = 0;
-    private BaflGameWeek _week = null;
+    private int _levelIndex = 0;
 
-    protected string _accessUrl = BaflUtilities.GAMECALENDAR_URL;
-    protected string _accessCode = App.GetApiKey("calendar");
+    protected string _accessUrl = BaflUtilities.STANDINGS_URL;
+    protected string _accessCode = App.GetApiKey("standings");
 
-    public ScheduleView()
+    public StandingsView()
     {
         InitializeComponent();
 
@@ -35,63 +34,54 @@ public partial class ScheduleView : ContentPage
     {
         get
         {
-            return _calendar.Title;
+            return _standings.Title;
         }
     }
 
-    public IEnumerable<BaflGameWeek> Weeks
+    public IEnumerable<BaflStandingEntry> Standings
     {
         get
         {
-            return _calendar.Weeks;
+            return _standings.Standings;
         }
     }
 
-    public BaflGameWeek WeeksItem
+    public int LevelsIndex
     {
-        get { return _week; }
+        get { return _levelIndex; }
         set
         {
-            if (value == _week)
+            if (value == _levelIndex)
                 return;
 
-            _week = value;
-            OnPropertyChanged(nameof(Matchups));
+            _levelIndex = value;
+
+            OnPropertyChanged(nameof(Teams));
         }
     }
-
-    //public int WeeksIndex
-    //{
-    //    get { return _weekIndex; }
-    //    set
-    //    {
-    //        if (value == _weekIndex)
-    //            return;
-
-    //        _weekIndex = value;
-
-    //        OnPropertyChanged(nameof(Matchups));
-    //    }
-    //}
 
     public bool HasMessage
     {
-        get { return !String.IsNullOrWhiteSpace(_calendar.Message); }
+        get { return !String.IsNullOrWhiteSpace(_standings.Message); }
     }
 
     public string Message
     {
-        get { return _calendar.Message; }
+        get { return _standings.Message; }
     }
 
-    public IEnumerable<BaflGameMatchup> Matchups
+    public IEnumerable<BaflStandingTeam> Teams
     {
         get
         {
-            if (WeeksItem != null)
-                return WeeksItem.Matchups;
+            if (LevelsIndex >= 0 && _standings.Standings.Count > LevelsIndex)
+            {
+                return _standings.Standings[LevelsIndex].Teams
+                    .OrderBy(team => team.Rank)
+                    .ThenBy(team => team.Team);
+            }
             else
-                return new List<BaflGameMatchup>();
+                return new List<BaflStandingTeam>();
         }
     }
 
@@ -125,11 +115,6 @@ public partial class ScheduleView : ContentPage
     /// <returns>The async task.</returns>
     private async Task LoadView()
     {
-        // get the current item if applicable
-        string weekText = null;
-        if (!_firstLoad && WeeksItem != null)
-            weekText = WeeksItem.WeekText;
-
         try
         {
             // construct the API key
@@ -137,25 +122,17 @@ public partial class ScheduleView : ContentPage
 
             // try to read the latest configuration information.
             HttpClient client = new HttpClient();
-            string scheduleContent = await client.GetStringAsync(_accessUrl + code);
-            _calendar = JsonSerializer.Deserialize<BaflGameCalendar>(scheduleContent);
+            string standingContent = await client.GetStringAsync(_accessUrl + code);
+            _standings = JsonSerializer.Deserialize<BaflStandings>(standingContent);
 
             // set the correct week
-            if (_calendar.Weeks.Count > 0 && _firstLoad)
+            if (_standings.Standings.Count > 0 && _firstLoad)
             {
-                bool set = false;
-                for (int wIndex = 0; wIndex < _calendar.Weeks.Count; wIndex++)
-                {
-                    if (_calendar.Weeks[wIndex].Date.AddDays(1) > DateTime.Now)
-                    {
-                        _week = _calendar.Weeks[wIndex];
-                        set = true;
-                        break;
-                    }
-                }
-
-                if (!set)
-                    _week = _calendar.Weeks[_calendar.Weeks.Count - 1];
+                LevelsIndex = 0;
+            }
+            else if (!_firstLoad)
+            {
+                weekPicker.BindingContext = this;
             }
 
             // set the text for the page header

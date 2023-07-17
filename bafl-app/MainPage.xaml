@@ -9,6 +9,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -108,6 +109,6 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         
-        
+        <Label Text=" " HeightRequest="150" Grid.Row="4" />
     </Grid>
 </ContentPage>

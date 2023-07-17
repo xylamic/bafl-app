@@ -73,7 +73,7 @@ public partial class CheerCompView : ContentPage
                 _firstLoad = false;
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             LastUpdated = String.Format("V  Failed load {0}, try again  V", DateTime.Now.ToShortTimeString());
         }

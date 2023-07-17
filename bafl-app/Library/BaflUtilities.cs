@@ -15,6 +15,10 @@ namespace bafl_app.library
 
         public static readonly string DRILLCOMP_URL = "https://baflapp.azurewebsites.net/api/drillcomp";
 
+        public static readonly string GAMECALENDAR_URL = "https://baflapp.azurewebsites.net/api/calendar";
+
+        public static readonly string STANDINGS_URL = "https://baflapp.azurewebsites.net/api/standings";
+
         public static readonly string ZelleUrl = "https://enroll.zellepay.com/qr-codes?data=ewogICJuYW1lIiA6ICJCQVkgQVJFQSBGT09UQkFMTCBMRUFHVUUgSU5DIiwKICAidG9rZW4iIDogImJhZmx0cmVhc3VyZXIyMUBnbWFpbC5jb20iLAogICJhY3Rpb24iIDogInBheW1lbnQiCn0=";
 
         public static readonly string CashAppUrl = "https://cash.app/$payBAFL?qr=1";
