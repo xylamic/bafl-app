@@ -151,6 +151,25 @@ public partial class StandingsView : ContentPage
         _isLoading = false;
         OnPropertyChanged(null);
     }
+
+    /// <summary>
+    /// The refresh was triggered by the user.
+    /// </summary>
+    /// <param name="sender">The sender of the event.</param>
+    /// <param name="e">The args.</param>
+    private void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
+    {
+        if (_isLoading)
+            return;
+
+        Task.Run(async () =>
+        {
+            _isLoading = true;
+            OnPropertyChanged(nameof(IsLoading));
+
+            await LoadView();
+        });
+    }
 }
 
 

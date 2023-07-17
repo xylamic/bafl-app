@@ -10,8 +10,6 @@ public partial class ScheduleView : ContentPage
     private BaflGameCalendar _calendar = new BaflGameCalendar();
     private bool _firstLoad = true;
     private bool _isError = false;
-    private int _weekIndex = 0;
-    private BaflGameWeek _week = null;
 
     protected string _accessUrl = BaflUtilities.GAMECALENDAR_URL;
     protected string _accessCode = App.GetApiKey("calendar");
@@ -47,33 +45,6 @@ public partial class ScheduleView : ContentPage
         }
     }
 
-    public BaflGameWeek WeeksItem
-    {
-        get { return _week; }
-        set
-        {
-            if (value == _week)
-                return;
-
-            _week = value;
-            OnPropertyChanged(nameof(Matchups));
-        }
-    }
-
-    //public int WeeksIndex
-    //{
-    //    get { return _weekIndex; }
-    //    set
-    //    {
-    //        if (value == _weekIndex)
-    //            return;
-
-    //        _weekIndex = value;
-
-    //        OnPropertyChanged(nameof(Matchups));
-    //    }
-    //}
-
     public bool HasMessage
     {
         get { return !String.IsNullOrWhiteSpace(_calendar.Message); }
@@ -88,8 +59,8 @@ public partial class ScheduleView : ContentPage
     {
         get
         {
-            if (WeeksItem != null)
-                return WeeksItem.Matchups;
+            if (weekPicker.SelectedIndex >= 0)
+                return _calendar.Weeks[weekPicker.SelectedIndex].Matchups;
             else
                 return new List<BaflGameMatchup>();
         }
@@ -125,11 +96,6 @@ public partial class ScheduleView : ContentPage
     /// <returns>The async task.</returns>
     private async Task LoadView()
     {
-        // get the current item if applicable
-        string weekText = null;
-        if (!_firstLoad && WeeksItem != null)
-            weekText = WeeksItem.WeekText;
-
         try
         {
             // construct the API key
@@ -140,22 +106,35 @@ public partial class ScheduleView : ContentPage
             string scheduleContent = await client.GetStringAsync(_accessUrl + code);
             _calendar = JsonSerializer.Deserialize<BaflGameCalendar>(scheduleContent);
 
-            // set the correct week
-            if (_calendar.Weeks.Count > 0 && _firstLoad)
+            if (_firstLoad)
             {
-                bool set = false;
-                for (int wIndex = 0; wIndex < _calendar.Weeks.Count; wIndex++)
+                // set the correct week
+                if (_calendar.Weeks.Count > 0)
                 {
-                    if (_calendar.Weeks[wIndex].Date.AddDays(1) > DateTime.Now)
+                    bool set = false;
+                    for (int wIndex = 0; wIndex < _calendar.Weeks.Count; wIndex++)
                     {
-                        _week = _calendar.Weeks[wIndex];
-                        set = true;
-                        break;
+                        if (_calendar.Weeks[wIndex].Date.AddDays(1) > DateTime.Now)
+                        {
+                            weekPicker.SelectedIndex = wIndex;
+                            set = true;
+                            break;
+                        }
                     }
-                }
 
-                if (!set)
-                    _week = _calendar.Weeks[_calendar.Weeks.Count - 1];
+                    if (!set)
+                        weekPicker.SelectedIndex = _calendar.Weeks.Count - 1;
+                }
+            }
+            else
+            {
+                OnPropertyChanged(nameof(Weeks));
+                OnPropertyChanged(nameof(WeeksItem));
+
+                if (_week != null)
+                {
+                    weekPicker.SelectedItem = (from w in _calendar.Weeks where w.WeekText == _week.WeekText select w).FirstOrDefault();
+                }
             }
 
             // set the text for the page header

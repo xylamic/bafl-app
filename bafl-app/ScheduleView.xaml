@@ -4,62 +4,67 @@
              x:Class="bafl_app.ScheduleView"
              Title="{Binding Path=TitleText}">
 
-    <ScrollView x:Name="scrollViewMain">
-        <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5">
+    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsLoading}">
+        <ScrollView x:Name="scrollViewMain">
+            <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5">
+                <!-- refresh label and bar -->
+                <Label Text="{Binding Path=LastUpdated}" FontSize="Micro" HorizontalOptions="Center" TextColor="{StaticResource Gray500}" />
+                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1"/>
 
-            <!-- optional message, displayed only if present -->
-            <Label Text="{Binding Path=Message}" TextColor="{StaticResource Primary}"
-                    FontSize="Medium" HorizontalTextAlignment="Center" IsVisible="{Binding Path=HasMessage}"
-                    BackgroundColor="{StaticResource Gray300}" Margin="0,0,0,5"/>
+                <!-- optional message, displayed only if present -->
+                <Label Text="{Binding Path=Message}" TextColor="{StaticResource Primary}"
+                       FontSize="Medium" HorizontalTextAlignment="Center" IsVisible="{Binding Path=HasMessage}"
+                       BackgroundColor="{StaticResource Gray300}" Margin="0,0,0,5"/>
 
-            <Picker ItemsSource="{Binding Path=Weeks}" SelectedItem="{Binding WeeksItem}"
-                    ItemDisplayBinding="{Binding Path=WeekText}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
+                <Picker ItemsSource="{Binding Path=Weeks}" SelectedItem="{Binding WeeksItem}" SelectedIndexChanged="weekPicker_SelectedIndexChanged"
+                        ItemDisplayBinding="{Binding Path=WeekText}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
 
-            <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
+                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
 
-            <!-- list of schedule items -->
-            <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Matchups}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Grid HorizontalOptions="CenterAndExpand" Margin="5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                <!-- list of schedule items -->
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Matchups}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="CenterAndExpand" Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding Away}" FontSize="Large" Grid.Row="0" HorizontalOptions="Center" />
-                            <HorizontalStackLayout Grid.Row="1" Margin="20,0,0,0" HorizontalOptions="CenterAndExpand">
-                                <Label Text="@" Grid.Column="1" FontSize="Large" TextColor="{StaticResource Secondary}" />
-                                <Label Text="{Binding Home}" Grid.Row="1" FontSize="Large" Margin="10,0,0,0" />
-                            </HorizontalStackLayout>
+                                <Label Text="{Binding Away}" FontSize="Large" Grid.Row="0" HorizontalOptions="Center" />
+                                <HorizontalStackLayout Grid.Row="1" Margin="20,0,0,0" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="@" Grid.Column="1" FontSize="Large" TextColor="{StaticResource Secondary}" />
+                                    <Label Text="{Binding Home}" Grid.Row="1" FontSize="Large" Margin="10,0,0,0" />
+                                </HorizontalStackLayout>
                                 
-                            <FlexLayout BindableLayout.ItemsSource="{Binding Scores}" Grid.Row="2" Margin="0,0,0,0" Wrap="Wrap" JustifyContent="Center">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate>
-                                        <HorizontalStackLayout Margin="5">
-                                            <Label Text="{Binding Level}" TextColor="{StaticResource Gray500}" FontSize="Small" />
-                                            <Label Text=" " />
-                                            <Label Text="{Binding Score}" />
-                                        </HorizontalStackLayout>
-                                    </DataTemplate>
+                                <FlexLayout BindableLayout.ItemsSource="{Binding Scores}" Grid.Row="2" Margin="0,0,0,0" Wrap="Wrap" JustifyContent="Center">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <HorizontalStackLayout Margin="5">
+                                                <Label Text="{Binding Level}" TextColor="{StaticResource Gray500}" FontSize="Small" />
+                                                <Label Text=" " />
+                                                <Label Text="{Binding Score}" />
+                                            </HorizontalStackLayout>
+                                        </DataTemplate>
 
-                                </BindableLayout.ItemTemplate>
-                            </FlexLayout>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
 
-                            <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1" Grid.Row="3" Margin="5"/>
+                                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1" Grid.Row="3" Margin="5"/>
                                 
-                        </Grid>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+
             </VerticalStackLayout>
-
-        </VerticalStackLayout>
-    </ScrollView>
+        </ScrollView>
+    </RefreshView>
 
 </ContentPage>
 
