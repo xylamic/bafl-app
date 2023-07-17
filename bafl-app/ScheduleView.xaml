@@ -16,7 +16,7 @@
                        FontSize="Medium" HorizontalTextAlignment="Center" IsVisible="{Binding Path=HasMessage}"
                        BackgroundColor="{StaticResource Gray300}" Margin="0,0,0,5"/>
 
-                <Picker ItemsSource="{Binding Path=Weeks}" SelectedItem="{Binding WeeksItem}" SelectedIndexChanged="weekPicker_SelectedIndexChanged"
+                <Picker ItemsSource="{Binding Path=Weeks}" SelectedItem="{Binding SelectedWeek}" 
                         ItemDisplayBinding="{Binding Path=WeekText}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
 
                 <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>

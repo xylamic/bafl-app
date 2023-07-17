@@ -10,7 +10,7 @@ public partial class StandingsView : ContentPage
     private BaflStandings _standings = new BaflStandings();
     private bool _firstLoad = true;
     private bool _isError = false;
-    private int _levelIndex = 0;
+    private BaflStandingEntry _selectedLevel;
 
     protected string _accessUrl = BaflUtilities.STANDINGS_URL;
     protected string _accessCode = App.GetApiKey("standings");
@@ -46,16 +46,20 @@ public partial class StandingsView : ContentPage
         }
     }
 
-    public int LevelsIndex
+    public BaflStandingEntry SelectedLevel
     {
-        get { return _levelIndex; }
+        get
+        {
+            if (_selectedLevel == null && _standings.Standings.Count > 0)
+            {
+                _selectedLevel = _standings.Standings[0];
+            }
+            return _selectedLevel;
+        }
+
         set
         {
-            if (value == _levelIndex)
-                return;
-
-            _levelIndex = value;
-
+            _selectedLevel = value;
             OnPropertyChanged(nameof(Teams));
         }
     }
@@ -74,9 +78,9 @@ public partial class StandingsView : ContentPage
     {
         get
         {
-            if (LevelsIndex >= 0 && _standings.Standings.Count > LevelsIndex)
+            if (_selectedLevel != null)
             {
-                return _standings.Standings[LevelsIndex].Teams
+                return _selectedLevel.Teams
                     .OrderBy(team => team.Rank)
                     .ThenBy(team => team.Team);
             }
@@ -124,16 +128,6 @@ public partial class StandingsView : ContentPage
             HttpClient client = new HttpClient();
             string standingContent = await client.GetStringAsync(_accessUrl + code);
             _standings = JsonSerializer.Deserialize<BaflStandings>(standingContent);
-
-            // set the correct week
-            if (_standings.Standings.Count > 0 && _firstLoad)
-            {
-                LevelsIndex = 0;
-            }
-            else if (!_firstLoad)
-            {
-                weekPicker.BindingContext = this;
-            }
 
             // set the text for the page header
             LastUpdated = String.Format("V  Updated {0}  V", DateTime.Now.ToLongDateString());
