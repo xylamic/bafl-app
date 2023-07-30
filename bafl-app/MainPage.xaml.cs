@@ -1,4 +1,6 @@
-﻿using bafl_app.library;
+﻿using System;
+using bafl_app.library;
+using Microsoft.Maui.ApplicationModel;
 
 namespace bafl_app;
 
@@ -10,6 +12,7 @@ public partial class MainPage : ContentPage
     private bool _boardShown = true;
     private bool _clubsShown = true;
     private bool _scheduleShown = true;
+    private bool _isLoading = true;
 
     /// <summary>
     /// Construct the view.
@@ -48,7 +51,24 @@ public partial class MainPage : ContentPage
 		await App.LoadConfiguration();
 
         // trigger the bindings to update
+        _isLoading = false;
 		OnPropertyChanged(null);
+    }
+
+    /// <summary>
+    /// Get whether the page is loading.
+    /// </summary>
+    public bool IsLoading
+    {
+        get => _isLoading;
+        private set
+        {
+            if (_isLoading != value)
+            {
+                _isLoading = value;
+                OnPropertyChanged(nameof(IsLoading));
+            }
+        }
     }
 
     /// <summary>
@@ -261,6 +281,31 @@ public partial class MainPage : ContentPage
         catch (Exception)
         {
             await DisplayAlert("Error", "Could not open the browser.", "OK");
+        }
+    }
+
+    private async void TapGestureFieldHyperlink_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        VisualElement ele = (VisualElement)sender;
+        BaflClub club = (BaflClub)ele.BindingContext;
+        string locString = club.FieldLocation;
+        
+
+        try
+        {
+            string[] locElements = locString.Split(',', StringSplitOptions.TrimEntries);
+            Location location = new Location
+            {
+                Latitude = Double.Parse(locElements[0]),
+                Longitude = Double.Parse(locElements[1])
+            };
+
+            await Map.Default.OpenAsync(location,
+                new MapLaunchOptions { Name = club.FieldName });
+        }
+        catch (Exception)
+        {
+            await DisplayAlert("Error", "Could not open map app.", "OK");
         }
     }
 }

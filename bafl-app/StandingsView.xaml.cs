@@ -4,18 +4,18 @@ using System.Text.Json;
 using bafl_app.library;
 using Microsoft.Maui.Controls;
 
-public partial class ScheduleView : ContentPage
+public partial class StandingsView : ContentPage
 {
     private bool _isLoading = true;
-    private BaflGameCalendar _calendar = new BaflGameCalendar();
-    private bool _isError = false;
-    private BaflGameWeek _selectedWeek = null;
     private bool _isRefreshing = false;
+    private BaflStandings _standings = new BaflStandings();
+    private bool _isError = false;
+    private BaflStandingEntry _selectedLevel;
 
-    protected string _accessUrl = BaflUtilities.GAMECALENDAR_URL;
-    protected string _accessCode = App.GetApiKey("calendar");
+    protected string _accessUrl = BaflUtilities.STANDINGS_URL;
+    protected string _accessCode = App.GetApiKey("standings");
 
-    public ScheduleView()
+    public StandingsView()
     {
         InitializeComponent();
 
@@ -34,54 +34,58 @@ public partial class ScheduleView : ContentPage
     {
         get
         {
-            return _calendar.Title;
+            return _standings.Title;
         }
     }
 
-    public BaflGameWeek SelectedWeek
+    public IEnumerable<BaflStandingEntry> Standings
     {
         get
         {
-            if (_selectedWeek == null && _calendar.Weeks.Count > 0)
+            return _standings.Standings;
+        }
+    }
+
+    public BaflStandingEntry SelectedLevel
+    {
+        get
+        {
+            if (_selectedLevel == null && _standings.Standings.Count > 0)
             {
-                _selectedWeek = _calendar.Weeks[FindClosestWeek()];
+                _selectedLevel = _standings.Standings[0];
             }
-            return _selectedWeek;
+            return _selectedLevel;
         }
 
         set
         {
-            _selectedWeek = value;
-            OnPropertyChanged(nameof(Matchups));
-        }
-    }
-
-    public IEnumerable<BaflGameWeek> Weeks
-    {
-        get
-        {
-            return _calendar.Weeks;
+            _selectedLevel = value;
+            OnPropertyChanged(nameof(Teams));
         }
     }
 
     public bool HasMessage
     {
-        get { return !String.IsNullOrWhiteSpace(_calendar.Message); }
+        get { return !String.IsNullOrWhiteSpace(_standings.Message); }
     }
 
     public string Message
     {
-        get { return _calendar.Message; }
+        get { return _standings.Message; }
     }
 
-    public IEnumerable<BaflGameMatchup> Matchups
+    public IEnumerable<BaflStandingTeam> Teams
     {
         get
         {
-            if (weekPicker.SelectedIndex >= 0)
-                return _calendar.Weeks[weekPicker.SelectedIndex].Matchups;
+            if (_selectedLevel != null)
+            {
+                return _selectedLevel.Teams
+                    .OrderBy(team => team.Rank)
+                    .ThenBy(team => team.Team);
+            }
             else
-                return new List<BaflGameMatchup>();
+                return new List<BaflStandingTeam>();
         }
     }
 
@@ -93,6 +97,9 @@ public partial class ScheduleView : ContentPage
         get => _isLoading;
     }
 
+    /// <summary>
+    /// Get whether the page is refreshing.
+    /// </summary>
     public bool IsRefreshing
     {
         get => _isRefreshing;
@@ -115,28 +122,6 @@ public partial class ScheduleView : ContentPage
     }
 
     /// <summary>
-    /// Find the closest week date.
-    /// </summary>
-    /// <returns>The week index.</returns>
-    private int FindClosestWeek()
-    {
-        for (int index = 0; index < _calendar.Weeks.Count; index++)
-        {
-            if (_calendar.Weeks[index].Date.AddDays(1) > DateTime.Now)
-                return index;
-        }
-
-        if (_calendar.Weeks.Count > 0)
-        {
-            return _calendar.Weeks.Count - 1;
-        }
-        else
-        {
-            return -1;
-        }
-    }
-
-    /// <summary>
     /// Load the view data.
     /// </summary>
     /// <returns>The async task.</returns>
@@ -149,8 +134,8 @@ public partial class ScheduleView : ContentPage
 
             // try to read the latest configuration information.
             HttpClient client = new HttpClient();
-            string scheduleContent = await client.GetStringAsync(_accessUrl + code);
-            _calendar = JsonSerializer.Deserialize<BaflGameCalendar>(scheduleContent);            
+            string standingContent = await client.GetStringAsync(_accessUrl + code);
+            _standings = JsonSerializer.Deserialize<BaflStandings>(standingContent);
 
             // set the text for the page header
             LastUpdated = String.Format("V  Updated {0}  V", DateTime.Now.ToLongDateString());
@@ -182,7 +167,6 @@ public partial class ScheduleView : ContentPage
         Task.Run(async () =>
         {
             _isRefreshing = true;
-            OnPropertyChanged(nameof(IsLoading));
             OnPropertyChanged(nameof(IsRefreshing));
 
             await LoadView();

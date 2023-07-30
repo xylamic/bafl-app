@@ -9,17 +9,21 @@ namespace bafl_app.library
         private string _mascot;
         private string _website;
         private string _president;
+        private string _fieldName;
+        private string _fieldLocation;
 
         public BaflClub() { }
 
         public BaflClub(string region, string football, string cheer,
-            string mascot, string website)
+            string mascot, string website, string fieldName, string fieldLocation)
         {
             _region = region;
             _football = football;
             _cheer = cheer;
             _mascot = mascot;
             _website = website;
+            _fieldName = fieldName;
+            _fieldLocation = fieldLocation;
         }
 
         public string Region
@@ -63,9 +67,31 @@ namespace bafl_app.library
             set => _president = value;
         }
 
+        public string FieldName
+        {
+            get => _fieldName;
+            set => _fieldName = value;
+        }
+
+        public string FieldLocation
+        {
+            get => _fieldLocation;
+            set => _fieldLocation = value;
+        }
+
+        public bool FieldPresent
+        {
+            get => !String.IsNullOrWhiteSpace(FieldLocation) && !String.IsNullOrWhiteSpace(FieldLocation);
+        }
+
+        public bool FieldNotPresent
+        {
+            get => !FieldPresent;
+        }
+
         public bool WebsitePresent
         {
-            get => !String.IsNullOrEmpty(Website);
+            get => !String.IsNullOrWhiteSpace(Website);
         }
 
         public override string ToString()

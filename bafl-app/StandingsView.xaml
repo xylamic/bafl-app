@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="bafl_app.ScheduleView"
+             x:Class="bafl_app.StandingsView"
              Title="{Binding Path=TitleText}">
 
     <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsRefreshing}">
@@ -16,15 +16,15 @@
                        FontSize="Medium" HorizontalTextAlignment="Center" IsVisible="{Binding Path=HasMessage}"
                        BackgroundColor="{StaticResource Gray300}" Margin="0,0,0,5"/>
 
-                <Picker ItemsSource="{Binding Path=Weeks}" SelectedItem="{Binding SelectedWeek}" 
-                        ItemDisplayBinding="{Binding Path=WeekText}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
+                <Picker ItemsSource="{Binding Path=Standings}" SelectedItem="{Binding SelectedLevel}"
+                        ItemDisplayBinding="{Binding Path=Level}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
 
                 <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
 
                 <ActivityIndicator IsRunning="{Binding Path=IsLoading}" IsVisible="{Binding Path=IsLoading}" />
 
                 <!-- list of schedule items -->
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Matchups}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Teams}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid HorizontalOptions="CenterAndExpand" Margin="5">
@@ -32,32 +32,28 @@
                                     <RowDefinition />
                                     <RowDefinition />
                                     <RowDefinition />
-                                    <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="{Binding Away}" FontSize="Large" Grid.Row="0" HorizontalOptions="Center" />
-                                <HorizontalStackLayout Grid.Row="1" Margin="20,0,0,0" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="@" Grid.Column="1" FontSize="Large" TextColor="{StaticResource Secondary}" />
-                                    <Label Text="{Binding Home}" Grid.Row="1" FontSize="Large" Margin="10,0,0,0" />
+                                <HorizontalStackLayout Grid.ColumnSpan="4">
+                                    <Label Text="{Binding Rank}" Margin="0,0,5,0" FontSize="Medium" />
+                                    <Label Text="{Binding Team}" TextColor="{StaticResource Secondary}" FontSize="Medium" />
+                                    <Label Text="🏁" IsVisible="{Binding Path=Playoff}" VerticalTextAlignment="Center" Margin="10,0,0,0" />
                                 </HorizontalStackLayout>
                                 
-                                <FlexLayout BindableLayout.ItemsSource="{Binding Scores}" Grid.Row="2" Margin="0,0,0,0" Wrap="Wrap" JustifyContent="Center">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <HorizontalStackLayout Margin="5">
-                                                <Label Text="{Binding Level}" TextColor="{StaticResource Gray500}" FontSize="Small" />
-                                                <Label Text=" " />
-                                                <Label Text="{Binding Score}" />
-                                            </HorizontalStackLayout>
-                                        </DataTemplate>
 
-                                    </BindableLayout.ItemTemplate>
-                                </FlexLayout>
+                                <Label Text="{Binding WinsText}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="{Binding LossesText}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="{Binding TiesText}" Grid.Row="1" Grid.Column="2" />
+                                <Label Text="{Binding PointsText}" Grid.Row="1" Grid.Column="3" />
 
-                                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1" Grid.Row="3" Margin="5"/>
+                                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1"
+                                      Grid.Row="2" Grid.ColumnSpan="4" Margin="5"/>
                                 
                             </Grid>
                         </DataTemplate>

@@ -14,19 +14,16 @@
 
     <MenuItem Text="" />
 
-    <FlyoutItem Title="Season Schedule" Icon="{AppThemeBinding Light=schedule_light.png, Dark=schedule_dark.png}" IsVisible="False">
+    <FlyoutItem Title="Season Schedule" Icon="{AppThemeBinding Light=schedule_light.png, Dark=schedule_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:ScheduleView}" />
        </Tab>
     </FlyoutItem>
-    <MenuItem
-        Text="Football Scoreboard"
-        Clicked="FootballScoreboard_Clicked"
-        IconImageSource="{AppThemeBinding Light=scoreboard_light.png, Dark=scoreboard_dark.png}"/>
-    <MenuItem
-        Text="Football Standings"
-        Clicked="FootballStandings_Clicked"
-        IconImageSource="{AppThemeBinding Light=standings_light.png, Dark=standings_dark.png}"/>
+    <FlyoutItem Title="Season Standings" Icon="{AppThemeBinding Light=standings_light.png, Dark=standings_dark.png}">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:StandingsView}" />
+       </Tab>
+    </FlyoutItem>
     <FlyoutItem Title="Cheer Competition" Icon="{AppThemeBinding Light=cheer_light.png, Dark=cheer_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:CheerCompView}" />

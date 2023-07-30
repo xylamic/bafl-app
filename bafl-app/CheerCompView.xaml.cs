@@ -11,6 +11,7 @@ namespace bafl_app;
 public partial class CheerCompView : ContentPage
 {
     private bool _isLoading = true;
+    private bool _isRefreshing = false;
     private BaflEvent _event = new BaflEvent();
     private bool _firstLoad = true;
 
@@ -73,12 +74,13 @@ public partial class CheerCompView : ContentPage
                 _firstLoad = false;
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             LastUpdated = String.Format("V  Failed load {0}, try again  V", DateTime.Now.ToShortTimeString());
         }
 
         _isLoading = false;
+        _isRefreshing = false;
         OnPropertyChanged(null);
 
         (stackLay as IView).InvalidateMeasure();
@@ -157,11 +159,19 @@ public partial class CheerCompView : ContentPage
     }
 
     /// <summary>
+    /// Whether the page is currently refreshing.
+    /// </summary>
+    public bool IsRefreshing
+    {
+        get => _isRefreshing;
+    }
+
+    /// <summary>
     /// Whether the page is currently NOT loading.
     /// </summary>
     public bool IsNotLoading
     {
-        get => !_isLoading;
+        get => !IsLoading;
     }
 
     /// <summary>
@@ -231,13 +241,13 @@ public partial class CheerCompView : ContentPage
     /// <param name="e">The args.</param>
     protected void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
     {
-        if (_isLoading)
+        if (_isLoading || _isRefreshing)
             return;
 
         Task.Run(async () =>
         {
-            _isLoading = true;
-            OnPropertyChanged(nameof(IsLoading));
+            _isRefreshing = true;
+            OnPropertyChanged(nameof(IsRefreshing));
 
             await LoadView();
         });

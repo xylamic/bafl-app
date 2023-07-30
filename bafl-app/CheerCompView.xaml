@@ -89,6 +89,8 @@
 
                 <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
 
+                <ActivityIndicator IsRunning="{Binding Path=IsLoading}" IsVisible="{Binding Path=IsLoading}" />
+
                 <!-- list of schedule items -->
                 <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Items}" x:Name="layoutList">
                     <BindableLayout.ItemTemplate>
