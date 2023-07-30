@@ -7,8 +7,8 @@ using Microsoft.Maui.Controls;
 public partial class StandingsView : ContentPage
 {
     private bool _isLoading = true;
+    private bool _isRefreshing = false;
     private BaflStandings _standings = new BaflStandings();
-    private bool _firstLoad = true;
     private bool _isError = false;
     private BaflStandingEntry _selectedLevel;
 
@@ -98,6 +98,14 @@ public partial class StandingsView : ContentPage
     }
 
     /// <summary>
+    /// Get whether the page is refreshing.
+    /// </summary>
+    public bool IsRefreshing
+    {
+        get => _isRefreshing;
+    }
+
+    /// <summary>
     /// Get whether the load resulted in an error.
     /// </summary>
     public bool IsError
@@ -133,7 +141,6 @@ public partial class StandingsView : ContentPage
             LastUpdated = String.Format("V  Updated {0}  V", DateTime.Now.ToLongDateString());
 
             _isError = false;
-            _firstLoad = false;
         }
         catch (Exception ex)
         {
@@ -143,6 +150,7 @@ public partial class StandingsView : ContentPage
         }
 
         _isLoading = false;
+        _isRefreshing = false;
         OnPropertyChanged(null);
     }
 
@@ -153,13 +161,13 @@ public partial class StandingsView : ContentPage
     /// <param name="e">The args.</param>
     private void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
     {
-        if (_isLoading)
+        if (_isLoading || _isRefreshing)
             return;
 
         Task.Run(async () =>
         {
-            _isLoading = true;
-            OnPropertyChanged(nameof(IsLoading));
+            _isRefreshing = true;
+            OnPropertyChanged(nameof(IsRefreshing));
 
             await LoadView();
         });

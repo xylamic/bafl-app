@@ -8,9 +8,9 @@ public partial class ScheduleView : ContentPage
 {
     private bool _isLoading = true;
     private BaflGameCalendar _calendar = new BaflGameCalendar();
-    private bool _firstLoad = true;
     private bool _isError = false;
     private BaflGameWeek _selectedWeek = null;
+    private bool _isRefreshing = false;
 
     protected string _accessUrl = BaflUtilities.GAMECALENDAR_URL;
     protected string _accessCode = App.GetApiKey("calendar");
@@ -93,6 +93,11 @@ public partial class ScheduleView : ContentPage
         get => _isLoading;
     }
 
+    public bool IsRefreshing
+    {
+        get => _isRefreshing;
+    }
+
     /// <summary>
     /// Get whether the load resulted in an error.
     /// </summary>
@@ -151,7 +156,6 @@ public partial class ScheduleView : ContentPage
             LastUpdated = String.Format("V  Updated {0}  V", DateTime.Now.ToLongDateString());
 
             _isError = false;
-            _firstLoad = false;
         }
         catch (Exception ex)
         {
@@ -161,6 +165,7 @@ public partial class ScheduleView : ContentPage
         }
 
         _isLoading = false;
+        _isRefreshing = false;
         OnPropertyChanged(null);
     }
 
@@ -171,13 +176,14 @@ public partial class ScheduleView : ContentPage
     /// <param name="e">The args.</param>
     private void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
     {
-        if (_isLoading)
+        if (_isLoading || _isRefreshing)
             return;
 
         Task.Run(async () =>
         {
-            _isLoading = true;
+            _isRefreshing = true;
             OnPropertyChanged(nameof(IsLoading));
+            OnPropertyChanged(nameof(IsRefreshing));
 
             await LoadView();
         });

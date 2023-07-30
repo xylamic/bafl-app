@@ -4,7 +4,7 @@
              x:Class="bafl_app.StandingsView"
              Title="{Binding Path=TitleText}">
 
-    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsLoading}">
+    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsRefreshing}">
         <ScrollView x:Name="scrollViewMain">
             <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5">
                 <!-- refresh label and bar -->
@@ -20,6 +20,8 @@
                         ItemDisplayBinding="{Binding Path=Level}" x:Name="weekPicker" Margin="10" HorizontalTextAlignment="Center"/>
 
                 <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="5"/>
+
+                <ActivityIndicator IsRunning="{Binding Path=IsLoading}" IsVisible="{Binding Path=IsLoading}" />
 
                 <!-- list of schedule items -->
                 <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Teams}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
