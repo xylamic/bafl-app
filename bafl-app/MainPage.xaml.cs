@@ -21,12 +21,6 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
 
-        // Turn all buttons to the off state, except the schedule
-        VisualStateManager.GoToState(BoardButton, "Off");
-        VisualStateManager.GoToState(ContactButton, "Off");
-        VisualStateManager.GoToState(ClubListButton, "Off");
-        VisualStateManager.GoToState(ScheduleButton, "On");
-
         BindingContext = this;
 
         // initialize the page view
@@ -68,6 +62,48 @@ public partial class MainPage : ContentPage
                 _isLoading = value;
                 OnPropertyChanged(nameof(IsLoading));
             }
+        }
+    }
+
+    /// <summary>
+    /// Get the schedule text.
+    /// </summary>
+    public string ScheduleText
+    {
+        get
+        {
+            if (_scheduleShown)
+                return ">> Schedule <<";
+            else
+                return "Schedule";
+        }
+    }
+
+    /// <summary>
+    /// Get the board text.
+    /// </summary>
+    public string BoardText
+    {
+        get
+        {
+            if (_boardShown)
+                return ">> Board <<";
+            else
+                return "Board";
+        }
+    }
+
+    /// <summary>
+    /// Get the teams text.
+    /// </summary>
+    public string TeamsText
+    {
+        get
+        {
+            if (_clubsShown)
+                return ">> Teams <<";
+            else
+                return "Teams";
         }
     }
 
@@ -199,27 +235,22 @@ public partial class MainPage : ContentPage
                 BoardShown = false;
                 ClubsShown = false;
                 ScheduleShown = true;
-                VisualStateManager.GoToState(BoardButton, "Off");
-                VisualStateManager.GoToState(ClubListButton, "Off");
-                VisualStateManager.GoToState(ScheduleButton, "On");
                 break;
             case 1:
                 BoardShown = false;
                 ClubsShown = true;
                 ScheduleShown = false;
-                VisualStateManager.GoToState(BoardButton, "Off");
-                VisualStateManager.GoToState(ClubListButton, "On");
-                VisualStateManager.GoToState(ScheduleButton, "Off");
                 break;
             case 2:
                 BoardShown = true;
                 ClubsShown = false;
                 ScheduleShown = false;
-                VisualStateManager.GoToState(BoardButton, "On");
-                VisualStateManager.GoToState(ClubListButton, "Off");
-                VisualStateManager.GoToState(ScheduleButton, "Off");
                 break;
         }
+
+        OnPropertyChanged(nameof(ScheduleText));
+        OnPropertyChanged(nameof(TeamsText));
+        OnPropertyChanged(nameof(BoardText));
     }
 
     /// <summary>
