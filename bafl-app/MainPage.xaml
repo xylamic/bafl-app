@@ -38,11 +38,11 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Text="Schedule" Pressed="ScheduleButton_Pressed" Margin="10,10,10,0"
+            <Button Text="{Binding Path=ScheduleText}" Pressed="ScheduleButton_Pressed" Margin="10,10,10,0"
                 x:Name="ScheduleButton" Grid.Column="0" Grid.Row="0" HorizontalOptions="FillAndExpand" />
-            <Button Text="Teams" Pressed="TeamsButton_Pressed" Margin="10,10,10,0"
+            <Button Text="{Binding Path=TeamsText}" Pressed="TeamsButton_Pressed" Margin="10,10,10,0"
                 x:Name="ClubListButton" Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand" />
-            <Button Text="Board" Pressed="BoardButton_Pressed" Margin="10,10,10,10"
+            <Button Text="{Binding Path=BoardText}" Pressed="BoardButton_Pressed" Margin="10,10,10,10"
                 x:Name="BoardButton" IsEnabled="True" Grid.Column="0" Grid.Row="1" HorizontalOptions="FillAndExpand" />
             <Button Text="Contact Us" Pressed="ContactButton_Pressed" Margin="10,10,10,10"
                 x:Name="ContactButton" IsEnabled="True" Grid.Column="1" Grid.Row="1" HorizontalOptions="FillAndExpand" />
