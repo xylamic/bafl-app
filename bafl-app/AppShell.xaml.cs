@@ -78,5 +78,10 @@ public partial class AppShell : Shell
     {
         await OpenUrl("https://www.bayareafootballleague.org", true);
     }
+
+    async void Bylaws_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await OpenUrl("https://www.bayareafootballleague.org/by-laws", true);
+    }
 }
 

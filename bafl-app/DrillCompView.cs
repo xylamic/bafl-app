@@ -14,7 +14,6 @@ public class DrillCompView: CheerCompView
     {
         _viewType = ViewType.Drill;
         _accessUrl = BaflUtilities.DRILLCOMP_URL;
-        _accessCode = App.GetApiKey("drillcomp");
         _mainFilter = "Drill";
     }
 }

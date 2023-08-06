@@ -58,5 +58,9 @@
         Text="BAFL Facebook"
         Clicked="Facebook_Clicked"
         IconImageSource="facebook.png"/>
+    <MenuItem
+        Text="BAFL By-laws"
+        Clicked="Bylaws_Clicked"
+        IconImageSource="{AppThemeBinding Light=bylaws_light.png, Dark=bylaws_dark.png}"/>
 </Shell>
 

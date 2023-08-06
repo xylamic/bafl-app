@@ -13,7 +13,6 @@ public partial class ScheduleView : ContentPage
     private bool _isRefreshing = false;
 
     protected string _accessUrl = BaflUtilities.GAMECALENDAR_URL;
-    protected string _accessCode = App.GetApiKey("calendar");
 
     public ScheduleView()
     {
@@ -145,7 +144,7 @@ public partial class ScheduleView : ContentPage
         try
         {
             // construct the API key
-            string code = String.Format("?code={0}", _accessCode);
+            string code = String.Format("?code={0}", await App.GetApiKey());
 
             // try to read the latest configuration information.
             HttpClient client = new HttpClient();
