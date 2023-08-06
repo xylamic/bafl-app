@@ -17,7 +17,6 @@ public partial class CheerCompView : ContentPage
 
     protected ViewType _viewType = ViewType.Cheer;
     protected string _accessUrl = BaflUtilities.CHEERCOMP_URL;
-    protected string _accessCode = App.GetApiKey("cheercomp");
     protected string _mainFilter = "Cheer";
 
     public enum ViewType
@@ -55,7 +54,7 @@ public partial class CheerCompView : ContentPage
         try
         {
             // construct the API key
-            string code = String.Format("?code={0}", _accessCode);
+            string code = String.Format("?code={0}", await App.GetApiKey());
 
             // try to read the latest configuration information.
             HttpClient client = new HttpClient();

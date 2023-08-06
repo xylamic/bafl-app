@@ -23,12 +23,13 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		// instantiate the views
+        // instantiate the views
         builder.Services.AddSingleton<CheerCompView>();
         builder.Services.AddSingleton<DrillCompView>();
         builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<CashAppPayView>();
         builder.Services.AddSingleton<ZellePayView>();
+		builder.Services.AddSingleton<BylawsView>();
 
 		// build the app
         return builder.Build();

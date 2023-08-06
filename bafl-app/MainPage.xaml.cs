@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define ERROR_PRONE_BUTTONS
+
+using System;
 using bafl_app.library;
 using Microsoft.Maui.ApplicationModel;
 
@@ -9,8 +11,8 @@ namespace bafl_app;
 /// </summary>
 public partial class MainPage : ContentPage
 {
-    private bool _boardShown = true;
-    private bool _clubsShown = true;
+    private bool _boardShown = false;
+    private bool _clubsShown = false;
     private bool _scheduleShown = true;
     private bool _isLoading = true;
 
@@ -20,6 +22,13 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+
+#if ERROR_PRONE_BUTTONS
+        VisualStateManager.GoToState(ScheduleButton, "On");
+        VisualStateManager.GoToState(ClubListButton, "Off");
+        VisualStateManager.GoToState(BoardButton, "Off");
+        VisualStateManager.GoToState(ContactButton, "Off");
+#endif
 
         BindingContext = this;
 
@@ -73,7 +82,7 @@ public partial class MainPage : ContentPage
         get
         {
             if (_scheduleShown)
-                return ">> Schedule <<";
+                return "🏈  Schedule  📣";
             else
                 return "Schedule";
         }
@@ -87,7 +96,7 @@ public partial class MainPage : ContentPage
         get
         {
             if (_boardShown)
-                return ">> Board <<";
+                return "🏈  Board  📣";
             else
                 return "Board";
         }
@@ -101,7 +110,7 @@ public partial class MainPage : ContentPage
         get
         {
             if (_clubsShown)
-                return ">> Teams <<";
+                return "🏈  Teams  📣";
             else
                 return "Teams";
         }
@@ -235,16 +244,31 @@ public partial class MainPage : ContentPage
                 BoardShown = false;
                 ClubsShown = false;
                 ScheduleShown = true;
+#if ERROR_PRONE_BUTTONS
+                VisualStateManager.GoToState(ScheduleButton, "On");
+                VisualStateManager.GoToState(ClubListButton, "Off");
+                VisualStateManager.GoToState(BoardButton, "Off");
+#endif
                 break;
             case 1:
                 BoardShown = false;
                 ClubsShown = true;
                 ScheduleShown = false;
+#if ERROR_PRONE_BUTTONS
+                VisualStateManager.GoToState(ScheduleButton, "Off");
+                VisualStateManager.GoToState(ClubListButton, "On");
+                VisualStateManager.GoToState(BoardButton, "Off");
+#endif
                 break;
             case 2:
                 BoardShown = true;
                 ClubsShown = false;
                 ScheduleShown = false;
+#if ERROR_PRONE_BUTTONS
+                VisualStateManager.GoToState(ScheduleButton, "Off");
+                VisualStateManager.GoToState(ClubListButton, "Off");
+                VisualStateManager.GoToState(BoardButton, "On");
+#endif
                 break;
         }
 

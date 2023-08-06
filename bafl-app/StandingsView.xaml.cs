@@ -13,7 +13,6 @@ public partial class StandingsView : ContentPage
     private BaflStandingEntry _selectedLevel;
 
     protected string _accessUrl = BaflUtilities.STANDINGS_URL;
-    protected string _accessCode = App.GetApiKey("standings");
 
     public StandingsView()
     {
@@ -130,7 +129,7 @@ public partial class StandingsView : ContentPage
         try
         {
             // construct the API key
-            string code = String.Format("?code={0}", _accessCode);
+            string code = String.Format("?code={0}", await App.GetApiKey());
 
             // try to read the latest configuration information.
             HttpClient client = new HttpClient();

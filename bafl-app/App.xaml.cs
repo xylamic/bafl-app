@@ -18,7 +18,7 @@ public partial class App : Application
     private static string _board_cache_filename;
     private static string _schedule_cache_filename;
 
-    private static Dictionary<string, string> _apiKeys = new Dictionary<string, string>();
+    private static BaflAppConfig _config = new BaflAppConfig();
 
     /// <summary>
     /// Has the App been initiated.
@@ -70,13 +70,6 @@ public partial class App : Application
         if (_isInitiatied)
             return;
 
-        // load keys
-        using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("ApiKeys.json");
-        using StreamReader reader = new StreamReader(fileStream);
-        string rawContent = await reader.ReadToEndAsync();
-        _apiKeys = JsonSerializer.Deserialize<Dictionary<string, string>>(rawContent);
-        Console.WriteLine("Loaded API keys.");
-
         // verify cache files are ready
         await PreloadCacheCheck();
 
@@ -92,19 +85,33 @@ public partial class App : Application
     /// <summary>
     /// Get the API key.
     /// </summary>
-    /// <param name="name">The name for the key.</param>
     /// <returns>The key or NULL if not found.</returns>
-    public static string GetApiKey(string name)
+    public static async Task<string> GetApiKey()
     {
-        string val;
-        if (_apiKeys.TryGetValue(name, out val))
+        if (String.IsNullOrEmpty(_config.Key))
         {
-            return val;
+            try
+            {
+                // try to read the latest configuration information.
+                using (HttpClient client = new HttpClient())
+                {
+                    StringContent postContent = new StringContent("{\"context\": \"BaflApp\"}");
+                    HttpResponseMessage response = await client.PostAsync(BaflUtilities.CONFIG_URL,
+                        postContent);
+                    string keyContent = await response.Content.ReadAsStringAsync();
+                    _config = JsonSerializer.Deserialize<BaflAppConfig>(keyContent);
+
+                    Console.WriteLine("Successfully read config data from the APIs.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(String.Format("Error reading API data: {0}", ex.ToString()));
+                return "";
+            }
         }
-        else
-        {
-            return null;
-        }
+
+        return _config.Key;
     }
 
     /// <summary>
@@ -118,9 +125,14 @@ public partial class App : Application
             // try to read the latest configuration information.
             using (HttpClient client = new HttpClient())
             {
+                StringContent postContent = new StringContent("{\"context\": \"BaflApp\"}");
+                HttpResponseMessage response = await client.PostAsync(BaflUtilities.CONFIG_URL,
+                    postContent);
+                string keyContent = await response.Content.ReadAsStringAsync();
+                _config = JsonSerializer.Deserialize<BaflAppConfig>(keyContent);
+
                 string content = await client.GetStringAsync(String.Format("{0}?code={1}",
-                    BaflUtilities.COREINFO_URL,
-                    App.GetApiKey("coreinfo")));
+                    BaflUtilities.COREINFO_URL, await GetApiKey()));
 
                 Dictionary<string, string> contentDict = JsonSerializer.Deserialize<Dictionary<string, string>>(content);
 
