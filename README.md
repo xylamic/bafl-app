@@ -2,7 +2,7 @@
 
 This is the Bay Area Football League (BAFL) official app. This allows members and parents to have quick access to important information & tools to simplify the experience and operations.
 
-This is a mobile application targeted at iOS and Android, built on .Net MAUI for cross-platform application development. This is a single code base that targets all platforms. This is available as open source for anyone to download and propose fixes & enhancements.
+This is a mobile application targeted at iOS and Android, built on .Net MAUI for cross-platform application development. This is a single code base that targets all platforms. This is open to allow anyone to view and propose fixes & enhancements.
 
 This was initially developed and currently moderated by Adam Jordan (@xylamic).
 
@@ -19,7 +19,7 @@ The Azure hosting is fully implemented as Azure Functions directly in the Azure 
 
 # Building the code
 
-This was built on Windows & MacOS with Visual Studio 2022. It is currently dependent on .Net 6. This code can be pulled down and built with no prior steps required. Running it in debug mode will leverage the Azure hosting for data.
+This was built on Windows & MacOS with Visual Studio 2022. It is currently dependent on .Net 7. This code can be pulled down and built with no prior steps required. Running it in debug mode will leverage the Azure hosting for data.
 
 Building and deploying to the App Stores (Apple & Google) is done locally by @xylamic.
 
