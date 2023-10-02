@@ -1,5 +1,6 @@
 ﻿namespace bafl_app;
 
+using System;
 using bafl_app.library;
 
 /// <summary>
@@ -22,7 +23,18 @@ public partial class ZellePayView : ContentPage
     /// <param name="e">The args.</param>
     private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     {
-        await Browser.Default.OpenAsync(BaflUtilities.ZelleUrl, BrowserLaunchMode.External);
+        try
+        {
+#if IOS
+            await Browser.Default.OpenAsync(BaflUtilities.ZelleUrl, BrowserLaunchMode.External);
+#else
+            await Browser.Default.OpenAsync(BaflUtilities.ZelleUrl, BrowserLaunchMode.SystemPreferred);
+#endif
+        }
+        catch (Exception)
+        {
+            await DisplayAlert("Error", "Could not open the app.", "OK");
+        }
     }
 }
 

@@ -22,7 +22,18 @@ public partial class CashAppPayView : ContentPage
     /// <param name="e">The args.</param>
     private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     {
-        await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.External);
+        try
+        {
+#if IOS    
+            await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.External);
+#else
+            await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.SystemPreferred);
+#endif
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", "Could not open the app.", "OK");
+        }
     }
 }
 

@@ -46,7 +46,11 @@ public partial class AppShell : Shell
 
             if (external)
             {
+#if IOS
                 await Browser.Default.OpenAsync(uri, BrowserLaunchMode.External);
+#else
+                await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+#endif
             }
             else
             {
@@ -55,7 +59,7 @@ public partial class AppShell : Shell
         }
         catch (Exception)
         {
-            await DisplayAlert("Error", "Could not open the browser.", "OK");
+            await DisplayAlert("Error", "Could not open the browser or app.", "OK");
         }
     }
 
