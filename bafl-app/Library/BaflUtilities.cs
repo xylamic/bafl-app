@@ -24,6 +24,14 @@ namespace bafl_app.library
         public static readonly string ZelleUrl = "https://enroll.zellepay.com/qr-codes?data=ewogICJuYW1lIiA6ICJCQVkgQVJFQSBGT09UQkFMTCBMRUFHVUUgSU5DIiwKICAidG9rZW4iIDogImJhZmx0cmVhc3VyZXIyMUBnbWFpbC5jb20iLAogICJhY3Rpb24iIDogInBheW1lbnQiCn0=";
 
         public static readonly string CashAppUrl = "https://cash.app/$payBAFL?qr=1";
+
+        public static readonly string Msg_PullRefreshTime = "🔽  Updated {0}, pull to refresh  🔽";
+
+        public static readonly string Msg_FailRefreshTime = "🔽  Failed load {0}, try again  🔽";
+
+        public static readonly string Msg_PullRefreshDay = "🔽  Updated {0}  🔽";
+
+        public static readonly string Msg_FailRefreshDay = "🔽  Failed load, try again  🔽";
     }
 }
 

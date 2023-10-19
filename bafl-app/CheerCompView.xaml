@@ -4,9 +4,9 @@
              x:Class="bafl_app.CheerCompView"
              Title="{Binding Path=Name}">
 
-    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsLoading}">
-        <ScrollView x:Name="scrollViewMain">
-            <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5">
+    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsLoading}" BackgroundColor="LightBlue">
+        <ScrollView x:Name="scrollViewMain" BackgroundColor="Blue">
+            <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5" BackgroundColor="Green">
                 <!-- refresh label and bar -->
                 <Label Text="{Binding Path=LastUpdated}" FontSize="Micro" HorizontalOptions="Center" TextColor="{StaticResource Gray500}" />
                 <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1"/>
@@ -53,21 +53,11 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Text="{Binding Path=MainText}" HorizontalOptions="Fill" 
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0,8,0,8"
-                            Clicked="CheerSection_Clicked" x:Name="CheerButtonOn"
-                            IsVisible="{Binding Path=CheerShown}"/>
-                    <Button Text="{Binding Path=MainText}" HorizontalOptions="Fill" 
-                            Grid.Column="0" Margin="2,0,2,0" Padding="0,8,0,8"
-                            Clicked="CheerSection_Clicked" x:Name="CheerButtonOff"
-                            IsVisible="{Binding Path=MascotShown}"/>
-                    <Button Text="Mascot" HorizontalOptions="Fill" 
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0,8,0,8"
-                            Clicked="MascotSection_Clicked" x:Name="MascotButtonOn"
-                            IsVisible="{Binding Path=MascotShown}"/>
-                    <Button Text="Mascot" HorizontalOptions="Fill" 
-                            Grid.Column="1" Margin="2,0,2,0" Padding="0,8,0,8"
-                            Clicked="MascotSection_Clicked" x:Name="MascotButtonOff"
-                            IsVisible="{Binding Path=CheerShown}"/>
+                            Grid.Column="0" Margin="2,0,2,0" Padding="0,8,0,10"
+                            Clicked="CheerSection_Clicked"/>
+                    <Button Text="{Binding Path=MascotText}" HorizontalOptions="Fill" 
+                            Grid.Column="1" Margin="2,0,2,0" Padding="0,8,0,10"
+                            Clicked="MascotSection_Clicked"/>
                     <Image Source="{AppThemeBinding Light=goto_light.png, Dark=goto_dark.png}" Grid.Column="2" MaximumHeightRequest="30" MaximumWidthRequest="30">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Goto_Clicked" />
@@ -92,7 +82,7 @@
                 <ActivityIndicator IsRunning="{Binding Path=IsLoading}" IsVisible="{Binding Path=IsLoading}" />
 
                 <!-- list of schedule items -->
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Items}" x:Name="layoutList">
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Items}" x:Name="layoutList" BackgroundColor="Aqua">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid HorizontalOptions="Fill" Margin="5">

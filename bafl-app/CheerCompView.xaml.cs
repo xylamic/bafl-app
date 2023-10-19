@@ -15,15 +15,8 @@ public partial class CheerCompView : ContentPage
     private BaflEvent _event = new BaflEvent();
     private bool _firstLoad = true;
 
-    protected ViewType _viewType = ViewType.Cheer;
     protected string _accessUrl = BaflUtilities.CHEERCOMP_URL;
     protected string _mainFilter = "Cheer";
-
-    public enum ViewType
-    {
-        Cheer,
-        Drill
-    }
 
     /// <summary>
     /// Construct the view.
@@ -32,10 +25,6 @@ public partial class CheerCompView : ContentPage
 	{
 		InitializeComponent();
 
-        VisualStateManager.GoToState(CheerButtonOn, "On");
-        VisualStateManager.GoToState(CheerButtonOff, "Off");
-        VisualStateManager.GoToState(MascotButtonOn, "On");
-        VisualStateManager.GoToState(MascotButtonOff, "Off");
         CheerShown = true;
 
         // set binding to itself
@@ -62,7 +51,7 @@ public partial class CheerCompView : ContentPage
             _event = JsonSerializer.Deserialize<BaflEvent>(cheerContent);
 
             // set the text for the page header
-            LastUpdated = String.Format("V  Updated {0}, pull to refresh  V", DateTime.Now.ToShortTimeString());
+            LastUpdated = String.Format(BaflUtilities.Msg_PullRefreshTime, DateTime.Now.ToShortTimeString());
 
             if (_firstLoad)
             {
@@ -75,14 +64,12 @@ public partial class CheerCompView : ContentPage
         }
         catch (Exception)
         {
-            LastUpdated = String.Format("V  Failed load {0}, try again  V", DateTime.Now.ToShortTimeString());
+            LastUpdated = String.Format(BaflUtilities.Msg_FailRefreshTime, DateTime.Now.ToShortTimeString());
         }
 
         _isLoading = false;
         _isRefreshing = false;
         OnPropertyChanged(null);
-
-        (stackLay as IView).InvalidateMeasure();
     }
 
     /// <summary>
@@ -96,9 +83,29 @@ public partial class CheerCompView : ContentPage
     /// <summary>
     /// Get the main text for the form (e.g. Cheer or Drill)
     /// </summary>
-    public string MainText
+    virtual public string MainText
     {
-        get => _viewType.ToString();
+        get
+        {
+            if (CheerShown)
+                return "⭐️  Cheer  ⭐️";
+            else
+                return "Cheer";
+        }
+    }
+
+    /// <summary>
+    /// Get the mascot text for the form.
+    /// </summary>
+    public string MascotText
+    {
+        get
+        {
+            if (!CheerShown)
+                return "⭐️  Mascot  ⭐️";
+            else
+                return "Mascot";
+        }
     }
 
     /// <summary>
@@ -259,6 +266,8 @@ public partial class CheerCompView : ContentPage
         OnPropertyChanged(nameof(Items));
         OnPropertyChanged(nameof(CheerShown));
         OnPropertyChanged(nameof(MascotShown));
+        OnPropertyChanged(nameof(MainText));
+        OnPropertyChanged(nameof(MascotText));
     }
 
     protected void MascotSection_Clicked(System.Object sender, System.EventArgs e)
@@ -268,6 +277,8 @@ public partial class CheerCompView : ContentPage
         OnPropertyChanged(nameof(Items));
         OnPropertyChanged(nameof(CheerShown));
         OnPropertyChanged(nameof(MascotShown));
+        OnPropertyChanged(nameof(MainText));
+        OnPropertyChanged(nameof(MascotText));
     }
 
     protected async void TapGestureMoreInfo_Tapped(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -291,7 +302,7 @@ public partial class CheerCompView : ContentPage
         int index = (from i in Enumerable.Range(0, Items.Count()) where Items.ElementAt(i) == highlightItem select i).FirstOrDefault();
 
         Element v = layoutList.ElementAt(index) as Element;
-        await scrollViewMain.ScrollToAsync(v, ScrollToPosition.MakeVisible, true);
+        await scrollViewMain.ScrollToAsync(v, ScrollToPosition.Center, true);
     }
 
     /// <summary>

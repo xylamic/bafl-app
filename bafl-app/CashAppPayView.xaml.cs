@@ -30,7 +30,7 @@ public partial class CashAppPayView : ContentPage
             await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.SystemPreferred);
 #endif
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             await DisplayAlert("Error", "Could not open the app.", "OK");
         }
