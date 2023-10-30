@@ -33,6 +33,7 @@
                                     <RowDefinition />
                                     <RowDefinition />
                                     <RowDefinition />
+                                    <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
@@ -40,7 +41,7 @@
 
                                 <Label Text="{Binding Away}" FontSize="Large" Grid.Row="0" HorizontalOptions="Center" />
                                 <HorizontalStackLayout Grid.Row="1" Margin="20,0,0,0" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="@" Grid.Column="1" FontSize="Large" TextColor="{StaticResource Secondary}" />
+                                    <Label Text="{Binding GameNeutralityText}" Grid.Column="1" FontSize="Large" TextColor="{StaticResource Secondary}" />
                                     <Label Text="{Binding Home}" Grid.Row="1" FontSize="Large" Margin="10,0,0,0" />
                                 </HorizontalStackLayout>
                                 
@@ -57,7 +58,9 @@
                                     </BindableLayout.ItemTemplate>
                                 </FlexLayout>
 
-                                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1" Grid.Row="3" Margin="5"/>
+                                <Label Text="{Binding Details}" IsVisible="{Binding HasDetails}" Grid.Row="3" HorizontalOptions="Center" FontAttributes="Italic" FontSize="Small" />
+
+                                <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="Fill" HeightRequest="1" Grid.Row="4" Margin="5"/>
                                 
                             </Grid>
                         </DataTemplate>

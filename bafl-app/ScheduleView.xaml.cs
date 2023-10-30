@@ -121,7 +121,7 @@ public partial class ScheduleView : ContentPage
     {
         for (int index = 0; index < _calendar.Weeks.Count; index++)
         {
-            if (_calendar.Weeks[index].Date.AddDays(1) > DateTime.Now)
+            if (_calendar.Weeks[index].Date.AddDays(2) > DateTime.Now)
                 return index;
         }
 
