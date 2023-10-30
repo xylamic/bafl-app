@@ -43,7 +43,7 @@
                                 <HorizontalStackLayout Grid.ColumnSpan="4">
                                     <Label Text="{Binding Rank}" Margin="0,0,5,0" FontSize="Medium" />
                                     <Label Text="{Binding Team}" TextColor="{StaticResource Secondary}" FontSize="Medium" />
-                                    <Label Text="🏁" IsVisible="{Binding Path=Playoff}" VerticalTextAlignment="Center" Margin="10,0,0,0" />
+                                    <Label Text="⭐️" IsVisible="{Binding Path=Playoff}" VerticalTextAlignment="Center" Margin="10,0,0,0" />
                                 </HorizontalStackLayout>
                                 
 

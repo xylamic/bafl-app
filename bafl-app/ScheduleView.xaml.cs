@@ -121,7 +121,7 @@ public partial class ScheduleView : ContentPage
     {
         for (int index = 0; index < _calendar.Weeks.Count; index++)
         {
-            if (_calendar.Weeks[index].Date.AddDays(1) > DateTime.Now)
+            if (_calendar.Weeks[index].Date.AddDays(2) > DateTime.Now)
                 return index;
         }
 
@@ -152,7 +152,7 @@ public partial class ScheduleView : ContentPage
             _calendar = JsonSerializer.Deserialize<BaflGameCalendar>(scheduleContent);            
 
             // set the text for the page header
-            LastUpdated = String.Format("V  Updated {0}  V", DateTime.Now.ToLongDateString());
+            LastUpdated = String.Format(BaflUtilities.Msg_PullRefreshDay, DateTime.Now.ToLongDateString());
 
             _isError = false;
         }
@@ -160,7 +160,7 @@ public partial class ScheduleView : ContentPage
         {
             _isError = true;
             Console.WriteLine(ex.ToString());
-            LastUpdated = String.Format("V  Failed load, try again  V", DateTime.Now.ToShortTimeString());
+            LastUpdated = String.Format(BaflUtilities.Msg_FailRefreshDay, DateTime.Now.ToShortTimeString());
         }
 
         _isLoading = false;

@@ -12,9 +12,22 @@ public class DrillCompView: CheerCompView
 {
     public DrillCompView()
     {
-        _viewType = ViewType.Drill;
         _accessUrl = BaflUtilities.DRILLCOMP_URL;
         _mainFilter = "Drill";
+    }
+
+    /// <summary>
+    /// Get the main text for the form (e.g. Cheer or Drill)
+    /// </summary>
+    public override string MainText
+    {
+        get
+        {
+            if (CheerShown)
+                return "⭐️  Drill  ⭐️";
+            else
+                return "Drill";
+        }
     }
 }
 

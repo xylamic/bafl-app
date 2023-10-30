@@ -10,7 +10,6 @@ namespace bafl_app.library
         private int _wins;
         private int _losses;
         private int _ties;
-        private int _points;
         private bool _playoff;
         private int _rank;
 
@@ -23,7 +22,6 @@ namespace bafl_app.library
             _wins = 0;
             _losses = 0;
             _ties = 0;
-            _points = 0;
             _playoff = false;
             _rank = 0;
         }
@@ -32,13 +30,12 @@ namespace bafl_app.library
         /// Construct the item.
         /// </summary>
         public BaflStandingTeam(string team, int wins, int losses,
-            int ties, int points, bool playoff, int rank)
+            int ties, bool playoff, int rank)
         {
             _team = team;
             _wins = wins;
             _losses = losses;
             _ties = ties;
-            _points = points;
             _playoff = playoff;
             _rank = rank;
         }
@@ -106,10 +103,9 @@ namespace bafl_app.library
         /// <summary>
         /// The team points.
         /// </summary>
-        public int Points
+        public double Points
         {
-            get => _points;
-            set => _points = value;
+            get => (double)Wins + (0.5 * Ties);
         }
 
         /// <summary>
