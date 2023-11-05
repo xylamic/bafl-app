@@ -1,5 +1,5 @@
 ﻿using System;
-namespace bafl_app.library
+namespace bafl.library
 {
     /// <summary>
     /// An event in the BAFL schedule.

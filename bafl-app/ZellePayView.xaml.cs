@@ -1,7 +1,7 @@
 ﻿namespace bafl_app;
 
 using System;
-using bafl_app.library;
+using bafl.library;
 
 /// <summary>
 /// The Zelle view.

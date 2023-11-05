@@ -1,5 +1,5 @@
 ﻿using System;
-namespace bafl_app.library
+namespace bafl.library
 {
     /// <summary>
     /// The BAFL game calendar.

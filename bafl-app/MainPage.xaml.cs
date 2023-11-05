@@ -1,7 +1,7 @@
 ﻿//#define ERROR_PRONE_BUTTONS
 
 using System;
-using bafl_app.library;
+using bafl.library;
 using Microsoft.Maui.ApplicationModel;
 
 namespace bafl_app;

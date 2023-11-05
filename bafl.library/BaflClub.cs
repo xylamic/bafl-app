@@ -1,5 +1,5 @@
 ﻿using System;
-namespace bafl_app.library
+namespace bafl.library
 {
     public class BaflClub
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace bafl_app.library
+namespace bafl.library
 {
     public class BaflBoardMember
     {

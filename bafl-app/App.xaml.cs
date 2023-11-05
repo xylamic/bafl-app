@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using bafl_app.library;
+using bafl.library;
 
 namespace bafl_app;
 

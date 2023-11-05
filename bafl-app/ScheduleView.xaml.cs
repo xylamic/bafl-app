@@ -1,7 +1,7 @@
 ﻿namespace bafl_app;
 
 using System.Text.Json;
-using bafl_app.library;
+using bafl.library;
 using Microsoft.Maui.Controls;
 
 public partial class ScheduleView : ContentPage

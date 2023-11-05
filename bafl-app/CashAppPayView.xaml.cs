@@ -1,6 +1,6 @@
 ﻿namespace bafl_app;
 
-using bafl_app.library;
+using bafl.library;
 
 /// <summary>
 /// The CashApp view.
