@@ -1,11 +1,13 @@
-﻿{
+{
   "1": {
     "Region": "Alvin",
     "Football": "Raiders",
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/alvin.raiders.9/",
-    "President": "Harold Truax"
+    "President": "Harold Truax",
+		"FieldName": "3625 Briscoe Dr, Alvin, TX",
+		"FieldLocation": "29.393842, -95.243813"
   },
   "2": {
     "Region": "Angleton",
@@ -13,7 +15,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/CAYFA/",
-    "President": "Gilbert Gardner"
+    "President": "Gilbert Gardner",
+		"FieldName": "1 Wildcat Dr, Angleton, TX",
+		"FieldLocation": "29.175664, -95.416667"
   },
   "4": {
     "Region": "Bay Area",
@@ -21,7 +25,9 @@
     "Cheer": "Legacy",
     "Mascot": "Mermaids",
     "Website": "https://www.bayareabucs.org",
-    "President": "Adam Jordan"
+    "President": "Adam Jordan",
+		"FieldName": "Lutheran South Academy",
+		"FieldLocation": "29.586574, -95.189739"
   },
   "5": {
     "Region": "Brazosport",
@@ -29,15 +35,19 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/BEYFALonghorns/",
-    "President": "Bradi Austin"
+    "President": "Bradi Austin",
+		"FieldName": "Freeport Intermediate School",
+		"FieldLocation": "28.954581, -95.373360"
   },
   "6": {
     "Region": "East End",
     "Football": "Eagles",
     "Cheer": "",
     "Mascot": "",
-    "Website": "http://www.eastendeagles.com",
-    "President": "Chris Medina"
+    "Website": "https://www.facebook.com/eastendeagles?mibextid=LQQJ4d",
+    "President": "Chris Medina",
+		"FieldName": "Gragg Park",
+		"FieldLocation": "29.706933, -95.316574"
   },
   "7": {
     "Region": "Hitchcock",
@@ -45,7 +55,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.hometeamsonline.com/teams/?u=HITCHCOCKREDRAIDERS&s=football",
-    "President": "Chris Chambers"
+    "President": "Chris Chambers",
+		"FieldName": "Hitchcock High School",
+		"FieldLocation": "29.345598, -95.031989"
   },
   "8": {
     "Region": "La Porte",
@@ -53,7 +65,9 @@
     "Cheer": "Darlings",
     "Mascot": "Stars",
     "Website": "https://www.lptexansdarlings.com/",
-    "President": "Christi Reynolds"
+    "President": "Christi Reynolds",
+		"FieldName": "Baker 6th Grade Campus",
+		"FieldLocation": "29.662590, -95.083830"
   },
   "9": {
     "Region": "League City",
@@ -61,7 +75,9 @@
     "Cheer": "Goldrush",
     "Mascot": "Nuggets",
     "Website": "https://www.facebook.com/leaguecity49ersgoldrush/",
-    "President": "Leighton McCorkle"
+    "President": "Leighton McCorkle",
+		"FieldName": "Chester L. Davis Sportsplex",
+		"FieldLocation": "29.488665, -95.100156"
   },
   "10": {
     "Region": "Magnolia Park",
@@ -69,7 +85,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/sharks.mps/",
-    "President": "Gilbert Avila"
+    "President": "Gilbert Avila",
+		"FieldName": "341 South 75th, Houston, TX",
+		"FieldLocation": "29.729016, -95.294054"
   },
   "11": {
     "Region": "Manvel",
@@ -77,7 +95,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.themanveltexans.org",
-    "President": "Brian Harris"
+    "President": "Roderick Houston",
+		"FieldName": "19601 Hwy 6, Manvel, TX",
+		"FieldLocation": "29.471981, -95.364939"
   },
   "12": {
     "Region": "Pasadena",
@@ -85,7 +105,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/pasadenapantherstx/",
-    "President": "Rick Cordova"
+    "President": "Rick Cordova",
+		"FieldName": "Memorial High School",
+		"FieldLocation": "29.639864, -95.173472"
   },
   "13": {
     "Region": "Pearland",
@@ -93,7 +115,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/PearlandPatriots/",
-    "President": "Terrance Crump"
+    "President": "Terrance Crump",
+		"FieldName": "Dad’s Club (Pearland)",
+		"FieldLocation": "29.550780, -95.322061"
   },
   "14": {
     "Region": "Pearland",
@@ -101,7 +125,9 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/PearlandTexans/",
-    "President": "Jeremy Geters"
+    "President": "Jeremy Geters",
+		"FieldName": "Pressner Stadium",
+		"FieldLocation": "29.538651, -95.267154"
   },
   "15": {
     "Region": "Sagemont",
@@ -109,14 +135,18 @@
     "Cheer": "",
     "Mascot": "",
     "Website": "https://www.facebook.com/sagemont.cowboys/",
-    "President": "Denny Wranich Sr"
+    "President": "Denny Wranich Sr",
+		"FieldName": "El Franco Lee Park",
+		"FieldLocation": "29.593461, -95.256872"
   },
   "16": {
     "Region": "Southeast Houston",
     "Football": "Wildcats",
     "Cheer": "",
     "Mascot": "",
-    "Website": "https://www.facebook.com/Sehwildcats/",
-    "President": "Kevin Jensen"
+    "Website": "https://www.facebook.com/southeasthouston.wildcats.1?mibextid=ZbWKwL",
+    "President": "Kevin Jensen",
+		"FieldName": "2209 Theta St, Houston, TX",
+		"FieldLocation": "29.649318, -95.232916"
   }
 }
