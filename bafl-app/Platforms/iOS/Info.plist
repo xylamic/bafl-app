@@ -30,9 +30,5 @@
 	<string>14.2</string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
-	<key>CFBundleVersion</key>
-	<string>50</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.5.2</string>
 </dict>
 </plist>

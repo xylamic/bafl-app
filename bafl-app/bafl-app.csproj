@@ -19,8 +19,8 @@
 		<ApplicationIdGuid>0F25D2F5-E70F-47CF-B4C5-87B514A16FE7</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.6.0</ApplicationDisplayVersion>
+		<ApplicationVersion>51</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -50,5 +50,17 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Resources\Images\schedule9v9_light.png" />
+	  <None Remove="Resources\Images\standings9v9_light.png" />
+	  <None Remove="Resources\Images\schedule9v9_dark.png" />
+	  <None Remove="Resources\Images\standings9v9_dark.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\schedule9v9_light.png" />
+	  <BundleResource Include="Resources\Images\standings9v9_light.png" />
+	  <BundleResource Include="Resources\Images\schedule9v9_dark.png" />
+	  <BundleResource Include="Resources\Images\standings9v9_dark.png" />
 	</ItemGroup>
 </Project>

@@ -4,6 +4,18 @@ using System.Text.Json;
 using bafl_app.library;
 using Microsoft.Maui.Controls;
 
+public class StandingsViewRegular : StandingsView
+{
+    public StandingsViewRegular() : base(BaflUtilities.STANDINGS_URL)
+    { }
+}
+
+public class StandingsView9v9 : StandingsView
+{
+    public StandingsView9v9() : base(BaflUtilities.STANDINGS9V9_URL)
+    { }
+}
+
 public partial class StandingsView : ContentPage
 {
     private bool _isLoading = true;
@@ -12,10 +24,12 @@ public partial class StandingsView : ContentPage
     private bool _isError = false;
     private BaflStandingEntry _selectedLevel;
 
-    protected string _accessUrl = BaflUtilities.STANDINGS_URL;
+    protected string _accessUrl = "";
 
-    public StandingsView()
+    public StandingsView(string accessUrl)
     {
+        _accessUrl = accessUrl;
+
         InitializeComponent();
 
         // set binding to itself
@@ -124,7 +138,7 @@ public partial class StandingsView : ContentPage
     /// Load the view data.
     /// </summary>
     /// <returns>The async task.</returns>
-    private async Task LoadView()
+    protected async Task LoadView()
     {
         try
         {
@@ -158,7 +172,7 @@ public partial class StandingsView : ContentPage
     /// </summary>
     /// <param name="sender">The sender of the event.</param>
     /// <param name="e">The args.</param>
-    private void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
+    protected void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
     {
         if (_isLoading || _isRefreshing)
             return;
