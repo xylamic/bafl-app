@@ -16,12 +16,12 @@
 
     <FlyoutItem Title="Season Schedule" Icon="{AppThemeBinding Light=schedule_light.png, Dark=schedule_dark.png}">
        <Tab>
-           <ShellContent ContentTemplate="{DataTemplate local:ScheduleView}" />
+           <ShellContent ContentTemplate="{DataTemplate local:ScheduleViewRegular}" />
        </Tab>
     </FlyoutItem>
     <FlyoutItem Title="Season Standings" Icon="{AppThemeBinding Light=standings_light.png, Dark=standings_dark.png}">
        <Tab>
-           <ShellContent ContentTemplate="{DataTemplate local:StandingsView}" />
+           <ShellContent ContentTemplate="{DataTemplate local:StandingsViewRegular}" />
        </Tab>
     </FlyoutItem>
     <FlyoutItem Title="Cheer Competition" Icon="{AppThemeBinding Light=cheer_light.png, Dark=cheer_dark.png}">
@@ -32,6 +32,16 @@
     <FlyoutItem Title="Drill Competition" Icon="{AppThemeBinding Light=drill_light.png, Dark=drill_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:DrillCompView}" />
+       </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="9v9 Schedule" Icon="{AppThemeBinding Light=schedule9v9_light.png, Dark=schedule9v9_dark.png}">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:ScheduleView9v9}" />
+       </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="9v9 Standings" Icon="{AppThemeBinding Light=standings9v9_light.png, Dark=standings9v9_dark.png}">
+       <Tab>
+           <ShellContent ContentTemplate="{DataTemplate local:StandingsView9v9}" />
        </Tab>
     </FlyoutItem>
 

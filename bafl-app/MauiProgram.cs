@@ -30,8 +30,10 @@ public static class MauiProgram
 		builder.Services.AddSingleton<CashAppPayView>();
         builder.Services.AddSingleton<ZellePayView>();
 		builder.Services.AddSingleton<BylawsView>();
+        builder.Services.AddSingleton<ScheduleViewRegular>();
+        builder.Services.AddSingleton<ScheduleView9v9>();
 
-		// build the app
+        // build the app
         return builder.Build();
 	}
 }
