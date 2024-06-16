@@ -3,14 +3,14 @@
 using bafl_app.library;
 
 /// <summary>
-/// The CashApp view.
+/// The Square view.
 /// </summary>
-public partial class CashAppPayView : ContentPage
+public partial class SquareView : ContentPage
 {
     /// <summary>
     /// Construct the view.
     /// </summary>
-	public CashAppPayView()
+	public SquareView()
 	{
         InitializeComponent();
     }
@@ -25,9 +25,9 @@ public partial class CashAppPayView : ContentPage
         try
         {
 #if IOS    
-            await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.External);
+            await Browser.Default.OpenAsync(BaflUtilities.SquareUrl, BrowserLaunchMode.External);
 #else
-            await Browser.Default.OpenAsync(BaflUtilities.CashAppUrl, BrowserLaunchMode.SystemPreferred);
+            await Browser.Default.OpenAsync(BaflUtilities.SquareUrl, BrowserLaunchMode.SystemPreferred);
 #endif
         }
         catch (Exception)

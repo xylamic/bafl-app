@@ -29,6 +29,8 @@ namespace bafl_app.library
 
         public static readonly string CashAppUrl = "https://cash.app/$payBAFL?qr=1";
 
+        public static readonly string SquareUrl = "https://square.link/u/anPW8szd";
+
         public static readonly string Msg_PullRefreshTime = "🔽  Updated {0}, pull to refresh  🔽";
 
         public static readonly string Msg_FailRefreshTime = "🔽  Failed load {0}, try again  🔽";

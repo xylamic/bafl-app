@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="bafl_app.CashAppPayView"
-             Title="CashApp">
+             x:Class="bafl_app.SquareView"
+             Title="Square">
 
     <Grid Margin="10,20,10,10">
         <Grid.RowDefinitions>
@@ -12,8 +12,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Text="$payBAFL" FontSize="Large" TextColor="Green" HorizontalTextAlignment="Center" Grid.Row="0" />
-        <Image Source="cashapp_code.png" WidthRequest="250" HeightRequest="250" Grid.Row="1" Margin="0,20,0,20" >
+        <Label Text="Square" FontSize="Large" TextColor="Green" HorizontalTextAlignment="Center" Grid.Row="0" />
+        <Image Source="square_code.png" WidthRequest="250" HeightRequest="250" Grid.Row="1" Margin="0,20,0,20" >
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
             </Image.GestureRecognizers>

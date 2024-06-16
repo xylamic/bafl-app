@@ -47,6 +47,12 @@
     "Location": "Team Fields"
   },
   {
+    "Date": "2024-10-06",
+    "Name": "Cheer Competition",
+    "Location": "Moody Gardens",
+    "Notable": true
+  },
+  {
     "Date": "2024-10-12",
     "Name": "Football - Week 9",
     "Location": "Team Fields"
@@ -55,12 +61,6 @@
     "Date": "2024-10-19",
     "Name": "Football - Week 10",
     "Location": "Team Fields"
-  },
-  {
-    "Date": "2024-10-20",
-    "Name": "Date TBA: Cheer Comp",
-    "Location": "TBA",
-    "Notable": true
   },
   {
     "Date": "2024-10-26",
@@ -86,7 +86,7 @@
     "Notable": true
   },
   {
-    "Date": "2024-11-23",
+    "Date": "2024-12-07",
     "Name": "Super Bowl",
     "Location": "TBA",
     "Notable": true

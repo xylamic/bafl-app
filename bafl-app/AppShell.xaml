@@ -34,7 +34,7 @@
            <ShellContent ContentTemplate="{DataTemplate local:DrillCompView}" />
        </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="9v9 Schedule" Icon="{AppThemeBinding Light=schedule9v9_light.png, Dark=schedule9v9_dark.png}">
+    <!--<FlyoutItem Title="9v9 Schedule" Icon="{AppThemeBinding Light=schedule9v9_light.png, Dark=schedule9v9_dark.png}">
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:ScheduleView9v9}" />
        </Tab>
@@ -43,13 +43,13 @@
        <Tab>
            <ShellContent ContentTemplate="{DataTemplate local:StandingsView9v9}" />
        </Tab>
-    </FlyoutItem>
+    </FlyoutItem>-->
 
     <MenuItem Text="" />
 
-    <FlyoutItem Title="Pay BAFL: CashApp" Icon="cashapp.png">
+    <FlyoutItem Title="Pay BAFL: Square" Icon="square.png">
         <Tab>
-            <ShellContent ContentTemplate="{DataTemplate local:CashAppPayView}" />
+            <ShellContent ContentTemplate="{DataTemplate local:SquareView}" />
         </Tab>
     </FlyoutItem>
     <FlyoutItem Title="Pay BAFL: Zelle" Icon="zelle.png" >

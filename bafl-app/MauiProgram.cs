@@ -27,7 +27,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<CheerCompView>();
         builder.Services.AddSingleton<DrillCompView>();
         builder.Services.AddSingleton<MainPage>();
-		builder.Services.AddSingleton<CashAppPayView>();
+		builder.Services.AddSingleton<SquareView>();
         builder.Services.AddSingleton<ZellePayView>();
 		builder.Services.AddSingleton<BylawsView>();
         builder.Services.AddSingleton<ScheduleViewRegular>();
