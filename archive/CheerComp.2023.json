@@ -1,0 +1,386 @@
+{
+  "Name": "2023 Cheer Competition",
+  "Date":  "2023-10-15",
+  "Message": "Congratulations to all the winners! Same time next year.",
+  "DoorsOpen": "9:00AM",
+	"MoreInfo": "https://www.bayareafootballleague.org/cheer-competition",
+	"Tickets": "",
+  "Schedule": [
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "10:00AM",
+      "Name": "🔆 Welcome & Introduction",
+      "Status": "10:00A",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "10:10AM",
+      "Name": "🇺🇸 Presentation of the Flags",
+      "Status": "10:09A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "10:20AM",
+      "Name": "📣 BAFL Cheer",
+      "Status": "10:15A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "",
+      "Name": "🔷 NOVICE",
+      "Status": "",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "10:30AM",
+      "Name": "Pearland Texans",
+      "Status": "10:30A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "10:45AM",
+      "Name": "Angleton Wildcats",
+      "Status": "10:50A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "11:00AM",
+      "Name": "League City 49ers",
+      "Status": "11:06A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "11:15AM",
+      "Name": "☕️ 5m BREAK",
+      "Status": "11:19A",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "11:20AM",
+      "Name": "Bay Area Buccaneers",
+      "Status": "11:23A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "11:35AM",
+      "Name": "Pearland Patriots",
+      "Status": "11:35A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "11:50AM",
+      "Name": "Alvin Raiders",
+      "Status": "11:46A",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "12:05PM",
+      "Name": "☕️ 15m BREAK",
+      "Status": "11:57A",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "",
+      "Name": "🔷 INTERMD",
+      "Status": "",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "12:20PM",
+      "Name": "Hitchcock Red Raiders",
+      "Status": "12:30P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "12:35PM",
+      "Name": "Sagemont Cowboys",
+      "Status": "12:42P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "12:50PM",
+      "Name": "Manvel Texans",
+      "Status": "12:55P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "1:05PM",
+      "Name": "☕️ 5m BREAK",
+      "Status": "1:06P",
+      "Highlight": false,
+      "Notable": true
+    },
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "1:10PM",
+      "Name": "La Porte Texans",
+      "Status": "1:11P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "1:25PM",
+      "Name": "Brazosport Longhorns",
+      "Status": "1:22P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "1:40PM",
+      "Name": "☕️ 15m BREAK",
+      "Status": "1:32P",
+      "Highlight": false,
+      "Notable": true
+		},
+    {
+      "Group": "Cheer",
+      "ScheduledStart": "",
+      "Name": "🔷 ADVANCED",
+      "Status": "",
+      "Highlight": false,
+      "Notable": false
+    },
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "1:55PM",
+      "Name": "Magnolia Park Sharks",
+      "Status": "1:48P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "2:10PM",
+      "Name": "Southeast Houston Wildcats",
+      "Status": "2:05P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "2:25PM",
+      "Name": "East End Eagles",
+      "Status": "2:17P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "2:40PM",
+      "Name": "Pasadena Panthers",
+      "Status": "2:40P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Cheer",
+      "ScheduledStart": "2:55PM",
+      "Name": "☕️ 20m BREAK, start Mascots",
+      "Status": "2:57P >> switch to Mascots tab",
+      "Highlight": false,
+      "Notable": true
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "2:55PM",
+      "Name": "☕️ 20m BREAK, start Mascots",
+      "Status": "2:57P",
+      "Highlight": false,
+      "Notable": true
+		},
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "3:15PM",
+      "Name": "Pearland Texans",
+      "Status": "3:27P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "3:25PM",
+      "Name": "Angleton Wildcats",
+      "Status": "3:33P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "3:35PM",
+      "Name": "League City 49ers",
+      "Status": "3:40P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "3:45PM",
+      "Name": "Bay Area Buccaneers",
+      "Status": "3:55P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "3:55PM",
+      "Name": "Pearland Patriots",
+      "Status": "4:00P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "4:05PM",
+      "Name": "Alvin Raiders",
+      "Status": "4:06P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "4:15PM",
+      "Name": "☕️ 5m BREAK",
+      "Status": "4:12P",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "4:20PM",
+      "Name": "** Sagemont Cowboys",
+      "Status": "4:20P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "4:30PM",
+      "Name": "** Hitchcock Red Raiders",
+      "Status": "4:34P",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "4:40PM",
+      "Name": "Manvel Texans",
+      "Status": "4:57P",
+      "Highlight": false,
+      "Notable": false
+    },
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "4:50PM",
+      "Name": "La Porte Texans",
+      "Status": "5:05P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:00PM",
+      "Name": "Brazosport Longhorns",
+      "Status": "5:12P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:10PM",
+      "Name": "☕️ 5m BREAK",
+      "Status": "5:15P",
+      "Highlight": false,
+      "Notable": true
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:15PM",
+      "Name": "Magnolia Park Sharks",
+      "Status": "5:24P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:25PM",
+      "Name": "Southeast Houston Wildcats",
+      "Status": "5:38P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:35PM",
+      "Name": "East End Eagles",
+      "Status": "5:47P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:45PM",
+      "Name": "Pasadena Panthers",
+      "Status": "6:05P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "5:55PM",
+      "Name": "☕️ 15m BREAK",
+      "Status": "6:13P",
+      "Highlight": false,
+      "Notable": true
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "6:10PM",
+      "Name": "Teams Return",
+      "Status": "6:30P",
+      "Highlight": false,
+      "Notable": false
+		},
+		{
+			"Group": "Mascot",
+      "ScheduledStart": "6:20PM",
+      "Name": "🏆 Awards Ceremony",
+      "Status": "6:42P",
+      "Highlight": false,
+      "Notable": true
+		}
+  ]
+}

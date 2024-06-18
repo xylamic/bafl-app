@@ -1,0 +1,2289 @@
+{
+  "Title": "2023 Schedule",
+  "Message": "Congratulations to the Super Bowl Champions!",
+  "Weeks": [
+    {
+      "Week": "Week 1",
+      "Date": "2023-08-12",
+      "Matchups": [
+        {
+          "Home": "Alvin Raiders",
+          "Away": "East End Eagles",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "8-36"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-30"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "7-23"
+						},
+						{
+							"Level": "Junior",
+							"Score": "28-39"
+						},
+						{
+							"Level": "Senior",
+							"Score": "45-14"
+						}
+					]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Angleton Wildcats",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "21-15"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "49-6"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "25-6"
+						},
+						{
+							"Level": "Junior",
+							"Score": "12-0"
+						},
+						{
+							"Level": "Senior",
+							"Score": "0-28"
+						}
+					]
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Pearland Texans",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "6-28"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-50"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "7-39"
+						},
+						{
+							"Level": "Junior",
+							"Score": "6-28"
+						},
+						{
+							"Level": "Senior",
+							"Score": "51-0"
+						}
+					]
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Sagemont Cowboys",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "24-12"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "30-6"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-36"
+						},
+						{
+							"Level": "Junior",
+							"Score": "62-12"
+						},
+						{
+							"Level": "Senior",
+							"Score": "18-6"
+						}
+					]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "La Porte Texans",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "12-43"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "6-0"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-34"
+						},
+						{
+							"Level": "Junior",
+							"Score": "0-43"
+						},
+						{
+							"Level": "Senior",
+							"Score": "39-0"
+						}
+					]
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Southeast Houston Wildcats",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "6-36"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "15-32"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "13-6"
+						},
+						{
+							"Level": "Junior",
+							"Score": "25-26"
+						},
+						{
+							"Level": "Senior",
+							"Score": "0-1"
+						}
+					]
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Magnolia Park Sharks",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "13-20"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "16-21"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "35-7"
+						},
+						{
+							"Level": "Junior",
+							"Score": "21-7"
+						},
+						{
+							"Level": "Senior",
+							"Score": "12-32"
+						}
+					]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 2",
+      "Date": "2023-08-19",
+      "Matchups": [
+        {
+          "Home": "Alvin Raiders",
+          "Away": "Sagemont Cowboys",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "25-8"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "44-0"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "6-38"
+						},
+						{
+							"Level": "Junior",
+							"Score": "57-0"
+						},
+						{
+							"Level": "Senior",
+							"Score": "51-0"
+						}
+					]
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Magnolia Park Sharks",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "9-41"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-37"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-44"
+						},
+						{
+							"Level": "Junior",
+							"Score": "12-18"
+						},
+						{
+							"Level": "Senior",
+							"Score": "14-0"
+						}
+					]
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Bay Area Buccaneers",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "50-0"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "53-0"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "31-8"
+						},
+						{
+							"Level": "Junior",
+							"Score": "53-6"
+						},
+						{
+							"Level": "Senior",
+							"Score": "7-40"
+						}
+					]
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Hitchcock Red Raiders",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "27-6"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "22-0"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "42-0"
+						},
+						{
+							"Level": "Junior",
+							"Score": "54-0"
+						},
+						{
+							"Level": "Senior",
+							"Score": "13-7"
+						}
+					]
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Pasadena Panthers",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "21-18"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-56"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-55"
+						},
+						{
+							"Level": "Junior",
+							"Score": "0-42"
+						},
+						{
+							"Level": "Senior",
+							"Score": "20-7"
+						}
+					]
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Pearland Patriots",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "19-18"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "6-20"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-33"
+						},
+						{
+							"Level": "Junior",
+							"Score": "8-19"
+						},
+						{
+							"Level": "Senior",
+							"Score": "6-12"
+						}
+					]
+        },
+        {
+          "Home": "Southeast Houston Wildcats",
+          "Away": "Manvel Texans",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "27-6"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "34-28"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-52"
+						},
+						{
+							"Level": "Junior",
+							"Score": "6-24"
+						},
+						{
+							"Level": "Senior",
+							"Score": "49-0"
+						}
+					]
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 3",
+      "Date": "2023-08-26",
+      "Matchups": [
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Alvin Raiders",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "0-31"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-53"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-14"
+						},
+						{
+							"Level": "Junior",
+							"Score": "0-44"
+						},
+						{
+							"Level": "Senior",
+							"Score": "0-27"
+						}]
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "League City 49ers",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "34-38"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "14-20"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "35-6"
+						},
+						{
+							"Level": "Junior",
+							"Score": "14-20"
+						},
+						{
+							"Level": "Senior",
+							"Score": "60-0"
+						}]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Brazosport Longhorns",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "20-14"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "28-7"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "49-0"
+						},
+						{
+							"Level": "Junior",
+							"Score": "14-0"
+						},
+						{
+							"Level": "Senior",
+							"Score": "9-37"
+						}]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "East End Eagles",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "0-49"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-61"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "0-49"
+						},
+						{
+							"Level": "Junior",
+							"Score": "0-59"
+						},
+						{
+							"Level": "Senior",
+							"Score": "6-33"
+						}]
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "La Porte Texans",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "13-59"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "27-0"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "41-0"
+						},
+						{
+							"Level": "Junior",
+							"Score": "0-29"
+						},
+						{
+							"Level": "Senior",
+							"Score": "42-6"
+						}]
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Pearland Texans",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "20-6"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "0-26"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "7-14"
+						},
+						{
+							"Level": "Junior",
+							"Score": "8-20"
+						},
+						{
+							"Level": "Senior",
+							"Score": "12-28"
+						}]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Southeast Houston Wildcats",
+					"Scores": [
+						{
+							"Level": "Peewee",
+							"Score": "12-32"
+						},
+						{
+							"Level": "Freshman",
+							"Score": "7-12"
+						},
+						{
+							"Level": "Sophomore",
+							"Score": "14-25"
+						},
+						{
+							"Level": "Junior",
+							"Score": "40-27"
+						},
+						{
+							"Level": "Senior",
+							"Score": "0-52"
+						}]
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 4",
+      "Date": "2023-09-02",
+      "Matchups": [
+        {
+          "Home": "La Porte Texans",
+          "Away": "Alvin Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "25-30"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-46"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "18-33"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "14-46"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-33"
+			  }]
+        },
+        {
+          "Home": "Southeast Houston Wildcats",
+          "Away": "Angleton Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "38-12"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "44-6"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-14"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "40-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "39-0"
+			  }]
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Bay Area Buccaneers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "26-9"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "36-6"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-8"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "32-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-39"
+			  }]
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Pasadena Panthers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "21-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "33-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-43"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "30-20"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "63-0"
+			  }]
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Hitchcock Red Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "34-14"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "41-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "18-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "48-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "34-7"
+			  }]
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Manvel Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "20-28"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "20-28"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-1"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-52"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "7-14"
+			  }]
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Magnolia Park Sharks",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-39"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-14"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "19-7"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-20"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "21-0"
+			  }]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 5",
+      "Date": "2023-09-09",
+      "Matchups": [
+        {
+          "Home": "Alvin Raiders",
+          "Away": "Pearland Patriots",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "20-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "51-6"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "44-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "59-0"
+			  }]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Angleton Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-7"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "13-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-12"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-36"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-38"
+			  }]
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Brazosport Longhorns",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "13-7"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "25-31"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "20-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "6-45"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "7-6"
+			  }]
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Pearland Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "34-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "50-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "12-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "45-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "20-18"
+			  }]
+        },
+        {
+          "Home": "Southeast Houston Wildcats",
+          "Away": "La Porte Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "12-28"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "42-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "13-28"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "40-34"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "40-0"
+			  }]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "League City 49ers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "26-6"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "41-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "45-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "10-13"
+			  }]
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Sagemont Cowboys",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "35-13"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "14-13"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "1-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "63-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-20"
+			  }]
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 6",
+      "Date": "2023-09-16",
+      "Matchups": [
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Alvin Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "20-28"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-52"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "9-49"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-28"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "40-0"
+			  }]
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "La Porte Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "14-40"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-16"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "7-26"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "-"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "-"
+			  }]
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Brazosport Longhorns",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "35-14"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "34-8"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "6-28"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "27-13"
+			  }]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "East End Eagles",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-20"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-48"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-46"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-56"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "6-40"
+			  }]
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Southeast Houston Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "25-15"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-33"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "19-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "13-21"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-34"
+			  }]
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Pasadena Panthers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-7"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "6-56"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "1-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-28"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "48-2"
+			  }]
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "BYE"
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 7",
+      "Date": "2023-09-23",
+      "Matchups": [
+        {
+          "Home": "Alvin Raiders",
+          "Away": "Manvel Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "27-7"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "42-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-1"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "13-43"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "53-8"
+			  }]
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Pearland Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-28"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-35"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-28"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-28"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "13-6"
+			  }]
+        },
+        {
+          "Home": "Southeast Houston Wildcats",
+          "Away": "Bay Area Buccaneers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "42-21"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "50-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "19-21"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "19-21"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "14-0"
+			  }]
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Pearland Patriots",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-25"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "12-13"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "15-12"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "14-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "15-14"
+			  }]
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "League City 49ers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "40-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "60-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "44-0"
+			  }]
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Hitchcock Red Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-18"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "20-7"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "49-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "15-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "28-13"
+			  }]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Magnolia Park Sharks",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "13-27"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "32-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "27-12"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "37-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "6-29"
+			  }]
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 8",
+      "Date": "2023-09-30",
+      "Matchups": [
+        {
+          "Home": "Southeast Houston Wildcats",
+          "Away": "Alvin Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "39-46"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "6-38"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-45"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "21-59"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "-"
+			  }]
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Angleton Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "18-13"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "8-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "33-12"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "43-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "45-0"
+			  }]
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Sagemont Cowboys",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "41-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "60-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-34"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "57-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "28-14"
+			  }]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Magnolia Park Sharks",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-36"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "18-28"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-40"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "6-12"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-27"
+			  }]
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "League City 49ers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "43-22"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "13-6"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "48-20"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "33-12"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-44"
+			  }]
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Pearland Patriots",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-13"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "14-13"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "1-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "43-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "34-14"
+			  }]
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Pasadena Panthers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "20-18"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "12-20"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-41"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-39"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "50-0"
+			  }]
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 9",
+      "Date": "2023-10-07",
+      "Matchups": [
+        {
+          "Home": "Alvin Raiders",
+          "Away": "Pasadena Panthers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "18-20"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "13-19"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-44"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "6-28"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "1-0"
+			  }]
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Angleton Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "21-26"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "22-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "14-21"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "13-6"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "6-54"
+			  }]
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Bay Area Buccaneers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "27-12"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "29-8"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "44-6"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "6-26"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-53"
+			  }]
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "East End Eagles",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "16-33"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-49"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "6-40"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "1-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "18-0"
+			  }]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Hitchcock Red Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-8"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "38-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "33-31"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "47-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "14-21"
+			  }]
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Manvel Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "41-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "13-38"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-1"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-1"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-43"
+			  }]
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Pearland Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-42"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "6-20"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "18-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-42"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "6-19"
+			  }]
+        },
+        {
+          "Home": "Southeast Houston Wildcats",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Pasadean Panthers",
+          "Away": "Brazosport Longhorns",
+		  "Scores": [
+			  {
+				  "Level": "Week 3 - Junior",
+				  "Score": "1-0"
+			  }]
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "La Porte Texans",
+		  "Scores": [
+			  {
+				  "Level": "Week 6 - Junior",
+				  "Score": "6-21"
+			  },
+			  {
+				  "Level": "Week 6 - Senior",
+				  "Score": "1-0"
+			  }]
+        }
+      ]
+    },
+    {
+      "Week": "Week 10",
+      "Date": "2023-10-14",
+      "Matchups": [
+        {
+          "Home": "League City 49ers",
+          "Away": "Alvin Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "20-42"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-48"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-54"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-54"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-14"
+			  }]
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Brazosport Longhorns",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-6"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "21-27"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "1-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-1"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "7-8"
+			  }]
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Sagemont Cowboys",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "36-28"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-19"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-45"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "45-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "53-0"
+			  }]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Hitchcock Red Raiders",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-6"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "44-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "61-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-26"
+			  }]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "La Porte Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "13-21"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "21-6"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "13-34"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "27-48"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "24-0"
+			  }]
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Southeast Houston Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "34-8"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-12"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "34-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "19-6"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-24"
+			  }]
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "BYE"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 11",
+      "Date": "2023-10-21",
+      "Matchups": [
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Brazosport Longhorns",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "7-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "7-39"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-14"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-58"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "7-6"
+			  }]
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Bay Area Buccaneers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "48-19"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "13-7"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "39-12"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "29-42"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-49"
+			  }]
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "East End Eagles",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "0-18"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "0-48"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "7-33"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-51"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "33-26"
+			  }]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "League City 49ers",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "15-32"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "18-26"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "20-20"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "18-26"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "14-0"
+			  }]
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Manvel Texans",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "20-6"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "42-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "0-1"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "0-57"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "21-19"
+			  }]
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Pearland Patriots",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "12-39"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "8-19"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "47-6"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "6-38"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "6-21"
+			  }]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Southeast Houston Wildcats",
+		  "Scores": [
+			  {
+				  "Level": "Peewee",
+				  "Score": "6-0"
+			  },
+			  {
+				  "Level": "Freshman",
+				  "Score": "27-0"
+			  },
+			  {
+				  "Level": "Sophomore",
+				  "Score": "56-0"
+			  },
+			  {
+				  "Level": "Junior",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Senior",
+				  "Score": "0-1"
+			  }]
+        },
+        {
+          "Home": "Alvin Raiders",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Playoffs - Round 1",
+      "Date": "2023-10-28",
+      "Matchups": [
+        {
+          "Home": "All fields",
+          "Away": "Peewee",
+		  "Scores": [
+			  {
+				  "Level": "Bay Area vs Brazosport",
+				  "Score": "27-19"
+			  },
+			  {
+				  "Level": "Pearland P. vs Sagemont",
+				  "Score": "0-19"
+			  },
+			  {
+				  "Level": "Hitchcock vs League City",
+				  "Score": "26-21"
+			  },
+			  {
+				  "Level": "Manvel vs Angleton",
+				  "Score": "12-7"
+			  }]
+        },
+        {
+          "Home": "Presner Stadium",
+          "Away": "Freshmen",
+		  "Scores": [
+			  {
+				  "Level": "Angleton vs Magnolia Park",
+				  "Score": "37-6"
+			  },
+			  {
+				  "Level": "La Porte vs League City",
+				  "Score": "12-6"
+			  },
+			  {
+				  "Level": "Hitchcock vs Sagemont",
+				  "Score": "51-12"
+			  },
+			  {
+				  "Level": "Bay Area vs Manvel",
+				  "Score": "26-0"
+			  }]
+        },
+        {
+          "Home": "Hitchcock High School",
+          "Away": "Sophomore",
+		  "Scores": [
+			  
+			  {
+				  "Level": "Hitchcock vs Magnolia Park",
+				  "Score": "21-6"
+			  },
+			  {
+				  "Level": "League City vs Brazosport",
+				  "Score": "49-0"
+			  },
+			  {
+				  "Level": "Angleton vs Pearland P.",
+				  "Score": "13-0"
+			  },
+			  {
+				  "Level": "SE Houston vs Bay Area",
+				  "Score": "0-7"
+			  }]
+        },
+        {
+          "Home": "El Franco Lee Park",
+          "Away": "Junior",
+		  "Scores": [
+			  
+			  {
+				  "Level": "Hitchcock vs Bay Area/Pearland P.",
+				  "Score": "49-0"
+			  },
+			  {
+				  "Level": "Sagemont vs SE Houston",
+				  "Score": "39-0"
+			  },
+			  {
+				  "Level": "Magnolia Park vs League City",
+				  "Score": "14-6"
+			  },
+			  {
+				  "Level": "Angleton vs La Porte",
+				  "Score": "33-6"
+			  }]
+        },
+        {
+          "Home": "Bob Briscoe Park",
+          "Away": "Senior",
+		  "Scores": [
+			  
+			  {
+				  "Level": "Pasadena vs Magnolia Park",
+				  "Score": "40-0"
+			  },
+			  {
+				  "Level": "League City vs Manvel",
+				  "Score": "20-0"
+			  },
+			  {
+				  "Level": "Pearland P. vs Hitchcock",
+				  "Score": "14-7"
+			  },
+			  {
+				  "Level": "La Porte vs Sagemont",
+				  "Score": "57-7"
+			  }]
+        }
+      ]
+    },
+    {
+      "Week": "Playoffs - Round 2",
+      "Date": "2023-11-04",
+      "Matchups": [
+        {
+          "Home": "All fields",
+          "Away": "Peewee",
+		  "Scores": [
+			  {
+				  "Level": "Sagemont vs Hitchcock",
+				  "Score": "18-12"
+			  },
+			  {
+				  "Level": "Bay Area vs Manvel",
+				  "Score": "29-6"
+			  }]
+        },
+        {
+          "Home": "Presner Stadium",
+          "Away": "Freshmen",
+		  "Scores": [
+			  {
+				  "Level": "Angleton vs Hitchcock",
+				  "Score": "16-15"
+			  },
+			  {
+				  "Level": "Bay Area vs La Porte",
+				  "Score": "12-6"
+			  }]
+        },
+        {
+          "Home": "Freeport Intermediate",
+          "Away": "Sophomore",
+		  "Scores": [
+			  {
+				  "Level": "Hitchcock vs Angleton",
+				  "Score": "28-19"
+			  },
+			  {
+				  "Level": "Bay Area vs League City",
+				  "Score": "0-46"
+			  }]
+        },
+        {
+          "Home": "Presner Stadium",
+          "Away": "Junior",
+		  "Scores": [
+			  {
+				  "Level": "Hitchcock vs Magnolia Park",
+				  "Score": "54-0"
+			  },
+			  {
+				  "Level": "Angleton vs Sagemont",
+				  "Score": "12-23"
+			  }]
+        },
+        {
+          "Home": "Freeport Intermediate",
+          "Away": "Senior",
+		  "Scores": [
+			  {
+				  "Level": "Pasadena vs Pearland P.",
+				  "Score": "50-13"
+			  },
+			  {
+				  "Level": "La Porte vs League City",
+				  "Score": "21-0"
+			  }]
+        }
+      ]
+    },
+    {
+      "Week": "Super Bowl",
+      "Date": "2023-11-18",
+      "Matchups": [
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Sagemont Cowboys",
+		  "IsNeutral": true,
+		  "Details": "",
+		  "Scores": [
+			  {
+				  "Level": "Pw",
+				  "Score": "49 - 42 🔹 Cowboys! 🏆"
+			  }]
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Bay Area Buccaneers",
+		  "IsNeutral": true,
+		  "Details": "",
+		  "Scores": [
+			  {
+				  "Level": "Fr",
+				  "Score": "0 - 28 🔹 Wildcats! 🏆"
+			  }]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "League City 49ers",
+		  "IsNeutral": true,
+		  "Details": "",
+		  "Scores": [
+			  {
+				  "Level": "So",
+				  "Score": "35 - 14 🔹 49ers! 🏆"
+			  }]
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Sagemont Cowboys",
+		  "IsNeutral": true,
+		  "Details": "",
+		  "Scores": [
+			  {
+				  "Level": "Jr",
+				  "Score": "12 - 27 🔹 Red Raiders! 🏆"
+			  }]
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "La Porte Texans",
+		  "IsNeutral": true,
+		  "Details": "",
+		  "Scores": [
+			  {
+				  "Level": "Sr",
+				  "Score": "24 - 13 🔹 LP Texans! 🏆"
+			  }]
+        }
+      ]
+    }
+  ]
+}
