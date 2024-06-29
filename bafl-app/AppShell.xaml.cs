@@ -87,5 +87,10 @@ public partial class AppShell : Shell
     {
         await OpenUrl("https://www.bayareafootballleague.org/by-laws", true);
     }
+
+    async void NWS_Clicked(object sender, EventArgs e)
+    {
+        await OpenUrl("https://alerts.weather.gov", true);
+    }
 }
 

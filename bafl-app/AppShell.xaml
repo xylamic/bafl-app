@@ -72,5 +72,14 @@
         Text="BAFL By-laws"
         Clicked="Bylaws_Clicked"
         IconImageSource="{AppThemeBinding Light=bylaws_light.png, Dark=bylaws_dark.png}"/>
+    <FlyoutItem Title="BAFL Monitor" Icon="{AppThemeBinding Light=calc_light.png, Dark=calc_dark.png}" >
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:AgeWeightCalcView}" />
+        </Tab>
+    </FlyoutItem>
+    <MenuItem
+        Text="NWS Alerts"
+        Clicked="NWS_Clicked"
+        IconImageSource="nws.png"/>
 </Shell>
 
