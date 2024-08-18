@@ -33,13 +33,18 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	  <MtouchLink>SdkOnly</MtouchLink>
-	  <CodesignProvision>Automatic</CodesignProvision>
-	  <CodesignKey>Apple Distribution: Adam Jordan (Y9G35CD6FM)</CodesignKey>
+	  <TargetFrameworks>net7.0-ios</TargetFrameworks>
+	  <RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+	  <CodesignKey>Apple Development: Adam Jordan (7RPU9K593R)</CodesignKey>
+	  <CodesignProvision>com.xylasoft.baflapp dev</CodesignProvision>
+	<!-- <CodesignEntitlements>Entitlements.plist</CodesignEntitlements> -->
 	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	  <CodesignKey>iPhone Developer</CodesignKey>
 	</PropertyGroup>
+
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	  <WarningLevel>4</WarningLevel>
 	</PropertyGroup>
