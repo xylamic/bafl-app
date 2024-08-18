@@ -125,6 +125,5 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
         
-        <Label Text=" " HeightRequest="150" Grid.Row="4" />
     </Grid>
 </ContentPage>

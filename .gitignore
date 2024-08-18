@@ -417,5 +417,7 @@ bafl-unit-test/obj
 dist
 **/data.json
 **/.venv
+**/*.keystore
+**/*.keyinfo
 
 bafl-app/Resources/Raw/ApiKeys.json
