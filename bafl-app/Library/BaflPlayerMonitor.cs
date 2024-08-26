@@ -37,7 +37,7 @@ namespace bafl_app.library
             _plays = 0;
             _halfplays = false;
             _onfield = false;
-            _isPlaying = false;
+            _isPlaying = true;
         }
 
         /// <summary>

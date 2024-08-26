@@ -1,4 +1,4 @@
-#if IS_RI_NET80
+#if DEBUG
 
 namespace bafl_app.testing;
 
@@ -6,6 +6,8 @@ using bafl_app.library;
 using System.Text.Json;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+
+#if IS_RI_NET80
 
 public class TestClass
 {
@@ -31,11 +33,21 @@ public class TestClass
     }
 }
 
+#endif
+
 public class TestBase
 {
     public static void PrintMethodExecution([CallerMemberName] string methodName = "")
     {
         Console.WriteLine($"\tExecuting method: {methodName}");
+    }
+
+    public static void CAssert(bool condition,[CallerMemberName] string methodName = "", [CallerLineNumber] int lineNumber = 0)
+    {
+        if (!condition)
+        {
+            Console.WriteLine($"\tAssertion failed {methodName}:{lineNumber}");
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-﻿#if IS_RI_NET80
+﻿#if DEBUG
 
 namespace bafl_app.testing;
 
