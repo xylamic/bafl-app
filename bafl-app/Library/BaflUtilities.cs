@@ -38,6 +38,16 @@ namespace bafl_app.library
         public static readonly string Msg_PullRefreshDay = "🔽  Updated {0}  🔽";
 
         public static readonly string Msg_FailRefreshDay = "🔽  Failed load, try again  🔽";
+
+        /// <summary>
+        /// The total number of play required for a freshment to senior player.
+        /// </summary>
+        public static readonly int TotalPlays_FrSr = 12;
+
+        /// <summary>
+        /// The total number of play required for a peewee player.
+        /// </summary>
+        public static readonly int TotalPlaysPw = 8;
     }
 }
 

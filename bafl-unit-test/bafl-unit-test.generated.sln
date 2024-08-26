@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bafl-app", "bafl-app.csproj", "{E85E4D87-DE57-44A8-9AD4-D5B7FE39C850}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bafl-unit-test", "bafl-unit-test.csproj", "{BF11FDEA-8F53-4FBA-96C4-B0A13802CC6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E85E4D87-DE57-44A8-9AD4-D5B7FE39C850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E85E4D87-DE57-44A8-9AD4-D5B7FE39C850}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E85E4D87-DE57-44A8-9AD4-D5B7FE39C850}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E85E4D87-DE57-44A8-9AD4-D5B7FE39C850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF11FDEA-8F53-4FBA-96C4-B0A13802CC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF11FDEA-8F53-4FBA-96C4-B0A13802CC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF11FDEA-8F53-4FBA-96C4-B0A13802CC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF11FDEA-8F53-4FBA-96C4-B0A13802CC6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B55A91A8-CACE-4A6B-8A10-312C8006436F}
+		SolutionGuid = {5BFE2A54-7EB1-42FA-9CB7-906E9DD0C568}
 	EndGlobalSection
 EndGlobal
