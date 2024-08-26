@@ -25,12 +25,12 @@ namespace bafl_app.library
             _playCount = 0;
         }
 
-        public BaflTeamMonitor(List<BaflPlayerMonitor> players, string homeTeam, string thisTeam, int opposingTeam)
+        public BaflTeamMonitor(IEnumerable<BaflPlayerMonitor> players, string thisTeam, string opposingTeam, int playCount)
         {
             _players = new ObservableCollection<BaflPlayerMonitor>(players);
-            _thisTeam = homeTeam;
-            _opposingTeam = thisTeam;
-            _playCount = opposingTeam;
+            _thisTeam = thisTeam;
+            _opposingTeam = opposingTeam;
+            _playCount = playCount;
         }
 
         /// <summary>
@@ -58,6 +58,37 @@ namespace bafl_app.library
         {
             get => _playCount;
             set => SetProperty(ref _playCount, value);
+        }
+
+        /// <summary>
+        /// The player count.
+        /// </summary>
+        public int PlayerCount
+        {
+            get => _players.Count;
+        }
+
+        /// <summary>
+        /// Get whether the team has completed its plays.
+        /// </summary>
+        public bool TeamComplete
+        {
+            get
+            {
+                foreach (BaflPlayerMonitor player in _players)
+                {
+                    if (player.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.NoPlays ||
+                        player.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        public void RunPlay()
+        {
         }
 
         /// <summary>

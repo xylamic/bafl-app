@@ -10,6 +10,24 @@
 			"args": [
 				"--framework", "net8.0"
 			]
-		}
+		},
+		{
+            "label": "Build Net8.0 App",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "bafl-app.csproj",
+                "--framework",
+                "net8.0",
+                "--arch",
+                "arm64"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
 	]
 }

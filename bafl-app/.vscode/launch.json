@@ -1,0 +1,20 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Net8.0 App Launch",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build Net8.0 App",
+            "program": "${workspaceFolder}/bin/Debug/net8.0/osx-arm64/bafl-app.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}

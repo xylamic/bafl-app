@@ -23,6 +23,9 @@ public class PlayMonitorTest : TestBase
         SimplePlayerMonitor3();
         SimplePlayerMonitor4();
         NotPlayingPlayerMonitor();
+        PlayerMonitorPlayCount();
+        PlayerMonitorPlayCountHalf();
+        SimpleTeamMonitor();
         System.Console.WriteLine("Completed testing PlayMonitor.");
     }
 
@@ -93,7 +96,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.IsPeewee);
         CAssert(monitor.Name == "John Doe");
         CAssert(monitor.Number == 12);
-        CAssert(monitor.Plays == 5);
+        CAssert(monitor.Plays == 4);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.CompletedPlays);
         CAssert(monitor.HalfPlays == true);
         CAssert(monitor.OnField == false);
@@ -115,6 +118,69 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.HalfPlays == false);
         CAssert(monitor.OnField == false);
         CAssert(monitor.IsPlaying == true);
+    }
+
+    public void PlayerMonitorPlayCount()
+    {
+        PrintMethodExecution();
+
+        BaflPlayerMonitor monitor = new BaflPlayerMonitor(false, 12, "", 0, false, false, true);
+
+        CAssert(monitor.Plays == 0);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.NoPlays);
+
+        for (int i = 0; i < 5; i++)
+        {
+            monitor.AddPlay();
+        }
+        CAssert(monitor.Plays == 5);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
+
+        for (int i = 0; i < 5; i++) monitor.AddPlay();
+        CAssert(monitor.Plays == 10);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
+
+        for (int i = 0; i < 5; i++) monitor.AddPlay();
+        CAssert(monitor.Plays == 12);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.CompletedPlays);
+
+        for (int i = 0; i < 5; i++) monitor.RemovePlay();
+        CAssert(monitor.Plays == 10);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
+
+        monitor.AddPlay(); monitor.AddPlay();
+        CAssert(monitor.Plays == 12);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.CompletedPlays);
+    }
+
+    public void PlayerMonitorPlayCountHalf()
+    {
+        PrintMethodExecution();
+
+        BaflPlayerMonitor monitor = new BaflPlayerMonitor(false, 15, "", 0, false, false, true);
+        monitor.HalfPlays = true;
+
+        CAssert(monitor.Plays == 0);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.NoPlays);
+
+        for (int i = 0; i < 5; i++)
+        {
+            monitor.AddPlay();
+        }
+        CAssert(monitor.Plays == 5);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
+
+        monitor.AddPlay();
+        CAssert(monitor.Plays == 6);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.CompletedPlays);
+
+        monitor.RemovePlay();
+        CAssert(monitor.Plays == 5);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
+
+        monitor.AddPlay();
+        CAssert(monitor.Plays == 6);
+        CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.CompletedPlays);
     }
 
     public void NotPlayingPlayerMonitor()
@@ -145,6 +211,31 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.OpposingTeam == "");
         CAssert(monitor.PlayCount == 0);
         CAssert(monitor.Players.Count == 0);
+    }
+
+    public void SimpleTeamMonitor()
+    {
+        PrintMethodExecution();
+
+        // generate 5 players
+        BaflPlayerMonitor[] players = new BaflPlayerMonitor[5];
+        for (int i = 0; i < 5; i++)
+        {
+            players[i] = new BaflPlayerMonitor(false, i, $"Player {i}", 0, true, true, true);
+        }
+
+        BaflTeamMonitor monitor = new BaflTeamMonitor(players, "Bay Area", "Hitchcock", 0);
+
+        CAssert(monitor != null);
+        CAssert(monitor.ThisTeam == "Bay Area");
+        CAssert(monitor.OpposingTeam == "Hitchcock");
+        CAssert(monitor.PlayCount == 0);
+        CAssert(monitor.PlayerCount == 5);
+
+        foreach (BaflPlayerMonitor player in monitor.Players)
+        {
+            
+        }
     }
 }
 

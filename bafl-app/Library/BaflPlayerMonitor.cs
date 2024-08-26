@@ -94,8 +94,27 @@ namespace bafl_app.library
         /// </summary>
         public int Plays
         {
-            get => _plays;
-            set => SetProperty(ref _plays, value);
+            get
+            {
+                int targetPlays = _isPeewee ? BaflUtilities.TotalPlaysPw : BaflUtilities.TotalPlays_FrSr;
+                if (_halfplays) targetPlays /= 2;
+
+                if (_plays >= targetPlays)
+                {
+                    return targetPlays;
+                }
+                else
+                {
+                    return _plays;
+                }
+            }
+            set
+            {
+                if (SetProperty(ref _plays, value))
+                {
+                    OnPropertyChanged(nameof(PlayStatus));
+                }
+            }
         }
 
         /// <summary>
@@ -134,6 +153,25 @@ namespace bafl_app.library
                 {
                     OnPropertyChanged(nameof(PlayStatus));
                 }
+            }
+        }
+
+        /// <summary>
+        /// Add a play.
+        /// </summary>
+        public void AddPlay()
+        {
+            Plays = _plays + 1;
+        }
+
+        /// <summary>
+        /// Remove a play.
+        /// </summary>
+        public void RemovePlay()
+        {
+            if (Plays > 0)
+            {
+                Plays = _plays - 1;
             }
         }
 
