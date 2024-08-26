@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // This configuration is for UNIT TESTING on the local arm64 machine
         {
             "name": "Net8.0 App Launch",
             "type": "coreclr",
