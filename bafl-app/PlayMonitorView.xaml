@@ -65,12 +65,10 @@
                         <SwipeView.RightItems>
                             <SwipeItems>
                                 <SwipeItem Text="Delete" BackgroundColor="Red" Clicked="DeletePlayer_Clicked" />
+                                <SwipeItem Text="In/out" BackgroundColor="Orange" Clicked="ActivePlayer_Clicked" />
+                                <SwipeItem Text="Half" BackgroundColor="Blue" Clicked="HalfPlayer_Clicked" />
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <SwipeView.LeftItems>
-                            <SwipeItem Text="On/off" BackgroundColor="Orange" Clicked="ActivePlayer_Clicked" />
-                            <SwipeItem Text="Half" BackgroundColor="Blue" Clicked="HalfPlayer_Clicked" />
-                        </SwipeView.LeftItems>
                         <Grid Margin="0,0,0,2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" />
