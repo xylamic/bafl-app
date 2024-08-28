@@ -81,6 +81,23 @@ namespace bafl_app.library
         }
 
         /// <summary>
+        /// The list of selectable numbers.
+        /// </summary>
+        public int[] Numbers
+        {
+            get
+            {
+                // a range from 0 to 99
+                int[] numbers = new int[100];
+                for (int i = 0; i < 100; i++)
+                {
+                    numbers[i] = i;
+                }
+                return numbers;
+            }
+        }
+
+        /// <summary>
         /// The player name.
         /// </summary>
         public string Name
@@ -96,8 +113,7 @@ namespace bafl_app.library
         {
             get
             {
-                int targetPlays = _isPeewee ? BaflUtilities.TotalPlaysPw : BaflUtilities.TotalPlays_FrSr;
-                if (_halfplays) targetPlays /= 2;
+                int targetPlays = PlaysTarget;
 
                 if (_plays >= targetPlays)
                 {
@@ -112,7 +128,39 @@ namespace bafl_app.library
             {
                 if (SetProperty(ref _plays, value))
                 {
+                    OnPropertyChanged(nameof(PlaysString));
                     OnPropertyChanged(nameof(PlayStatus));
+                }
+            }
+        }
+
+        /// <summary>
+        /// The target number of plays.
+        /// </summary>
+        public int PlaysTarget
+        {
+            get
+            {
+                int targetPlays = _isPeewee ? BaflUtilities.TotalPlaysPw : BaflUtilities.TotalPlays_FrSr;
+                if (_halfplays) targetPlays /= 2;
+                return targetPlays;
+            }
+        }
+
+        /// <summary>
+        /// The number of plays as a string.
+        /// </summary>
+        public string PlaysString
+        {
+            get
+            {
+                if (Plays >= PlaysTarget)
+                {
+                    return $"All {PlaysTarget}";
+                }
+                else
+                {
+                    return $"{Plays} of {PlaysTarget}";
                 }
             }
         }
@@ -138,7 +186,11 @@ namespace bafl_app.library
         public bool OnField
         {
             get => _onfield;
-            set => SetProperty(ref _onfield, value);
+            set
+            {
+                if (IsPlaying)
+                    SetProperty(ref _onfield, value);
+            }
         }
 
         /// <summary>
@@ -159,9 +211,18 @@ namespace bafl_app.library
         /// <summary>
         /// Add a play.
         /// </summary>
-        public void AddPlay()
+        /// <returns>True if the play was added.</returns>
+        public bool AddPlay()
         {
-            Plays = _plays + 1;
+            if (IsPlaying && OnField)
+            {
+                Plays = _plays + 1;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -173,6 +234,15 @@ namespace bafl_app.library
             {
                 Plays = _plays - 1;
             }
+        }
+
+        public void ResetPlayer()
+        {
+            Plays = 0;
+            HalfPlays = false;
+            OnPropertyChanged(nameof(PlaysString));
+            OnPropertyChanged(nameof(PlayStatus));
+            OnPropertyChanged(nameof(Plays));
         }
 
         /// <summary>

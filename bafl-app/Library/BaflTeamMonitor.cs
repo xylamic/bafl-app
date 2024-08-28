@@ -13,6 +13,7 @@ namespace bafl_app.library
         private string _thisTeam;
         private string _opposingTeam;
         private int _playCount;
+        private List<BaflPlayerMonitor> _undoPlayers = new List<BaflPlayerMonitor>();
 
         /// <summary>
         /// Construct the item.
@@ -23,6 +24,7 @@ namespace bafl_app.library
             _thisTeam = "";
             _opposingTeam = "";
             _playCount = 0;
+            LastPlay = null;
         }
 
         public BaflTeamMonitor(IEnumerable<BaflPlayerMonitor> players, string thisTeam, string opposingTeam, int playCount)
@@ -68,6 +70,23 @@ namespace bafl_app.library
             get => _players.Count;
         }
 
+        public DateTime? LastPlay
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Get whether undo is allowed.
+        /// </summary>
+        public bool UndoAllowed
+        {
+            get
+            {
+                return _undoPlayers.Count > 0;
+            }
+        }
+
         /// <summary>
         /// Get whether the team has completed its plays.
         /// </summary>
@@ -87,8 +106,91 @@ namespace bafl_app.library
             }
         }
 
+        /// <summary>
+        /// Get the number of players on the field.
+        /// </summary>
+        public int PlayersOnField
+        {
+            get => _players.Count(p => p.OnField && p.IsPlaying);
+        }
+
+        /// <summary>
+        /// Run the play.
+        /// </summary>
         public void RunPlay()
         {
+            ClearUndo();
+
+            bool playRun = false;
+            foreach (BaflPlayerMonitor player in _players)
+            {
+                if (player.AddPlay())
+                {
+                    _undoPlayers.Add(player);
+                    playRun = true;
+                }
+            }
+            
+            if (playRun)
+            {
+                PlayCount += 1;
+                OnPropertyChanged(nameof(UndoAllowed));
+                LastPlay = DateTime.Now;
+            }
+        }
+
+        /// <summary>
+        /// Undo the play.
+        /// </summary>
+        public void UndoPlay()
+        {
+            if (_undoPlayers.Count > 0)
+            {
+                foreach (BaflPlayerMonitor player in _undoPlayers)
+                {
+                    player.RemovePlay();
+                }
+                PlayCount -= 1;
+                ClearUndo();
+            }
+        }
+
+        /// <summary>
+        /// Sort the players.
+        /// </summary>
+        public void SortPlayers()
+        {
+            var sorted = Players.OrderBy(x => x.Number).ToList();
+            Players.Clear();
+
+            foreach (var item in sorted)
+            {
+                Players.Add(item);
+            }
+
+            OnPropertyChanged(nameof(Players));
+        }
+
+        public void SetAllOnField(bool onField)
+        {
+            foreach (BaflPlayerMonitor player in _players)
+            {
+                player.OnField = onField;
+            }
+        }
+
+        /// <summary>
+        /// Reset the plays for the whole team.
+        /// </summary>
+        public void ResetPlays()
+        {
+            foreach (BaflPlayerMonitor player in _players)
+            {
+                player.ResetPlayer();
+            }
+            ClearUndo();
+            LastPlay = null;
+            PlayCount = 0;
         }
 
         /// <summary>
@@ -97,6 +199,15 @@ namespace bafl_app.library
         public ObservableCollection<BaflPlayerMonitor> Players
         {
             get => _players;
+        }
+
+        /// <summary>
+        /// Clear the undo buffer.
+        /// </summary>
+        private void ClearUndo()
+        {
+            _undoPlayers.Clear();
+            OnPropertyChanged(nameof(UndoAllowed));
         }
     }
 }

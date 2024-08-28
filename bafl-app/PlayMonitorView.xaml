@@ -4,93 +4,106 @@
              x:Class="bafl_app.PlayMonitorView"
              Title="2024 BAFL Play Monitor">
 
-    <Grid Margin="10,20,10,10">
+    <Grid Padding="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <Label Text="Select the team and enter the birthdate to calculate." HorizontalTextAlignment="Center" Grid.Row="0"
-               FontSize="Medium"
-               Margin="0,0,0,10"/>
-        <Rectangle Grid.RowSpan="3" Grid.Row="1" Stroke="{StaticResource Primary}" Margin="0,5,0,5" />
-        <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="1" Margin="0,10,0,10">
-            <Label Text="Football" VerticalTextAlignment="Center" />
-            <Switch IsToggled="{Binding IsCheer}" VerticalOptions="Center" Margin="10,0,10,0" />
-            <Label Text="Cheer/Drill" VerticalTextAlignment="Center" />
-        </HorizontalStackLayout>
-        <DatePicker HorizontalOptions="Center" 
-                    MaximumDate="01-01-2021"
-                    Date="{Binding SelectedBirthDate}"
-                    Grid.Row="2"
-                    CharacterSpacing="5"
-                    FontSize="Medium"
-                    Format="dd MMM yyyy"/>
-        <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center" Margin="0,0,0,10">
-            <Label Text="Move up a level: " FontSize="Medium" VerticalTextAlignment="Center" />
-            <CheckBox IsChecked="{Binding IsUpLevel}" VerticalOptions="Center" />
-        </HorizontalStackLayout>
-        <Grid Grid.Row="4" Margin="0,0,0,10">
-            <Rectangle Stroke="{StaticResource Secondary}" StrokeThickness="2" />
-            <VerticalStackLayout>
-                <Label Text="Age on August 1, 2024" FontSize="Medium"
-                       HorizontalTextAlignment="Center" Margin="0,10,0,0"/>
-                <Label Text="{Binding AgeText}" Margin="0,0,0,10"
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource Secondary}"/>
-                <Label Text="Level" FontSize="Medium"
-                       HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding LevelText}" Margin="0,0,0,10"
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource Secondary}"/>
-                <Label Text="Max Weight for Level (lbs)" FontSize="Medium"
-                       HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding WeightText}" Margin="0,0,0,10"
-                       TextColor="{StaticResource Secondary}"
-                       HorizontalTextAlignment="Center"/>
-            </VerticalStackLayout>
-        </Grid>
-        <Label Grid.Row="5" HorizontalTextAlignment="Center" Text="{Binding AddDescription}"
-               Margin="0,0,0,10"/>
-        <Grid Grid.Row="6" HorizontalOptions="Center">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
+            <Label Text="Next play:" Margin="0,0,2,0" Grid.Column="0" VerticalTextAlignment="Center" />
+            <Label Text="{Binding NextPlay}" Margin="0,0,10,0" Grid.Column="1" VerticalTextAlignment="Center" />
+            <ImageButton Source="{AppThemeBinding Light=undo_light.png, Dark=undo_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="2" Clicked="Undo_Clicked" IsEnabled="{Binding UndoAllowed}" />
+            <ImageButton Source="{AppThemeBinding Light=restart_light.png, Dark=restart_dark.png}" MaximumHeightRequest="25"
+                 Grid.Column="3" Margin="0,0,10,0" Clicked="Reset_Clicked" />
+            <Label Text="Players:" Margin="0,0,2,0" Grid.Column="5" VerticalTextAlignment="Center" />
+            <Label Text="{Binding PlayerCount}" Margin="0,0,10,0" Grid.Column="6" VerticalTextAlignment="Center" />
+            <ImageButton Source="{AppThemeBinding Light=sortbynumber_light.png, Dark=sortbynumber_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="7" Clicked="SortByNumber_Clicked" />
+            <ImageButton Source="{AppThemeBinding Light=import_light.png, Dark=import_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="8" />
+            <ImageButton Source="{AppThemeBinding Light=export_light.png, Dark=export_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="9" />
+        </Grid>
+        <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="1" />
+        <ScrollView HorizontalOptions="CenterAndExpand" Grid.Row="2">
+            <CollectionView ItemsSource="{Binding Players}" VerticalOptions="FillAndExpand">
+                <CollectionView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="#" MinimumWidthRequest="60" Grid.Column="0" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                        <Label Text="On Field" Grid.Column="1" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                        <Label Text="Plays" Grid.Column="3" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
 
-            <Rectangle Fill="{StaticResource Tertiary}" HeightRequest="2" Grid.Row="0" Grid.ColumnSpan="2" />
-            <Label Text="[Reference] Weights (lbs) by Level" Grid.ColumnSpan="2"
-                   Grid.Row="1" HorizontalTextAlignment="Center" />
+                            <Picker x:Name="PlayPicker" ItemsSource="{Binding Numbers}" SelectedItem="{Binding Number}" Grid.Column="0"
+                                MinimumWidthRequest="60" Margin="0,0,10,0" FontSize="Large" HorizontalTextAlignment="Center"
+                                VerticalOptions="Center" />
+                            <Switch IsToggled="{Binding OnField}" HorizontalOptions="End" Grid.Column="1" IsEnabled="{Binding IsPlaying}"
+                                Margin="0,0,10,0" Toggled="OnFieldSwitch_Toggled" VerticalOptions="Center" />
+                            <Entry Text="{Binding Name}" FontSize="Large" Grid.Column="2" Margin="0,0,10,0" VerticalOptions="Center" />
 
-            <Label Text="Peewee (5-6)" Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" />
-            <Label Text="120" Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" />
+                            <Label Text="{Binding PlaysString}" Grid.Column="3" FontSize="Large" Margin="0,0,10,0" VerticalOptions="Center" />
+                            
 
-            <Label Text="Freshman (7-8)" Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Center" />
-            <Label Text="140" Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="Center" />
+                            <Border Stroke="{StaticResource Primary}"  StrokeThickness="1" Grid.Row="1" Grid.ColumnSpan="5" Margin="0,2,0,0" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="3" />
 
-            <Label Text="Sophomore (9)" Grid.Row="4" Grid.Column="0" HorizontalTextAlignment="Center" />
-            <Label Text="160" Grid.Row="4" Grid.Column="1" HorizontalTextAlignment="Center" />
+        <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" Margin="10,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
 
-            <Label Text="Junior (10)" Grid.Row="5" Grid.Column="0" HorizontalTextAlignment="Center" />
-            <Label Text="180" Grid.Row="5" Grid.Column="1" HorizontalTextAlignment="Center" />
-
-            <Label Text="Senior (11-12)" Grid.Row="6" Grid.Column="0" HorizontalTextAlignment="Center" />
-            <Label Text="200" Grid.Row="6" Grid.Column="1" HorizontalTextAlignment="Center" />
+            <ImageButton Source="{AppThemeBinding Light=leftarrow_light.png, Dark=leftarrow_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
+                 Grid.Column="0" VerticalOptions="Center" Clicked="AllOffField_Clicked" />
+            <ImageButton Source="{AppThemeBinding Light=rightarrow_light.png, Dark=rightarrow_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
+                 Grid.Column="1" VerticalOptions="Center" Clicked="AllOnField_Clicked" />
+            <Label Text="{Binding OnFieldCount}" FontSize="Large" Grid.Column="2" Margin="0,0,10,0" VerticalOptions="Center" />
+            <Button Text="Run Play" Clicked="RunPlayButton_Clicked" Grid.Column="4" Margin="0,0,10,0" VerticalOptions="Center" />
         </Grid>
     </Grid>
 
