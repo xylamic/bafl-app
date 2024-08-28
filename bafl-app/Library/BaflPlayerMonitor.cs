@@ -16,6 +16,20 @@ namespace bafl_app.library
         private bool _isPlaying;
 
         /// <summary>
+        /// The static data of a player for serialization.
+        /// </summary>
+        public class SBaflPlayerMonitor
+        {
+            public bool IsPeewee {get; set;}
+            public int Number {get; set;}
+            public string Name {get; set;}
+            public int Plays {get; set;}
+            public bool HalfPlays {get; set;}
+            public bool OnField {get; set;}
+            public bool IsPlaying {get; set;}
+        }
+
+        /// <summary>
         /// The play status for a player.
         /// </summary>
         public enum PlayerPlayStatus
@@ -63,12 +77,50 @@ namespace bafl_app.library
         }
 
         /// <summary>
+        /// Construct the monitor item from a JSON string.
+        /// </summary>
+        /// <returns>The JSON string.</returns>
+        public string ExportAsJson()
+        {
+            SBaflPlayerMonitor sBaflPlayerMonitor = new SBaflPlayerMonitor()
+            {
+                IsPeewee = IsPeewee,
+                Number = Number,
+                Name = Name,
+                Plays = Plays,
+                HalfPlays = IsHalfPlays,
+                OnField = OnField,
+                IsPlaying = IsPlaying
+            };
+            string json = System.Text.Json.JsonSerializer.Serialize(sBaflPlayerMonitor);
+            return json;
+        }
+
+        /// <summary>
+        /// Import the monitor item from a JSON string.
+        /// </summary>
+        /// <param name="json">The JSON string.</param>
+        /// <returns>The monitor item.</returns>
+        public static BaflPlayerMonitor ImportFromJson(string json)
+        {
+            SBaflPlayerMonitor spm = System.Text.Json.JsonSerializer.Deserialize<SBaflPlayerMonitor>(json);
+            return new BaflPlayerMonitor(spm.IsPeewee, spm.Number, spm.Name,
+                spm.Plays, spm.HalfPlays, spm.OnField, spm.IsPlaying);
+        }
+
+        /// <summary>
         /// Whether this is a peewee player.
         /// </summary>
         public bool IsPeewee
         {
             get => _isPeewee;
-            set => SetProperty(ref _isPeewee, value);
+            set
+            {
+                SetProperty(ref _isPeewee, value);
+                OnPropertyChanged(nameof(PlaysTarget));
+                OnPropertyChanged(nameof(PlaysString));
+                OnPropertyChanged(nameof(PlayStatus));
+            }
         }
 
         /// <summary>
@@ -153,7 +205,11 @@ namespace bafl_app.library
         public string PlaysString
         {
             get
-            {
+            {   
+                if (!IsPlaying)
+                {
+                    return "N/A";
+                }
                 if (Plays >= PlaysTarget)
                 {
                     return $"All {PlaysTarget}";
@@ -168,7 +224,7 @@ namespace bafl_app.library
         /// <summary>
         /// Whether this play is getting half the plays.
         /// </summary>
-        public bool HalfPlays
+        public bool IsHalfPlays
         {
             get => _halfplays;
             set
@@ -176,6 +232,7 @@ namespace bafl_app.library
                 if (SetProperty(ref _halfplays, value))
                 {
                     OnPropertyChanged(nameof(PlayStatus));
+                    OnPropertyChanged(nameof(PlaysString));
                 }
             }
         }
@@ -204,6 +261,13 @@ namespace bafl_app.library
                 if (SetProperty(ref _isPlaying, value))
                 {
                     OnPropertyChanged(nameof(PlayStatus));
+                    OnPropertyChanged(nameof(PlaysString));
+
+                    if (!_isPlaying)
+                    {
+                        OnField = false;
+                        OnPropertyChanged(nameof(OnField));
+                    }
                 }
             }
         }
@@ -239,7 +303,7 @@ namespace bafl_app.library
         public void ResetPlayer()
         {
             Plays = 0;
-            HalfPlays = false;
+            IsHalfPlays = false;
             OnPropertyChanged(nameof(PlaysString));
             OnPropertyChanged(nameof(PlayStatus));
             OnPropertyChanged(nameof(Plays));

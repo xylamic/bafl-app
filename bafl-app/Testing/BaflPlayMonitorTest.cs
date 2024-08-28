@@ -41,7 +41,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.Number == 0);
         CAssert(monitor.Plays == 0);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.NoPlays);
-        CAssert(monitor.HalfPlays == false);
+        CAssert(monitor.IsHalfPlays == false);
         CAssert(monitor.OnField == false);
         CAssert(monitor.IsPlaying == true);
     }
@@ -54,7 +54,7 @@ public class PlayMonitorTest : TestBase
         monitor.Name = "John Doe";
         monitor.Number = 12;
         monitor.Plays = 5;
-        monitor.HalfPlays = true;
+        monitor.IsHalfPlays = true;
         monitor.OnField = true;
         monitor.IsPlaying = true;
 
@@ -64,7 +64,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.Number == 12);
         CAssert(monitor.Plays == 5);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
-        CAssert(monitor.HalfPlays == true);
+        CAssert(monitor.IsHalfPlays == true);
         CAssert(monitor.OnField == true);
         CAssert(monitor.IsPlaying == true);
     }
@@ -81,7 +81,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.Number == 12);
         CAssert(monitor.Plays == 5);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
-        CAssert(monitor.HalfPlays == true);
+        CAssert(monitor.IsHalfPlays == true);
         CAssert(monitor.OnField == true);
         CAssert(monitor.IsPlaying == true);
     }
@@ -98,7 +98,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.Number == 12);
         CAssert(monitor.Plays == 4);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.CompletedPlays);
-        CAssert(monitor.HalfPlays == true);
+        CAssert(monitor.IsHalfPlays == true);
         CAssert(monitor.OnField == false);
         CAssert(monitor.IsPlaying == true);
     }
@@ -115,7 +115,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.Number == 12);
         CAssert(monitor.Plays == 5);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.PartialPlays);
-        CAssert(monitor.HalfPlays == false);
+        CAssert(monitor.IsHalfPlays == false);
         CAssert(monitor.OnField == false);
         CAssert(monitor.IsPlaying == true);
     }
@@ -158,7 +158,7 @@ public class PlayMonitorTest : TestBase
         PrintMethodExecution();
 
         BaflPlayerMonitor monitor = new BaflPlayerMonitor(false, 15, "", 0, false, true, true);
-        monitor.HalfPlays = true;
+        monitor.IsHalfPlays = true;
 
         CAssert(monitor.Plays == 0);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.NoPlays);
@@ -195,7 +195,7 @@ public class PlayMonitorTest : TestBase
         CAssert(monitor.Number == 12);
         CAssert(monitor.Plays == 0);
         CAssert(monitor.PlayStatus == BaflPlayerMonitor.PlayerPlayStatus.NotPlaying);
-        CAssert(monitor.HalfPlays == false);
+        CAssert(monitor.IsHalfPlays == false);
         CAssert(monitor.OnField == false);
         CAssert(monitor.IsPlaying == false);
     }
@@ -229,7 +229,7 @@ public class PlayMonitorTest : TestBase
         }
         players[8] = new BaflPlayerMonitor(false, 8, "Player 8", 0, false, false, false);
 
-        BaflTeamMonitor monitor = new BaflTeamMonitor(players, "Bay Area", "Hitchcock", 0);
+        BaflTeamMonitor monitor = new BaflTeamMonitor(false, players, "Bay Area", "Hitchcock", 0);
 
         CAssert(monitor != null);
         CAssert(monitor.ThisTeam == "Bay Area");
@@ -371,6 +371,23 @@ public class PlayMonitorTest : TestBase
         }
         CAssert(monitor.TeamComplete == false);
         CAssert(monitor.UndoAllowed == false);
+
+        string json = monitor.ExportAsJson();
+        BaflTeamMonitor monitor2 = BaflTeamMonitor.ImportFromJson(json);
+        CAssert(monitor2.ThisTeam == monitor.ThisTeam);
+        CAssert(monitor2.OpposingTeam == monitor.OpposingTeam);
+        CAssert(monitor2.PlayCount == monitor.PlayCount);
+        CAssert(monitor2.PlayerCount == monitor.PlayerCount);
+        for (int i = 0; i < 9; i++)
+        {
+            CAssert(monitor2.Players[i].Name == monitor.Players[i].Name);
+            CAssert(monitor2.Players[i].Number == monitor.Players[i].Number);
+            CAssert(monitor2.Players[i].Plays == monitor.Players[i].Plays);
+            CAssert(monitor2.Players[i].IsHalfPlays == monitor.Players[i].IsHalfPlays);
+            CAssert(monitor2.Players[i].OnField == monitor.Players[i].OnField);
+            CAssert(monitor2.Players[i].IsPlaying == monitor.Players[i].IsPlaying);
+        }
+
     }
 }
 

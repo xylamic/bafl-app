@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Text.Json;
 
 namespace bafl_app.library
 {
@@ -13,7 +14,18 @@ namespace bafl_app.library
         private string _thisTeam;
         private string _opposingTeam;
         private int _playCount;
+        private bool _isPeewee;
         private List<BaflPlayerMonitor> _undoPlayers = new List<BaflPlayerMonitor>();
+
+        public class SBaflTeamMonitor
+        {
+            public bool IsPeewee {get; set;}
+            public List<string> Players {get; set;}
+            public string ThisTeam {get; set;}
+            public string OpposingTeam {get; set;}
+            public int PlayCount {get; set;}
+            public DateTime? LastPlay {get; set;}
+        }
 
         /// <summary>
         /// Construct the item.
@@ -24,15 +36,62 @@ namespace bafl_app.library
             _thisTeam = "";
             _opposingTeam = "";
             _playCount = 0;
+            _isPeewee = false;
             LastPlay = null;
         }
 
-        public BaflTeamMonitor(IEnumerable<BaflPlayerMonitor> players, string thisTeam, string opposingTeam, int playCount)
+        public BaflTeamMonitor(bool isPeewee, IEnumerable<BaflPlayerMonitor> players, string thisTeam, string opposingTeam, int playCount)
         {
+            _isPeewee = isPeewee;
             _players = new ObservableCollection<BaflPlayerMonitor>(players);
             _thisTeam = thisTeam;
             _opposingTeam = opposingTeam;
             _playCount = playCount;
+        }
+
+        /// <summary>
+        /// Import the data from JSON.
+        /// </summary>
+        /// <returns>The JSON string.</returns>
+        public string ExportAsJson()
+        {
+            SBaflTeamMonitor data = new SBaflTeamMonitor()
+            {
+                IsPeewee = _isPeewee,
+                Players = new List<string>(),
+                ThisTeam = _thisTeam,
+                OpposingTeam = _opposingTeam,
+                PlayCount = _playCount,
+                LastPlay = LastPlay
+            };
+
+            foreach (BaflPlayerMonitor player in _players)
+            {
+                data.Players.Add(player.ExportAsJson());
+            }
+
+            return JsonSerializer.Serialize(data);
+        }
+
+        /// <summary>
+        /// Import the data from JSON.
+        /// </summary>
+        /// <param name="json">The JSON string.</param>
+        /// <returns>The team monitor.</returns>
+        public static BaflTeamMonitor ImportFromJson(string json)
+        {
+            SBaflTeamMonitor data = JsonSerializer.Deserialize<SBaflTeamMonitor>(json);
+
+            List<BaflPlayerMonitor> players = new List<BaflPlayerMonitor>();
+            foreach (string playerJson in data.Players)
+            {
+                players.Add(BaflPlayerMonitor.ImportFromJson(playerJson));
+            }
+
+            return new BaflTeamMonitor(data.IsPeewee, players, data.ThisTeam, data.OpposingTeam, data.PlayCount)
+            {
+                LastPlay = data.LastPlay
+            };
         }
 
         /// <summary>
@@ -103,6 +162,22 @@ namespace bafl_app.library
                     }
                 }
                 return true;
+            }
+        }
+
+        /// <summary>
+        /// Get whether the team is peewee.
+        /// </summary>
+        public bool IsPeewee
+        {
+            get => _isPeewee;
+            set
+            {
+                SetProperty(ref _isPeewee, value);
+                foreach (BaflPlayerMonitor player in _players)
+                {
+                    player.IsPeewee = value;
+                }
             }
         }
 

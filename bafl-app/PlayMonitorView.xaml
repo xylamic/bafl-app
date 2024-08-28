@@ -4,7 +4,7 @@
              x:Class="bafl_app.PlayMonitorView"
              Title="2024 BAFL Play Monitor">
 
-    <Grid Padding="10">
+    <Grid Padding="10" HorizontalOptions="Fill" VerticalOptions="Fill">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -13,7 +13,7 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" HorizontalOptions="Fill" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
@@ -25,40 +25,52 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <Label Text="Next play:" Margin="0,0,2,0" Grid.Column="0" VerticalTextAlignment="Center" />
             <Label Text="{Binding NextPlay}" Margin="0,0,10,0" Grid.Column="1" VerticalTextAlignment="Center" />
             <ImageButton Source="{AppThemeBinding Light=undo_light.png, Dark=undo_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
                  Grid.Column="2" Clicked="Undo_Clicked" IsEnabled="{Binding UndoAllowed}" />
             <ImageButton Source="{AppThemeBinding Light=restart_light.png, Dark=restart_dark.png}" MaximumHeightRequest="25"
-                 Grid.Column="3" Margin="0,0,10,0" Clicked="Reset_Clicked" />
+                 Grid.Column="3" Margin="0,0,20,0" Clicked="Reset_Clicked" />
             <Label Text="Players:" Margin="0,0,2,0" Grid.Column="5" VerticalTextAlignment="Center" />
             <Label Text="{Binding PlayerCount}" Margin="0,0,10,0" Grid.Column="6" VerticalTextAlignment="Center" />
             <ImageButton Source="{AppThemeBinding Light=sortbynumber_light.png, Dark=sortbynumber_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
                  Grid.Column="7" Clicked="SortByNumber_Clicked" />
+            <ImageButton Source="{AppThemeBinding Light=plus_light.png, Dark=plus_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="8" Clicked="AddPlayer_Clicked" />
             <ImageButton Source="{AppThemeBinding Light=import_light.png, Dark=import_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
-                 Grid.Column="8" />
+                 Grid.Column="9" Clicked="Import_Clicked" />
             <ImageButton Source="{AppThemeBinding Light=export_light.png, Dark=export_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
-                 Grid.Column="9" />
+                 Grid.Column="10" Clicked="Export_Clicked" />
         </Grid>
         <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="1" />
-        <ScrollView HorizontalOptions="CenterAndExpand" Grid.Row="2">
-            <CollectionView ItemsSource="{Binding Players}" VerticalOptions="FillAndExpand">
-                <CollectionView.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="auto" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="#" MinimumWidthRequest="60" Grid.Column="0" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
-                        <Label Text="On Field" Grid.Column="1" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
-                        <Label Text="Plays" Grid.Column="3" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
-                    </Grid>
-                </CollectionView.Header>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
+        <CollectionView ItemsSource="{Binding Players}" VerticalOptions="FillAndExpand" Grid.Row="2" >
+            <CollectionView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="#" MinimumWidthRequest="60" Grid.Column="0" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                    <Label Text="On Field" Grid.Column="1" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                    <Label Text="Plays" Grid.Column="3" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Red" Clicked="DeletePlayer_Clicked" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <SwipeView.LeftItems>
+                            <SwipeItem Text="On/off" BackgroundColor="Orange" Clicked="ActivePlayer_Clicked" />
+                            <SwipeItem Text="Half" BackgroundColor="Blue" Clicked="HalfPlayer_Clicked" />
+                        </SwipeView.LeftItems>
                         <Grid Margin="0,0,0,2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" />
@@ -83,27 +95,45 @@
 
                             <Border Stroke="{StaticResource Primary}"  StrokeThickness="1" Grid.Row="1" Grid.ColumnSpan="5" Margin="0,2,0,0" />
                         </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </ScrollView>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="3" />
 
-        <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" Margin="10,0,10,10">
+        <Grid Grid.Row="4" HorizontalOptions="Fill" Margin="10,0,10,10">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
 
-            <ImageButton Source="{AppThemeBinding Light=leftarrow_light.png, Dark=leftarrow_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
+            <ImageButton Source="{AppThemeBinding Light=leftswitch_light.png, Dark=leftswitch_dark.png}" MaximumHeightRequest="30" Margin="60,0,5,0"
                  Grid.Column="0" VerticalOptions="Center" Clicked="AllOffField_Clicked" />
-            <ImageButton Source="{AppThemeBinding Light=rightarrow_light.png, Dark=rightarrow_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
+            <ImageButton Source="{AppThemeBinding Light=rightswitch_light.png, Dark=rightswitch_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
                  Grid.Column="1" VerticalOptions="Center" Clicked="AllOnField_Clicked" />
-            <Label Text="{Binding OnFieldCount}" FontSize="Large" Grid.Column="2" Margin="0,0,10,0" VerticalOptions="Center" />
-            <Button Text="Run Play" Clicked="RunPlayButton_Clicked" Grid.Column="4" Margin="0,0,10,0" VerticalOptions="Center" />
+            <Label Text="On Field:" FontSize="Large" Grid.Column="2" VerticalOptions="Center" Margin="0,0,2,0" />
+            <Label Text="{Binding OnFieldCount}" FontSize="Large" Grid.Column="3" Margin="0,0,20,0" VerticalOptions="Center"
+                TextColor="{Binding OnFieldColor}" />
+
+            <Button Text="Run Play" Clicked="RunPlayButton_Clicked" Grid.Column="5" Margin="0,0,10,0" VerticalOptions="Center" />
+
+            <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3" Margin="60,10,0,0">
+                <Label Text="Last:" Margin="0,0,10,0" />
+                <Label Text="{Binding LastPlay}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Row="1" Grid.Column="5" Margin="0,10,0,0">
+                <CheckBox IsChecked="{Binding IsPeewee}" Margin="0,0,10,0" />
+                <Label Text="Peewee" />
+            </HorizontalStackLayout>
+            
         </Grid>
     </Grid>
 
