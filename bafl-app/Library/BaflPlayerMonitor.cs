@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Dynamic;
 namespace bafl_app.library
 {
     /// <summary>
@@ -7,6 +8,7 @@ namespace bafl_app.library
     /// </summary>
     public class BaflPlayerMonitor : NotifyPropertyChangedBase
     {
+        #region Private Variables
         private bool _isPeewee;
         private int _number;
         private string _name;
@@ -14,7 +16,10 @@ namespace bafl_app.library
         private bool _halfplays;
         private bool _onfield;
         private bool _isPlaying;
+        private PlayerMissReasons _notPlayReasons;
+        #endregion
 
+        #region Serialization
         /// <summary>
         /// The static data of a player for serialization.
         /// </summary>
@@ -27,53 +32,7 @@ namespace bafl_app.library
             public bool HalfPlays {get; set;}
             public bool OnField {get; set;}
             public bool IsPlaying {get; set;}
-        }
-
-        /// <summary>
-        /// The play status for a player.
-        /// </summary>
-        public enum PlayerPlayStatus
-        {
-            NoPlays,
-            PartialPlays,
-            CompletedPlays,
-            NotPlaying
-        }
-
-        /// <summary>
-        /// Construct the item.
-        /// </summary>
-        public BaflPlayerMonitor()
-        {
-            _isPeewee = false;
-            _number = 0;
-            _name = "";
-            _plays = 0;
-            _halfplays = false;
-            _onfield = false;
-            _isPlaying = true;
-        }
-
-        /// <summary>
-        /// Construct the monitor item.
-        /// </summary>
-        /// <param name="isPeewee">Whether this is a peewee player.</param>
-        /// <param name="number">The player number.</param>
-        /// <param name="name">The player name.</param>
-        /// <param name="plays">The number of plays.</param>
-        /// <param name="halfplays">Whether this play is getting half the plays.</param>
-        /// <param name="onfield">Whether this player is on the field.</param>
-        /// <param name="isPlaying">Whether this player is playing.</param>
-        public BaflPlayerMonitor(bool isPeewee, int number, string name, int plays,
-            bool halfplays, bool onfield, bool isPlaying)
-        {
-            _isPeewee = isPeewee;
-            _number = number;
-            _name = name;
-            _plays = plays;
-            _halfplays = halfplays;
-            _onfield = onfield;
-            _isPlaying = isPlaying;
+            public int NotPlayReason { get; set; }
         }
 
         /// <summary>
@@ -90,7 +49,8 @@ namespace bafl_app.library
                 Plays = Plays,
                 HalfPlays = IsHalfPlays,
                 OnField = OnField,
-                IsPlaying = IsPlaying
+                IsPlaying = IsPlaying,
+                NotPlayReason = (int)NotPlayReason
             };
             string json = System.Text.Json.JsonSerializer.Serialize(sBaflPlayerMonitor);
             return json;
@@ -105,7 +65,74 @@ namespace bafl_app.library
         {
             SBaflPlayerMonitor spm = System.Text.Json.JsonSerializer.Deserialize<SBaflPlayerMonitor>(json);
             return new BaflPlayerMonitor(spm.IsPeewee, spm.Number, spm.Name,
-                spm.Plays, spm.HalfPlays, spm.OnField, spm.IsPlaying);
+                spm.Plays, spm.HalfPlays, spm.OnField, spm.IsPlaying, (PlayerMissReasons)spm.NotPlayReason);
+        }
+        #endregion
+
+        #region Enums
+        /// <summary>
+        /// The play status for a player.
+        /// </summary>
+        public enum PlayerPlayStatus
+        {
+            NoPlays,
+            PartialPlays,
+            CompletedPlays,
+            NotPlaying
+        }
+
+        /// <summary>
+        /// Enum defining why a player is not getting plays.
+        /// </summary>
+        public enum PlayerMissReasons
+        {
+            NotSet = 0,
+            Injured = 1,
+            Absent = 2,
+            Discipline = 3,
+            Sick = 4,
+            ParentRequest = 5,
+            Ejected = 6
+        }
+        #endregion
+
+        /// <summary>
+        /// Construct the item.
+        /// </summary>
+        public BaflPlayerMonitor()
+        {
+            _isPeewee = false;
+            _number = 0;
+            _name = "";
+            _plays = 0;
+            _halfplays = false;
+            _onfield = false;
+            _isPlaying = true;
+            _notPlayReasons = PlayerMissReasons.NotSet;
+        }
+
+        /// <summary>
+        /// Construct the monitor item.
+        /// </summary>
+        /// <param name="isPeewee">Whether this is a peewee player.</param>
+        /// <param name="number">The player number.</param>
+        /// <param name="name">The player name.</param>
+        /// <param name="plays">The number of plays.</param>
+        /// <param name="halfplays">Whether this play is getting half the plays.</param>
+        /// <param name="onfield">Whether this player is on the field.</param>
+        /// <param name="isPlaying">Whether this player is playing.</param>
+        /// <param name="notPlayReason">The reason why a player may not be playing.</param>
+        public BaflPlayerMonitor(bool isPeewee, int number, string name, int plays,
+            bool halfplays, bool onfield, bool isPlaying, PlayerMissReasons notPlayReason = PlayerMissReasons.NotSet)
+        {
+            _isPeewee = isPeewee;
+            _number = number;
+            _name = name;
+            _plays = plays;
+            _halfplays = halfplays;
+            _onfield = onfield;
+            _isPlaying = isPlaying;
+            _notPlayReasons = notPlayReason;
         }
 
         /// <summary>
@@ -156,6 +183,14 @@ namespace bafl_app.library
         {
             get => _name;
             set => SetProperty(ref _name, value);
+        }
+
+        /// <summary>
+        /// The reason a player may not be playing.
+        /// </summary>
+        public PlayerMissReasons NotPlayReason
+        {
+            get; set;
         }
 
         /// <summary>
