@@ -111,9 +111,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
-            <ImageButton Source="{AppThemeBinding Light=leftswitch_light.png, Dark=leftswitch_dark.png}" MaximumHeightRequest="30" Margin="60,0,5,0"
+            <ImageButton Source="{AppThemeBinding Light=leftswitch_light.png, Dark=leftswitch_dark.png}" MaximumHeightRequest="30" Margin="10,0,5,0"
                  Grid.Column="0" VerticalOptions="Center" Clicked="AllOffField_Clicked" />
             <ImageButton Source="{AppThemeBinding Light=rightswitch_light.png, Dark=rightswitch_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
                  Grid.Column="1" VerticalOptions="Center" Clicked="AllOnField_Clicked" />
@@ -123,7 +124,7 @@
 
             <Button Text="Run Play" Clicked="RunPlayButton_Clicked" Grid.Column="5" Margin="0,0,10,0" VerticalOptions="Center" />
 
-            <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3" Margin="60,10,0,0">
+            <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3" Margin="10,10,0,0">
                 <Label Text="Last:" Margin="0,0,10,0" />
                 <Label Text="{Binding LastPlay}" />
             </HorizontalStackLayout>
@@ -131,7 +132,20 @@
                 <CheckBox IsChecked="{Binding IsPeewee}" Margin="0,0,10,0" />
                 <Label Text="Peewee" />
             </HorizontalStackLayout>
-            
+
+            <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="6" HorizontalOptions="Center" Margin="10,10,10,0">
+                <Label Text="{Binding ThisTeam}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ThisTeam_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="  vs.  " />
+                <Label Text="{Binding OpposingTeam}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpposingTeam_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
         </Grid>
     </Grid>
 

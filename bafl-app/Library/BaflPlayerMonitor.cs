@@ -91,7 +91,7 @@ namespace bafl_app.library
             Absent = 2,
             Discipline = 3,
             Sick = 4,
-            ParentRequest = 5,
+            Parent = 5,
             Ejected = 6
         }
         #endregion
@@ -243,7 +243,10 @@ namespace bafl_app.library
             {   
                 if (!IsPlaying)
                 {
-                    return "N/A";
+                    if (NotPlayReason == PlayerMissReasons.NotSet)
+                        return "N/A";
+                    else
+                        return NotPlayReason.ToString();
                 }
                 if (Plays >= PlaysTarget)
                 {
@@ -295,14 +298,14 @@ namespace bafl_app.library
             {
                 if (SetProperty(ref _isPlaying, value))
                 {
-                    OnPropertyChanged(nameof(PlayStatus));
-                    OnPropertyChanged(nameof(PlaysString));
-
                     if (!_isPlaying)
                     {
                         OnField = false;
                         OnPropertyChanged(nameof(OnField));
                     }
+
+                    OnPropertyChanged(nameof(PlayStatus));
+                    OnPropertyChanged(nameof(PlaysString));
                 }
             }
         }

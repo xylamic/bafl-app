@@ -110,6 +110,34 @@ public partial class PlayMonitorView : ContentPage
         }
     }
 
+    /// <summary>
+    /// Get the team name.
+    /// </summary>
+    public string ThisTeam
+    {
+        get => _teamMonitor.ThisTeam;
+        set
+        {
+            _teamMonitor.ThisTeam = value;
+            OnPropertyChanged(nameof(ThisTeam));
+            PersistData();
+        }
+    }
+
+    /// <summary>
+    /// Get the opposing team name.
+    /// </summary>
+    public string OpposingTeam
+    {
+        get => _teamMonitor.OpposingTeam;
+        set
+        {
+            _teamMonitor.OpposingTeam = value;
+            OnPropertyChanged(nameof(OpposingTeam));
+            PersistData();
+        }
+    }
+
     public ObservableCollection<BaflPlayerMonitor> Players
     {
         get => _teamMonitor.Players;
@@ -242,18 +270,79 @@ public partial class PlayMonitorView : ContentPage
         OnPropertyChanged(nameof(Players));
     }
 
-    private void ActivePlayer_Clicked(object sender, EventArgs e)
+    private async void ActivePlayer_Clicked(object sender, EventArgs e)
     {
         MenuItem button = (MenuItem)sender;
         BaflPlayerMonitor player = (BaflPlayerMonitor)button.BindingContext;
-        player.IsPlaying = !player.IsPlaying;
+
+        if (player.IsPlaying)
+        {
+            string[] vals = Enum.GetNames(typeof(BaflPlayerMonitor.PlayerMissReasons))[1..];
+            string action = await DisplayActionSheet("Select the reason to remove the player.", "Cancel", null, vals);
+            if (action == "Cancel")
+                return;
+
+            // find the index of action in vals
+            int index = Array.IndexOf(vals, action) + 1;
+            if (index <= 0)
+                index = 0;
+            
+            player.NotPlayReason = (BaflPlayerMonitor.PlayerMissReasons)index;
+
+            player.IsPlaying = false;
+        }
+        else
+        {
+            bool answer = await DisplayAlert("Confirm", "Reinstate player into the game?", "Yes", "No");
+            if (answer)
+            {
+                player.IsPlaying = false;
+                player.NotPlayReason = BaflPlayerMonitor.PlayerMissReasons.NotSet;
+            }
+
+            player.IsPlaying = true;
+        }
+
+        OnPropertyChanged(nameof(OnFieldCount));
     }
 
-    private void HalfPlayer_Clicked(object sender, EventArgs e)
+    private async void HalfPlayer_Clicked(object sender, EventArgs e)
     {
         MenuItem button = (MenuItem)sender;
         BaflPlayerMonitor player = (BaflPlayerMonitor)button.BindingContext;
-        player.IsHalfPlays = !player.IsHalfPlays;
+
+        if (!player.IsPlaying)
+        {
+            await DisplayAlert("Error", "Player must be active to set half-plays.", "OK");
+            return;
+        }
+
+        if (!player.IsHalfPlays)
+        {
+            string[] vals = Enum.GetNames(typeof(BaflPlayerMonitor.PlayerMissReasons))[1..];
+            string action = await DisplayActionSheet("Select the reason to set player to half-plays.", "Cancel", null, vals);
+            if (action == "Cancel")
+                return;
+
+            int index = Array.IndexOf(vals, action) + 1;
+            if (index <= 0)
+                index = 0;
+            
+            player.NotPlayReason = (BaflPlayerMonitor.PlayerMissReasons)index;
+
+            player.IsHalfPlays = true;
+        }
+        else
+        {
+            bool answer = await DisplayAlert("Confirm", "Reinstate player as a full game?", "Yes", "No");
+            if (answer)
+            {
+                player.IsHalfPlays = false;
+                player.NotPlayReason = BaflPlayerMonitor.PlayerMissReasons.NotSet;
+            }
+            
+            player.IsHalfPlays = false;
+        }
     }
 
     /// <summary>
@@ -333,6 +422,24 @@ public partial class PlayMonitorView : ContentPage
         catch (Exception)
         {
             await DisplayAlert("Error", "Could not write the file.", "OK");
+        }
+    }
+
+    private async void ThisTeam_Tapped(object sender, EventArgs e)
+    {
+        string result = await DisplayPromptAsync("This team", "What's this team's name?", "OK", "Cancel", ThisTeam);
+        if (!String.IsNullOrWhiteSpace(result))
+        {
+            ThisTeam = result;
+        }
+    }
+
+    private async void OpposingTeam_Tapped(object sender, EventArgs e)
+    {
+        string result = await DisplayPromptAsync("Opposing team", "What's the opposing team's name?", "OK", "Cancel", OpposingTeam);
+        if (!String.IsNullOrWhiteSpace(result))
+        {
+            OpposingTeam = result;
         }
     }
 }

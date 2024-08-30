@@ -38,6 +38,8 @@ namespace bafl_app.library
             _playCount = 0;
             _isPeewee = false;
             LastPlay = null;
+
+            CheckTeamNames();
         }
 
         public BaflTeamMonitor(bool isPeewee, IEnumerable<BaflPlayerMonitor> players, string thisTeam, string opposingTeam, int playCount)
@@ -47,6 +49,23 @@ namespace bafl_app.library
             _thisTeam = thisTeam;
             _opposingTeam = opposingTeam;
             _playCount = playCount;
+
+            CheckTeamNames();
+        }
+
+        /// <summary>
+        /// Verify the team names aren't empty.
+        /// </summary>
+        private void CheckTeamNames()
+        {
+            if (string.IsNullOrWhiteSpace(_thisTeam))
+            {
+                _thisTeam = "This team (edit)";
+            }
+            if (string.IsNullOrWhiteSpace(_opposingTeam))
+            {
+                _opposingTeam = "Opposing team (edit)";
+            }
         }
 
         /// <summary>
