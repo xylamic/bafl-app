@@ -38,6 +38,29 @@ namespace bafl_app.library
         public static readonly string Msg_PullRefreshDay = "🔽  Updated {0}  🔽";
 
         public static readonly string Msg_FailRefreshDay = "🔽  Failed load, try again  🔽";
+
+        /// <summary>
+        /// The total number of play required for a freshment to senior player.
+        /// </summary>
+        public static readonly int TotalPlays_FrSr = 12;
+
+        /// <summary>
+        /// The total number of play required for a peewee player.
+        /// </summary>
+        public static readonly int TotalPlaysPw = 8;
+
+        /// <summary>
+        /// Write out a file to the cache.
+        /// </summary>
+        /// <param name="fileName">The name of the file to write.</param>
+        /// <param name="content">The content to write to the file.</param>
+        /// <returns>The file path.</returns>
+        public static async Task<string> CreateFileAsync(string fileName, string content)
+        {
+            string filePath = Path.Combine(FileSystem.CacheDirectory, fileName);
+            await File.WriteAllTextAsync(filePath, content);
+            return filePath;
+        }
     }
 }
 

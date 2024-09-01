@@ -77,6 +77,11 @@
             <ShellContent ContentTemplate="{DataTemplate local:AgeWeightCalcView}" />
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Play Monitor" Icon="{AppThemeBinding Light=playmonitor_light.png, Dark=playmonitor_dark.png}" >
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:PlayMonitorView}" />
+        </Tab>
+    </FlyoutItem>
     <MenuItem
         Text="NWS Alerts"
         Clicked="NWS_Clicked"

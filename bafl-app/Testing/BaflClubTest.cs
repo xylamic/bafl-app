@@ -1,19 +1,17 @@
-﻿namespace bafl_unit_test;
+﻿#if DEBUG
+
+namespace bafl_app.testing;
 
 using bafl_app.library;
 using System.Text.Json;
-using Xunit.Abstractions;
+using System.Diagnostics;
 
 public class BaflClubTest
 {
-    private readonly ITestOutputHelper output;
-
-    public BaflClubTest(ITestOutputHelper output)
+    public BaflClubTest()
     {
-        this.output = output;
     }
 
-    [Fact()]
     public void ClubGeneration()
     {
         Dictionary<int, BaflClub> clubList = new Dictionary<int, BaflClub>();
@@ -24,7 +22,9 @@ public class BaflClubTest
             "Buccaneers",
             "Legacy",
             "Mermaids",
-            "https://www.bayareabucs.org");
+            "https://www.bayareabucs.org",
+            "LSA",
+            "coord1");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -32,6 +32,8 @@ public class BaflClubTest
             "Texans",
             "Darlings",
             "Stars",
+            "",
+            "",
             "");
         clubList.Add(id++, club);
 
@@ -40,7 +42,9 @@ public class BaflClubTest
             "Dolphins",
             "",
             "",
-            "");
+            "",
+            "Loc1",
+            "coord2");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -48,7 +52,9 @@ public class BaflClubTest
             "Longhorns",
             "",
             "",
-            "");
+            "",
+            "Loc2",
+            "coord3");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -56,7 +62,9 @@ public class BaflClubTest
             "Raiders",
             "",
             "",
-            "");
+            "",
+            "Loc3",
+            "coord4");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -64,7 +72,9 @@ public class BaflClubTest
             "Wildcats",
             "",
             "",
-            "");
+            "",
+            "Loc4",
+            "coord5");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -72,7 +82,9 @@ public class BaflClubTest
             "Eagles",
             "",
             "",
-            "");
+            "",
+            "Loc5",
+            "coord6");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -80,7 +92,9 @@ public class BaflClubTest
             "Eagles",
             "",
             "",
-            "");
+            "",
+            "Loc6",
+            "coord7");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -88,7 +102,9 @@ public class BaflClubTest
             "Red Raiders",
             "",
             "",
-            "");
+            "",
+            "Loc7",
+            "coord8");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -96,7 +112,9 @@ public class BaflClubTest
             "49ers",
             "",
             "",
-            "");
+            "",
+            "Loc8",
+            "coord9");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -104,7 +122,9 @@ public class BaflClubTest
             "Sharks",
             "",
             "",
-            "");
+            "",
+            "Loc9",
+            "coord10");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -112,7 +132,9 @@ public class BaflClubTest
             "Texans",
             "",
             "",
-            "");
+            "",
+            "Loc10",
+            "coord11");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -120,7 +142,9 @@ public class BaflClubTest
             "Mustangs",
             "",
             "",
-            "");
+            "",
+            "Loc11",
+            "coord12");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -128,7 +152,9 @@ public class BaflClubTest
             "Panthers",
             "",
             "",
-            "");
+            "",
+            "Loc12",
+            "coord13");
         clubList.Add(id++, club);
 
 
@@ -137,7 +163,9 @@ public class BaflClubTest
             "Patriots",
             "",
             "",
-            "");
+            "",
+            "Loc13",
+            "coord14");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -145,7 +173,9 @@ public class BaflClubTest
             "Texans",
             "",
             "",
-            "");
+            "",
+            "Loc14",
+            "coord15");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -153,7 +183,9 @@ public class BaflClubTest
             "Cowboys",
             "",
             "",
-            "");
+            "",
+            "Loc15",
+            "coord16");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -161,7 +193,9 @@ public class BaflClubTest
             "Wildcats",
             "",
             "",
-            "");
+            "",
+            "Loc16",
+            "coord17");
         clubList.Add(id++, club);
 
         club = new BaflClub(
@@ -169,16 +203,20 @@ public class BaflClubTest
             "Braves",
             "",
             "",
-            "");
+            "",
+            "Loc17",
+            "coord18");
         clubList.Add(id++, club);
 
         var options = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(clubList, options);
-        output.WriteLine(jsonString);
+        //output.WriteLine(jsonString);
 
         var clubList2 =
             JsonSerializer.Deserialize<Dictionary<int, BaflClub>>(jsonString);
 
-        Assert.Equal(19, clubList2?.Count);
+        Debug.Assert(19 == clubList2?.Count);
     }
 }
+
+#endif

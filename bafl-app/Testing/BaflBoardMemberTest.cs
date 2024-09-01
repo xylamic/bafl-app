@@ -1,19 +1,18 @@
-﻿namespace bafl_unit_test;
+﻿#if DEBUG
+
+namespace bafl_app.testing;
 
 using bafl_app.library;
+using System.Diagnostics;
 using System.Text.Json;
-using Xunit.Abstractions;
 
 public class BaflBoardMemberTest
 {
-    private readonly ITestOutputHelper output;
 
-    public BaflBoardMemberTest(ITestOutputHelper output)
+    public BaflBoardMemberTest()
     {
-        this.output = output;
     }
 
-    [Fact()]
     public void BoardGeneration()
     {
         List<BaflBoardMember> memberList = new List<BaflBoardMember>();
@@ -56,11 +55,13 @@ public class BaflBoardMemberTest
 
         var options = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(memberList, options);
-        output.WriteLine(jsonString);
+        // output.WriteLine(jsonString);
 
         var memberList2 =
             JsonSerializer.Deserialize<List<BaflBoardMember>>(jsonString);
 
-        Assert.Equal(6, memberList2?.Count);
+        Debug.Assert(6 == memberList2?.Count);
     }
 }
+
+#endif

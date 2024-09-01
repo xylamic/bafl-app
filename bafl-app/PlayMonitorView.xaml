@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bafl_app.PlayMonitorView"
+             Title="2024 BAFL Play Monitor">
+
+    <Grid Padding="10" HorizontalOptions="Fill" VerticalOptions="Fill" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HorizontalOptions="Fill" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Plays:" Margin="0,0,2,0" Grid.Column="0" VerticalTextAlignment="Center" />
+            <Label Text="{Binding PlayCount}" Margin="0,0,10,0" Grid.Column="1" VerticalTextAlignment="Center" />
+            <ImageButton Source="{AppThemeBinding Light=undo_light.png, Dark=undo_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="2" Clicked="Undo_Clicked" IsEnabled="{Binding UndoAllowed}" MaximumWidthRequest="25" />
+            <ImageButton Source="{AppThemeBinding Light=restart_light.png, Dark=restart_dark.png}" MaximumHeightRequest="25"
+                 Grid.Column="3" Margin="0,0,5,0" Clicked="Reset_Clicked" MaximumWidthRequest="25" IsEnabled="{Binding NotLocked}" />
+            <Label Text="Players:" Margin="10,0,2,0" Grid.Column="5" VerticalTextAlignment="Center" />
+            <Label Text="{Binding PlayerCount}" Margin="0,0,10,0" Grid.Column="6" VerticalTextAlignment="Center" />
+            <ImageButton Source="{AppThemeBinding Light=sortbynumber_light.png, Dark=sortbynumber_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="7" Clicked="SortByNumber_Clicked" MaximumWidthRequest="25" />
+            <ImageButton Source="{AppThemeBinding Light=plus_light.png, Dark=plus_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="8" Clicked="AddPlayer_Clicked" MaximumWidthRequest="25" />
+            <ImageButton Source="{AppThemeBinding Light=import_light.png, Dark=import_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="9" Clicked="Import_Clicked" MaximumWidthRequest="25" />
+            <ImageButton Source="{AppThemeBinding Light=export_light.png, Dark=export_dark.png}" MaximumHeightRequest="25" Margin="0,0,5,0"
+                 Grid.Column="10" Clicked="Export_Clicked" MaximumWidthRequest="25" />
+        </Grid>
+        <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="1" />
+        <CollectionView ItemsSource="{Binding Players}" VerticalOptions="FillAndExpand" Grid.Row="2" >
+            <CollectionView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="#" MinimumWidthRequest="60" Grid.Column="0" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                    <Label Text="On Field" Grid.Column="1" HorizontalTextAlignment="Center" Margin="0,0,10,0" />
+                    <Label Text="Left" Grid.Column="3" HorizontalTextAlignment="Center" Margin="0,0,30,0" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Red" Clicked="DeletePlayer_Clicked" />
+                                <SwipeItem Text="In/out" BackgroundColor="Orange" Clicked="ActivePlayer_Clicked" />
+                                <SwipeItem Text="Half" BackgroundColor="Blue" Clicked="HalfPlayer_Clicked" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Margin="0,0,0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+
+                            <Picker x:Name="PlayPicker" ItemsSource="{Binding Numbers}" SelectedItem="{Binding Number}" Grid.Column="0"
+                                MinimumWidthRequest="60" Margin="0,0,10,0" FontSize="Large" HorizontalTextAlignment="Center"
+                                VerticalOptions="Center" />
+                            <Switch IsToggled="{Binding OnField}" HorizontalOptions="End" Grid.Column="1" IsEnabled="{Binding IsPlaying}"
+                                Margin="0,0,10,0" Toggled="OnFieldSwitch_Toggled" VerticalOptions="Center" />
+                            <Entry Text="{Binding Name}" FontSize="Large" Grid.Column="2" Margin="0,0,10,0" VerticalOptions="Center" />
+
+                            <Label Text="{Binding PlaysString}" Grid.Column="3" FontSize="Large" Margin="0,0,10,0" VerticalOptions="Center" />
+                            
+
+                            <Border Stroke="{StaticResource Primary}"  StrokeThickness="1" Grid.Row="1" Grid.ColumnSpan="5" Margin="0,-1,0,0" />
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="3" />
+
+        <Grid Grid.Row="4" HorizontalOptions="Fill" Margin="10,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <ImageButton Source="{AppThemeBinding Light=leftswitch_light.png, Dark=leftswitch_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
+                 Grid.Column="0" VerticalOptions="Center" Clicked="AllOffField_Clicked" MaximumWidthRequest="30" />
+            <ImageButton Source="{AppThemeBinding Light=rightswitch_light.png, Dark=rightswitch_dark.png}" MaximumHeightRequest="30" Margin="0,0,5,0"
+                 Grid.Column="1" VerticalOptions="Center" Clicked="AllOnField_Clicked" MaximumWidthRequest="30" />
+            <Label Text="On Field:" FontSize="Large" Grid.Column="2" VerticalOptions="Center" Margin="0,0,2,0" />
+            <Label Text="{Binding OnFieldCount}" FontSize="Large" Grid.Column="3" Margin="0,0,20,0" VerticalOptions="Center"
+                TextColor="{Binding OnFieldColor}" />
+
+            <Button Text="Run Play" Clicked="RunPlayButton_Clicked" VerticalOptions="Center" Grid.Column="5" Margin="0,0,10,0"
+                IsEnabled="{Binding NotLocked}" />
+
+            <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Margin="00,10,0,0" HorizontalOptions="Center">
+                <Label Text="Last:" Margin="0,0,10,0" />
+                <Label Text="{Binding LastPlay}" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Row="1" Grid.Column="5" Margin="0,10,0,0">
+                <CheckBox IsChecked="{Binding IsPeewee}" Margin="0,0,10,0" />
+                <Label Text="Peewee" VerticalTextAlignment="Center" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="2" Grid.ColumnSpan="6" HorizontalOptions="Center" Margin="10,10,10,0">
+                <Label Text="{Binding ThisTeam}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ThisTeam_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="  vs.  " />
+                <Label Text="{Binding OpposingTeam}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpposingTeam_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <Rectangle Fill="Black" Opacity="0.60" Grid.RowSpan="5" IsVisible="{Binding Locked}" InputTransparent="False" Margin="-10" />
+        <Label Text="{Binding CountdownValue}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" 
+            FontSize="50" Grid.RowSpan="5" IsVisible="{Binding Locked}" />
+    </Grid>
+
+</ContentPage>
+
