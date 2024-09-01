@@ -16,7 +16,7 @@ public partial class AppShell : Shell
         {
             double minPixels = Math.Min(DeviceDisplay.MainDisplayInfo.Width, DeviceDisplay.MainDisplayInfo.Height);
 
-            if (DeviceInfo.Idiom == DeviceIdiom.Tablet && minPixels / DeviceDisplay.MainDisplayInfo.Density > 800)
+            if (DeviceInfo.Idiom == DeviceIdiom.Tablet && minPixels / DeviceDisplay.MainDisplayInfo.Density >= 800)
             {
                 this.FlyoutBehavior = FlyoutBehavior.Locked;
             }

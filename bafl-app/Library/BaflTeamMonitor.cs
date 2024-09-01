@@ -89,7 +89,8 @@ namespace bafl_app.library
                 data.Players.Add(player.ExportAsJson());
             }
 
-            return JsonSerializer.Serialize(data);
+            string json = JsonSerializer.Serialize(data);
+            return json;
         }
 
         /// <summary>

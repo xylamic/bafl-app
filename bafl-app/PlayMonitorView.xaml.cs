@@ -7,6 +7,8 @@ using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel;
 using bafl_app.library;
+using System.ComponentModel;
+using Microsoft.Maui.Devices;
 
 /// <summary>
 /// The Zelle view.
@@ -14,26 +16,14 @@ using bafl_app.library;
 public partial class PlayMonitorView : ContentPage
 {
     private BaflTeamMonitor _teamMonitor = new BaflTeamMonitor();
+    private bool _screenLocked = false;
+    private string _countdownValue = "";
 
     /// <summary>
     /// Construct the view.
     /// </summary>
 	public PlayMonitorView()
 	{
-        _teamMonitor.PropertyChanged += (sender, e) =>
-        {
-            if (e.PropertyName == nameof(BaflTeamMonitor.PlayersOnField))
-                OnPropertyChanged(nameof(OnFieldCount));
-            else if (e.PropertyName == nameof(BaflTeamMonitor.UndoAllowed))
-                OnPropertyChanged(nameof(UndoAllowed));
-            else if (e.PropertyName == nameof(BaflTeamMonitor.LastPlay))
-                OnPropertyChanged(nameof(LastPlay));
-            else if (e.PropertyName == nameof(BaflTeamMonitor.IsPeewee))
-                OnPropertyChanged(nameof(IsPeewee));
-
-            PersistData();
-        };
-
         LoadData();
 
         this.BindingContext = this;
@@ -41,14 +31,46 @@ public partial class PlayMonitorView : ContentPage
         InitializeComponent();
     }
 
-    public string NextPlay
+    public string PlayCount
     {
-        get => (_teamMonitor.PlayCount + 1).ToString();
+        get => _teamMonitor.PlayCount.ToString();
     }
 
     public string PlayerCount
     {
-        get => _teamMonitor.PlayCount.ToString();
+        get => _teamMonitor.PlayerCount.ToString();
+    }
+
+    /// <summary>
+    /// Get and set whether the screen is locked.
+    /// </summary>
+    public bool Locked
+    {
+        get => _screenLocked;
+        set
+        {
+            _screenLocked = value;
+            OnPropertyChanged(nameof(Locked));
+            OnPropertyChanged(nameof(NotLocked));
+        }
+    }
+
+    public bool NotLocked
+    {
+        get => !_screenLocked;
+    }
+
+    /// <summary>
+    /// Get the countdown value on the screen.
+    /// </summary>
+    public string CountdownValue
+    {
+        get => _countdownValue;
+        set
+        {
+            _countdownValue = value;
+            OnPropertyChanged(nameof(CountdownValue));
+        }
     }
 
     public bool IsPeewee
@@ -120,7 +142,6 @@ public partial class PlayMonitorView : ContentPage
         {
             _teamMonitor.ThisTeam = value;
             OnPropertyChanged(nameof(ThisTeam));
-            PersistData();
         }
     }
 
@@ -134,7 +155,6 @@ public partial class PlayMonitorView : ContentPage
         {
             _teamMonitor.OpposingTeam = value;
             OnPropertyChanged(nameof(OpposingTeam));
-            PersistData();
         }
     }
 
@@ -158,9 +178,25 @@ public partial class PlayMonitorView : ContentPage
         }
 
         _teamMonitor.RunPlay();
-        OnPropertyChanged(nameof(NextPlay));
+        Vibration.Default.Vibrate();
+        OnPropertyChanged(nameof(PlayCount));
         OnPropertyChanged(nameof(LastPlay));
         OnPropertyChanged(nameof(UndoAllowed));
+
+        // Show the countdown label
+        Locked = true;
+
+        // Countdown from 3 to 0
+        for (int i = 3; i >= 0; i--)
+        {
+            CountdownValue = i.ToString();
+
+            // Wait for 1 second
+            await Task.Delay(1000);
+        }
+
+        // Hide the countdown label or reset it
+        Locked = false;
     }
 
     /// <summary>
@@ -176,26 +212,28 @@ public partial class PlayMonitorView : ContentPage
     /// </summary>
     private void LoadData()
     {
+        _teamMonitor = null;
         try
         {
             string json = Preferences.Get("team-monitor", "");
             if (json.Length > 0)
             {
                 _teamMonitor = BaflTeamMonitor.ImportFromJson(json);
+                _teamMonitor.PropertyChanged += TeamPropertyChange;
                 foreach (BaflPlayerMonitor player in _teamMonitor.Players)
                 {
-                    player.PropertyChanged += (sender, e) =>
-                    {
-                        PersistData();
-                    };
+                    player.PropertyChanged += PlayerPropertyChange;
                 }
-                OnPropertyChanged(null);
+                OnPropertyChanged(String.Empty);
             }
         }
         catch (Exception) {}
 
         if (_teamMonitor == null)
+        {
             _teamMonitor = new BaflTeamMonitor();
+            _teamMonitor.PropertyChanged += TeamPropertyChange;
+        }
     }
 
     private void OnFieldSwitch_Toggled(object sender, ToggledEventArgs e)
@@ -223,7 +261,7 @@ public partial class PlayMonitorView : ContentPage
     private void Undo_Clicked(object sender, EventArgs e)
     {
         _teamMonitor.UndoPlay();
-        OnPropertyChanged(nameof(NextPlay));
+        OnPropertyChanged(nameof(PlayCount));
         OnPropertyChanged(nameof(LastPlay));
         OnPropertyChanged(nameof(UndoAllowed));
     }
@@ -235,7 +273,7 @@ public partial class PlayMonitorView : ContentPage
             return;
 
         _teamMonitor.ResetPlays();
-        OnPropertyChanged(nameof(NextPlay));
+        OnPropertyChanged(nameof(PlayCount));
         OnPropertyChanged(nameof(LastPlay));
     }
 
@@ -257,17 +295,16 @@ public partial class PlayMonitorView : ContentPage
         BaflPlayerMonitor player = (BaflPlayerMonitor)button.BindingContext;
         _teamMonitor.Players.Remove(player);
         OnPropertyChanged(nameof(Players));
+        OnPropertyChanged(nameof(PlayerCount));
     }
 
     private void AddPlayer_Clicked(object sender, EventArgs e)
     {
         BaflPlayerMonitor player = new BaflPlayerMonitor(IsPeewee, 99, "-", 0, false, false, true);
-        player.PropertyChanged += (sender, e) =>
-        {
-            PersistData();
-        };
+        player.PropertyChanged += PlayerPropertyChange;
         _teamMonitor.Players.Add(player);
         OnPropertyChanged(nameof(Players));
+        OnPropertyChanged(nameof(PlayerCount));
     }
 
     private async void ActivePlayer_Clicked(object sender, EventArgs e)
@@ -346,32 +383,66 @@ public partial class PlayMonitorView : ContentPage
     }
 
     /// <summary>
+    /// The team property change events.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The event args.</param>
+    private void TeamPropertyChange(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(BaflTeamMonitor.PlayersOnField))
+            OnPropertyChanged(nameof(OnFieldCount));
+        else if (e.PropertyName == nameof(BaflTeamMonitor.UndoAllowed))
+            OnPropertyChanged(nameof(UndoAllowed));
+        else if (e.PropertyName == nameof(BaflTeamMonitor.LastPlay))
+            OnPropertyChanged(nameof(LastPlay));
+        else if (e.PropertyName == nameof(BaflTeamMonitor.IsPeewee))
+            OnPropertyChanged(nameof(IsPeewee));
+
+        PersistData();
+    }
+
+    /// <summary>
+    /// Property change events for a player.
+    /// </summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The event args.</param>
+    private void PlayerPropertyChange(object sender, PropertyChangedEventArgs e)
+    {
+        PersistData();
+    }
+
+    /// <summary>
     /// Import a team monitor file.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The event args.</param>
     private async void Import_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Error", "Import not yet implemented.", "OK");
-        return;
-
-        // Configure the FilePicker to only show .baflmon files
-        var options = new PickOptions
+        string file = null;
+        try
         {
-            PickerTitle = "Select a BAFL Team Monitor file",
-            FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+            // Configure the FilePicker to only show .baflmon files
+            var options = new PickOptions
             {
-                { DevicePlatform.iOS, new[] { ".baflmon" } },
-                { DevicePlatform.Android, new[] { ".baflmon" } },
-                { DevicePlatform.WinUI, new[] { ".baflmon" } },
-                { DevicePlatform.macOS, new[] { ".baflmon" } }
-            })
-        };
+                PickerTitle = "Select a BAFL Team Monitor file",
+                FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+                {
+                    { DevicePlatform.iOS, new[] { "public.json" } },
+                    { DevicePlatform.Android, new[] { "application/json" } },
+                    { DevicePlatform.WinUI, new[] { ".json" } },
+                    { DevicePlatform.macOS, new[] { "public.json" } }
+                })
+            };
 
-        // get the file
-        string file = (await FilePicker.Default.PickAsync(options)).FullPath;
-        if (file == null)
+            // get the file
+            file = (await FilePicker.Default.PickAsync(options)).FullPath;
+            if (string.IsNullOrWhiteSpace(file))
+                return;
+        }
+        catch (Exception)
+        {
             return;
+        }
 
         // read the file
         try
@@ -381,7 +452,14 @@ public partial class PlayMonitorView : ContentPage
             if (monitor != null)
             {
                 _teamMonitor = monitor;
-                OnPropertyChanged(null);
+
+                _teamMonitor.PropertyChanged += TeamPropertyChange;
+                foreach (BaflPlayerMonitor player in _teamMonitor.Players)
+                {
+                    player.PropertyChanged += PlayerPropertyChange;
+                }
+
+                OnPropertyChanged(String.Empty);
             }
         }
         catch (Exception)
@@ -390,38 +468,25 @@ public partial class PlayMonitorView : ContentPage
         }
     }
 
+    /// <summary>
+    /// Export the team monitor file.
+    /// </summary>
     private async void Export_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Error", "Export not yet implemented.", "OK");
-        return;
-
-        // Configure the FilePicker to only show .baflmon files
-        var options = new PickOptions
-        {
-            PickerTitle = "Select a BAFL Team Monitor file",
-            FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-            {
-                { DevicePlatform.iOS, new[] { ".baflmon" } },
-                { DevicePlatform.Android, new[] { ".baflmon" } },
-                { DevicePlatform.WinUI, new[] { ".baflmon" } },
-                { DevicePlatform.macOS, new[] { ".baflmon" } }
-            })
-        };
-
-        // get the file
-        string file = (await FilePicker.Default.PickAsync(options)).FullPath;
-        if (file == null)
-            return;
-
-        // write the file
         try
         {
             string json = _teamMonitor.ExportAsJson();
-            File.WriteAllText(file, json);
+            string file = await BaflUtilities.CreateFileAsync(ThisTeam + ".json", json);
+
+            await Share.RequestAsync(new ShareFileRequest
+            {
+                Title = "Share team monitor file",
+                File = new ShareFile(file, "application/json")
+            });
         }
         catch (Exception)
         {
-            await DisplayAlert("Error", "Could not write the file.", "OK");
+            await DisplayAlert("Error", "Could not write & share the file.", "OK");
         }
     }
 

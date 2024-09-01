@@ -64,8 +64,9 @@ namespace bafl_app.library
         public static BaflPlayerMonitor ImportFromJson(string json)
         {
             SBaflPlayerMonitor spm = System.Text.Json.JsonSerializer.Deserialize<SBaflPlayerMonitor>(json);
+            PlayerMissReasons reason = (PlayerMissReasons)spm.NotPlayReason;
             return new BaflPlayerMonitor(spm.IsPeewee, spm.Number, spm.Name,
-                spm.Plays, spm.HalfPlays, spm.OnField, spm.IsPlaying, (PlayerMissReasons)spm.NotPlayReason);
+                spm.Plays, spm.HalfPlays, spm.OnField, spm.IsPlaying, reason);
         }
         #endregion
 
@@ -190,7 +191,14 @@ namespace bafl_app.library
         /// </summary>
         public PlayerMissReasons NotPlayReason
         {
-            get; set;
+            get => _notPlayReasons;
+            set
+            {
+                if (SetProperty(ref _notPlayReasons, value))
+                {
+                    OnPropertyChanged(nameof(PlaysString));
+                }
+            }
         }
 
         /// <summary>
@@ -250,11 +258,13 @@ namespace bafl_app.library
                 }
                 if (Plays >= PlaysTarget)
                 {
-                    return $"All {PlaysTarget}";
+                    return $"✅";
                 }
                 else
                 {
-                    return $"{Plays} of {PlaysTarget}";
+                    int playsLeft = PlaysTarget - Plays;
+                    string indicator = playsLeft > PlaysTarget / 2 ? "🟥" : "🟨";
+                    return $"{PlaysTarget - Plays} {indicator}";
                 }
             }
         }
