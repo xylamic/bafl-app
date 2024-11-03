@@ -29,10 +29,10 @@ public partial class CheerCompView : ContentPage
 
         // set binding to itself
         BindingContext = this;
-
+        
         // begin the data load
         Task.Run(async () => { await LoadView(); });
-	}
+    }
 
     /// <summary>
     /// Load the view data.
@@ -61,15 +61,20 @@ public partial class CheerCompView : ContentPage
                 }
                 _firstLoad = false;
             }
+
+            _isLoading = false;
+            _isRefreshing = false;
+            OnPropertyChanged(null);
         }
         catch (Exception)
         {
             LastUpdated = String.Format(BaflUtilities.Msg_FailRefreshTime, DateTime.Now.ToShortTimeString());
         }
-
-        _isLoading = false;
-        _isRefreshing = false;
-        OnPropertyChanged(null);
+        finally
+        {
+            _isLoading = false;
+            _isRefreshing = false;
+        }
     }
 
     /// <summary>
@@ -130,6 +135,14 @@ public partial class CheerCompView : ContentPage
     public string Message
     {
         get => _event.Message;
+    }
+
+    /// <summary>
+    /// Get the general informational message.
+    /// </summary>
+    public string Information
+    {
+        get => _event.Information;
     }
 
     /// <summary>
@@ -245,17 +258,19 @@ public partial class CheerCompView : ContentPage
     /// </summary>
     /// <param name="sender">The sender of the event.</param>
     /// <param name="e">The args.</param>
-    protected void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
+    protected async void RefreshView_Refreshing(System.Object sender, System.EventArgs e)
     {
         if (_isLoading || _isRefreshing)
             return;
 
-        Task.Run(async () =>
+        await MainThread.InvokeOnMainThreadAsync(async () =>
         {
             _isRefreshing = true;
             OnPropertyChanged(nameof(IsRefreshing));
 
             await LoadView();
+
+            GC.Collect();
         });
     }
 

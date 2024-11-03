@@ -4,7 +4,7 @@
              x:Class="bafl_app.CheerCompView"
              Title="{Binding Path=Name}">
 
-    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsLoading}" >
+    <RefreshView Refreshing="RefreshView_Refreshing" IsRefreshing="{Binding Path=IsRefreshing}" >
         <ScrollView x:Name="scrollViewMain" >
             <VerticalStackLayout x:Name="stackLay" Margin="5,5,5,5" >
                 <!-- refresh label and bar -->
@@ -21,7 +21,7 @@
                         HorizontalTextAlignment="Center" FontSize="Large" TextColor="{StaticResource Secondary}" />
 
                 <!-- event note -->
-                <Label Text="Real-time schedule below. Doors only open for entry &amp; exit during breaks." FontSize="Small"
+                <Label Text="{Binding Information}" FontSize="Small"
                         HorizontalTextAlignment="Center" Margin="10,0,10,5" />
 
                 <!-- doors open time -->

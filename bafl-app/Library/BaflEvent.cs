@@ -9,6 +9,7 @@ namespace bafl_app.library
         private string _name;
         private DateTime _date;
         private string _message;
+        private string _information;
         private string _doorsOpen;
         private string _moreinfo;
         private string _tickets;
@@ -22,6 +23,7 @@ namespace bafl_app.library
             _name = "";
             _date = DateTime.MinValue;
             _message = "";
+            _information = "";
             _doorsOpen = "";
             _moreinfo = "";
             _tickets = "";
@@ -34,6 +36,7 @@ namespace bafl_app.library
         /// <param name="name">The name of the event.</param>
         /// <param name="date">The date of the event.</param>
         /// <param name="message">Any unique message, if needed.</param>
+        /// <param name="information">General informational message.</param>
         /// <param name="doorsOpen">The time the doors open.</param>
         /// <param name="moreInfo">The more info URL link.</param>
         /// <param name="tickets">The tickets URL.</param>
@@ -42,6 +45,7 @@ namespace bafl_app.library
             string name,
             DateTime date,
             string message,
+            string information,
             string doorsOpen,
             string moreInfo,
             string tickets,
@@ -50,8 +54,10 @@ namespace bafl_app.library
             _name = name;
             _date = date;
             _message = message;
+            _information = information;
             _doorsOpen = doorsOpen;
             _moreinfo = moreInfo;
+            _tickets = tickets;
             _schedule = new List<BaflEventLineItem>(items);
         }
 
@@ -98,6 +104,15 @@ namespace bafl_app.library
         {
             get => _message;
             set => _message = value;
+        }
+
+        /// <summary>
+        /// The general informational message.
+        /// </summary>
+        public string Information
+        {
+            get => _information;
+            set => _information = value;
         }
 
         /// <summary>
