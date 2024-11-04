@@ -31,13 +31,48 @@ namespace bafl_app.library
 
         public static readonly string SquareUrl = "https://square.link/u/anPW8szd";
 
-        public static readonly string Msg_PullRefreshTime = "🔽  Updated {0}, pull to refresh  🔽";
+        private static readonly string Msg_PullRefreshTime = "🔽  Updated @ {0}, pull to refresh  🔽";
 
-        public static readonly string Msg_FailRefreshTime = "🔽  Failed load {0}, try again  🔽";
+        private static readonly string Msg_FailRefreshTime = "🔽  Failed load @ {0}, try again. Detail: {1}  🔽";
 
-        public static readonly string Msg_PullRefreshDay = "🔽  Updated {0}  🔽";
+        private static readonly string Msg_PullRefreshDay = "🔽  Updated @ {0}, pull to refresh  🔽";
 
-        public static readonly string Msg_FailRefreshDay = "🔽  Failed load, try again  🔽";
+        private static readonly string Msg_FailRefreshDay = "🔽  Failed load @ {0}, try again. Detail: {1}  🔽";
+
+        /// <summary>
+        /// Generate a refresh update message.
+        /// </summary>
+        /// <param name="isDay">Whether it's a day message, otherwise a time message.</param>
+        /// <returns>The update message to show.</returns>
+        public static string GenerateUpdateMessage(bool isDay)
+        {
+            if (isDay)
+            {
+                return String.Format(BaflUtilities.Msg_PullRefreshDay, DateTime.Now.ToShortDateString());
+            }
+            else
+            {
+                return String.Format(BaflUtilities.Msg_PullRefreshTime, DateTime.Now.ToShortTimeString());
+            }
+        }
+
+        /// <summary>
+        /// Generate an error message for refreshing.
+        /// </summary>
+        /// <param name="isDay">Whether it's a day message (schedule), otherwise a time message (cheer comp).</param>
+        /// <param name="ex">The exception that occurred.</param>
+        /// <returns>The string to show.</returns>
+        public static string GenerateErrorMessage(bool isDay, Exception ex)
+        {
+            if (isDay)
+            {
+                return String.Format(BaflUtilities.Msg_FailRefreshDay, DateTime.Now.ToShortDateString(), ex.Message);
+            }
+            else
+            {
+                return String.Format(BaflUtilities.Msg_FailRefreshTime, DateTime.Now.ToShortTimeString(), ex.Message);
+            }
+        }
 
         /// <summary>
         /// The total number of play required for a freshment to senior player.
