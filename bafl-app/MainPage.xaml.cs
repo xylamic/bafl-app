@@ -55,7 +55,7 @@ public partial class MainPage : ContentPage
 
         // trigger the bindings to update
         _isLoading = false;
-		OnPropertyChanged(null);
+		OnPropertyChanged(String.Empty);
     }
 
     /// <summary>

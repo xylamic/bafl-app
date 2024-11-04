@@ -151,7 +151,7 @@ public partial class StandingsView : ContentPage
             _standings = JsonSerializer.Deserialize<BaflStandings>(standingContent);
 
             // set the text for the page header
-            LastUpdated = String.Format(BaflUtilities.Msg_PullRefreshDay, DateTime.Now.ToLongDateString());
+            LastUpdated = BaflUtilities.GenerateUpdateMessage(true);
 
             _isError = false;
         }
@@ -159,12 +159,14 @@ public partial class StandingsView : ContentPage
         {
             _isError = true;
             Console.WriteLine(ex.ToString());
-            LastUpdated = String.Format(BaflUtilities.Msg_FailRefreshDay, DateTime.Now.ToShortTimeString());
+            LastUpdated = BaflUtilities.GenerateErrorMessage(true, ex);
         }
-
-        _isLoading = false;
-        _isRefreshing = false;
-        OnPropertyChanged(null);
+        finally
+        {
+            _isLoading = false;
+            _isRefreshing = false;
+            OnPropertyChanged(String.Empty);
+        }
     }
 
     /// <summary>

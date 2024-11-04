@@ -51,7 +51,7 @@ public partial class CheerCompView : ContentPage
             _event = JsonSerializer.Deserialize<BaflEvent>(cheerContent);
 
             // set the text for the page header
-            LastUpdated = String.Format(BaflUtilities.Msg_PullRefreshTime, DateTime.Now.ToShortTimeString());
+            LastUpdated = BaflUtilities.GenerateUpdateMessage(false);
 
             if (_firstLoad)
             {
@@ -61,19 +61,17 @@ public partial class CheerCompView : ContentPage
                 }
                 _firstLoad = false;
             }
-
-            _isLoading = false;
-            _isRefreshing = false;
-            OnPropertyChanged(null);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            LastUpdated = String.Format(BaflUtilities.Msg_FailRefreshTime, DateTime.Now.ToShortTimeString());
+            LastUpdated = BaflUtilities.GenerateErrorMessage(false, ex);
         }
         finally
         {
             _isLoading = false;
             _isRefreshing = false;
+
+            OnPropertyChanged(String.Empty);
         }
     }
 
