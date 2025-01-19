@@ -9,6 +9,7 @@ using bafl_app.library;
 public partial class AgeWeightCalcView : ContentPage
 {
     private DateTime _selectedBirthdate = new DateTime(2014, 08, 01);
+    private DateTime _targetDate = new DateTime(2025, 08, 01);
     private bool _isCheer = false;
     private bool _upLevel = false;
 
@@ -25,13 +26,38 @@ public partial class AgeWeightCalcView : ContentPage
     private string[] _footballWeights = new string[]
     {
         "N/A",
-        "120",
-        "140",
-        "160",
-        "180",
-        "200",
+        "130",
+        "150",
+        "170",
+        "190",
+        "210",
         "N/A"
     };
+
+    public string PeeweeWeight
+    {
+        get { return _footballWeights[1]; }
+    }
+
+    public string FreshmanWeight
+    {
+        get { return _footballWeights[2]; }
+    }
+
+    public string SophomoreWeight
+    {
+        get { return _footballWeights[3]; }
+    }
+
+    public string JuniorWeight
+    {
+        get { return _footballWeights[4]; }
+    }
+
+    public string SeniorWeight
+    {
+        get { return _footballWeights[5]; }
+    }
 
     /// <summary>
     /// Construct the view.
@@ -43,11 +69,33 @@ public partial class AgeWeightCalcView : ContentPage
         InitializeComponent();
     }
 
+    /// <summary>
+    /// Get the title of the page.
+    /// </summary>
+    public string TitleText
+    {
+        get
+        {
+            // 2024 Monitor Calculator format with _targetDate year
+            return String.Format("{0} Monitor Calculator", _targetDate.ToString("yyyy"));
+        }
+    }
+
+    /// <summary>
+    /// Get the age date target text.
+    /// </summary>
+    public string AgeOnText
+    {
+        get
+        {
+            // Age on "August 1, 2025" format with _targetDate
+            return "Age on " + _targetDate.ToString("MMMM d, yyyy");
+        }
+    }
+
     private void CalculateText()
     {
-        DateTime targetDate = new DateTime(2024, 8, 1);
-
-        int age = GetYearsDifference(_selectedBirthdate, targetDate);
+        int age = GetYearsDifference(_selectedBirthdate, _targetDate);
         AgeText = age.ToString();
 
         if (!_isCheer)
