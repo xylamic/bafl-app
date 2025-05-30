@@ -46,7 +46,7 @@
                  Grid.Column="10" Clicked="Export_Clicked" MaximumWidthRequest="25" />
         </Grid>
         <Border Stroke="{StaticResource Primary}" StrokeThickness="3" Margin="0,10,0,10" Grid.Row="1" />
-        <CollectionView ItemsSource="{Binding Players}" VerticalOptions="FillAndExpand" Grid.Row="2" >
+        <CollectionView ItemsSource="{Binding Players}" VerticalOptions="Fill" Grid.Row="2" >
             <CollectionView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
