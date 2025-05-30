@@ -1,0 +1,100 @@
+[
+  {
+    "Date": "2024-07-27",
+    "Name": "First Official Practice",
+    "Location": "Team Fields",
+    "Notable": true
+  },
+	{
+    "Date": "2024-08-17",
+    "Name": "Football - Week 1",
+    "Location": "Team Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2024-08-24",
+    "Name": "Football - Week 2",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-08-31",
+    "Name": "Football - Week 3",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-09-07",
+    "Name": "Football - Week 4",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-09-14",
+    "Name": "Football - Week 5",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-09-21",
+    "Name": "Football - Week 6",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-09-28",
+    "Name": "Football - Week 7",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-10-05",
+    "Name": "Football - Week 8",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-10-06",
+    "Name": "Cheer Competition",
+    "Location": "Moody Gardens",
+    "Notable": true
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Football - Week 9",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-10-19",
+    "Name": "Football - Week 10",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-10-26",
+    "Name": "Football - Week 11",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2024-11-02",
+    "Name": "Football Quarterfinals",
+    "Location": "Check Schedule",
+    "Notable": true
+  },
+  {
+    "Date": "2024-11-09",
+    "Name": "Football Semifinals",
+    "Location": "TBA",
+    "Notable": true
+  },
+  {
+    "Date": "2024-11-16",
+    "Name": "Drill Competition",
+    "Location": "Santa Fe High School",
+    "Notable": true
+  },
+  {
+    "Date": "2024-11-23",
+    "Name": "BAFL Bowl (All Star Game)",
+    "Location": "Pearland Stadium (The Rig)",
+    "Notable": true
+  },
+  {
+    "Date": "2024-12-07",
+    "Name": "Super Bowl",
+    "Location": "Rice Stadium",
+    "Notable": true
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "Date": "2025-07-26",
+    "Name": "First Official Practice",
+    "Location": "Team Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2025-08-16",
+    "Name": "Football - Week 1",
+    "Location": "Team Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2025-08-23",
+    "Name": "Football - Week 2",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-08-30",
+    "Name": "Football - Week 3",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-09-06",
+    "Name": "Football - Week 4",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-09-13",
+    "Name": "Football - Week 5",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-09-20",
+    "Name": "Football - Week 6",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-09-27",
+    "Name": "Football - Week 7",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-10-04",
+    "Name": "Football - Week 8",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-10-11",
+    "Name": "Football - Week 9",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-10-18",
+    "Name": "Football - Week 10",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-10-25",
+    "Name": "Football - Week 11",
+    "Location": "Team Fields"
+  },
+  {
+    "Date": "2025-11-01",
+    "Name": "Football Quarterfinals",
+    "Location": "Select Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2025-11-02",
+    "Name": "Cheer Competition",
+    "Location": "Moody Gardens",
+    "Notable": true
+  },
+  {
+    "Date": "2025-11-08",
+    "Name": "Football Semifinals",
+    "Location": "Select Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2025-11-15",
+    "Name": "BAFL Bowl (All Star Game)",
+    "Location": "TBA",
+    "Notable": true
+  },
+  {
+    "Date": "2025-11-22",
+    "Name": "Drill Competition",
+    "Location": "TBA",
+    "Notable": true
+  },
+  {
+    "Date": "2025-12-06",
+    "Name": "Super Bowl",
+    "Location": "Rice Stadium",
+    "Notable": true
+  }
+]
