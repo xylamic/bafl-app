@@ -1,0 +1,480 @@
+{
+  "Title": "2025 Schedule",
+  "Message": "Are you conditioning? Camp soon and Week 1 is August 16th",
+  "Weeks": [
+    {
+      "Week": "Week 1",
+      "Date": "2025-08-16",
+      "Matchups": [
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "Angleton Wildcats"
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Pearland Patriots"
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "League City 49ers"
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Dickinson Gators"
+        },
+        {
+          "Home": "Santa Fe Braves",
+          "Away": "East End Eagles"
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Hitchcock Red Raiders"
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Magnolia Park Sharks"
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Sagemont Cowboys"
+        },
+        {
+          "Home": "BYE",
+          "Away": "Bay Area Cardinals"
+        }
+      ]
+    },
+    {
+      "Week": "Week 2",
+      "Date": "2025-08-23",
+      "Matchups": [
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Santa Fe Braves"
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Bay Area Buccaneers"
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Brazosport Longhorns"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Dickinson Gators"
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Bay Area Cardinals"
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "La Porte Texans"
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Pearland Texans"
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Texas City Stingrays"
+        },
+        {
+          "Home": "BYE",
+          "Away": "Magnolia Park Sharks"
+        }
+      ]
+    },
+    {
+      "Week": "Week 3",
+      "Date": "2025-08-30",
+      "Matchups": [
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Angleton Wildcats"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Bay Area Buccaneers"
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "League City 49ers"
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Manvel Texans"
+        },
+        {
+          "Home": "Dickinson Gators",
+          "Away": "Pasadena Panthers"
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Santa Fe Braves"
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Sagemont Cowboys"
+        },
+        {
+          "Home": "Bay Area Cardinals",
+          "Away": "Texas City Stingrays"
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 4",
+      "Date": "2025-09-06",
+      "Matchups": [
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Bay Area Cardinals"
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "East End Eagles"
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Hitchcock Red Raiders"
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "League City 49ers"
+        },
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "Manvel Texans"
+        },
+        {
+          "Home": "Santa Fe Braves",
+          "Away": "Pasadena Panthers"
+        },
+        {
+          "Home": "Dickinson Gators",
+          "Away": "Pearland Patriots"
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Pearland Texans"
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 5",
+      "Date": "2025-09-13",
+      "Matchups": [
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Angleton Wildcats"
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Brazosport Longhorns"
+        },
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "Dickinson Gators"
+        },
+        {
+          "Home": "Bay Area Cardinals",
+          "Away": "East End Eagles"
+        },
+        {
+          "Home": "Santa Fe Braves",
+          "Away": "Magnolia Park Sharks"
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Pearland Texans"
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Sagemont Cowboys"
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "BYE"
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "BYE"
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 6",
+      "Date": "2025-09-20",
+      "Matchups": [
+        {
+          "Home": "Dickinson Gators",
+          "Away": "Bay Area Buccaneers"
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Bay Area Cardinals"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Brazosport Longhorns"
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "La Porte Texans"
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Manvel Texans"
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Santa Fe Braves"
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Texas City Stingrays"
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 7",
+      "Date": "2025-09-27",
+      "Matchups": [
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Dickinson Gators"
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Hitchcock Red Raiders"
+        },
+        {
+          "Home": "Santa Fe Braves",
+          "Away": "La Porte Texans"
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Magnolia Park Sharks"
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "Manvel Texans"
+        },
+        {
+          "Home": "Bay Area Cardinals",
+          "Away": "Pasadena Panthers"
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Pearland Patriots"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "BYE"
+        },
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 8",
+      "Date": "2025-10-04",
+      "Matchups": [
+        {
+          "Home": "Bay Area Cardinals",
+          "Away": "Angleton Wildcats"
+        },
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "Bay Area Buccaneers"
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "Brazosport Longhorns"
+        },
+        {
+          "Home": "Santa Fe Braves",
+          "Away": "Dickinson Gators"
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "East End Eagles"
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "League City 49ers"
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Magnolia Park Sharks"
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Pearland Patriots"
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 9",
+      "Date": "2025-10-11",
+      "Matchups": [
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "Bay Area Cardinals"
+        },
+        {
+          "Home": "Pearland Texans",
+          "Away": "East End Eagles"
+        },
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Hitchcock Red Raiders"
+        },
+        {
+          "Home": "League City 49ers",
+          "Away": "La Porte Texans"
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Manvel Texans"
+        },
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Santa Fe Braves"
+        },
+        {
+          "Home": "Dickinson Gators",
+          "Away": "Sagemont Cowboys"
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Texas City Stingrays"
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 10",
+      "Date": "2025-10-18",
+      "Matchups": [
+        {
+          "Home": "League City 49ers",
+          "Away": "Angleton Wildcats"
+        },
+        {
+          "Home": "Hitchcock Red Raiders",
+          "Away": "Bay Area Buccaneers"
+        },
+        {
+          "Home": "Magnolia Park Sharks",
+          "Away": "La Porte Texans"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Pasadena Panthers"
+        },
+        {
+          "Home": "Bay Area Cardinals",
+          "Away": "Pearland Texans"
+        },
+        {
+          "Home": "Brazosport Longhorns",
+          "Away": "Santa Fe Braves"
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Sagemont Cowboys"
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Texas City Stingrays"
+        },
+        {
+          "Home": "Dickinson Gators",
+          "Away": "BYE"
+        }
+      ]
+    },
+    {
+      "Week": "Week 11",
+      "Date": "2025-10-25",
+      "Matchups": [
+        {
+          "Home": "Bay Area Buccaneers",
+          "Away": "Bay Area Cardinals"
+        },
+        {
+          "Home": "Angleton Wildcats",
+          "Away": "Brazosport Longhorns"
+        },
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "Hitchcock Red Raiders"
+        },
+        {
+          "Home": "Dickinson Gators",
+          "Away": "League City 49ers"
+        },
+        {
+          "Home": "East End Eagles",
+          "Away": "Magnolia Park Sharks"
+        },
+        {
+          "Home": "La Porte Texans",
+          "Away": "Pasadena Panthers"
+        },
+        {
+          "Home": "Sagemont Cowboys",
+          "Away": "Pearland Patriots"
+        },
+        {
+          "Home": "Manvel Texans",
+          "Away": "Pearland Texans"
+        },
+        {
+          "Home": "Santa Fe Braves",
+          "Away": "BYE"
+        }
+      ]
+    }
+  ]
+}
