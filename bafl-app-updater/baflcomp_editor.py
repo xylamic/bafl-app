@@ -6,7 +6,6 @@ A Streamlit application to manage CheerComp.json and DrillComp.json files in Azu
 import streamlit as st
 import json
 from datetime import datetime
-import pandas as pd
 from azure_blob_service import AzureBlobService
 import os
 from dotenv import load_dotenv
@@ -33,7 +32,7 @@ if 'competition_data' not in st.session_state:
     st.session_state.competition_data = None
 if 'blob_service' not in st.session_state:
     st.session_state.blob_service = AzureBlobService(
-        STORAGE_ACCOUNT, 
+        STORAGE_ACCOUNT,
         CONTAINER_NAME
     )
 if 'has_unsaved_changes' not in st.session_state:
@@ -284,27 +283,28 @@ def main():
             # Create title with highlight indicator
             is_highlighted = item.get('Highlight', False)
             highlight_emoji = "⭐ " if is_highlighted else ""
-            expander_title = (f"{highlight_emoji}#{idx + 1}: {item.get('Name', 'Unnamed')} - "
-                            f"{item.get('ScheduledStart', 'No time')}")
+            expander_title = (
+                f"{highlight_emoji}#{idx + 1}: {item.get('Name', 'Unnamed')} - "
+                f"{item.get('ScheduledStart', 'No time')}")
             with st.expander(expander_title, expanded=False):
                 col1, col2, col3 = st.columns([2, 2, 1])
                 
                 with col1:
                     new_group = st.text_input(
-                        "Group", 
-                        value=item.get('Group', ''), 
+                        "Group",
+                        value=item.get('Group', ''),
                         key=f"group_{item_id}",
                         on_change=mark_unsaved_changes
                     )
                     new_start = st.text_input(
-                        "Scheduled Start", 
-                        value=item.get('ScheduledStart', ''), 
+                        "Scheduled Start",
+                        value=item.get('ScheduledStart', ''),
                         key=f"start_{item_id}",
                         on_change=mark_unsaved_changes
                     )
                     new_name = st.text_input(
-                        "Name", 
-                        value=item.get('Name', ''), 
+                        "Name",
+                        value=item.get('Name', ''),
                         key=f"name_{item_id}",
                         on_change=mark_unsaved_changes
                     )
@@ -312,23 +312,23 @@ def main():
                     item['Group'] = new_group
                     item['ScheduledStart'] = new_start
                     item['Name'] = new_name
-                
+
                 with col2:
                     new_status = st.text_input(
-                        "Status", 
-                        value=item.get('Status', ''), 
+                        "Status",
+                        value=item.get('Status', ''),
                         key=f"status_{item_id}",
                         on_change=mark_unsaved_changes
                     )
                     new_highlight = st.checkbox(
-                        "Highlight", 
-                        value=item.get('Highlight', False), 
+                        "Highlight",
+                        value=item.get('Highlight', False),
                         key=f"highlight_{item_id}",
                         on_change=mark_unsaved_changes
                     )
                     new_notable = st.checkbox(
-                        "Notable", 
-                        value=item.get('Notable', False), 
+                        "Notable",
+                        value=item.get('Notable', False),
                         key=f"notable_{item_id}",
                         on_change=mark_unsaved_changes
                     )
