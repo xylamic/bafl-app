@@ -16,7 +16,7 @@ A Streamlit web application for managing the CheerComp.json file stored in Azure
 ### 1. Install Dependencies
 
 ```bash
-cd ServerUpdater
+cd /Users/xylamic/Development/bafl-app/bafl-app-updater
 pip3 install -r requirements.txt
 ```
 
@@ -84,7 +84,7 @@ az role assignment create \
 ## Running the Application
 
 ```bash
-cd ServerUpdater
+cd /Users/xylamic/Development/bafl-app/bafl-app-updater
 streamlit run cheercomp_editor.py
 ```
 
@@ -131,16 +131,28 @@ pip install -r requirements.txt
 ## File Structure
 
 ```
-ServerUpdater/
+bafl-app-updater/
 ├── cheercomp_editor.py      # Main Streamlit application
 ├── azure_blob_service.py    # Azure Blob Storage service class
 ├── requirements.txt         # Python dependencies
+├── .env                     # Azure configuration (git-ignored)
+├── .env.example             # Environment variable template
+├── .gitignore               # Git ignore rules
+├── .flake8                  # Linting configuration
 └── README.md               # This file
 ```
 
 ## Notes
 
-- The application runs entirely in the ServerUpdater folder and does not affect the main BAFL app
+- This application is separate from the main BAFL app and manages Azure blob updates
 - Changes are only saved when you explicitly click "Save to Azure"
 - The application keeps data in session state, so refreshing the page will lose unsaved changes
 - All edits are validated as proper JSON before saving
+
+## Location
+
+This application has been moved from the main BAFL app repository to its own standalone location:
+- **New Location:** `/Users/xylamic/Development/bafl-app/bafl-app-updater`
+- **Previous Location:** `/Users/xylamic/Development/bafl-app/bafl-app/ServerUpdater`
+
+This separation allows for independent version control and deployment of the server updater utility.
