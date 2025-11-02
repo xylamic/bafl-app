@@ -1,6 +1,6 @@
 """
-BAFL Cheer Competition Editor
-A Streamlit application to manage the CheerComp.json file in Azure Blob Storage
+BAFL Competition Editor
+A Streamlit application to manage CheerComp.json and DrillComp.json files in Azure Blob Storage
 """
 
 import streamlit as st
@@ -19,11 +19,12 @@ SUBSCRIPTION_ID = os.getenv('AZURE_SUBSCRIPTION_ID', '')
 RESOURCE_GROUP = os.getenv('AZURE_RESOURCE_GROUP', '')
 STORAGE_ACCOUNT = os.getenv('AZURE_STORAGE_ACCOUNT', '')
 CONTAINER_NAME = os.getenv('AZURE_CONTAINER_NAME', '')
-BLOB_NAME = os.getenv('AZURE_BLOB_NAME', 'CheerComp.json')
+CHEER_BLOB_NAME = os.getenv('AZURE_CHEER_BLOB_NAME', 'CheerComp.json')
+DRILL_BLOB_NAME = os.getenv('AZURE_DRILL_BLOB_NAME', 'DrillComp.json')
 
 # Initialize session state
-if 'cheercomp_data' not in st.session_state:
-    st.session_state.cheercomp_data = None
+if 'competition_data' not in st.session_state:
+    st.session_state.competition_data = None
 if 'blob_service' not in st.session_state:
     st.session_state.blob_service = AzureBlobService(
         STORAGE_ACCOUNT, 
@@ -35,20 +36,38 @@ if 'last_save_time' not in st.session_state:
     st.session_state.last_save_time = None
 if 'last_load_time' not in st.session_state:
     st.session_state.last_load_time = None
+if 'selected_competition' not in st.session_state:
+    st.session_state.selected_competition = 'Cheer'
+
+
+def get_current_blob_name():
+    """Get the blob name for the currently selected competition"""
+    return CHEER_BLOB_NAME if st.session_state.selected_competition == 'Cheer' else DRILL_BLOB_NAME
+
+
+def get_competition_title():
+    """Get the title for the currently selected competition"""
+    return f"BAFL {st.session_state.selected_competition} Competition Editor"
+
+
+def get_competition_icon():
+    """Get the icon for the currently selected competition"""
+    return "📣" if st.session_state.selected_competition == 'Cheer' else "🎺"
 
 
 def load_data():
-    """Load CheerComp data from Azure Blob Storage"""
+    """Load Competition data from Azure Blob Storage"""
     try:
-        data = st.session_state.blob_service.read_blob(BLOB_NAME)
-        cheercomp_data = json.loads(data)
+        blob_name = get_current_blob_name()
+        data = st.session_state.blob_service.read_blob(blob_name)
+        competition_data = json.loads(data)
         
         # Add unique IDs to schedule items if they don't have them
-        for idx, item in enumerate(cheercomp_data.get('Schedule', [])):
+        for idx, item in enumerate(competition_data.get('Schedule', [])):
             if '_id' not in item:
                 item['_id'] = f"item_{idx}_{hash(str(item))}"
         
-        st.session_state.cheercomp_data = cheercomp_data
+        st.session_state.competition_data = competition_data
         st.session_state.has_unsaved_changes = False
         st.session_state.last_save_time = None
         st.session_state.last_load_time = datetime.now()
@@ -59,15 +78,16 @@ def load_data():
 
 
 def save_data():
-    """Save CheerComp data to Azure Blob Storage"""
+    """Save Competition data to Azure Blob Storage"""
     try:
         # Remove internal _id fields before saving
-        data_to_save = st.session_state.cheercomp_data.copy()
+        data_to_save = st.session_state.competition_data.copy()
         for item in data_to_save.get('Schedule', []):
             item.pop('_id', None)
         
+        blob_name = get_current_blob_name()
         json_data = json.dumps(data_to_save, indent=2)
-        st.session_state.blob_service.write_blob(BLOB_NAME, json_data)
+        st.session_state.blob_service.write_blob(blob_name, json_data)
         st.session_state.has_unsaved_changes = False
         st.session_state.last_save_time = datetime.now()
         return True
@@ -83,22 +103,48 @@ def mark_unsaved_changes():
 
 def main():
     st.set_page_config(
-        page_title="BAFL Cheer Competition Editor",
-        page_icon="📣",
+        page_title="BAFL Competition Editor",
+        page_icon="🏆",
         layout="wide",
         menu_items={
             'Get Help': None,
             'Report a bug': None,
-            'About': "BAFL Cheer Competition Editor - Manage CheerComp.json in Azure Blob Storage"
+            'About': "BAFL Competition Editor - Manage competition files in Azure Blob Storage"
         }
     )
     
-    st.title("📣 BAFL Cheer Competition Editor")
+    # Dynamic title based on selected competition
+    icon = get_competition_icon()
+    title = get_competition_title()
+    st.title(f"{icon} {title}")
     
     st.markdown("---")
     
     # Control buttons - using sidebar for always-visible access
     with st.sidebar:
+        st.header("🏆 Competition")
+        
+        # Competition selector
+        competition_options = ['Cheer', 'Drill']
+        selected = st.radio(
+            "Select Competition",
+            competition_options,
+            index=competition_options.index(st.session_state.selected_competition),
+            key="competition_selector"
+        )
+        
+        # Handle competition change
+        if selected != st.session_state.selected_competition:
+            if st.session_state.get('has_unsaved_changes', False):
+                st.warning("⚠️ You have unsaved changes! Save them before switching.")
+            else:
+                st.session_state.selected_competition = selected
+                st.session_state.competition_data = None
+                st.session_state.last_save_time = None
+                st.session_state.last_load_time = None
+                st.rerun()
+        
+        st.markdown("---")
         st.header("🔧 Actions")
         
         if st.button("🔄 Load from Azure", use_container_width=True, key="sidebar_load"):
@@ -106,7 +152,7 @@ def main():
                 st.rerun()
         
         if st.button("💾 Save to Azure", use_container_width=True, key="sidebar_save"):
-            if st.session_state.cheercomp_data:
+            if st.session_state.competition_data:
                 if save_data():
                     st.rerun()
             else:
@@ -131,14 +177,14 @@ def main():
         st.caption("**Azure Storage**")
         st.caption(f"Account: `{STORAGE_ACCOUNT}`")
         st.caption(f"Container: `{CONTAINER_NAME}`")
-        st.caption(f"Blob: `{BLOB_NAME}`")
+        st.caption(f"Blob: `{get_current_blob_name()}`")
     
     # Load data on first run
-    if st.session_state.cheercomp_data is None:
+    if st.session_state.competition_data is None:
         st.info("👆 Click 'Load from Azure' to start editing")
         return
     
-    data = st.session_state.cheercomp_data
+    data = st.session_state.competition_data
     
     # Overview Fields Section
     st.header("📋 Event Overview")
@@ -164,7 +210,7 @@ def main():
             data['DoorsOpen'] = new_doors_open
             data['MoreInfo'] = new_more_info
             data['Tickets'] = new_tickets
-            st.session_state.cheercomp_data = data
+            st.session_state.competition_data = data
             mark_unsaved_changes()
             st.success("✅ Overview updated (remember to save to Azure)")
             st.rerun()
@@ -252,7 +298,7 @@ def main():
                     if st.button("🗑️ Delete", key=f"delete_{idx}", use_container_width=True):
                         schedule.pop(idx)
                         data['Schedule'] = schedule
-                        st.session_state.cheercomp_data = data
+                        st.session_state.competition_data = data
                         mark_unsaved_changes()
                         st.rerun()
     
@@ -284,7 +330,7 @@ def main():
             }
             schedule.append(new_item)
             data['Schedule'] = schedule
-            st.session_state.cheercomp_data = data
+            st.session_state.competition_data = data
             mark_unsaved_changes()
             st.success("✅ Item added (remember to save to Azure)")
             st.rerun()

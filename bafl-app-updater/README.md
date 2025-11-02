@@ -1,9 +1,10 @@
-# BAFL Cheer Competition Editor
+# BAFL Competition Editor
 
-A Streamlit web application for managing the CheerComp.json file stored in Azure Blob Storage.
+A Streamlit web application for managing CheerComp.json and DrillComp.json files stored in Azure Blob Storage.
 
 ## Features
 
+- 🏆 Switch between Cheer and Drill competitions
 - 📋 Edit event overview fields (Name, Date, Message, etc.)
 - 📅 Manage schedule items in an interactive table
 - ➕ Add new schedule entries
@@ -16,7 +17,6 @@ A Streamlit web application for managing the CheerComp.json file stored in Azure
 ### 1. Install Dependencies
 
 ```bash
-cd /Users/xylamic/Development/bafl-app/bafl-app-updater
 pip3 install -r requirements.txt
 ```
 
@@ -34,7 +34,8 @@ AZURE_SUBSCRIPTION_ID=your-subscription-id
 AZURE_RESOURCE_GROUP=your-resource-group
 AZURE_STORAGE_ACCOUNT=your-storage-account
 AZURE_CONTAINER_NAME=your-container-name
-AZURE_BLOB_NAME=CheerComp.json
+AZURE_CHEER_BLOB_NAME=CheerComp.json
+AZURE_DRILL_BLOB_NAME=DrillComp.json
 ```
 
 **Note:** The `.env` file is git-ignored to keep credentials secure.
@@ -84,16 +85,20 @@ az role assignment create \
 ## Running the Application
 
 ```bash
-cd /Users/xylamic/Development/bafl-app/bafl-app-updater
-streamlit run cheercomp_editor.py
+streamlit run baflcomp_editor.py
 ```
 
 The application will open in your default browser at `http://localhost:8501`
 
 ## Usage
 
+### Selecting Competition
+1. Use the radio buttons in the sidebar to select either **Cheer** or **Drill** competition
+2. The page title and icon will update accordingly
+3. If you have unsaved changes, you'll be warned before switching
+
 ### Loading Data
-1. Click **"🔄 Load from Azure"** to fetch the current CheerComp.json from blob storage
+1. Click **"🔄 Load from Azure"** to fetch the current competition file from blob storage
 2. The data will populate in the form below
 
 ### Editing Overview Fields
@@ -132,7 +137,7 @@ pip install -r requirements.txt
 
 ```
 bafl-app-updater/
-├── cheercomp_editor.py      # Main Streamlit application
+├── baflcomp_editor.py       # Main Streamlit application
 ├── azure_blob_service.py    # Azure Blob Storage service class
 ├── requirements.txt         # Python dependencies
 ├── .env                     # Azure configuration (git-ignored)
@@ -151,8 +156,4 @@ bafl-app-updater/
 
 ## Location
 
-This application has been moved from the main BAFL app repository to its own standalone location:
-- **New Location:** `/Users/xylamic/Development/bafl-app/bafl-app-updater`
-- **Previous Location:** `/Users/xylamic/Development/bafl-app/bafl-app/ServerUpdater`
-
-This separation allows for independent version control and deployment of the server updater utility.
+This application is standalone and independent from the main BAFL app repository for version control and deployment purposes.
