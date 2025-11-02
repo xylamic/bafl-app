@@ -4,6 +4,7 @@ A Streamlit web application for managing CheerComp.json and DrillComp.json files
 
 ## Features
 
+- 🔐 Password-protected access
 - 🏆 Switch between Cheer and Drill competitions
 - 📋 Edit event overview fields (Name, Date, Message, etc.)
 - 📅 Manage schedule items in an interactive table
@@ -36,7 +37,13 @@ AZURE_STORAGE_ACCOUNT=your-storage-account
 AZURE_CONTAINER_NAME=your-container-name
 AZURE_CHEER_BLOB_NAME=CheerComp.json
 AZURE_DRILL_BLOB_NAME=DrillComp.json
+
+# Authentication
+APP_USERNAME=admin
+APP_PASSWORD=your-secure-password-here
 ```
+
+**Important:** Change the default username and password to secure values!
 
 **Note:** The `.env` file is git-ignored to keep credentials secure.
 
@@ -84,13 +91,64 @@ az role assignment create \
 
 ## Running the Application
 
+### Option 1: Docker (Recommended)
+
+#### Quick Start (One Command)
+```bash
+./start.sh
+```
+
+This script will:
+- Check for `.env` configuration
+- Build the Docker image
+- Start the application
+- Show you the access URL
+
+#### Using Docker Compose (Easiest)
+```bash
+# Make sure your .env file is configured
+docker-compose up -d
+```
+
+The application will be available at `http://localhost:8505`
+
+To stop the application:
+```bash
+docker-compose down
+```
+
+To view logs:
+```bash
+docker-compose logs -f
+```
+
+#### Using Docker directly
+```bash
+# Build the image
+docker build -t bafl-competition-editor .
+
+# Run the container
+docker run -d \
+  --name bafl-editor \
+  -p 8505:8505 \
+  --env-file .env \
+  bafl-competition-editor
+```
+
+### Option 2: Local Python
+
 ```bash
 streamlit run baflcomp_editor.py
 ```
 
-The application will open in your default browser at `http://localhost:8501`
+The application will open in your default browser at `http://localhost:8505`
 
 ## Usage
+
+### Login
+1. Navigate to `http://localhost:8505`
+2. Enter the username and password configured in your `.env` file
+3. Click **Login** to access the application
 
 ### Selecting Competition
 1. Use the radio buttons in the sidebar to select either **Cheer** or **Drill** competition
@@ -116,6 +174,9 @@ The application will open in your default browser at `http://localhost:8501`
 2. This will upload the updated JSON to Azure Blob Storage
 3. A success message will confirm the save
 
+### Logout
+- Click the **"🚪 Logout"** button in the sidebar to end your session
+
 ## Troubleshooting
 
 ### Authentication Errors
@@ -140,12 +201,33 @@ bafl-app-updater/
 ├── baflcomp_editor.py       # Main Streamlit application
 ├── azure_blob_service.py    # Azure Blob Storage service class
 ├── requirements.txt         # Python dependencies
+├── Dockerfile               # Docker container configuration
+├── docker-compose.yml       # Docker Compose orchestration
+├── .dockerignore            # Files to exclude from Docker build
 ├── .env                     # Azure configuration (git-ignored)
 ├── .env.example             # Environment variable template
 ├── .gitignore               # Git ignore rules
 ├── .flake8                  # Linting configuration
 └── README.md               # This file
 ```
+
+## Deployment
+
+### Docker Deployment
+
+The application is containerized and ready for deployment to any Docker-compatible platform:
+
+- **Docker Hub/Registry**: Build and push the image to your registry
+- **Azure Container Instances**: Deploy directly from Docker image
+- **Azure App Service**: Use Docker deployment
+- **Kubernetes**: Use the Docker image in your K8s cluster
+- **Any VPS with Docker**: Simple `docker-compose up -d`
+
+**Production Tips:**
+- Always use strong passwords in production
+- Consider using Azure Key Vault for secrets
+- Use HTTPS/TLS in production environments
+- Set up proper monitoring and logging
 
 ## Notes
 

@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  bafl-editor:
+    build: .
+    container_name: bafl-competition-editor
+    ports:
+      - "8505:8505"
+    environment:
+      # Azure Storage Configuration
+      - AZURE_SUBSCRIPTION_ID=${AZURE_SUBSCRIPTION_ID}
+      - AZURE_RESOURCE_GROUP=${AZURE_RESOURCE_GROUP}
+      - AZURE_STORAGE_ACCOUNT=${AZURE_STORAGE_ACCOUNT}
+      - AZURE_CONTAINER_NAME=${AZURE_CONTAINER_NAME}
+      - AZURE_CHEER_BLOB_NAME=${AZURE_CHEER_BLOB_NAME}
+      - AZURE_DRILL_BLOB_NAME=${AZURE_DRILL_BLOB_NAME}
+      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+      # Authentication
+      - APP_USERNAME=${APP_USERNAME}
+      - APP_PASSWORD=${APP_PASSWORD}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8505/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s

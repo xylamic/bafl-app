@@ -22,7 +22,13 @@ CONTAINER_NAME = os.getenv('AZURE_CONTAINER_NAME', '')
 CHEER_BLOB_NAME = os.getenv('AZURE_CHEER_BLOB_NAME', 'CheerComp.json')
 DRILL_BLOB_NAME = os.getenv('AZURE_DRILL_BLOB_NAME', 'DrillComp.json')
 
+# Authentication configuration
+APP_USERNAME = os.getenv('APP_USERNAME', 'admin')
+APP_PASSWORD = os.getenv('APP_PASSWORD', 'changeme123')
+
 # Initialize session state
+if 'authenticated' not in st.session_state:
+    st.session_state.authenticated = False
 if 'competition_data' not in st.session_state:
     st.session_state.competition_data = None
 if 'blob_service' not in st.session_state:
@@ -99,6 +105,35 @@ def save_data():
 def mark_unsaved_changes():
     """Mark that there are unsaved changes"""
     st.session_state.has_unsaved_changes = True
+
+
+def check_authentication():
+    """Display login form and check authentication"""
+    st.set_page_config(
+        page_title="BAFL Competition Editor - Login",
+        page_icon="🔐",
+        layout="centered"
+    )
+    
+    st.title("🔐 BAFL Competition Editor")
+    st.markdown("---")
+    
+    # Create login form
+    with st.form("login_form"):
+        st.subheader("Please log in to continue")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        submit = st.form_submit_button("Login", use_container_width=True)
+        
+        if submit:
+            if username == APP_USERNAME and password == APP_PASSWORD:
+                st.session_state.authenticated = True
+                st.rerun()
+            else:
+                st.error("❌ Invalid username or password")
+    
+    st.markdown("---")
+    st.caption("🔒 This application is password protected")
 
 
 def main():
@@ -178,6 +213,13 @@ def main():
         st.caption(f"Account: `{STORAGE_ACCOUNT}`")
         st.caption(f"Container: `{CONTAINER_NAME}`")
         st.caption(f"Blob: `{get_current_blob_name()}`")
+        
+        # Logout button
+        st.markdown("---")
+        if st.button("🚪 Logout", use_container_width=True, type="secondary"):
+            st.session_state.authenticated = False
+            st.session_state.competition_data = None
+            st.rerun()
     
     # Load data on first run
     if st.session_state.competition_data is None:
@@ -239,7 +281,10 @@ def main():
             if f"start_{item_id}" in st.session_state:
                 item['ScheduledStart'] = st.session_state[f"start_{item_id}"]
             
-            expander_title = (f"#{idx + 1}: {item.get('Name', 'Unnamed')} - "
+            # Create title with highlight indicator
+            is_highlighted = item.get('Highlight', False)
+            highlight_emoji = "⭐ " if is_highlighted else ""
+            expander_title = (f"{highlight_emoji}#{idx + 1}: {item.get('Name', 'Unnamed')} - "
                             f"{item.get('ScheduledStart', 'No time')}")
             with st.expander(expander_title, expanded=False):
                 col1, col2, col3 = st.columns([2, 2, 1])
@@ -342,4 +387,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Check authentication first
+    if not st.session_state.get('authenticated', False):
+        check_authentication()
+    else:
+        main()
