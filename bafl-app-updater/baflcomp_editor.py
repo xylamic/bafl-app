@@ -9,6 +9,7 @@ from datetime import datetime
 from azure_blob_service import AzureBlobService
 import os
 from dotenv import load_dotenv
+import extra_streamlit_components as stx
 
 # Load environment variables
 load_dotenv()
@@ -24,6 +25,9 @@ DRILL_BLOB_NAME = os.getenv('AZURE_DRILL_BLOB_NAME', 'DrillComp.json')
 # Authentication configuration
 APP_USERNAME = os.getenv('APP_USERNAME', 'admin')
 APP_PASSWORD = os.getenv('APP_PASSWORD', 'changeme123')
+
+# Initialize cookie manager
+cookie_manager = stx.CookieManager()
 
 # Initialize session state
 if 'authenticated' not in st.session_state:
@@ -42,7 +46,11 @@ if 'last_save_time' not in st.session_state:
 if 'last_load_time' not in st.session_state:
     st.session_state.last_load_time = None
 if 'selected_competition' not in st.session_state:
-    st.session_state.selected_competition = 'Cheer'
+    # Try to load from cookie, default to 'Cheer'
+    saved_competition = cookie_manager.get('selected_competition')
+    st.session_state.selected_competition = saved_competition if saved_competition in ['Cheer', 'Drill'] else 'Cheer'
+if 'cookie_manager_ready' not in st.session_state:
+    st.session_state.cookie_manager_ready = False
 
 
 def get_current_blob_name():
@@ -173,6 +181,8 @@ def main():
                 st.warning("⚠️ You have unsaved changes! Save them before switching.")
             else:
                 st.session_state.selected_competition = selected
+                # Save to cookie for next session
+                cookie_manager.set('selected_competition', selected, max_age=60*60*24*365)  # 1 year
                 st.session_state.competition_data = None
                 st.session_state.last_save_time = None
                 st.session_state.last_load_time = None
@@ -229,32 +239,55 @@ def main():
     
     # Overview Fields Section
     st.header("📋 Event Overview")
-    with st.form("overview_form"):
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            new_name = st.text_input("Event Name", value=data.get('Name', ''))
-            new_date = st.text_input("Date (YYYY-MM-DD)", value=data.get('Date', ''))
-            new_message = st.text_input("Message", value=data.get('Message', ''))
-            new_information = st.text_area("Information", value=data.get('Information', ''))
-        
-        with col2:
-            new_doors_open = st.text_input("Doors Open", value=data.get('DoorsOpen', ''))
-            new_more_info = st.text_input("More Info URL", value=data.get('MoreInfo', ''))
-            new_tickets = st.text_input("Tickets URL", value=data.get('Tickets', ''))
-        
-        if st.form_submit_button("💾 Update Overview", use_container_width=True):
-            data['Name'] = new_name
-            data['Date'] = new_date
-            data['Message'] = new_message
-            data['Information'] = new_information
-            data['DoorsOpen'] = new_doors_open
-            data['MoreInfo'] = new_more_info
-            data['Tickets'] = new_tickets
-            st.session_state.competition_data = data
-            mark_unsaved_changes()
-            st.success("✅ Overview updated (remember to save to Azure)")
-            st.rerun()
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        data['Name'] = st.text_input(
+            "Event Name",
+            value=data.get('Name', ''),
+            key="overview_name",
+            on_change=mark_unsaved_changes
+        )
+        data['Date'] = st.text_input(
+            "Date (YYYY-MM-DD)",
+            value=data.get('Date', ''),
+            key="overview_date",
+            on_change=mark_unsaved_changes
+        )
+        data['Message'] = st.text_input(
+            "Message",
+            value=data.get('Message', ''),
+            key="overview_message",
+            on_change=mark_unsaved_changes
+        )
+        data['Information'] = st.text_area(
+            "Information",
+            value=data.get('Information', ''),
+            key="overview_information",
+            on_change=mark_unsaved_changes
+        )
+    
+    with col2:
+        data['DoorsOpen'] = st.text_input(
+            "Doors Open",
+            value=data.get('DoorsOpen', ''),
+            key="overview_doors_open",
+            on_change=mark_unsaved_changes
+        )
+        data['MoreInfo'] = st.text_input(
+            "More Info URL",
+            value=data.get('MoreInfo', ''),
+            key="overview_more_info",
+            on_change=mark_unsaved_changes
+        )
+        data['Tickets'] = st.text_input(
+            "Tickets URL",
+            value=data.get('Tickets', ''),
+            key="overview_tickets",
+            on_change=mark_unsaved_changes
+        )
+    
+    st.session_state.competition_data = data
     
     st.markdown("---")
     
@@ -280,11 +313,9 @@ def main():
             if f"start_{item_id}" in st.session_state:
                 item['ScheduledStart'] = st.session_state[f"start_{item_id}"]
             
-            # Create title with highlight indicator
-            is_highlighted = item.get('Highlight', False)
-            highlight_emoji = "⭐ " if is_highlighted else ""
+            # Create title without highlight indicator to prevent auto-refresh issues
             expander_title = (
-                f"{highlight_emoji}#{idx + 1}: {item.get('Name', 'Unnamed')} - "
+                f"#{idx + 1}: {item.get('Name', 'Unnamed')} - "
                 f"{item.get('ScheduledStart', 'No time')}")
             with st.expander(expander_title, expanded=False):
                 col1, col2, col3 = st.columns([2, 2, 1])
@@ -362,6 +393,19 @@ def main():
             new_highlight = st.checkbox("Highlight")
             new_notable = st.checkbox("Notable")
         
+        with col3:
+            st.write("**Position**")
+            # Create position options
+            position_options = ["End of list"]
+            if len(schedule) > 0:
+                position_options = [f"Position {i+1}" for i in range(len(schedule))] + ["End of list"]
+            
+            position_choice = st.selectbox(
+                "Insert at",
+                position_options,
+                index=len(position_options) - 1  # Default to end of list
+            )
+        
         if st.form_submit_button("➕ Add Item", use_container_width=True):
             import time
             new_item = {
@@ -373,17 +417,20 @@ def main():
                 "Highlight": new_highlight,
                 "Notable": new_notable
             }
-            schedule.append(new_item)
+            
+            # Insert at specified position
+            if position_choice == "End of list":
+                schedule.append(new_item)
+            else:
+                # Extract position number from "Position X"
+                position = int(position_choice.split()[1]) - 1
+                schedule.insert(position, new_item)
+            
             data['Schedule'] = schedule
             st.session_state.competition_data = data
             mark_unsaved_changes()
             st.success("✅ Item added (remember to save to Azure)")
             st.rerun()
-    
-    # Footer with save reminder
-    st.markdown("---")
-    if st.session_state.get('has_unsaved_changes', False):
-        st.info("💡 Don't forget to click '💾 Save to Azure' at the top!")
 
 
 if __name__ == "__main__":
