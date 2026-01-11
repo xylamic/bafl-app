@@ -146,8 +146,7 @@ public partial class StandingsView : ContentPage
             string code = String.Format("?code={0}", await App.GetApiKey());
 
             // try to read the latest configuration information.
-            HttpClient client = new HttpClient();
-            string standingContent = await client.GetStringAsync(_accessUrl + code);
+            string standingContent = await BaflUtilities.SharedHttpClient.GetStringAsync(_accessUrl + code);
             _standings = JsonSerializer.Deserialize<BaflStandings>(standingContent);
 
             // set the text for the page header

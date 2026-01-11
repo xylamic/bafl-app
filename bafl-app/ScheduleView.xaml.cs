@@ -167,8 +167,7 @@ public partial class ScheduleView : ContentPage
             string code = String.Format("?code={0}", await App.GetApiKey());
 
             // try to read the latest configuration information.
-            HttpClient client = new HttpClient();
-            string scheduleContent = await client.GetStringAsync(_accessUrl + code);
+            string scheduleContent = await BaflUtilities.SharedHttpClient.GetStringAsync(_accessUrl + code);
             _calendar = JsonSerializer.Deserialize<BaflGameCalendar>(scheduleContent);            
 
             // set the text for the page header

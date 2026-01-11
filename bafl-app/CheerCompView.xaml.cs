@@ -46,8 +46,7 @@ public partial class CheerCompView : ContentPage
             string code = String.Format("?code={0}", await App.GetApiKey());
 
             // try to read the latest configuration information.
-            HttpClient client = new HttpClient();
-            string cheerContent = await client.GetStringAsync(_accessUrl + code);
+            string cheerContent = await BaflUtilities.SharedHttpClient.GetStringAsync(_accessUrl + code);
             _event = JsonSerializer.Deserialize<BaflEvent>(cheerContent);
 
             // set the text for the page header

@@ -93,16 +93,13 @@ public partial class App : Application
             try
             {
                 // try to read the latest configuration information.
-                using (HttpClient client = new HttpClient())
-                {
-                    StringContent postContent = new StringContent("{\"context\": \"BaflApp\"}");
-                    HttpResponseMessage response = await client.PostAsync(BaflUtilities.CONFIG_URL,
-                        postContent);
-                    string keyContent = await response.Content.ReadAsStringAsync();
-                    _config = JsonSerializer.Deserialize<BaflAppConfig>(keyContent);
+                StringContent postContent = new StringContent("{\"context\": \"BaflApp\"}");
+                HttpResponseMessage response = await BaflUtilities.SharedHttpClient.PostAsync(BaflUtilities.CONFIG_URL,
+                    postContent);
+                string keyContent = await response.Content.ReadAsStringAsync();
+                _config = JsonSerializer.Deserialize<BaflAppConfig>(keyContent);
 
-                    Console.WriteLine("Successfully read config data from the APIs.");
-                }
+                Console.WriteLine("Successfully read config data from the APIs.");
             }
             catch (Exception ex)
             {
@@ -123,25 +120,22 @@ public partial class App : Application
         try
         {
             // try to read the latest configuration information.
-            using (HttpClient client = new HttpClient())
-            {
-                StringContent postContent = new StringContent("{\"context\": \"BaflApp\"}");
-                HttpResponseMessage response = await client.PostAsync(BaflUtilities.CONFIG_URL,
-                    postContent);
-                string keyContent = await response.Content.ReadAsStringAsync();
-                _config = JsonSerializer.Deserialize<BaflAppConfig>(keyContent);
+            StringContent postContent = new StringContent("{\"context\": \"BaflApp\"}");
+            HttpResponseMessage response = await BaflUtilities.SharedHttpClient.PostAsync(BaflUtilities.CONFIG_URL,
+                postContent);
+            string keyContent = await response.Content.ReadAsStringAsync();
+            _config = JsonSerializer.Deserialize<BaflAppConfig>(keyContent);
 
-                string content = await client.GetStringAsync(String.Format("{0}?code={1}",
-                    BaflUtilities.COREINFO_URL, await GetApiKey()));
+            string content = await BaflUtilities.SharedHttpClient.GetStringAsync(String.Format("{0}?code={1}",
+                BaflUtilities.COREINFO_URL, await GetApiKey()));
 
-                Dictionary<string, string> contentDict = JsonSerializer.Deserialize<Dictionary<string, string>>(content);
+            Dictionary<string, string> contentDict = JsonSerializer.Deserialize<Dictionary<string, string>>(content);
 
-                await File.WriteAllTextAsync(_team_cache_filename, contentDict["teams"]);
-                await File.WriteAllTextAsync(_board_cache_filename, contentDict["board"]);
-                await File.WriteAllTextAsync(_schedule_cache_filename, contentDict["schedule"]);
+            await File.WriteAllTextAsync(_team_cache_filename, contentDict["teams"]);
+            await File.WriteAllTextAsync(_board_cache_filename, contentDict["board"]);
+            await File.WriteAllTextAsync(_schedule_cache_filename, contentDict["schedule"]);
 
-                Console.WriteLine("Successfully read latest data from the APIs.");
-            }
+            Console.WriteLine("Successfully read latest data from the APIs.");
         }
         catch (Exception ex)
         {

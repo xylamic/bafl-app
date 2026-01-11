@@ -3,6 +3,11 @@ namespace bafl_app.library
 {
 	public static class BaflUtilities
 	{
+        /// <summary>
+        /// Shared HttpClient instance to avoid socket exhaustion.
+        /// </summary>
+        public static readonly HttpClient SharedHttpClient = new HttpClient();
+
         public static readonly string CONFIG_URL = "https://baflapp.azurewebsites.net/api/app-config";
 
         public static readonly string COREINFO_URL = "https://baflapp.azurewebsites.net/api/coreinfo";

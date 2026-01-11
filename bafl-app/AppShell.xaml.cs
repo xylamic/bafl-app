@@ -108,7 +108,7 @@ public partial class AppShell : Shell
 
     async void NWS_Clicked(object sender, EventArgs e)
     {
-        await OpenUrl("https://alerts.weather.gov", true);
+        await OpenUrl("https://www.weather.gov/alerts", true);
     }
 }
 
