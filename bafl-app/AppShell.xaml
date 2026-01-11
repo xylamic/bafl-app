@@ -52,11 +52,11 @@
             <ShellContent ContentTemplate="{DataTemplate local:SquareView}" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Pay BAFL: Zelle" Icon="zelle.png" >
+    <!-- <FlyoutItem Title="Pay BAFL: Zelle" Icon="zelle.png" >
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:ZellePayView}" />
         </Tab>
-    </FlyoutItem>
+    </FlyoutItem> -->
 
     <MenuItem Text="" />
 

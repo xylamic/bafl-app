@@ -8,8 +8,8 @@ using bafl_app.library;
 /// </summary>
 public partial class AgeWeightCalcView : ContentPage
 {
-    private DateTime _selectedBirthdate = new DateTime(2014, 08, 01);
-    private DateTime _targetDate = new DateTime(2025, 08, 01);
+    private DateTime _selectedBirthdate = new DateTime(DateTime.Now.AddYears(-10).Year, 08, 01);
+    private DateTime _targetDate = new DateTime(DateTime.Now.Year, 08, 01);
     private bool _isCheer = false;
     private bool _upLevel = false;
 

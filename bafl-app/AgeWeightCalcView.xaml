@@ -25,7 +25,7 @@
             <Label Text="Cheer/Drill" VerticalTextAlignment="Center" />
         </HorizontalStackLayout>
         <DatePicker HorizontalOptions="Center" 
-                    MaximumDate="01-01-2022"
+                    MaximumDate="01-01-2024"
                     Date="{Binding SelectedBirthDate}"
                     Grid.Row="2"
                     CharacterSpacing="5"

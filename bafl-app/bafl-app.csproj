@@ -20,8 +20,8 @@
 		<ApplicationIdGuid>0F25D2F5-E70F-47CF-B4C5-87B514A16FE7</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.7.3</ApplicationDisplayVersion>
-		<ApplicationVersion>71</ApplicationVersion>
+		<ApplicationDisplayVersion>1.7.4</ApplicationDisplayVersion>
+		<ApplicationVersion>79</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -49,6 +49,14 @@
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	  <WarningLevel>4</WarningLevel>
 	</PropertyGroup>
+
+	<!-- Android 16KB Page Size Support -->
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android'))">
+		<AndroidEnableProfiler>false</AndroidEnableProfiler>
+		<AndroidUseAssemblyStore>false</AndroidUseAssemblyStore>
+		<PublishTrimmed>true</PublishTrimmed>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />
