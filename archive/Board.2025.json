@@ -1,0 +1,134 @@
+[
+  {
+    "Role": "President",
+    "Name": "Chris Sweat",
+    "Email": "chris_sweat@ymail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "1st Vice President",
+    "Name": "Mark Thompson",
+    "Email": "",
+    "EmailPresent": true
+  },
+  {
+    "Role": "2nd Vice President",
+    "Name": "Angelica Flores",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Secretary",
+    "Name": "Jennifer Sorsby",
+    "Email": "baflsecretary@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Treasurer",
+    "Name": "Gino Barbagelata",
+    "Email": "Gino77de@yahoo.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Athletic Director",
+    "Name": "Denny Wranich",
+    "Email": "dwranich82@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "Drill Director",
+    "Name": "Bel Wranich",
+    "Email": "bafldrilldirector@gmail.com",
+    "EmailPresent": true
+  },
+  {
+    "Role": "1st Asst Athletic Director",
+    "Name": "AJ Rodrigue",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "2nd Asst Athletic Director",
+    "Name": "Jeff Spriggans",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "1st Asst Drill Director",
+    "Name": "Ann Marie Segundo",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "2nd Asst Drill Director",
+    "Name": "Jose Pena",
+    "Email": "",
+    "EmailPresent": false
+  },
+	{
+		"Role": "Ways & Means Director",
+		"Name": "Gloria Sanchez",
+		"Email": "eeeagles@yahoo.com",
+		"EmailPresent": true
+	},
+	{
+		"Role": "Asst Ways & Means Director",
+		"Name": "Barry Horton",
+		"Email": "",
+		"EmailPresent": false
+	},
+  {
+    "Role": "Parliamentarian",
+    "Name": "Bradi Austin",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Safety Director",
+    "Name": "Kirby Hall",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Chair",
+    "Name": "Bubba",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Amber Bell",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Al'Jarrey Royston",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Amberley Boggs",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Shannon Ross",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Special Events Member",
+    "Name": "Todd Greif",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "IT Director",
+    "Name": "Adam Jordan",
+    "Email": "bafl@xylasoft.com",
+    "EmailPresent": true
+  }
+]

@@ -1,0 +1,635 @@
+{
+  "Name": "2025 Drill Competition",
+  "Date": "2025-11-22",
+  "Message": "Congratulations to all the winners and overall winner, the East End Eagles! 🦅",
+  "Information": "Real-time schedule below. Entry: $18, Shout outs: $5. Remember: no outside food\ud83c\udf2d, drink\ud83e\udd64, or merchandise\ud83d\udc90.",
+  "DoorsOpen": "9:30AM",
+  "MoreInfo": "https://www.bayareafootballleague.org/drill-comp",
+  "Tickets": "",
+  "Schedule": [
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:00AM",
+      "Name": "Opening Ceremony",
+      "Status": "10:00AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "",
+      "Name": "POM ",
+      "Status": "",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:10AM",
+      "Name": "Santa Fe Starlettes",
+      "Status": "10:19AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:18AM",
+      "Name": "Pearland Lady Texans",
+      "Status": "10:26AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:26AM",
+      "Name": "Bay Area Rubys",
+      "Status": "10:30AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:34AM",
+      "Name": "Hitchcock Raiderettes",
+      "Status": "10:36AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:42AM",
+      "Name": "Bay Area Sirens",
+      "Status": "10:42AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:50AM",
+      "Name": "Sagemont Cowgirls",
+      "Status": "10:47AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "10:58AM",
+      "Name": "Texas City Lady Rays",
+      "Status": "10:54AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:06AM",
+      "Name": "Pasadena Top Cats",
+      "Status": "11:03AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:14AM",
+      "Name": "Brazosport Longhorns",
+      "Status": "[Not performing]",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:22AM",
+      "Name": "Pearland Patriettes",
+      "Status": "11:08AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:30AM",
+      "Name": "Magnolia Park Sharkettes",
+      "Status": "11:23AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:38AM",
+      "Name": "La Porte Darlings",
+      "Status": "11:31AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:46AM",
+      "Name": "Angleton Lady Cats",
+      "Status": "11:38AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "11:54AM",
+      "Name": "East End Eagles",
+      "Status": "11:48AM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "12:02PM",
+      "Name": "Manvel Divas",
+      "Status": "12:01PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "12:10PM",
+      "Name": "Dickinson Shapphires",
+      "Status": "12:06PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "",
+      "Name": "Jazz",
+      "Status": "Took a \u26d3\ufe0f\u200d\ud83d\udca5",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "12:34PM",
+      "Name": "Bay Area Sirens",
+      "Status": "12:36PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "12:42PM",
+      "Name": "Texas City Lady Rays",
+      "Status": "12:40PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "12:50PM",
+      "Name": "Pasadena Top Cats",
+      "Status": "12:45PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "12:58PM",
+      "Name": "Brazosport Longhorns",
+      "Status": "[Not performing]",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:06PM",
+      "Name": "Magnolia Park Sharkettes",
+      "Status": "12:52PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:14PM",
+      "Name": "League City Gold Rush",
+      "Status": "1:00PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:22PM",
+      "Name": "Angleton Lady Cats",
+      "Status": "1:09PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:30PM",
+      "Name": "Dickinson Shapphires",
+      "Status": "1:15PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "",
+      "Name": "Military",
+      "Status": "Break taken",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:40PM",
+      "Name": "Santa Fe Starlettes",
+      "Status": "1:37PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:48PM",
+      "Name": "Hitchcock Raiderettes",
+      "Status": "1:46PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "1:56PM",
+      "Name": "Sagemont Cowgirls",
+      "Status": "1:54PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "2:04PM",
+      "Name": "League City Gold Rush",
+      "Status": "2:01PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "2:12PM",
+      "Name": "La Porte Darlings",
+      "Status": "2:08PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "2:20PM",
+      "Name": "Manvel Divas Mascots",
+      "Status": "2:15PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "2:28PM",
+      "Name": "Dickinson Shapphires",
+      "Status": "2:21PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "",
+      "Name": "Prop",
+      "Status": "",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "2:46PM",
+      "Name": "Santa Fe Starlettes",
+      "Status": "2:40PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "2:54PM",
+      "Name": "Pearland Lady Texans",
+      "Status": "2:45PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:02PM",
+      "Name": "Bay Area Rubys",
+      "Status": "2:51PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:10PM",
+      "Name": "Texas City Lady Rays",
+      "Status": "3:11PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:18PM",
+      "Name": "Brazosport Longhorns",
+      "Status": "[Not performing]",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:26PM",
+      "Name": "Pearland Patriettes",
+      "Status": "3:16PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:34PM",
+      "Name": "Angleton Lady Cats",
+      "Status": "3:19PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:42PM",
+      "Name": "East End Eagles",
+      "Status": "3:32PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:50PM",
+      "Name": "Manvel Divas",
+      "Status": "3:50PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "",
+      "Name": "Novelty",
+      "Status": "",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "3:58PM",
+      "Name": "Pearland Lady Texans",
+      "Status": "3:55PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:06PM",
+      "Name": "Bay Area Rubys",
+      "Status": "4:07PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:14PM",
+      "Name": "Hitchcock Raiderettes",
+      "Status": "4:16PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:22PM",
+      "Name": "Bay Area Sirens",
+      "Status": "4:20PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:30PM",
+      "Name": "Sagemont Cowgirls",
+      "Status": "4:30PM \ud83e\ude84",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:38PM",
+      "Name": "Pasadena Top Cats",
+      "Status": "4:40PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:46PM",
+      "Name": "Pearland Patriettes",
+      "Status": "4:49PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "4:54PM",
+      "Name": "Magnolia Park Sharkettes",
+      "Status": "4:55PM \ud83e\uddcc",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "5:02PM",
+      "Name": "League City Gold Rush",
+      "Status": "5:15PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "5:10PM",
+      "Name": "La Porte Darlings",
+      "Status": "5:35PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "5:18PM",
+      "Name": "East End Eagles",
+      "Status": "5:45PM \ud83c\udfb2",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Drill",
+      "ScheduledStart": "",
+      "Name": ">> Switch to Mascots tab",
+      "Status": "On to mascots",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "",
+      "Name": "Start Mascots",
+      "Status": "",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "5:45PM",
+      "Name": "Santa Fe Rising Stars",
+      "Status": "6:20PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "5:50PM",
+      "Name": "Pearland Tiny Texans",
+      "Status": "6:26PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "5:55PM",
+      "Name": "Bay Area Mini Mascots",
+      "Status": "6:32PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:00PM",
+      "Name": "Hitchcock Raiderettes Mini Raiderettes",
+      "Status": "6:42PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:05PM",
+      "Name": "Bay Area Mermaids",
+      "Status": "6:48PM \ud83d\udc1a",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:10PM",
+      "Name": "Sagemont Mini Cowgirls",
+      "Status": "6:53PM \ud83e\udd96",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:15PM",
+      "Name": "Texas City Baby Rays",
+      "Status": "6:59PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:20PM",
+      "Name": "Pasadena Mini Cats",
+      "Status": "7:08PM \ud83c\udfdd\ufe0f",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:25PM",
+      "Name": "Brazosport Longhorns",
+      "Status": "-",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:30PM",
+      "Name": "Pearland Pretty Little Mascots",
+      "Status": "-",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:35PM",
+      "Name": "Magnolia Park Sharks Mascots",
+      "Status": "7:12PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:40PM",
+      "Name": "League City Nuggets",
+      "Status": "7:22PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:45PM",
+      "Name": "La Porte Texan Stars",
+      "Status": "7:28PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:50PM",
+      "Name": "Angleton Lady Cat Mascots",
+      "Status": "7:35PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "6:55PM",
+      "Name": "East End Eagles Mascots",
+      "Status": "7:42PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "7:00PM",
+      "Name": "Manvel Divas Mascots",
+      "Status": "7:52PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "7:05PM",
+      "Name": "Dickinson Gems",
+      "Status": "8:00PM",
+      "Highlight": false,
+      "Notable": false
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "7:10PM",
+      "Name": "Break",
+      "Status": "",
+      "Highlight": false,
+      "Notable": true
+    },
+    {
+      "Group": "Mascot",
+      "ScheduledStart": "7:30PM",
+      "Name": "Awards Ceremony",
+      "Status": "All done!",
+      "Highlight": false,
+      "Notable": false
+    }
+  ]
+}
