@@ -1,6 +1,6 @@
 {
   "Title": "2026 Schedule",
-  "Message": "Week 2 updated.",
+  "Message": "Week 3 updated.",
   "Weeks": [
     {
       "Week": "Week 1",
@@ -220,99 +220,99 @@
           "Home": "East End Eagles",
           "Away": "Angleton Wildcats",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "44 @ 0" },
+            { "Level": "Freshman", "Score": "57 @ 0" },
+            { "Level": "Sophomore", "Score": "55 @ 0" },
+            { "Level": "Junior", "Score": "58 @ 0" },
+            { "Level": "Senior", "Score": "22 @ 18" }
           ]
         },
         {
           "Home": "Bay Area Buccaneers",
           "Away": "League City 49ers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "24 @ 34" },
+            { "Level": "Freshman", "Score": "54 @ 0" },
+            { "Level": "Sophomore", "Score": "45 @ 0" },
+            { "Level": "Junior", "Score": "14 @ 19" },
+            { "Level": "Senior", "Score": "32 @ 25" }
           ]
         },
         {
           "Home": "Brazosport Longhorns",
           "Away": "Pearland Patriots",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "1 @ 0" },
+            { "Level": "Freshman", "Score": "49 @ 0" },
+            { "Level": "Sophomore", "Score": "1 @ 0" },
+            { "Level": "Junior", "Score": "1 @ 0" },
+            { "Level": "Senior", "Score": "50 @ 0" }
           ]
         },
         {
           "Home": "Pearland Texans",
           "Away": "Dickinson Gators",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "6 @ 7" },
+            { "Level": "Freshman", "Score": "0 @ 46" },
+            { "Level": "Sophomore", "Score": "36 @ 6" },
+            { "Level": "Junior", "Score": "28 @ 8" },
+            { "Level": "Senior", "Score": "6 @ 54" }
           ]
         },
         {
           "Home": "Hitchcock Red Raiders",
           "Away": "Manvel Texans",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "7 @ 14" },
+            { "Level": "Freshman", "Score": "27 @ 14" },
+            { "Level": "Sophomore", "Score": "7 @ 13" },
+            { "Level": "Junior", "Score": "20 @ 6" },
+            { "Level": "Senior", "Score": "48 @ 0" }
           ]
         },
         {
           "Home": "La Porte Texans",
           "Away": "La Marque Chargers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "32 @ 12" },
+            { "Level": "Freshman", "Score": "20 @ 0" },
+            { "Level": "Sophomore", "Score": "56 @ 0" },
+            { "Level": "Junior", "Score": "28 @ 6" },
+            { "Level": "Senior", "Score": "13 @ 59" }
           ]
         },
         {
           "Home": "Magnolia Park Sharks",
           "Away": "Santa Fe Braves",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "18 @ 13" },
+            { "Level": "Freshman", "Score": "0 @ 31" },
+            { "Level": "Sophomore", "Score": "0 @ 6" },
+            { "Level": "Junior", "Score": "12 @ 18" },
+            { "Level": "Senior", "Score": "0 @ 38" }
           ]
         },
         {
           "Home": "Texas City Stingrays",
           "Away": "Pasadena Panthers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "42 @ 21" },
+            { "Level": "Freshman", "Score": "0 @ 43" },
+            { "Level": "Sophomore", "Score": "0 @ 0" },
+            { "Level": "Junior", "Score": "0 @ 16" },
+            { "Level": "Senior", "Score": "0 @ 34" }
           ]
         },
         {
           "Home": "Sagemont Cowboys",
           "Away": "Pearland Hurricanes",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "28 @ 6" },
+            { "Level": "Freshman", "Score": "42 @ 0" },
+            { "Level": "Sophomore", "Score": "55 @ 0" },
+            { "Level": "Junior", "Score": "0 @ 21" },
+            { "Level": "Senior", "Score": "41 @ 6" }
           ]
         }
       ]
