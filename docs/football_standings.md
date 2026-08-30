@@ -97,6 +97,14 @@ Because sorting is by `Rank`, ranks should be assigned so the intended order is 
 every team shares `Rank = 1` (a freshly seeded file), the view falls back to alphabetical order
 by team name.
 
+### Tied ranks (competition ranking)
+
+Ranks use standard competition ("1-2-2-4") ranking: teams with the same record share the same
+`Rank`, and the next rank skips by the number of teams tied above it. A team's rank equals
+`1 + (number of teams ahead of it)`. For example, after Week 1 every level has nine teams at
+`1`–`0` all sharing `Rank = 1`, and the nine `0`–`1` teams all sharing `Rank = 10` (not `2`).
+Teams sharing a rank are then ordered alphabetically by name in the view.
+
 ## Clean-season seed format
 
 A new season file (such as `FootballStandings.2026.json`) is seeded as follows:
@@ -126,6 +134,8 @@ A new season file (such as `FootballStandings.2026.json`) is seeded as follows:
 3. Set `Points` to `Wins + 0.5 × Ties` for consistency (the app recomputes this regardless).
 4. Recompute `Rank` per level from the standings order (typically by points, then tiebreakers),
    assigning `1` to the top team. The view sorts on `Rank`, so it must reflect the intended order.
+   Use competition ranking: tied teams share a rank, and the next rank is `1 + (teams ahead)`
+   (e.g. nine teams tied at `1` are followed by rank `10`).
 5. Set `Playoff` to `true` for teams in a qualifying position; the app renders a ⭐️ for them.
 6. Keep team names identical across `Teams.<year>.json`, `GameSchedule.<year>.json`, and this
    file so records line up.
