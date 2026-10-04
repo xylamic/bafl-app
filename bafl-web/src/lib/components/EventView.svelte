@@ -29,6 +29,8 @@
 		() => peekCache(endpoint, toEvent)
 	);
 
+	const AUTO_REFRESH_MS = 30_000;
+
 	let showMascot = $state(false);
 	let firstLoad = true;
 	let listEl: HTMLElement | undefined = $state();
@@ -41,7 +43,7 @@
 			}
 			firstLoad = false;
 		});
-		return loader.watchVisibility();
+		return loader.poll(AUTO_REFRESH_MS);
 	});
 
 	let event = $derived(loader.data);

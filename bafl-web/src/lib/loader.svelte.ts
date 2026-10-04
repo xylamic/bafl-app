@@ -40,6 +40,23 @@ export function createLoader<T>(
 		return () => document.removeEventListener('visibilitychange', onChange);
 	}
 
+	/**
+	 * Refreshes every `intervalMs` while the page is visible, and right away on return if a
+	 * refresh is overdue. Call inside `onMount`; returns the cleanup.
+	 */
+	function poll(intervalMs: number): () => void {
+		const due = () => document.visibilityState === 'visible' && Date.now() - lastAttempt >= intervalMs - 1000;
+		const onTick = () => {
+			if (due()) void refresh();
+		};
+		const timer = setInterval(onTick, intervalMs);
+		document.addEventListener('visibilitychange', onTick);
+		return () => {
+			clearInterval(timer);
+			document.removeEventListener('visibilitychange', onTick);
+		};
+	}
+
 	return {
 		get result() {
 			return state.result;
@@ -51,6 +68,7 @@ export function createLoader<T>(
 			return state.loading;
 		},
 		refresh,
-		watchVisibility
+		watchVisibility,
+		poll
 	};
 }

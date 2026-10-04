@@ -28,3 +28,12 @@ export const NAV_SECTIONS: NavLink[][] = [
 ];
 
 export const CONTACT_URL = 'https://www.bayareafootballleague.org/contact';
+
+export const FEEDBACK_EMAIL = 'bafl@xylasoft.com';
+
+/** Pre-fills the subject plus the page and browser so app issues are easier to reproduce. */
+export function feedbackMailto(path: string, userAgent: string): string {
+	const subject = 'BAFL App Feedback';
+	const body = ['', '', '---', `Page: ${path}`, `Browser: ${userAgent}`].join('\r\n');
+	return `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
