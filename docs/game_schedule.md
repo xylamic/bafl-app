@@ -159,8 +159,20 @@ Angleton (away) 24, Texas City (home) 7.
 > Orientation verified against the 2025 season: applying away-first parsing reproduces the
 > published standings exactly (e.g. Angleton Peewee 10–0, Dickinson Peewee 0–10).
 
+### Forfeits
+
+A forfeit is recorded as a `1`–`0` result, keeping the away-first orientation. The winning
+team gets `1`, the losing team gets `0`. A source scoreboard may flag these separately (e.g. a
+"1-0 FORFEIT" note); still write them as normal scores. Examples: if the home team wins by
+forfeit, use `"0 @ 1"`; if the away team wins by forfeit, use `"1 @ 0"`.
+
+### Levels that did not play
+
+Leave any level that was not played as `"TBA"` (for example, a matchup where only some age
+levels fielded a game).
+
 To automate score entry, match a played game to its matchup by (`Week`, `Home`, `Away`), then
-set each level's `Score` to `"<away> @ <home>"`. Leave levels that did not play as `"TBA"`.
+set each level's `Score` to `"<away> @ <home>"`.
 
 ## Postseason weeks
 
@@ -256,8 +268,10 @@ One matchup per level, each at a neutral site, with a final score:
 1. Parse the file and locate the target `Week` by its label.
 2. Regular season: identify the game by (`Home`, `Away`); for each level that played, set
    `Score` to `"<away> @ <home>"`. Away score is written first.
-3. Never alter BYE entries (`Home == "BYE"`) — they have no `Scores`.
-4. Keep the five regular-season levels in order: Peewee, Freshman, Sophomore, Junior, Senior.
-5. Do not apply the regular-season score rule to playoff, All-Star, or Super Bowl weeks; those
+3. Record forfeits as `1`–`0` in away-first order (`"1 @ 0"` or `"0 @ 1"`); leave unplayed
+   levels as `"TBA"`.
+4. Never alter BYE entries (`Home == "BYE"`) — they have no `Scores`.
+5. Keep the five regular-season levels in order: Peewee, Freshman, Sophomore, Junior, Senior.
+6. Do not apply the regular-season score rule to playoff, All-Star, or Super Bowl weeks; those
    use times or the `"<away> - <home> Final"` form as documented above.
-6. Preserve `Weeks` in chronological order so the app's "closest week" selection works.
+7. Preserve `Weeks` in chronological order so the app's "closest week" selection works.

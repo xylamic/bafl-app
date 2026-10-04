@@ -1,171 +1,171 @@
 {
     "Title": "2026 Standings",
-    "Message": "Week 7 updated.",
+    "Message": "",
     "Standings": [
         {
             "Level": "Peewee",
             "Teams": [
                 {
                     "Team": "Angleton Wildcats",
-                    "Wins": 6,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 2
+                    "Rank": 1
                 },
                 {
                     "Team": "Bay Area Buccaneers",
-                    "Wins": 3,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 9
+                    "Rank": 1
                 },
                 {
                     "Team": "Brazosport Longhorns",
-                    "Wins": 1,
-                    "Losses": 6,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 15
+                    "Rank": 1
                 },
                 {
                     "Team": "Dickinson Gators",
-                    "Wins": 3,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 9
+                    "Rank": 1
                 },
                 {
                     "Team": "East End Eagles",
                     "Wins": 0,
-                    "Losses": 7,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 18
+                    "Rank": 1
                 },
                 {
                     "Team": "Hitchcock Red Raiders",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "La Marque Chargers",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 7
+                    "Rank": 1
                 },
                 {
                     "Team": "La Porte Texans",
-                    "Wins": 1,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 15
+                    "Rank": 1
                 },
                 {
                     "Team": "League City 49ers",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 },
                 {
                     "Team": "Magnolia Park Sharks",
-                    "Wins": 1,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 15
+                    "Rank": 1
                 },
                 {
                     "Team": "Manvel Texans",
-                    "Wins": 5,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Pasadena Panthers",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 7
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Hurricanes",
-                    "Wins": 7,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 7,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "Pearland Patriots",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Texans",
-                    "Wins": 4,
-                    "Losses": 2,
-                    "Ties": 1,
-                    "Points": 4.5,
+                    "Wins": 0,
+                    "Losses": 0,
+                    "Ties": 0,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 6
+                    "Rank": 1
                 },
                 {
                     "Team": "Sagemont Cowboys",
-                    "Wins": 2,
-                    "Losses": 3,
-                    "Ties": 1,
-                    "Points": 2.5,
+                    "Wins": 0,
+                    "Losses": 0,
+                    "Ties": 0,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "Santa Fe Braves",
-                    "Wins": 5,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Texas City Stingrays",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 }
             ]
         },
@@ -174,165 +174,165 @@
             "Teams": [
                 {
                     "Team": "Angleton Wildcats",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Bay Area Buccaneers",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "Brazosport Longhorns",
-                    "Wins": 1,
-                    "Losses": 6,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 15
+                    "Rank": 1
                 },
                 {
                     "Team": "Dickinson Gators",
-                    "Wins": 1,
-                    "Losses": 6,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 15
+                    "Rank": 1
                 },
                 {
                     "Team": "East End Eagles",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 8
+                    "Rank": 1
                 },
                 {
                     "Team": "Hitchcock Red Raiders",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "La Marque Chargers",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "La Porte Texans",
                     "Wins": 0,
-                    "Losses": 6,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 17
+                    "Rank": 1
                 },
                 {
                     "Team": "League City 49ers",
-                    "Wins": 6,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "Magnolia Park Sharks",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "Manvel Texans",
-                    "Wins": 6,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "Pasadena Panthers",
-                    "Wins": 3,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Hurricanes",
-                    "Wins": 5,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Patriots",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 8
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Texans",
-                    "Wins": 5,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Sagemont Cowboys",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "Santa Fe Braves",
                     "Wins": 0,
-                    "Losses": 7,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 17
+                    "Rank": 1
                 },
                 {
                     "Team": "Texas City Stingrays",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 }
             ]
         },
@@ -341,165 +341,165 @@
             "Teams": [
                 {
                     "Team": "Angleton Wildcats",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Bay Area Buccaneers",
-                    "Wins": 1,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 13
+                    "Rank": 1
                 },
                 {
                     "Team": "Brazosport Longhorns",
                     "Wins": 0,
-                    "Losses": 7,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "Dickinson Gators",
-                    "Wins": 5,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "East End Eagles",
-                    "Wins": 3,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "Hitchcock Red Raiders",
-                    "Wins": 6,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "La Marque Chargers",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 9
+                    "Rank": 1
                 },
                 {
                     "Team": "La Porte Texans",
                     "Wins": 0,
-                    "Losses": 6,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "League City 49ers",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Magnolia Park Sharks",
-                    "Wins": 3,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 11
+                    "Rank": 1
                 },
                 {
                     "Team": "Manvel Texans",
-                    "Wins": 6,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "Pasadena Panthers",
-                    "Wins": 5,
-                    "Losses": 1,
-                    "Ties": 1,
-                    "Points": 5.5,
+                    "Wins": 0,
+                    "Losses": 0,
+                    "Ties": 0,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Hurricanes",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 9
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Patriots",
-                    "Wins": 1,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 13
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Texans",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 9
+                    "Rank": 1
                 },
                 {
                     "Team": "Sagemont Cowboys",
                     "Wins": 0,
-                    "Losses": 6,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "Santa Fe Braves",
-                    "Wins": 1,
-                    "Losses": 6,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 13
+                    "Rank": 1
                 },
                 {
                     "Team": "Texas City Stingrays",
-                    "Wins": 4,
-                    "Losses": 1,
-                    "Ties": 1,
-                    "Points": 4.5,
+                    "Wins": 0,
+                    "Losses": 0,
+                    "Ties": 0,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 8
+                    "Rank": 1
                 }
             ]
         },
@@ -508,165 +508,165 @@
             "Teams": [
                 {
                     "Team": "Angleton Wildcats",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 },
                 {
                     "Team": "Bay Area Buccaneers",
-                    "Wins": 6,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 2
+                    "Rank": 1
                 },
                 {
                     "Team": "Brazosport Longhorns",
                     "Wins": 0,
-                    "Losses": 7,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 17
+                    "Rank": 1
                 },
                 {
                     "Team": "Dickinson Gators",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "East End Eagles",
-                    "Wins": 2,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 },
                 {
                     "Team": "Hitchcock Red Raiders",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "La Marque Chargers",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "La Porte Texans",
                     "Wins": 0,
-                    "Losses": 6,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 17
+                    "Rank": 1
                 },
                 {
                     "Team": "League City 49ers",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Magnolia Park Sharks",
-                    "Wins": 2,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 },
                 {
                     "Team": "Manvel Texans",
-                    "Wins": 7,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 7,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "Pasadena Panthers",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Hurricanes",
-                    "Wins": 3,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Patriots",
-                    "Wins": 1,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Texans",
-                    "Wins": 2,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 2,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 12
+                    "Rank": 1
                 },
                 {
                     "Team": "Sagemont Cowboys",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 },
                 {
                     "Team": "Santa Fe Braves",
-                    "Wins": 3,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 },
                 {
                     "Team": "Texas City Stingrays",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 3
+                    "Rank": 1
                 }
             ]
         },
@@ -675,165 +675,165 @@
             "Teams": [
                 {
                     "Team": "Angleton Wildcats",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Bay Area Buccaneers",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Brazosport Longhorns",
-                    "Wins": 1,
-                    "Losses": 6,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 14
+                    "Rank": 1
                 },
                 {
                     "Team": "Dickinson Gators",
-                    "Wins": 6,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 2
+                    "Rank": 1
                 },
                 {
                     "Team": "East End Eagles",
-                    "Wins": 3,
-                    "Losses": 4,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 },
                 {
                     "Team": "Hitchcock Red Raiders",
-                    "Wins": 1,
-                    "Losses": 5,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 1,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 14
+                    "Rank": 1
                 },
                 {
                     "Team": "La Marque Chargers",
-                    "Wins": 3,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 },
                 {
                     "Team": "La Porte Texans",
-                    "Wins": 6,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 6,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 2
+                    "Rank": 1
                 },
                 {
                     "Team": "League City 49ers",
-                    "Wins": 5,
-                    "Losses": 1,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 5,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 4
+                    "Rank": 1
                 },
                 {
                     "Team": "Magnolia Park Sharks",
-                    "Wins": 4,
-                    "Losses": 2,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Manvel Texans",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Pasadena Panthers",
                     "Wins": 0,
-                    "Losses": 7,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Hurricanes",
-                    "Wins": 4,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 4,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 5
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Patriots",
-                    "Wins": 3,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 },
                 {
                     "Team": "Pearland Texans",
-                    "Wins": 7,
+                    "Wins": 0,
                     "Losses": 0,
                     "Ties": 0,
-                    "Points": 7,
+                    "Points": 0,
                     "Playoff": false,
                     "Rank": 1
                 },
                 {
                     "Team": "Sagemont Cowboys",
                     "Wins": 0,
-                    "Losses": 6,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "Santa Fe Braves",
                     "Wins": 0,
-                    "Losses": 7,
+                    "Losses": 0,
                     "Ties": 0,
                     "Points": 0,
                     "Playoff": false,
-                    "Rank": 16
+                    "Rank": 1
                 },
                 {
                     "Team": "Texas City Stingrays",
-                    "Wins": 3,
-                    "Losses": 3,
+                    "Wins": 0,
+                    "Losses": 0,
                     "Ties": 0,
-                    "Points": 3,
+                    "Points": 0,
                     "Playoff": false,
-                    "Rank": 10
+                    "Rank": 1
                 }
             ]
         }
