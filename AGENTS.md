@@ -57,7 +57,7 @@ Each row is a rule or format that lives in more than one place. **When one side 
 | **Bundled fallback data** used before the first successful API call | `bafl-web/static/data/{Teams,Board,Schedule}.json`; refresh it from `/api/coreinfo` each season. `bafl-app/Resources/Raw/` is a historical snapshot and does not need to match. |
 | **Menu order and external links** (website, Facebook, by-laws, NWS alerts, contact) | `bafl-app/AppShell.xaml`, `bafl-app/AppShell.xaml.cs`, `bafl-app/MainPage.xaml.cs`, `bafl-web/src/lib/navigation.ts` |
 | **Brand colors:** Primary `#1C154D`, Secondary `#E4001C` | `bafl-app/Resources/Styles/Colors.xaml`, `bafl-web/src/app.css` |
-| **CORS allowed origins** | Function App `baflapp` CORS settings must list every `bafl-web` hostname. Today: `https://blue-plant-07b93f610.2.azurestaticapps.net` (plus `https://portal.azure.com`). Add any custom domain before pointing DNS at the site. |
+| **CORS allowed origins** | Function App `baflapp` CORS settings must list every `bafl-web` hostname. Today: `https://app.bayareafootballleague.org` and `https://blue-plant-07b93f610.2.azurestaticapps.net` (plus `https://portal.azure.com`). Add any new hostname here before pointing DNS at the site. |
 
 ## Web app commands
 
@@ -74,7 +74,7 @@ Run these from `bafl-web/` with Node 22 or later.
 The web app runs on a Free-tier Azure Static Web App; pushes to `main` that touch `bafl-web/` deploy it.
 
 - **Resource:** Static Web App `bafl-web` in resource group `BAFLApp` (subscription "Core VS Enterprise Subscriptino"), region Central US.
-- **URL:** `https://blue-plant-07b93f610.2.azurestaticapps.net`.
+- **URL:** `https://app.bayareafootballleague.org` (public address). It is a CNAME in Wix DNS pointing at the default host `https://blue-plant-07b93f610.2.azurestaticapps.net`, which also keeps working.
 - **Pipeline:** `.github/workflows/bafl-web.yml` runs `npm ci`, `check`, `test`, and `build`, then uploads `bafl-web/build`. It authenticates with the repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN_BAFL_WEB`.
 - **Manual deploy:** from `bafl-web/`, run `npx @azure/static-web-apps-cli deploy ./build --env production` with the deployment token from `az staticwebapp secrets list`.
 - **No PR previews:** preview hostnames are not in the Function App CORS list, so their API calls would fail.
