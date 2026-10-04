@@ -6,7 +6,7 @@
 	import { createLoader } from '$lib/loader.svelte';
 	import { CONTACT_URL } from '$lib/navigation';
 	import { pageTitle } from '$lib/pageTitle.svelte';
-	import StatusBar from '$lib/components/StatusBar.svelte';
+	import InstallBanner from '$lib/components/InstallBanner.svelte';
 
 	type Tab = 'schedule' | 'teams' | 'board';
 
@@ -16,10 +16,10 @@
 	);
 	let tab = $state<Tab>('schedule');
 
+	// League info rarely changes: show the saved copy, update quietly once per visit.
 	onMount(() => {
 		pageTitle.value = 'Bay Area Football League';
 		void loader.refresh();
-		return loader.watchVisibility();
 	});
 
 	let info = $derived(loader.data);
@@ -34,6 +34,8 @@
 </script>
 
 <div class="page">
+	<InstallBanner />
+
 	<section class="intro">
 		<img src="/img/bafl.png" alt="Bay Area Football League logo" width="125" height="114" />
 		<p>
@@ -49,9 +51,9 @@
 		<a class="btn secondary" href={CONTACT_URL} target="_blank" rel="noopener noreferrer">Contact Us</a>
 	</div>
 
-	<StatusBar result={loader.result} loading={loader.loading} onrefresh={loader.refresh} />
-
-	{#if tab === 'schedule'}
+	{#if !info}
+		<p class="muted loading">{loader.loading ? 'Loading…' : ''}</p>
+	{:else if tab === 'schedule'}
 		<ul class="cards">
 			{#each schedule as item, i (i)}
 				<li class:past={item.past}>
@@ -144,6 +146,10 @@
 
 	.cards li.past {
 		opacity: 0.5;
+	}
+
+	.loading {
+		text-align: center;
 	}
 
 	.title {

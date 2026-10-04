@@ -5,9 +5,13 @@
 	import { NAV_SECTIONS } from '$lib/navigation';
 	import { pageTitle } from '$lib/pageTitle.svelte';
 	import ThemedIcon from '$lib/components/ThemedIcon.svelte';
-	import InstallHint from '$lib/components/InstallHint.svelte';
+	import InstallHelp from '$lib/components/InstallHelp.svelte';
+	import { canInstall, initInstall, requestInstall } from '$lib/install.svelte';
 
 	let { children } = $props();
+
+	// Register before the browser fires `beforeinstallprompt` shortly after load.
+	initInstall();
 
 	let menuOpen = $state(false);
 
@@ -63,6 +67,22 @@
 				{/each}
 			</ul>
 		{/each}
+		{#if canInstall()}
+			<hr />
+			<button
+				class="install-item"
+				onclick={() => {
+					menuOpen = false;
+					void requestInstall();
+				}}
+			>
+				<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+					<rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+					<path d="M12 7v8M8.5 11.5 12 15l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<span>Install App</span>
+			</button>
+		{/if}
 	</nav>
 
 	{#if menuOpen}
@@ -70,10 +90,11 @@
 	{/if}
 
 	<main>
-		<InstallHint />
 		{@render children()}
 	</main>
 </div>
+
+<InstallHelp />
 
 <style>
 	.topbar {
@@ -149,8 +170,25 @@
 		text-decoration: none;
 	}
 
-	.sidebar a:hover {
+	.sidebar a:hover,
+	.install-item:hover {
 		background: var(--surface);
+	}
+
+	.install-item {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		width: 100%;
+		min-height: 44px;
+		padding: 6px 10px;
+		border: none;
+		border-radius: 8px;
+		background: transparent;
+		color: var(--accent);
+		font-weight: 600;
+		text-align: left;
+		cursor: pointer;
 	}
 
 	.sidebar a.active {
