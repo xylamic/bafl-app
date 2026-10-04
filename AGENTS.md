@@ -74,6 +74,7 @@ Run these from `bafl-web/` with Node 22 or later.
 The web app runs on a Free-tier Azure Static Web App; pushes to `main` that touch `bafl-web/` deploy it.
 
 - **Resource:** Static Web App `bafl-web` in resource group `BAFLApp` (subscription "Core VS Enterprise Subscriptino"), region Central US.
+- **Delete lock:** `protect-bafl-web` (CanNotDelete) blocks accidental deletion, which would lose the default hostname and the custom domain binding. Remove the lock first if deletion is really intended.
 - **URL:** `https://app.bayareafootballleague.org` (public address). It is a CNAME in Wix DNS pointing at the default host `https://blue-plant-07b93f610.2.azurestaticapps.net`, which also keeps working.
 - **Pipeline:** `.github/workflows/bafl-web.yml` runs `npm ci`, `check`, `test`, and `build`, then uploads `bafl-web/build`. It authenticates with the repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN_BAFL_WEB`.
 - **Manual deploy:** from `bafl-web/`, run `npx @azure/static-web-apps-cli deploy ./build --env production` with the deployment token from `az staticwebapp secrets list`.
