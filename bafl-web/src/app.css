@@ -1,0 +1,188 @@
+:root {
+	/* Brand colors: keep in sync with bafl-app/Resources/Styles/Colors.xaml */
+	--primary: #1c154d;
+	--secondary: #e4001c;
+	--tertiary: #e1dbda;
+	--gray-300: #acacac;
+	--gray-500: #6e6e6e;
+
+	--bg: #ffffff;
+	--surface: #f5f4f7;
+	--text: #141414;
+	--muted: var(--gray-500);
+	--accent: var(--primary);
+	--rule: var(--primary);
+	--banner-bg: #e6e3ef;
+	--highlight: rgba(255, 221, 0, 0.25);
+	--danger: #c80000;
+	--warn: #ff4500;
+	--ok: #00a000;
+
+	--sidebar-width: 280px;
+	--topbar-height: 52px;
+	--radius: 10px;
+
+	color-scheme: light dark;
+	font-family:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.4;
+	-webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #141414;
+		--surface: #212121;
+		--text: #f2f2f2;
+		--muted: #a0a0a0;
+		--accent: #ff4d63;
+		--rule: #5a4fa8;
+		--banner-bg: #2c2840;
+		--highlight: rgba(255, 221, 0, 0.18);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+}
+
+a {
+	color: var(--accent);
+}
+
+button,
+select,
+input {
+	font: inherit;
+	color: inherit;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4em;
+	min-height: 40px;
+	padding: 0.4em 1em;
+	border: 1px solid var(--primary);
+	border-radius: var(--radius);
+	background: var(--primary);
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.btn.secondary {
+	background: transparent;
+	color: var(--text);
+	border-color: var(--rule);
+}
+
+.btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.icon-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	padding: 6px;
+	border: none;
+	border-radius: 8px;
+	background: transparent;
+	cursor: pointer;
+}
+
+.icon-btn:hover:not(:disabled) {
+	background: var(--surface);
+}
+
+.icon-btn:disabled {
+	opacity: 0.35;
+	cursor: not-allowed;
+}
+
+.icon-btn img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.segmented {
+	display: flex;
+	gap: 6px;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.segmented button {
+	flex: 1 0 auto;
+	min-height: 40px;
+	padding: 0.4em 0.9em;
+	border: 1px solid var(--rule);
+	border-radius: var(--radius);
+	background: transparent;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.segmented button[aria-pressed='true'] {
+	background: var(--primary);
+	border-color: var(--primary);
+	color: #fff;
+	font-weight: 600;
+}
+
+.rule {
+	border: none;
+	border-top: 1px solid var(--rule);
+	margin: 8px 0;
+}
+
+.rule.thick {
+	border-top-width: 4px;
+}
+
+.banner {
+	background: var(--banner-bg);
+	color: var(--text);
+	border-left: 4px solid var(--secondary);
+	padding: 0.6em 0.9em;
+	margin: 8px 0;
+	text-align: center;
+	font-size: 1.05rem;
+	border-radius: 4px;
+}
+
+.muted {
+	color: var(--muted);
+}
+
+.page {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 12px 14px 32px;
+}
+
+.page.narrow {
+	max-width: 720px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}

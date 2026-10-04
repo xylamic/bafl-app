@@ -1,0 +1,46 @@
+name: bafl-web deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bafl-web/**'
+      - '.github/workflows/bafl-web.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bafl-web-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bafl-web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: bafl-web/package-lock.json
+
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+
+      # PR preview environments are not used: their hostnames are not in the Function App CORS list.
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BAFL_WEB }}
+          action: upload
+          app_location: bafl-web/build
+          skip_app_build: true
+          skip_api_build: true

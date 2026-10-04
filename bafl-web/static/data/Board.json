@@ -65,18 +65,18 @@
     "Email": "",
     "EmailPresent": false
   },
-	{
-		"Role": "Ways & Means Director",
-		"Name": "",
-		"Email": "",
-		"EmailPresent": false
-	},
-	{
-		"Role": "Asst Ways & Means Director",
-		"Name": "Bryan Chacon",
-		"Email": "",
-		"EmailPresent": false
-	},
+  {
+    "Role": "Ways & Means Director",
+    "Name": "",
+    "Email": "",
+    "EmailPresent": false
+  },
+  {
+    "Role": "Asst Ways & Means Director",
+    "Name": "Bryan Chacon",
+    "Email": "",
+    "EmailPresent": false
+  },
   {
     "Role": "Parliamentarian",
     "Name": "Andrew Wainscott",
@@ -125,12 +125,12 @@
     "Email": "",
     "EmailPresent": false
   },
-	{
+  {
     "Role": "Special Events Member",
     "Name": "Marcus Murphy",
     "Email": "",
     "EmailPresent": false
-	},
+  },
   {
     "Role": "IT Director",
     "Name": "Adam Jordan",
