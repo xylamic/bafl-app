@@ -1,100 +1,94 @@
 [
   {
-    "Date": "2025-07-26",
+    "Date": "2026-07-25",
     "Name": "First Official Practice",
     "Location": "Team Fields",
     "Notable": true
   },
   {
-    "Date": "2025-08-16",
+    "Date": "2026-08-15",
     "Name": "Football - Week 1",
     "Location": "Team Fields",
     "Notable": true
   },
   {
-    "Date": "2025-08-23",
+    "Date": "2026-08-22",
     "Name": "Football - Week 2",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-08-30",
+    "Date": "2026-08-29",
     "Name": "Football - Week 3",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-09-06",
+    "Date": "2026-09-05",
     "Name": "Football - Week 4",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-09-13",
+    "Date": "2026-09-12",
     "Name": "Football - Week 5",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-09-20",
+    "Date": "2026-09-19",
     "Name": "Football - Week 6",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-09-27",
+    "Date": "2026-09-26",
     "Name": "Football - Week 7",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-10-04",
+    "Date": "2026-10-03",
     "Name": "Football - Week 8",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-10-11",
+    "Date": "2026-10-10",
     "Name": "Football - Week 9",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-10-18",
+    "Date": "2026-10-17",
     "Name": "Football - Week 10",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-10-25",
+    "Date": "2026-10-24",
     "Name": "Football - Week 11",
     "Location": "Team Fields"
   },
   {
-    "Date": "2025-11-01",
-    "Name": "Football Quarterfinals",
-    "Location": "Select Fields",
-    "Notable": true
-  },
-  {
-    "Date": "2025-11-02",
+    "Date": "2026-11-01",
     "Name": "Cheer Competition",
     "Location": "Moody Gardens",
     "Notable": true
   },
   {
-    "Date": "2025-11-08",
+    "Date": "2026-11-07",
+    "Name": "Football Quarterfinals",
+    "Location": "Select Fields",
+    "Notable": true
+  },
+  {
+    "Date": "2026-11-14",
     "Name": "Football Semifinals",
     "Location": "Select Fields",
     "Notable": true
   },
   {
-    "Date": "2025-11-15",
-    "Name": "BAFL Bowl (All Star Game)",
-    "Location": "TBA",
-    "Notable": true
-  },
-  {
-    "Date": "2025-11-22",
+    "Date": "2026-11-21",
     "Name": "Drill Competition",
-    "Location": "TBA",
+    "Location": "Santa Fe High School",
     "Notable": true
   },
   {
-    "Date": "2025-12-06",
+    "Date": "2026-12-05",
     "Name": "Super Bowl",
-    "Location": "Rice Stadium",
+    "Location": "Challenger Columbia Stadium",
     "Notable": true
   }
 ]

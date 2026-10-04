@@ -7,9 +7,9 @@
   },
   {
     "Role": "1st Vice President",
-    "Name": "Mark Thompson",
+    "Name": "Barry Horton",
     "Email": "",
-    "EmailPresent": true
+    "EmailPresent": false
   },
   {
     "Role": "2nd Vice President",
@@ -25,9 +25,9 @@
   },
   {
     "Role": "Treasurer",
-    "Name": "Gino Barbagelata",
-    "Email": "Gino77de@yahoo.com",
-    "EmailPresent": true
+    "Name": "Mark Thompson",
+    "Email": "",
+    "EmailPresent": false
   },
   {
     "Role": "Athletic Director",
@@ -67,19 +67,19 @@
   },
 	{
 		"Role": "Ways & Means Director",
-		"Name": "Gloria Sanchez",
-		"Email": "eeeagles@yahoo.com",
-		"EmailPresent": true
+		"Name": "",
+		"Email": "",
+		"EmailPresent": false
 	},
 	{
 		"Role": "Asst Ways & Means Director",
-		"Name": "Barry Horton",
+		"Name": "Bryan Chacon",
 		"Email": "",
 		"EmailPresent": false
 	},
   {
     "Role": "Parliamentarian",
-    "Name": "Bradi Austin",
+    "Name": "Andrew Wainscott",
     "Email": "",
     "EmailPresent": false
   },
@@ -91,13 +91,13 @@
   },
   {
     "Role": "Special Events Chair",
-    "Name": "Bubba",
+    "Name": "",
     "Email": "",
     "EmailPresent": false
   },
   {
     "Role": "Special Events Member",
-    "Name": "Amber Bell",
+    "Name": "Patrick Weiss",
     "Email": "",
     "EmailPresent": false
   },
@@ -125,6 +125,12 @@
     "Email": "",
     "EmailPresent": false
   },
+	{
+    "Role": "Special Events Member",
+    "Name": "Marcus Murphy",
+    "Email": "",
+    "EmailPresent": false
+	},
   {
     "Role": "IT Director",
     "Name": "Adam Jordan",
