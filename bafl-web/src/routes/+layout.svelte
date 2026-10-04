@@ -2,10 +2,11 @@
 	import '../app.css';
 	import { page } from '$app/state';
 	import { afterNavigate } from '$app/navigation';
-	import { NAV_SECTIONS } from '$lib/navigation';
+	import { NAV_SECTIONS, feedbackMailto } from '$lib/navigation';
 	import { pageTitle } from '$lib/pageTitle.svelte';
 	import ThemedIcon from '$lib/components/ThemedIcon.svelte';
 	import InstallHelp from '$lib/components/InstallHelp.svelte';
+	import FeedbackHelp from '$lib/components/FeedbackHelp.svelte';
 	import { canInstall, initInstall, requestInstall } from '$lib/install.svelte';
 
 	let { children } = $props();
@@ -14,6 +15,27 @@
 	initInstall();
 
 	let menuOpen = $state(false);
+	let feedbackHref = $derived(feedbackMailto(page.url.pathname, navigator.userAgent));
+	let showFeedbackHelp = $state(false);
+
+	// Browsers don't report whether a mailto: link opened anything. If the page never loses
+	// focus to a mail app, assume nothing opened and offer the address instead.
+	function onFeedbackClick() {
+		menuOpen = false;
+		let left = false;
+		const markLeft = () => {
+			left = true;
+		};
+		window.addEventListener('blur', markLeft);
+		window.addEventListener('pagehide', markLeft);
+		document.addEventListener('visibilitychange', markLeft);
+		setTimeout(() => {
+			window.removeEventListener('blur', markLeft);
+			window.removeEventListener('pagehide', markLeft);
+			document.removeEventListener('visibilitychange', markLeft);
+			if (!left && document.visibilityState === 'visible' && document.hasFocus()) showFeedbackHelp = true;
+		}, 2000);
+	}
 
 	afterNavigate(() => {
 		menuOpen = false;
@@ -67,6 +89,20 @@
 				{/each}
 			</ul>
 		{/each}
+		<hr />
+		<a href={feedbackHref} onclick={onFeedbackClick}>
+			<svg class="menu-svg" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+				<path
+					d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 13.5z"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.6"
+					stroke-linejoin="round"
+				/>
+				<path d="M8 8.5h8M8 11.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+			</svg>
+			<span>Send Feedback</span>
+		</a>
 		{#if canInstall()}
 			<hr />
 			<button
@@ -95,6 +131,7 @@
 </div>
 
 <InstallHelp />
+<FeedbackHelp bind:open={showFeedbackHelp} />
 
 <style>
 	.topbar {
@@ -200,6 +237,10 @@
 		margin-left: auto;
 		color: var(--muted);
 		font-size: 0.85em;
+	}
+
+	.menu-svg {
+		flex: none;
 	}
 
 	.scrim {
