@@ -45,9 +45,9 @@
        </Tab>
     </FlyoutItem>-->
 
-    <MenuItem Text="" />
+    <MenuItem Text="" Shell.FlyoutItemIsVisible="False" />
 
-    <FlyoutItem Title="Pay BAFL: Square" Icon="square.png">
+    <FlyoutItem Title="Pay BAFL: Square" Icon="square.png" IsVisible="False">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:SquareView}" />
         </Tab>

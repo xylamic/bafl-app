@@ -20,8 +20,8 @@
 		<ApplicationIdGuid>0F25D2F5-E70F-47CF-B4C5-87B514A16FE7</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.7.4</ApplicationDisplayVersion>
-		<ApplicationVersion>81</ApplicationVersion>
+		<ApplicationDisplayVersion>1.7.5</ApplicationDisplayVersion>
+		<ApplicationVersion>82</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -55,6 +55,15 @@
 		<AndroidEnableProfiler>false</AndroidEnableProfiler>
 		<AndroidUseAssemblyStore>false</AndroidUseAssemblyStore>
 		<PublishTrimmed>true</PublishTrimmed>
+	</PropertyGroup>
+
+	<!-- Google Play upload key. Keystore is git-ignored; set BAFL_ANDROID_KEYSTORE_PASS before a Release build. -->
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+		<AndroidKeyStore>true</AndroidKeyStore>
+		<AndroidSigningKeyStore>Platforms/Android/Xylasoft.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>xylasoft</AndroidSigningKeyAlias>
+		<AndroidSigningStorePass>env:BAFL_ANDROID_KEYSTORE_PASS</AndroidSigningStorePass>
+		<AndroidSigningKeyPass>env:BAFL_ANDROID_KEYSTORE_PASS</AndroidSigningKeyPass>
 	</PropertyGroup>
 
 	<ItemGroup>
