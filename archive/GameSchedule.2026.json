@@ -1,6 +1,6 @@
 {
   "Title": "2026 Schedule",
-  "Message": "Week 9 updated.",
+  "Message": "Week 10 updated. Playoff Round 1 schedule posted.",
   "Weeks": [
     {
       "Week": "Week 1",
@@ -800,7 +800,7 @@
             { "Level": "Freshman", "Score": "7 @ 45" },
             { "Level": "Sophomore", "Score": "0 @ 54" },
             { "Level": "Junior", "Score": "0 @ 35" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Senior", "Score": "20 @ 14" }
           ]
         },
         {
@@ -931,88 +931,88 @@
           "Home": "Angleton Wildcats",
           "Away": "League City 49ers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "0 @ 21" },
+            { "Level": "Freshman", "Score": "19 @ 0" },
+            { "Level": "Sophomore", "Score": "28 @ 12" },
+            { "Level": "Junior", "Score": "39 @ 0" },
+            { "Level": "Senior", "Score": "42 @ 12" }
           ]
         },
         {
           "Home": "La Porte Texans",
           "Away": "Bay Area Buccaneers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "35 @ 21" },
+            { "Level": "Freshman", "Score": "49 @ 0" },
+            { "Level": "Sophomore", "Score": "25 @ 12" },
+            { "Level": "Junior", "Score": "46 @ 6" },
+            { "Level": "Senior", "Score": "7 @ 12" }
           ]
         },
         {
           "Home": "Texas City Stingrays",
           "Away": "Brazosport Longhorns",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "0 @ 40" },
+            { "Level": "Freshman", "Score": "0 @ 50" },
+            { "Level": "Sophomore", "Score": "0 @ 1" },
+            { "Level": "Junior", "Score": "0 @ 1" },
+            { "Level": "Senior", "Score": "14 @ 20" }
           ]
         },
         {
           "Home": "Santa Fe Braves",
           "Away": "Dickinson Gators",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "14 @ 28" },
+            { "Level": "Freshman", "Score": "54 @ 14" },
+            { "Level": "Sophomore", "Score": "32 @ 7" },
+            { "Level": "Junior", "Score": "23 @ 24" },
+            { "Level": "Senior", "Score": "55 @ 0" }
           ]
         },
         {
           "Home": "Hitchcock Red Raiders",
           "Away": "La Marque Chargers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "0 @ 29" },
+            { "Level": "Freshman", "Score": "0 @ 49" },
+            { "Level": "Sophomore", "Score": "0 @ 42" },
+            { "Level": "Junior", "Score": "0 @ 20" },
+            { "Level": "Senior", "Score": "0 @ 60" }
           ]
         },
         {
           "Home": "Pearland Texans",
           "Away": "Magnolia Park Sharks",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "27 @ 6" },
+            { "Level": "Freshman", "Score": "0 @ 30" },
+            { "Level": "Sophomore", "Score": "0 @ 19" },
+            { "Level": "Junior", "Score": "33 @ 0" },
+            { "Level": "Senior", "Score": "6 @ 40" }
           ]
         },
         {
           "Home": "Sagemont Cowboys",
           "Away": "Pasadena Panthers",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "39 @ 34" },
+            { "Level": "Freshman", "Score": "13 @ 2" },
+            { "Level": "Sophomore", "Score": "50 @ 0" },
+            { "Level": "Junior", "Score": "0 @ 50" },
+            { "Level": "Senior", "Score": "0 @ 43" }
           ]
         },
         {
           "Home": "Pearland Patriots",
           "Away": "Pearland Hurricanes",
           "Scores": [
-            { "Level": "Peewee", "Score": "TBA" },
-            { "Level": "Freshman", "Score": "TBA" },
-            { "Level": "Sophomore", "Score": "TBA" },
-            { "Level": "Junior", "Score": "TBA" },
-            { "Level": "Senior", "Score": "TBA" }
+            { "Level": "Peewee", "Score": "42 @ 6" },
+            { "Level": "Freshman", "Score": "12 @ 48" },
+            { "Level": "Sophomore", "Score": "62 @ 0" },
+            { "Level": "Junior", "Score": "32 @ 0" },
+            { "Level": "Senior", "Score": "7 @ 21" }
           ]
         },
         {
@@ -1126,6 +1126,64 @@
             { "Level": "Sophomore", "Score": "TBA" },
             { "Level": "Junior", "Score": "TBA" },
             { "Level": "Senior", "Score": "TBA" }
+          ]
+        }
+      ]
+    },
+    {
+      "Week": "Playoff Round 1",
+      "Date": "2026-11-07",
+      "Matchups": [
+        {
+          "Home": "Pasadena Panthers",
+          "Away": "Seniors",
+          "IsNeutral": false,
+          "Details": "Sam Rayburn High School",
+          "Scores": [
+            { "Level": "Pw: Angleton vs Pasadena", "Score": "8:00am" },
+            { "Level": "Dickinson vs Manvel", "Score": "9:30am" },
+            { "Level": "League City vs Magnolia Park", "Score": "11:30am" },
+            { "Level": "La Porte vs Bay Area", "Score": "1:30pm" },
+            { "Level": "Pearland T vs AW/PP", "Score": "3:30pm" }
+          ]
+        },
+        {
+          "Home": "Texas City Stingrays",
+          "Away": "Juniors",
+          "IsNeutral": false,
+          "Details": "Carlos Garza Sports Complex",
+          "Scores": [
+            { "Level": "Pw: Hitchcock vs La Marque", "Score": "8:00am" },
+            { "Level": "Manvel vs La Marque", "Score": "9:30am" },
+            { "Level": "Sagemont vs League City", "Score": "11:30am" },
+            { "Level": "Bay Area vs DG/PH", "Score": "1:30pm" },
+            { "Level": "Texas City vs Hitchcock", "Score": "3:30pm" }
+          ]
+        },
+        {
+          "Home": "Pearland Patriots",
+          "Away": "Sophomores",
+          "IsNeutral": false,
+          "Details": "Pearland Dads Club",
+          "Scores": [
+            { "Level": "Pw: Pearland H vs Bay Area", "Score": "8:00am" },
+            { "Level": "2 Seed vs 7 Seed", "Score": "9:30am" },
+            { "Level": "1 Seed vs 8 Seed", "Score": "11:30am" },
+            { "Level": "3 Seed vs 6 Seed", "Score": "1:30pm" },
+            { "Level": "4 Seed vs 5 Seed", "Score": "3:30pm" }
+          ]
+        },
+        {
+          "Home": "Dickinson Gators",
+          "Away": "Freshmen",
+          "IsNeutral": false,
+          "Details": "McAdams Junior High School",
+          "Scores": [
+            { "Level": "Pw: Santa Fe vs Manvel", "Score": "8:00am" },
+            { "Level": "League City vs Pasadena", "Score": "9:30am" },
+            { "Level": "Manvel vs Pearland T", "Score": "11:30am" },
+            { "Level": "Texas City vs Angleton", "Score": "1:30pm" },
+            { "Level": "Pearland P vs Hitchcock", "Score": "3:30pm" }
           ]
         }
       ]

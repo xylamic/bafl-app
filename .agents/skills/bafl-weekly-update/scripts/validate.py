@@ -20,9 +20,17 @@ def load(path):
         return json.load(f)
 
 
+def is_regular_season(wk):
+    # Postseason weeks ("Playoff Round 1", "Super Bowl", ...) repurpose Home/Away/Score;
+    # see docs/game_schedule.md "Postseason weeks".
+    return str(wk.get("Week", "")).lower().startswith("week")
+
+
 def team_names(schedule):
     names = set()
     for wk in schedule["Weeks"]:
+        if not is_regular_season(wk):
+            continue
         for m in wk["Matchups"]:
             if m["Home"] != "BYE":
                 names.add(m["Home"])
@@ -36,6 +44,17 @@ def validate_schedule(schedule, errors):
         label = wk.get("Week", "?")
         if not wk.get("Week") or not wk.get("Date"):
             errors.append(f"schedule: week missing Week/Date near '{label}'")
+        if not is_regular_season(wk):
+            for m in wk["Matchups"]:
+                if not m.get("Home") or not m.get("Away"):
+                    errors.append(f"schedule {label}: matchup missing Home/Away")
+                for s in m.get("Scores", []):
+                    if not s.get("Level") or not s.get("Score"):
+                        errors.append(
+                            f"schedule {label}: row for {m.get('Away')} @ {m.get('Home')} "
+                            "needs non-empty Level and Score"
+                        )
+            continue
         seen = []
         for m in wk["Matchups"]:
             home, away = m.get("Home", ""), m.get("Away", "")
