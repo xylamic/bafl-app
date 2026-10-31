@@ -24,10 +24,10 @@
                 <ActivityIndicator IsRunning="{Binding Path=IsLoading}" IsVisible="{Binding Path=IsLoading}" />
 
                 <!-- list of schedule items -->
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Teams}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Teams}" x:Name="layoutList" HorizontalOptions="Center" >
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <Grid HorizontalOptions="CenterAndExpand" Margin="5">
+                            <Grid HorizontalOptions="Center" Margin="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition />

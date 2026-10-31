@@ -24,10 +24,10 @@
                 <ActivityIndicator IsRunning="{Binding Path=IsLoading}" IsVisible="{Binding Path=IsLoading}" />
 
                 <!-- list of schedule items -->
-                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Matchups}" x:Name="layoutList" HorizontalOptions="CenterAndExpand" >
+                <VerticalStackLayout BindableLayout.ItemsSource="{Binding Path=Matchups}" x:Name="layoutList" HorizontalOptions="Center" >
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <Grid HorizontalOptions="CenterAndExpand" Margin="5">
+                            <Grid HorizontalOptions="Center" Margin="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition />
@@ -40,7 +40,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label Text="{Binding Away}" FontSize="Large" Grid.Row="0" HorizontalOptions="Center" />
-                                <HorizontalStackLayout Grid.Row="1" Margin="20,0,0,0" HorizontalOptions="CenterAndExpand">
+                                <HorizontalStackLayout Grid.Row="1" Margin="20,0,0,0" HorizontalOptions="Center">
                                     <Label Text="{Binding GameNeutralityText}" Grid.Column="1" FontSize="Large" TextColor="{StaticResource Secondary}" />
                                     <Label Text="{Binding Home}" Grid.Row="1" FontSize="Large" Margin="10,0,0,0" />
                                 </HorizontalStackLayout>

@@ -27,7 +27,7 @@
             Text="{Binding Path=DescriptionText}"
             HorizontalTextAlignment="Center"/>
 
-        <Grid HorizontalOptions="FillAndExpand" Grid.Row="2"
+        <Grid HorizontalOptions="Fill" Grid.Row="2"
                 Grid.ColumnSpan="2" Margin="10,10,10,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -39,23 +39,23 @@
             </Grid.ColumnDefinitions>
 
             <Button Text="{Binding Path=ScheduleText}" Pressed="ScheduleButton_Pressed" Margin="10,10,10,0"
-                x:Name="ScheduleButton" Grid.Column="0" Grid.Row="0" HorizontalOptions="FillAndExpand" />
+                x:Name="ScheduleButton" Grid.Column="0" Grid.Row="0" HorizontalOptions="Fill" />
             <Button Text="{Binding Path=TeamsText}" Pressed="TeamsButton_Pressed" Margin="10,10,10,0"
-                x:Name="ClubListButton" Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand" />
+                x:Name="ClubListButton" Grid.Column="1" Grid.Row="0" HorizontalOptions="Fill" />
             <Button Text="{Binding Path=BoardText}" Pressed="BoardButton_Pressed" Margin="10,10,10,10"
-                x:Name="BoardButton" IsEnabled="True" Grid.Column="0" Grid.Row="1" HorizontalOptions="FillAndExpand" />
+                x:Name="BoardButton" IsEnabled="True" Grid.Column="0" Grid.Row="1" HorizontalOptions="Fill" />
             <Button Text="Contact Us" Pressed="ContactButton_Pressed" Margin="10,10,10,10"
-                x:Name="ContactButton" IsEnabled="True" Grid.Column="1" Grid.Row="1" HorizontalOptions="FillAndExpand" />
+                x:Name="ContactButton" IsEnabled="True" Grid.Column="1" Grid.Row="1" HorizontalOptions="Fill" />
 
         </Grid>
 
-        <ActivityIndicator Grid.Row="3" Grid.ColumnSpan="2" IsRunning="{Binding Path=IsLoading}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <ActivityIndicator Grid.Row="3" Grid.ColumnSpan="2" IsRunning="{Binding Path=IsLoading}" HorizontalOptions="Center" VerticalOptions="Center" />
 
-        <CollectionView ItemsSource="{Binding ScheduleList}" Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand"
-                  IsVisible="{Binding Path=ScheduleShown}" x:Name="ScheduleView" SelectionMode="None" HorizontalOptions="Center">
+        <CollectionView ItemsSource="{Binding ScheduleList}" Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="Fill"
+                  IsVisible="{Binding Path=ScheduleShown}" x:Name="ScheduleView" SelectionMode="None" HorizontalOptions="Fill">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <VerticalStackLayout Margin="0,10,0,10" Opacity="{Binding Path=OpacityValue}" WidthRequest="400">
+                    <VerticalStackLayout Margin="0,10,0,10" Opacity="{Binding Path=OpacityValue}">
                         <Grid HorizontalOptions="Center">
                             <Label Text="⭐️" IsVisible="{Binding Path=Notable}" Margin="-30,0,10,0" VerticalTextAlignment="Center" />
                             <Label Text="{Binding Path=Name}"
@@ -70,12 +70,12 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <CollectionView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand" SelectionMode="None"
+        <CollectionView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="Fill" SelectionMode="None"
                         x:Name="ClubListView" ItemsSource="{Binding Path=BaflClubs}" IsVisible="{Binding Path=ClubsShown}"
-                        HorizontalOptions="CenterAndExpand" ItemSizingStrategy="MeasureAllItems">
+                        HorizontalOptions="Fill" ItemSizingStrategy="MeasureAllItems">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid HorizontalOptions="FillAndExpand" WidthRequest="400">
+                    <Grid HorizontalOptions="Fill">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -113,11 +113,11 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <CollectionView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="FillAndExpand" SelectionMode="None"
-                x:Name="BoardListView" ItemsSource="{Binding Path=BaflBoard}" IsVisible="{Binding Path=BoardShown}" HorizontalOptions="Center">
+        <CollectionView Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalOptions="Fill" SelectionMode="None"
+                x:Name="BoardListView" ItemsSource="{Binding Path=BaflBoard}" IsVisible="{Binding Path=BoardShown}" HorizontalOptions="Fill">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <VerticalStackLayout HorizontalOptions="Center" Margin="0,5,0,5" WidthRequest="400">
+                    <VerticalStackLayout HorizontalOptions="Center" Margin="0,5,0,5">
                         <Label Text="{Binding Role}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,10,0" />
                         <Label Text="{Binding Name}" FontSize="Small" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource Gray500}" />
                     </VerticalStackLayout>

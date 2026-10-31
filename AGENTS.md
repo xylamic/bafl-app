@@ -8,7 +8,7 @@ The repository holds two client apps, one editor tool, and the season data they 
 
 | Component | Location | What it is |
 |---|---|---|
-| **Mobile app** | `bafl-app/` | .NET MAUI app. Published on iOS and iPadOS. The Android build compiles but is not published (Google Play account closed). |
+| **Mobile app** | `bafl-app/` | .NET MAUI app. Published on iOS and iPadOS, including iPhone Duo. Build iOS with Xcode 27.1 and .NET SDK/workload set 10.0.403 or later (iOS 27.1 SDK); it uses the scene lifecycle (`Platforms/iOS/SceneDelegate.cs`). The side menu stays open when the window's shorter side is at least 600 points (iPad, unfolded iPhone Duo), set in `AppShell.xaml.cs`. The Android build compiles but is not published (Google Play account closed). |
 | **Web app** | `bafl-web/` | SvelteKit + TypeScript Progressive Web App (PWA), built as static files for Azure Static Web Apps (SWA). Independent of `bafl-app/`; it shares no code, only data formats and rules. |
 | **Backend API** | Azure portal only | HTTP-triggered Azure Functions at `https://baflapp.azurewebsites.net/api`. **The source is not in this repository.** Endpoint changes happen in the portal. |
 | **Data storage** | Azure Blob Storage | Holds the JSON files the Functions serve. |
